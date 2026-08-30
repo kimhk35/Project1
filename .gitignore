@@ -1,0 +1,63 @@
+# 환경 변수 / 시크릿
+.env
+.env.*
+*.env
+*.key
+*.pem
+secrets/
+credentials/
+
+# API Key 관련 (확장자/파일명 패턴)
+*.json
+!package.json
+!tsconfig.json
+!cspell.json
+  # 위 예외 말고는 일반 json 백업/설정 파일 제외 가능 — 필요시 주석 해제
+# 실제 민감 키가 포함된 json은 수동으로 제외하세요.
+
+# 의존성
+node_modules/
+vendor/
+pip-cache/
+__pycache__/
+*.pyc
+*.pyo
+.eggs/
+*.egg-info/
+
+# Python 가상환경
+.venv/
+venv/
+env/
+.env.python
+
+# OS 파일
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 에디터
+.vscode/*
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.swp
+*.swo
+
+# 빌드 / 임시
+dist/
+build/
+tmp/
+*.log
+*.bak
+
+# 테스트/검증 결과 (재생성 가능)
+__pycache__
+.coverage
+htmlcov/
+.tox/
+.nox/
+.pytest_cache/
+
+# 로컬 전용 설정
+*.local
