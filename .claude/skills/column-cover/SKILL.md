@@ -14,11 +14,11 @@ description: AI Insight Column 칼럼 원고(PDF DOCX)에 시리즈 테마 표�
 | 본연재 〈에이전틱 사고 · 온톨로지〉 | main | 00 01 02 … (00은 PROLOGUE) | 미색 종이 + 청록 | 본문 첫머리 `연재 〈에이전틱 사고 · 온톨로지〉 제N회` |
 | Spin-Off | spinoff | S1 S2 … | 먹색 + 주황 | 제목이나 파일명에 Spin-Off |
 | Policy Lens | policy | PL1 PL2 … | 크림 + 청색 | `AI Insight Column – Policy Lens` |
-| 번외편 | special | EX1 EX2 … | 남색 + 보라 청록 그라데이션 | 번외편 |
 
 - 본연재 번호는 원고에 적힌 제N회를 그대로 쓴다 나머지는 원고에 번호가 있으면 그 번호 없으면 `python column-covers/build.py next`가 알려 주는 다음 번호
 - 테마 색 레이아웃 글꼴은 `series.py` `build.py`에 고정되어 있다 새 칼럼에서 바꾸지 않는다
-- 시리즈를 알 수 없거나 새 시리즈로 보이면 만들기 전에 사용자에게 묻는다
+- 시리즈는 이 셋뿐이다 번외편은 시리즈로 다루지 않는다
+- 번외편이나 시리즈를 알 수 없는 원고 새 시리즈로 보이는 원고가 오면 만들기 전에 사용자에게 묻는다
 
 ## 표지 문구 규칙
 

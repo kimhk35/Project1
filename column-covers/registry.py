@@ -1,7 +1,7 @@
 """발행된 표지 목록 (번호 대장)
 
 새 칼럼 표지를 만들면 여기에 한 줄 추가한다 같은 시리즈에서 번호가 겹치면 build.py가 멈춘다
-- series  series.py의 키 main spinoff policy special
+- series  series.py의 키 main spinoff policy
 - n       시리즈 안의 번호 본연재는 원고의 제N회 그대로
 - src     원본 파일 이름 (build 때 --src 폴더에서 찾는다)
 - meta    번호 옆 작은 줄 두 항목
@@ -59,11 +59,4 @@ COVERS = [
          title=['AI 교육 콘텐츠의 문제는', '기술보다 ‘번역’에 있다'],
          sub='개발자·정책 입안자·현장 교사가 같은 테이블에 앉아야 하는 이유',
          tags=['공동설계', '공통 언어', '교사는 최종 사용자가 아니다'], art='art_translate'),
-
-    # ---------------------------------------------------------------- 번외편
-    dict(series='special', n=1, src='[AI Insight Column-번외편]유동적 최소구조 AI확장구성주의.pdf',
-         meta=['개념적·이론적', '탐색 칼럼'], kicker='유동적 최소구조와 AI-확장구성주의',
-         title=['최소구조는', '고체가 아닙니다', '변화무쌍한 유체입니다'],
-         sub='Piaget·Vygotsky의 비판적 계승에서 ‘최소구조의 착시’와 AI-확장구성주의까지',
-         tags=['국소적 충분구조', '최소구조의 착시', 'AI-확장구성주의'], art='art_fluid'),
 ]
