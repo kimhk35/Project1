@@ -1,0 +1,753 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>학습분석 요약 영상</title>
+<style>
+@font-face{font-family:P;src:url(fonts/Pretendard-Regular.otf);font-weight:400}
+@font-face{font-family:P;src:url(fonts/Pretendard-Medium.otf);font-weight:500}
+@font-face{font-family:P;src:url(fonts/Pretendard-SemiBold.otf);font-weight:600}
+@font-face{font-family:P;src:url(fonts/Pretendard-Bold.otf);font-weight:700}
+@font-face{font-family:P;src:url(fonts/Pretendard-ExtraBold.otf);font-weight:800}
+@font-face{font-family:P;src:url(fonts/Pretendard-Black.otf);font-weight:900}
+:root{--navy:#1E2761;--navy2:#2B3A7A;--teal:#00877D;--mint:#7FE3D6;--ice:#CADCFC;--bg:#F1F4F9;--ink:#1E2761;--muted:#5A6577;--line:#DDE3EE;--warm:#F2A65A;--red:#E0605E;--green:#2FB37F}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1920px;height:1080px;overflow:hidden;background:var(--bg);font-family:P,'Noto Color Emoji',sans-serif;color:var(--ink);word-break:keep-all}
+#stage{position:relative;width:1920px;height:1080px;overflow:hidden;background:var(--bg)}
+svg *{transform-box:fill-box;transform-origin:center}
+.blob{position:absolute;border-radius:50%;filter:blur(2px);opacity:.55}
+.scene{position:absolute;inset:0;display:none}
+.scene.dark{background:radial-gradient(1200px 800px at 70% 20%,#2B3A7A 0%,#1E2761 55%,#141B45 100%);color:#fff}
+.abs{position:absolute}
+.kicker{position:absolute;left:120px;top:96px;font-weight:800;font-size:24px;letter-spacing:.22em;color:var(--teal)}
+.h{position:absolute;left:120px;top:136px;font-weight:800;font-size:66px;letter-spacing:-.02em;line-height:1.15}
+.dark .kicker{color:var(--mint)}
+.card{background:#fff;border-radius:28px;box-shadow:0 18px 50px rgba(30,39,97,.12)}
+.pill{display:inline-flex;align-items:center;gap:12px;padding:12px 26px;border-radius:999px;font-weight:700;font-size:28px}
+.num{display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:50%;background:var(--navy);color:#fff;font-weight:800;font-size:28px;flex:none}
+.num.t{background:var(--teal)}
+.cap{position:absolute;left:0;right:0;bottom:54px;text-align:center;opacity:0;pointer-events:none}
+.cap span{display:inline-block;max-width:1500px;background:rgba(20,27,69,.88);color:#fff;font-weight:600;font-size:34px;line-height:1.45;padding:14px 34px;border-radius:18px}
+.cap b{color:var(--mint)}
+.dark .cap span{background:rgba(0,135,125,.92)}
+.dark .cap b{color:#fff;text-decoration:underline}
+.bubble{position:absolute;background:#fff;border-radius:26px;padding:22px 30px;font-size:32px;font-weight:700;line-height:1.4;box-shadow:0 14px 34px rgba(30,39,97,.15);color:var(--ink)}
+.bubble:after{content:'';position:absolute;left:44px;bottom:-22px;border:14px solid transparent;border-top:18px solid #fff;border-bottom:0}
+.bubble.r:after{left:auto;right:44px}
+.char{position:absolute}
+.char svg{width:100%;height:100%;overflow:visible}
+#hud{position:absolute;right:60px;top:44px;font-weight:700;font-size:22px;padding:10px 22px;border-radius:999px;background:#fff;color:var(--navy);box-shadow:0 6px 20px rgba(30,39,97,.1);opacity:0}
+#prog{position:absolute;left:0;bottom:0;height:8px;background:var(--teal);width:0}
+.strike{position:relative}
+.strike:after{content:'';position:absolute;left:-4%;top:52%;height:6px;border-radius:3px;background:var(--red);width:calc(var(--s,0)*108%)}
+.chip{display:inline-flex;align-items:center;gap:14px;background:#fff;border:3px solid var(--line);border-radius:20px;padding:16px 26px;font-size:32px;font-weight:700;color:var(--navy)}
+.muted{color:var(--muted)}
+.tag{font-weight:800;font-size:22px;letter-spacing:.18em}
+.dot{position:absolute;width:44px;height:44px;border-radius:50%;background:#CADCFC;transition:none}
+.dot.risk{background:var(--red)}
+.dot.safe{box-shadow:0 0 0 5px var(--green) inset}
+.dot.miss:after{content:'✕';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:26px}
+.tile{position:absolute;width:150px;height:96px;border-radius:18px;background:#fff;border:3px solid var(--line);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:22px;color:var(--muted)}
+.tile.keep{border-color:var(--teal);color:var(--teal)}
+</style>
+</head>
+<body>
+<div id="stage">
+<div class="blob" id="b1" style="width:520px;height:520px;background:#CADCFC;left:-120px;top:-140px"></div>
+<div class="blob" id="b2" style="width:420px;height:420px;background:#CFEDEA;right:-100px;bottom:-120px"></div>
+<div class="blob" id="b3" style="width:220px;height:220px;background:#E8EDF6;left:1300px;top:120px"></div>
+
+<!-- ================= S1 TITLE ================= -->
+<section class="scene dark" id="s-title" data-dur="9">
+  <svg class="abs" width="1920" height="1080" style="left:0;top:0;opacity:.35">
+    <g id="gridlines" stroke="#3A4A8F" stroke-width="2" fill="none">
+      <path pathLength="1" style="stroke-dasharray:1" data-a="draw@0:1.6" d="M0 820 L1920 820"/>
+      <path pathLength="1" style="stroke-dasharray:1" data-a="draw@0.2:1.6" d="M0 700 L1920 700"/>
+      <path pathLength="1" style="stroke-dasharray:1" data-a="draw@0.4:1.6" d="M0 580 L1920 580"/>
+    </g>
+    <path pathLength="1" style="stroke-dasharray:1" data-a="draw@0.6:2.4" d="M0 900 C200 880 300 760 480 780 S760 600 960 640 S1300 420 1500 470 S1800 300 1920 260" stroke="#7FE3D6" stroke-width="6" fill="none"/>
+  </svg>
+  <div class="abs pill" style="left:140px;top:200px;background:rgba(127,227,214,.15);color:#7FE3D6" data-a="left@0.4">WEEK 06 · 강의 요약</div>
+  <div class="abs" style="left:136px;top:290px;font-weight:900;font-size:128px;line-height:1.08;letter-spacing:-.03em">
+    <div data-a="up@0.7">인공지능과</div>
+    <div data-a="up@0.95" style="color:#7FE3D6">학습분석</div>
+  </div>
+  <div class="abs" style="left:142px;top:600px;width:980px;font-size:36px;line-height:1.5;font-weight:500;color:#CADCFC" data-a="up@1.6">데이터가 쌓이면 무엇을 알 수 있고<br>무엇을 알았다고 착각하게 되는가</div>
+  <div class="abs" style="left:142px;top:760px;display:flex;gap:16px">
+    <span class="pill" style="background:rgba(255,255,255,.1);color:#fff;font-size:24px" data-a="pop@2.2">문제 기반 학습</span>
+    <span class="pill" style="background:rgba(255,255,255,.1);color:#fff;font-size:24px" data-a="pop@2.35">관련 논문 활용</span>
+    <span class="pill" style="background:rgba(255,255,255,.1);color:#fff;font-size:24px" data-a="pop@2.5">대면 강의와 토론</span>
+  </div>
+  <div class="abs" style="left:142px;top:930px;font-size:24px;color:#9AA4B5" data-a="fade@2.8">디지털 교육(AI·Digital Education) · 아주대학교 교육대학원</div>
+  <div class="char" data-kind="robot" style="left:1300px;top:300px;width:420px;height:560px" data-a="pop@1.2:0.8" data-wave="1.8-4.2" data-talk="2-4"></div>
+  <div class="bubble r" style="left:1180px;top:170px" data-a="pop@2.2">안녕하세요 오늘은 지표를 읽는 훈련이에요!</div>
+</section>
+
+<!-- ================= S2 QUESTION ================= -->
+<section class="scene" id="s-question" data-dur="13" data-part="TODAY'S QUESTION">
+  <div class="kicker" data-a="up@0.2">TODAY'S QUESTION</div>
+  <div class="char" data-kind="teacher" style="left:120px;top:420px;width:380px;height:520px" data-a="left@0.3" data-talk="0.8-4.5,8-11" data-wave="0.8-2.4"></div>
+  <div class="bubble" style="left:170px;top:250px;width:520px" data-a="pop@1">대시보드 숫자 믿어도 될까요?</div>
+  <div class="card abs" style="left:760px;top:210px;width:1020px;height:470px;padding:40px 50px" data-a="up@1.4">
+    <div class="tag muted">STUDENT DASHBOARD · 학생 A</div>
+    <div style="display:flex;gap:30px;margin-top:30px">
+      <div style="flex:1;background:#F1F4F9;border-radius:22px;padding:28px">
+        <div style="font-size:26px;font-weight:700" class="muted">주간 접속 시간</div>
+        <div style="font-size:96px;font-weight:900;color:var(--teal);line-height:1.1"><span data-a="count@2:2" data-to="14">0</span><span style="font-size:48px">시간</span></div>
+        <div style="font-size:26px;font-weight:700;color:var(--green)" data-a="up@3.4">▲ 지난주 대비 3배</div>
+      </div>
+      <div style="flex:1;background:#F1F4F9;border-radius:22px;padding:28px">
+        <div style="font-size:26px;font-weight:700" class="muted">푼 문항 수</div>
+        <div style="font-size:96px;font-weight:900;color:var(--navy);line-height:1.1"><span data-a="count@2.3:2" data-to="248">0</span><span style="font-size:48px">개</span></div>
+        <div style="font-size:26px;font-weight:700;color:var(--green)" data-a="up@3.7">▲ 학급 1위</div>
+      </div>
+    </div>
+    <div class="abs" style="right:40px;top:26px;font-size:150px;font-weight:900;color:var(--warm)" data-a="pop@5:0.7 pulse@6">?</div>
+  </div>
+  <div class="abs" style="left:760px;top:720px;width:1060px;font-size:50px;font-weight:800;line-height:1.3" data-a="up@5.4">접속 시간이 길고 문항을 많이 푼 학생은<br><span style="color:var(--teal)">정말로 더 많이 배웠는가?</span></div>
+  <div class="cap" data-t="0.8"><span>대시보드는 이 질문에 답하지 않아요</span></div>
+  <div class="cap" data-t="5.4"><span>다만 <b>답한 것처럼 보이는 숫자</b>를 보여 줄 뿐이에요</span></div>
+  <div class="cap" data-t="9"><span>오늘의 목표는 그 숫자가 <b>무엇을 세고 있는지</b> 확인하는 습관이에요</span></div>
+</section>
+
+<!-- ================= S3 ROADMAP ================= -->
+<section class="scene" id="s-road" data-dur="10" data-part="AGENDA">
+  <div class="kicker" data-a="up@0.2">AGENDA</div>
+  <div class="h" data-a="up@0.35">오늘의 흐름 다섯 파트</div>
+  <svg class="abs" style="left:0;top:0" width="1920" height="1080">
+    <path pathLength="1" style="stroke-dasharray:1" data-a="draw@0.6:2.6" d="M200 560 C400 420 520 700 700 560 S1000 420 1160 560 S1460 700 1720 560" stroke="#CADCFC" stroke-width="10" fill="none" stroke-linecap="round"/>
+  </svg>
+  <div class="abs" style="left:130px;top:470px;width:160px;text-align:center" data-a="pop@1"><div class="num" style="width:120px;height:120px;font-size:48px;margin:0 auto">1</div></div>
+  <div class="abs" style="left:620px;top:470px;width:160px;text-align:center" data-a="pop@1.5"><div class="num" style="width:120px;height:120px;font-size:48px;margin:0 auto">2</div></div>
+  <div class="abs" style="left:1080px;top:470px;width:160px;text-align:center" data-a="pop@2"><div class="num" style="width:120px;height:120px;font-size:48px;margin:0 auto">3</div></div>
+  <div class="abs" style="left:1640px;top:470px;width:160px;text-align:center" data-a="pop@3"><div class="num t" style="width:120px;height:120px;font-size:48px;margin:0 auto">5</div></div>
+  <div class="abs" style="left:1360px;top:600px;width:160px;text-align:center" data-a="pop@2.5"><div class="num" style="width:120px;height:120px;font-size:48px;margin:0 auto">4</div></div>
+  <div class="abs" style="left:60px;top:620px;width:300px;text-align:center;font-size:32px;font-weight:800" data-a="up@1.2">학습분석이란<div class="muted" style="font-size:22px;font-weight:600;margin-top:8px">정의 · 데이터 · 지표</div></div>
+  <div class="abs" style="left:550px;top:320px;width:300px;text-align:center;font-size:32px;font-weight:800" data-a="up@1.7">분석의 방법<div class="muted" style="font-size:22px;font-weight:600;margin-top:8px">예측 모형 · 성능 지표</div></div>
+  <div class="abs" style="left:1000px;top:320px;width:320px;text-align:center;font-size:32px;font-weight:800" data-a="up@2.2">대시보드와 조기경보<div class="muted" style="font-size:22px;font-weight:600;margin-top:8px">개입 · 낙인 방지</div></div>
+  <div class="abs" style="left:1290px;top:750px;width:300px;text-align:center;font-size:32px;font-weight:800" data-a="up@2.7">윤리와 설명가능성<div class="muted" style="font-size:22px;font-weight:600;margin-top:8px">최소화 · 통지 · 편향</div></div>
+  <div class="abs" style="left:1570px;top:320px;width:300px;text-align:center;font-size:32px;font-weight:800;color:var(--teal)" data-a="up@3.2">학교 적용 설계<div class="muted" style="font-size:22px;font-weight:600;margin-top:8px">지표 정의 실습</div></div>
+  <div class="cap" data-t="1"><span>데이터에서 지표 그리고 예측과 개입 윤리를 거쳐 <b>학교 적용</b>까지</span></div>
+</section>
+
+<!-- ================= S4 DEFINITION ================= -->
+<section class="scene" id="s-def" data-dur="14" data-part="PART 01 · 학습분석이란">
+  <div class="kicker" data-a="up@0.2">01 · DEFINITION</div>
+  <div class="h" data-a="up@0.35">학습분석이란?</div>
+  <div class="abs" style="left:120px;top:250px;width:1100px;font-size:34px;line-height:1.5;font-weight:500" class="muted" data-a="up@0.8">학습자와 학습 맥락에 관한 데이터를 <b>측정·수집·분석·보고</b>하여<br>학습을 <b style="color:var(--teal)">이해하고 개선</b>하는 활동</div>
+  <div class="abs" style="left:120px;top:440px;display:flex;align-items:center;gap:26px">
+    <div class="card" style="width:230px;height:250px;padding:30px 20px;text-align:center" data-a="pop@1.6"><div style="font-size:70px">📏</div><div style="font-size:34px;font-weight:800;margin-top:10px">측정·수집</div><div class="muted" style="font-size:22px;margin-top:6px">무엇을 데이터로?</div></div>
+    <div style="font-size:50px;color:#9AA4B5" data-a="left@2">➜</div>
+    <div class="card" style="width:230px;height:250px;padding:30px 20px;text-align:center" data-a="pop@2.2"><div style="font-size:70px">🧮</div><div style="font-size:34px;font-weight:800;margin-top:10px">분석</div><div class="muted" style="font-size:22px;margin-top:6px">기술 통계~예측</div></div>
+    <div style="font-size:50px;color:#9AA4B5" data-a="left@2.6">➜</div>
+    <div class="card" style="width:230px;height:250px;padding:30px 20px;text-align:center" data-a="pop@2.8"><div style="font-size:70px">📊</div><div style="font-size:34px;font-weight:800;margin-top:10px">보고</div><div class="muted" style="font-size:22px;margin-top:6px">대시보드 설계</div></div>
+    <div style="font-size:50px;color:#9AA4B5" data-a="left@3.2">➜</div>
+    <div class="card" style="width:230px;height:250px;padding:30px 20px;text-align:center;background:var(--teal);color:#fff" data-a="pop@3.4 pulse@4.5"><div style="font-size:70px">🌱</div><div style="font-size:34px;font-weight:800;margin-top:10px">개선</div><div style="font-size:22px;margin-top:6px;opacity:.85">목적은 개입</div></div>
+  </div>
+  <div class="card abs" style="left:1420px;top:250px;width:400px;padding:34px 36px;background:var(--navy);color:#fff" data-a="right@6">
+    <div class="tag" style="color:var(--mint)">핵심 질문 3</div>
+    <div style="font-size:31px;font-weight:700;line-height:1.9;margin-top:14px">
+      <div data-a="up@6.6">① 무엇을 세고 있는가</div>
+      <div data-a="up@7.1">② 누가 보는가</div>
+      <div data-a="up@7.6">③ 무엇을 바꿀 수 있는가</div>
+    </div>
+    <div style="margin-top:18px;font-size:24px;color:var(--warm);font-weight:700" data-a="up@8.3">답할 수 없으면 도입 보류</div>
+  </div>
+  <div class="cap" data-t="0.8"><span>학습분석은 데이터로 학습을 <b>이해하고 개선</b>하는 활동이에요</span></div>
+  <div class="cap" data-t="4"><span>분석의 목적은 설명이 아니라 <b>개입</b> 개입 설계가 없으면 관찰에 그쳐요</span></div>
+  <div class="cap" data-t="8.6"><span>세 질문에 답할 수 없다면 도입은 잠시 멈추세요</span></div>
+</section>
+
+<!-- ================= S5 ACTIVITY vs LEARNING ================= -->
+<section class="scene" id="s-ind" data-dur="15" data-part="PART 01 · 학습분석이란">
+  <div class="kicker" data-a="up@0.2">INDICATORS</div>
+  <div class="h" data-a="up@0.35">활동 지표 vs 학습 지표</div>
+  <div class="abs" style="left:120px;top:300px;width:1680px;display:flex;flex-wrap:wrap;gap:20px" id="chips">
+    <div class="chip" data-a="pop@0.8">⏱ 접속 빈도·시간</div>
+    <div class="chip" data-a="pop@1.0">📈 진도율</div>
+    <div class="chip" data-a="pop@1.2">✅ 정답률</div>
+    <div class="chip" data-a="pop@1.4">📮 과제 제출률</div>
+    <div class="chip" data-a="pop@1.6">🔁 재시도 횟수</div>
+    <div class="chip" data-a="pop@1.8">💬 상호작용 수</div>
+  </div>
+  <div class="card abs" style="left:120px;top:460px;width:800px;height:380px;padding:36px 44px" data-a="up@4">
+    <div class="tag" style="color:var(--navy)">ACTIVITY</div>
+    <div style="font-size:46px;font-weight:900;margin-top:6px">활동 지표</div>
+    <div style="font-size:30px;font-weight:600;margin-top:8px" class="muted">무엇을 얼마나 했는가</div>
+    <div style="font-size:28px;line-height:1.75;margin-top:18px;font-weight:600">
+      <div data-a="up@5">✔ 자동 수집 즉시 확인 비교가 쉬움</div>
+      <div data-a="up@5.4" style="color:var(--red)">✘ 이해 여부를 담지 못함</div>
+      <div data-a="up@5.8" style="color:var(--red)">✘ 조작·최적화가 쉬움</div>
+    </div>
+  </div>
+  <div class="card abs" style="left:1000px;top:460px;width:800px;height:380px;padding:36px 44px;border:4px dashed var(--teal);background:#E4F2F0" data-a="up@4.4">
+    <div class="tag" style="color:var(--teal)">LEARNING</div>
+    <div style="font-size:46px;font-weight:900;margin-top:6px;color:var(--teal)">학습 지표</div>
+    <div style="font-size:30px;font-weight:600;margin-top:8px" class="muted">무엇을 할 수 있게 되었는가</div>
+    <div style="font-size:28px;line-height:1.75;margin-top:18px;font-weight:600">
+      <div data-a="up@6.4">✔ 성취기준과 연결 조작이 어려움</div>
+      <div data-a="up@6.8">✔ 별도 확인 과제와 교사 판단 필요</div>
+    </div>
+  </div>
+  <div class="abs pill" style="left:120px;top:864px;background:var(--warm);color:#fff" data-a="pop@8.5">여섯 지표 모두 왼쪽! 대시보드 대부분이 활동 지표</div>
+  <div class="cap" data-t="0.8"><span>대시보드에 자주 보이는 여섯 지표</span></div>
+  <div class="cap" data-t="4"><span>이것들은 모두 <b>활동</b>의 지표예요</span></div>
+  <div class="cap" data-t="9"><span>학습의 지표로 승격시키려면 <b>별도의 근거</b>가 필요해요</span></div>
+</section>
+
+<!-- ================= S6 PROXY CASE ================= -->
+<section class="scene" id="s-proxy" data-dur="16" data-part="PART 01 · 대리 지표의 문제">
+  <div class="kicker" data-a="up@0.2">CASE · PROXY</div>
+  <div class="h" data-a="up@0.35">접속 시간을 관리 지표로 삼았더니</div>
+  <div class="card abs" style="left:120px;top:290px;width:980px;height:600px;padding:30px 40px" data-a="up@0.7">
+    <div style="display:flex;gap:30px;font-size:26px;font-weight:700">
+      <span style="color:var(--teal)">━ 접속 시간</span><span style="color:var(--navy)">━ 문항 정답률</span>
+    </div>
+    <svg width="900" height="470" style="margin-top:14px">
+      <g stroke="#DDE3EE" stroke-width="2"><line x1="40" y1="60" x2="880" y2="60"/><line x1="40" y1="180" x2="880" y2="180"/><line x1="40" y1="300" x2="880" y2="300"/><line x1="40" y1="420" x2="880" y2="420"/></g>
+      <g font-family="P" font-size="22" fill="#8A93A3" font-weight="600"><text x="40" y="455">1주</text><text x="300" y="455">순위 공개</text><text x="560" y="455">독려 메시지</text><text x="820" y="455">8주</text></g>
+      <path pathLength="1" style="stroke-dasharray:1" data-a="draw@1.4:3" d="M40 360 L160 350 L280 330 L400 240 L520 170 L640 120 L760 90 L880 60" stroke="#00877D" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <path pathLength="1" style="stroke-dasharray:1" data-a="draw@1.4:3" d="M40 300 L160 296 L280 304 L400 298 L520 302 L640 297 L760 303 L880 299" stroke="#1E2761" stroke-width="10" fill="none" stroke-linecap="round"/>
+      <g data-a="pop@4.6"><rect x="640" y="12" width="230" height="44" rx="22" fill="#00877D"/><text x="755" y="42" text-anchor="middle" font-family="P" font-size="24" font-weight="800" fill="#fff">접속 시간 급증</text></g>
+      <g data-a="pop@5.2"><rect x="640" y="316" width="230" height="44" rx="22" fill="#1E2761"/><text x="755" y="346" text-anchor="middle" font-family="P" font-size="24" font-weight="800" fill="#fff">정답률 변화 없음</text></g>
+    </svg>
+  </div>
+  <div class="char" data-kind="student" data-mood="sleep" style="left:1210px;top:420px;width:330px;height:450px" data-a="up@5.8"></div>
+  <div class="abs" style="left:1480px;top:520px;width:300px" data-a="pop@6.3">
+    <div style="background:#1E2761;border-radius:16px;padding:14px;width:280px;height:170px;box-shadow:0 12px 30px rgba(0,0,0,.15)">
+      <div style="background:#E8EDF6;border-radius:8px;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:800;color:var(--navy);font-size:24px">학습 창 열림<div style="font-size:40px;color:var(--teal)" data-a="count@6.5:6" data-to="312">0</div><div style="font-size:18px" class="muted">분째 접속 중</div></div>
+    </div>
+  </div>
+  <div class="abs" style="left:1440px;top:380px;font-size:60px;font-weight:900;color:#9AA4B5" data-a="float@0 fade@6.6">z<span style="font-size:44px">z</span><span style="font-size:30px">z</span></div>
+  <div class="card abs" style="left:1180px;top:220px;width:620px;padding:24px 32px;background:var(--navy);color:#fff" data-a="right@10">
+    <div class="tag" style="color:var(--mint)">점검 질문</div>
+    <div style="font-size:28px;font-weight:700;line-height:1.6;margin-top:6px">이 지표를 올리는 <span style="color:var(--warm)">최단 경로</span>는?<br>그 경로가 학습과 무관하다면 → 대리 지표 위험</div>
+  </div>
+  <div class="cap" data-t="0.8"><span>한 중학교가 주간 접속 시간을 집계하고 <b>학급 순위</b>를 공개했어요</span></div>
+  <div class="cap" data-t="4.6"><span>접속 시간은 크게 늘었지만 정답률은 그대로</span></div>
+  <div class="cap" data-t="6.6"><span>학생들은 창을 열어 두는 방법을 배웠어요</span></div>
+  <div class="cap" data-t="10.2"><span>지표를 관리하면 그 지표는 반드시 오른다 <b>올라간 것이 학습인가 지표인가?</b></span></div>
+</section>
+
+<!-- ================= S7 BLIND SPOTS (iceberg) ================= -->
+<section class="scene" id="s-blind" data-dur="13" data-part="PART 01 · 데이터가 못 보는 것">
+  <div class="kicker" data-a="up@0.2">BLIND SPOTS</div>
+  <div class="h" data-a="up@0.35">데이터가 보지 못하는 것</div>
+  <svg class="abs" style="left:0;top:0" width="1920" height="1080">
+    <rect x="0" y="470" width="1920" height="610" fill="#CFE3F7" data-a="fade@0.5"/>
+    <path d="M0 470 Q120 455 240 470 T480 470 T720 470 T960 470 T1200 470 T1440 470 T1680 470 T1920 470" stroke="#9CC3EA" stroke-width="6" fill="none" data-a="fade@0.5"/>
+    <path id="berg-top" d="M820 470 L900 340 L960 300 L1030 350 L1110 470 Z" fill="#fff" stroke="#B9C6E4" stroke-width="4" data-a="up@0.9"/>
+    <path id="berg-bot" d="M820 470 L1110 470 L1300 640 L1250 860 L1040 1010 L820 990 L640 820 L660 620 Z" fill="#E8F1FC" stroke="#B9C6E4" stroke-width="4" data-a="up@4"/>
+  </svg>
+  <div class="abs tag" style="left:130px;top:300px;color:var(--navy)" data-a="left@1.4">기록에 남는 것</div>
+  <div class="abs" style="left:130px;top:345px;display:flex;flex-wrap:wrap;gap:12px;width:620px">
+    <span class="chip" style="font-size:26px;padding:10px 20px" data-a="pop@1.6">클릭</span>
+    <span class="chip" style="font-size:26px;padding:10px 20px" data-a="pop@1.8">제출 시각</span>
+    <span class="chip" style="font-size:26px;padding:10px 20px" data-a="pop@2">정답 여부</span>
+    <span class="chip" style="font-size:26px;padding:10px 20px" data-a="pop@2.2">접속 시간</span>
+    <span class="chip" style="font-size:26px;padding:10px 20px" data-a="pop@2.4">게시물 개수</span>
+  </div>
+  <div class="abs tag" style="left:1320px;top:540px;color:var(--teal)" data-a="right@4.6">기록에 남지 않는 것</div>
+  <div class="abs" style="left:1320px;top:590px;font-size:32px;font-weight:700;line-height:1.85;color:var(--navy)">
+    <div data-a="right@5">💬 옆자리 친구에게 한 설명</div>
+    <div data-a="right@5.5">😣 포기하기 직전의 망설임</div>
+    <div data-a="right@6">🏠 집에서의 학습 환경</div>
+    <div data-a="right@6.5">🤫 말하지 않은 이해</div>
+    <div data-a="right@7">👀 교사와 눈을 맞춘 순간</div>
+  </div>
+  <div class="cap" data-t="0.8"><span>데이터에 남는 건 빙산의 일각</span></div>
+  <div class="cap" data-t="4.2"><span>교육적으로 더 중요한 건 <b>기록에 남지 않는 것</b>인 경우가 많아요</span></div>
+  <div class="cap" data-t="8.4"><span>대시보드 보는 시간이 <b>학생을 보는 시간</b>을 줄이지 않게</span></div>
+</section>
+
+<!-- ================= S8 DIVIDER PART 2 + FOUR LEVELS ================= -->
+<section class="scene" id="s-levels" data-dur="12" data-part="PART 02 · 분석의 방법">
+  <div class="kicker" data-a="up@0.2">02 · FOUR LEVELS</div>
+  <div class="h" data-a="up@0.35">분석의 네 수준</div>
+  <div class="abs" style="left:160px;top:760px;width:340px;height:140px;background:var(--navy);border-radius:20px 20px 0 0;color:#fff;padding:22px" data-a="up@0.9"><div style="font-size:34px;font-weight:800">① 기술적</div><div style="font-size:23px;opacity:.8">무엇이 일어났나</div></div>
+  <div class="abs" style="left:520px;top:620px;width:340px;height:280px;background:var(--navy2);border-radius:20px 20px 0 0;color:#fff;padding:22px" data-a="up@1.4"><div style="font-size:34px;font-weight:800">② 진단적</div><div style="font-size:23px;opacity:.8">왜 일어났나</div></div>
+  <div class="abs" style="left:880px;top:480px;width:340px;height:420px;background:#0E6F68;border-radius:20px 20px 0 0;color:#fff;padding:22px" data-a="up@1.9"><div style="font-size:34px;font-weight:800">③ 예측적</div><div style="font-size:23px;opacity:.8">무엇이 일어날까<br>→ 오분류 문제</div></div>
+  <div class="abs" style="left:1240px;top:340px;width:340px;height:560px;background:var(--teal);border-radius:20px 20px 0 0;color:#fff;padding:22px" data-a="up@2.4"><div style="font-size:34px;font-weight:800">④ 처방적</div><div style="font-size:23px;opacity:.8">무엇을 해야 하나<br>→ 판단 위임 문제</div></div>
+  <svg class="abs" style="left:0;top:0" width="1920" height="1080">
+    <path pathLength="1" style="stroke-dasharray:1" data-a="draw@3:1.5" d="M300 720 L1420 290" stroke="#E0605E" stroke-width="8" fill="none" stroke-dasharray="1"/>
+    <g data-a="pop@4.3"><rect x="1470" y="220" width="300" height="60" rx="30" fill="#E0605E"/><text x="1620" y="260" text-anchor="middle" font-family="P" font-weight="800" font-size="28" fill="#fff">위험도 ↑</text></g>
+  </svg>
+  <div class="card abs" style="left:1620px;top:420px;width:250px;padding:22px;font-size:24px;font-weight:700;line-height:1.6" data-a="right@5.5">실무 권고<br><span style="color:var(--teal)">1~2수준부터</span><br>4수준은 교사 판단 경유</div>
+  <div class="cap" data-t="0.8"><span>수준이 오를수록 가능성도 커지지만 <b>위험도 함께</b> 올라요</span></div>
+  <div class="cap" data-t="5.5"><span>학교 실무 대부분은 <b>기술적·진단적 분석</b>으로 충분해요</span></div>
+</section>
+
+<!-- ================= S9 ACCURACY TRAP ================= -->
+<section class="scene" id="s-acc" data-dur="17" data-part="PART 02 · 성능 지표 읽기">
+  <div class="kicker" data-a="up@0.2">BASE RATE</div>
+  <div class="h" data-a="up@0.35">정확도 90%의 함정</div>
+  <div class="abs" id="dots" style="left:120px;top:290px;width:640px;height:640px"></div>
+  <div class="abs pill" id="model-stamp" style="left:250px;top:560px;background:var(--navy);color:#fff;font-size:34px;box-shadow:0 12px 30px rgba(0,0,0,.25)" data-a="pop@6 out@8.4">🤖 예측 결과: 모두 안전!</div>
+  <div class="abs" style="left:880px;top:300px;display:flex;gap:30px">
+    <div class="card" style="width:290px;padding:30px;text-align:center" data-a="up@8.6"><div class="tag muted">정확도</div><div style="font-size:100px;font-weight:900;color:var(--green)"><span data-a="count@8.8:1.5" data-to="90">0</span>%</div><div class="muted" style="font-size:22px;font-weight:600">전체 중 맞춘 비율</div></div>
+    <div class="card" style="width:290px;padding:30px;text-align:center" data-a="up@10"><div class="tag muted">재현율</div><div style="font-size:100px;font-weight:900;color:var(--red)">0%</div><div class="muted" style="font-size:22px;font-weight:600">찾아낸 위험 학생</div></div>
+    <div class="card" style="width:290px;padding:30px;text-align:center" data-a="up@11"><div class="tag muted">기저율</div><div style="font-size:100px;font-weight:900;color:var(--navy)">10%</div><div class="muted" style="font-size:22px;font-weight:600">실제 위험군 비율</div></div>
+  </div>
+  <div class="card abs" style="left:880px;top:640px;width:930px;padding:30px 38px;background:var(--navy);color:#fff" data-a="right@12.6">
+    <div style="font-size:32px;font-weight:800;line-height:1.5">업체 자료에 정확도만 있다면?<br><span style="color:var(--mint)">기저율과 재현율을 함께 요구하세요</span></div>
+  </div>
+  <div class="cap" data-t="0.8"><span>위험 학생이 100명 중 <b>10명</b>인 학교를 생각해 봐요</span></div>
+  <div class="cap" data-t="6"><span>아무도 위험하지 않다고 예측하는 모형이 있다면</span></div>
+  <div class="cap" data-t="8.8"><span>정확도는 무려 90% 하지만 위험 학생은 <b>한 명도 찾지 못했어요</b></span></div>
+  <div class="cap" data-t="12.8"><span>사건이 드물수록 정확도는 쉽게 높아져요</span></div>
+</section>
+
+<!-- ================= S10 SEESAW ================= -->
+<section class="scene" id="s-seesaw" data-dur="13" data-part="PART 02 · 성능 지표 읽기">
+  <div class="kicker" data-a="up@0.2">TRADE-OFF</div>
+  <div class="h" data-a="up@0.35">정밀도와 재현율의 시소</div>
+  <div class="abs" style="left:560px;top:420px;width:800px;height:400px" data-a="up@0.6">
+    <div id="plank" class="abs" style="left:0;top:180px;width:800px;height:26px;border-radius:13px;background:var(--navy)">
+      <div class="abs pill" style="left:10px;top:-86px;background:var(--teal);color:#fff">재현율 ↑</div>
+      <div class="abs pill" style="right:10px;top:-86px;background:var(--warm);color:#fff">정밀도 ↑</div>
+    </div>
+    <svg class="abs" style="left:340px;top:200px" width="120" height="120"><path d="M60 6 L112 110 L8 110 Z" fill="#00877D"/></svg>
+  </div>
+  <div class="card abs" style="left:120px;top:300px;width:420px;padding:28px 32px" data-a="left@2">
+    <div style="font-size:30px;font-weight:800;color:var(--teal)">재현율을 높이면</div>
+    <div style="font-size:26px;line-height:1.7;font-weight:600;margin-top:10px">✔ 놓치는 학생이 줄어요<br><span style="color:var(--red)">✘ 오탐과 낙인 위험 증가<br>✘ 교사 확인 부담 증가</span></div>
+  </div>
+  <div class="card abs" style="left:1380px;top:300px;width:420px;padding:28px 32px" data-a="right@5.2">
+    <div style="font-size:30px;font-weight:800;color:#C77A2E">정밀도를 높이면</div>
+    <div style="font-size:26px;line-height:1.7;font-weight:600;margin-top:10px">✔ 헛된 개입이 줄어요<br><span style="color:var(--red)">✘ 조용히 어려운 학생이 배제<br>✘ 형평성 문제 발생</span></div>
+  </div>
+  <div class="abs" style="left:0;right:0;top:860px;text-align:center;font-size:40px;font-weight:800" data-a="up@8.6">통계의 문제가 아니라 <span style="color:var(--teal)">교육적 선택</span></div>
+  <div class="cap" data-t="0.8"><span>한쪽을 올리면 다른 쪽이 내려가요</span></div>
+  <div class="cap" data-t="8.6"><span>개입이 부담 없는 형태라면 <b>재현율</b>을 높이는 편이 나아요</span></div>
+</section>
+
+<!-- ================= S11 CORRELATION ================= -->
+<section class="scene" id="s-corr" data-dur="11" data-part="PART 02 · 상관과 인과">
+  <div class="kicker" data-a="up@0.2">CORRELATION</div>
+  <div class="h" data-a="up@0.35">함께 나타난다 ≠ 바꾸면 달라진다</div>
+  <div class="card abs" style="left:260px;top:360px;width:420px;height:200px;display:flex;align-items:center;justify-content:center;font-size:44px;font-weight:800" data-a="left@0.8">⏱ 접속 시간 ↑</div>
+  <div class="card abs" style="left:1240px;top:360px;width:420px;height:200px;display:flex;align-items:center;justify-content:center;font-size:44px;font-weight:800" data-a="right@0.8">🏆 성취 ↑</div>
+  <svg class="abs" style="left:0;top:0" width="1920" height="1080">
+    <path pathLength="1" style="stroke-dasharray:1" data-a="draw@1.6:1" d="M700 460 L1220 460" stroke="#00877D" stroke-width="10" fill="none" stroke-linecap="round"/>
+    <g data-a="pop@2.4"><circle cx="960" cy="460" r="52" fill="#F2A65A"/><text x="960" y="483" text-anchor="middle" font-family="P" font-weight="900" font-size="64" fill="#fff">?</text></g>
+    <path pathLength="1" style="stroke-dasharray:1" data-a="draw@4.6:1" d="M880 760 L560 580" stroke="#9AA4B5" stroke-width="7" fill="none" stroke-dasharray="1"/>
+    <path pathLength="1" style="stroke-dasharray:1" data-a="draw@4.6:1" d="M1040 760 L1360 580" stroke="#9AA4B5" stroke-width="7" fill="none"/>
+  </svg>
+  <div class="abs card" style="left:700px;top:740px;width:520px;padding:24px;text-align:center;background:var(--navy);color:#fff" data-a="pop@4"><div class="tag" style="color:var(--mint)">숨은 제3의 요인</div><div style="font-size:34px;font-weight:800;margin-top:6px">가정 환경 · 기기 · 선행 학습</div></div>
+  <div class="cap" data-t="0.8"><span>접속 시간과 성취가 함께 높다고 해서</span></div>
+  <div class="cap" data-t="2.6"><span>접속을 늘리면 성취가 오를까요? <b>방향은 알 수 없어요</b></span></div>
+  <div class="cap" data-t="6"><span>개입을 결정하기 전에 <b>작은 규모로 먼저 확인</b>하세요</span></div>
+</section>
+
+<!-- ================= S12 EARLY WARNING ORDER ================= -->
+<section class="scene" id="s-ews" data-dur="15" data-part="PART 03 · 대시보드와 조기경보">
+  <div class="kicker" data-a="up@0.2">03 · EARLY WARNING</div>
+  <div class="h" data-a="up@0.35">조기경보 설계 순서의 역전</div>
+  <div class="abs" style="left:120px;top:300px;display:flex;align-items:center;gap:22px;font-size:40px;font-weight:800">
+    <span class="tag" style="width:180px;color:var(--red)" data-a="fade@0.8">잘못된 순서</span>
+    <span class="chip" data-a="pop@1">🤖 예측 모형</span><span data-a="fade@1.3" class="muted">➜</span>
+    <span class="chip" data-a="pop@1.5">📋 위험군 명단</span><span data-a="fade@1.8" class="muted">➜</span>
+    <span class="chip" data-a="pop@2">❔ 개입</span>
+  </div>
+  <div class="abs" style="left:1520px;top:250px;font-size:170px;font-weight:900;color:var(--red);transform-origin:center" data-a="pop@3:0.5">✕</div>
+  <div class="abs" style="left:120px;top:470px;display:flex;align-items:center;gap:22px;font-size:40px;font-weight:800">
+    <span class="tag" style="width:180px;color:var(--teal)" data-a="fade@4.2">올바른 순서</span>
+    <span class="chip" style="border-color:var(--teal)" data-a="pop@4.4">🤝 개입 확정</span><span data-a="fade@4.7" class="muted">➜</span>
+    <span class="chip" style="border-color:var(--teal)" data-a="pop@4.9">📡 신호 수집</span><span data-a="fade@5.2" class="muted">➜</span>
+    <span class="chip" style="border-color:var(--teal)" data-a="pop@5.4">📏 임계값 기준</span>
+  </div>
+  <div class="abs" style="left:1520px;top:420px;font-size:170px;font-weight:900;color:var(--teal)" data-a="pop@6:0.5">✓</div>
+  <div class="card abs" style="left:120px;top:660px;width:1100px;padding:30px 40px" data-a="up@7.4">
+    <div class="tag" style="color:var(--warm)">CASE · 고등학교 학업 중단 예측</div>
+    <div style="font-size:30px;font-weight:700;line-height:1.6;margin-top:8px">보고된 정확도 높음 → 명단만 전달 → 후속 절차 없음<br><span style="color:var(--red)">결과 변화 없음 · 학생 반발 · 명단 유출 우려</span></div>
+  </div>
+  <div class="char" data-kind="teacher" style="left:1340px;top:560px;width:330px;height:450px" data-a="right@9" data-talk="10-14"></div>
+  <div class="bubble r" style="left:1270px;top:560px;width:480px;font-size:30px" data-a="pop@10">경보가 울리면 우리는 무엇을 하죠?</div>
+  <div class="cap" data-t="0.8"><span>모형부터 만들면 <b>명단만 만들고 위험만 늘어요</b></span></div>
+  <div class="cap" data-t="4.2"><span>가능한 개입을 먼저 정하고 개입 없는 경보는 만들지 않아요</span></div>
+  <div class="cap" data-t="10"><span>예측의 정확도와 개입의 효과는 <b>별개의 문제</b>예요</span></div>
+</section>
+
+<!-- ================= S13 PYRAMID + TRAFFIC LIGHT ================= -->
+<section class="scene" id="s-pyr" data-dur="15" data-part="PART 03 · 개입과 낙인 방지">
+  <div class="kicker" data-a="up@0.2">INTERVENTION</div>
+  <div class="h" data-a="up@0.35">개입의 세 수준</div>
+  <svg class="abs" style="left:100px;top:280px" width="760" height="640">
+    <g data-a="up@0.8"><path d="M60 600 L700 600 L610 430 L150 430 Z" fill="#00877D"/><text x="380" y="530" text-anchor="middle" font-family="P" font-weight="800" font-size="40" fill="#fff">보편적 개입</text><text x="380" y="574" text-anchor="middle" font-family="P" font-weight="600" font-size="24" fill="#E4F2F0">전원 대상 · 낙인 없음</text></g>
+    <g data-a="up@1.4"><path d="M160 410 L600 410 L505 240 L255 240 Z" fill="#2B3A7A"/><text x="380" y="336" text-anchor="middle" font-family="P" font-weight="800" font-size="36" fill="#fff">선택적 개입</text><text x="380" y="376" text-anchor="middle" font-family="P" font-weight="600" font-size="22" fill="#CADCFC">소집단 보충</text></g>
+    <g data-a="up@2"><path d="M265 220 L495 220 L380 30 Z" fill="#1E2761"/><text x="380" y="170" text-anchor="middle" font-family="P" font-weight="800" font-size="28" fill="#fff">집중적</text></g>
+  </svg>
+  <div class="abs" style="left:120px;top:890px;font-size:28px;font-weight:700;color:var(--teal)" data-a="up@3">가능한 한 낮은 수준의 개입으로 처리</div>
+  <div class="card abs" style="left:960px;top:260px;width:840px;padding:34px 40px" data-a="right@5">
+    <div class="tag" style="color:var(--warm)">CASE · 신호등 색을 없앴더니</div>
+    <div style="display:flex;gap:40px;margin-top:26px;align-items:center">
+      <div style="width:130px;background:#2A2F45;border-radius:30px;padding:18px;display:flex;flex-direction:column;gap:14px;align-items:center" id="tlight">
+        <div class="lamp" style="width:84px;height:84px;border-radius:50%;background:#E0605E"></div>
+        <div class="lamp" style="width:84px;height:84px;border-radius:50%;background:#F2C14E"></div>
+        <div class="lamp" style="width:84px;height:84px;border-radius:50%;background:#2FB37F"></div>
+      </div>
+      <div style="font-size:28px;font-weight:700;line-height:1.7">
+        <div data-a="up@6"><span class="muted">BEFORE</span> 공용 화면에 적·황·녹</div>
+        <div data-a="up@6.4" style="color:var(--red)">→ 학생 사이에 색이 알려짐</div>
+        <div data-a="up@8.6" style="margin-top:14px"><span style="color:var(--teal)">AFTER</span> 변화 방향만 개별 화면에</div>
+        <div data-a="up@9.2" style="color:var(--teal)">↗ 학생 반발 감소<br>↗ 상담 요청 증가 · 개입은 유지</div>
+      </div>
+    </div>
+  </div>
+  <div class="cap" data-t="0.8"><span>조기경보 결과는 <b>낮은 수준의 개입</b>부터</span></div>
+  <div class="cap" data-t="5.2"><span>같은 데이터라도 <b>표시 방식</b>이 낙인을 만들거나 줄여요</span></div>
+  <div class="cap" data-t="10.5"><span>열람 환경과 표시 방식이 곧 개인정보 보호의 실질적 내용이에요</span></div>
+</section>
+
+<!-- ================= S14 SELF-FULFILLING ================= -->
+<section class="scene" id="s-self" data-dur="14" data-part="PART 04 · 윤리와 설명가능성">
+  <div class="kicker" data-a="up@0.2">04 · SELF-FULFILLING PROPHECY</div>
+  <div class="h" data-a="up@0.35">예측이 스스로를 맞힐 때</div>
+  <div class="abs" style="left:300px;top:300px;width:620px;height:620px">
+    <svg class="abs" id="ring" width="620" height="620" style="left:0;top:0"><circle cx="310" cy="310" r="230" fill="none" stroke="#CADCFC" stroke-width="10" stroke-dasharray="30 22"/></svg>
+    <div class="abs pill" style="left:170px;top:40px;background:var(--navy);color:#fff" data-a="pop@1">① 위험군 표시</div>
+    <div class="abs pill" style="left:400px;top:260px;background:#2B3A7A;color:#fff" data-a="pop@2">② 기대 수준 ↓</div>
+    <div class="abs pill" style="left:150px;top:500px;background:#0E6F68;color:#fff" data-a="pop@3">③ 도전 과제 ↓</div>
+    <div class="abs pill" style="left:-110px;top:260px;background:var(--red);color:#fff" data-a="pop@4">④ 성취 하락</div>
+  </div>
+  <div class="card abs" style="left:1060px;top:320px;width:740px;padding:34px 40px" data-a="right@5.2">
+    <div style="font-size:34px;font-weight:800;line-height:1.5">모형 정확도는 올라갔지만<br><span style="color:var(--red)">그것은 예측의 성공이 아니에요</span></div>
+    <div style="font-size:28px;font-weight:600;margin-top:14px" class="muted">바뀐 처우가 결과를 만든 자기충족 예언</div>
+  </div>
+  <div class="card abs" style="left:1060px;top:640px;width:740px;padding:30px 40px;background:#E4F2F0" data-a="up@8.4">
+    <div class="tag" style="color:var(--teal)">표현의 관리</div>
+    <div style="font-size:36px;font-weight:800;margin-top:10px"><span class="strike" data-a="strike@9.4">위험군</span> <span style="color:var(--teal)" data-a="pop@10">→ 지원이 필요한 영역</span></div>
+    <div style="font-size:24px;font-weight:600;margin-top:8px" class="muted">사람이 아닌 상태를 지칭하기</div>
+  </div>
+  <div class="cap" data-t="0.8"><span>위험군으로 표시되자 기대 수준이 낮아지고 도전 과제가 줄었어요</span></div>
+  <div class="cap" data-t="5.2"><span>예측대로 성취가 떨어졌다면 그건 <b>자기충족 예언</b>이에요</span></div>
+  <div class="cap" data-t="9.4"><span>등급 대신 지표 개별 열람 보편적 개입 우선 그리고 <b>표현의 관리</b></span></div>
+</section>
+
+<!-- ================= S15 ETHICS 5 ================= -->
+<section class="scene" id="s-ethics" data-dur="13" data-part="PART 04 · 윤리와 설명가능성">
+  <div class="kicker" data-a="up@0.2">PRINCIPLES</div>
+  <div class="h" data-a="up@0.35">학습분석 윤리 다섯 원칙</div>
+  <div class="abs" style="left:120px;top:290px;display:flex;gap:24px">
+    <div class="card" style="width:316px;height:360px;padding:30px" data-a="up@0.8"><div style="font-size:64px">🎯</div><div style="font-size:32px;font-weight:800;margin-top:12px">목적의 정당성</div><div class="muted" style="font-size:23px;line-height:1.5;margin-top:10px;font-weight:600">관리 편의는 목적이 아니에요</div></div>
+    <div class="card" style="width:316px;height:360px;padding:30px" data-a="up@1.2"><div style="font-size:64px">🧺</div><div style="font-size:32px;font-weight:800;margin-top:12px">최소 수집</div><div class="muted" style="font-size:23px;line-height:1.5;margin-top:10px;font-weight:600">나중에 쓸지도 모른다는 근거가 아니에요</div></div>
+    <div class="card" style="width:316px;height:360px;padding:30px" data-a="up@1.6"><div style="font-size:64px">🔍</div><div style="font-size:32px;font-weight:800;margin-top:12px">투명성</div><div class="muted" style="font-size:23px;line-height:1.5;margin-top:10px;font-weight:600">무엇을 왜 모으는지 학생·보호자가 알기</div></div>
+    <div class="card" style="width:316px;height:360px;padding:30px" data-a="up@2"><div style="font-size:64px">🙋</div><div style="font-size:32px;font-weight:800;margin-top:12px">학생의 주체성</div><div class="muted" style="font-size:23px;line-height:1.5;margin-top:10px;font-weight:600">데이터의 대상이 아닌 학습의 주체</div></div>
+    <div class="card" style="width:316px;height:360px;padding:30px;background:var(--navy);color:#fff" data-a="up@2.4"><div style="font-size:64px">⚖️</div><div style="font-size:32px;font-weight:800;margin-top:12px">책임의 소재</div><div style="font-size:23px;line-height:1.5;margin-top:10px;font-weight:600;color:var(--ice)">판단 책임은 사람에게</div></div>
+  </div>
+  <div class="abs" style="left:120px;top:710px;width:1680px">
+    <div class="tag muted" data-a="fade@5">데이터 주체의 권리</div>
+    <div style="display:flex;gap:18px;margin-top:14px">
+      <span class="pill" style="background:#E4F2F0;color:var(--teal)" data-a="pop@5.4">알 권리</span>
+      <span class="pill" style="background:#E4F2F0;color:var(--teal)" data-a="pop@5.7">접근·정정권</span>
+      <span class="pill" style="background:#E4F2F0;color:var(--teal)" data-a="pop@6">설명 요구권</span>
+      <span class="pill" style="background:#FFF1E4;color:#B5651D" data-a="pop@7">✂ 목적별 데이터 최소화</span>
+      <span class="pill" style="background:#FFF1E4;color:#B5651D" data-a="pop@7.3">🗓 삭제 시점을 미리</span>
+    </div>
+  </div>
+  <div class="cap" data-t="0.8"><span>수집할 수 있다는 것이 <b>수집해도 된다는 뜻은 아니에요</b></span></div>
+  <div class="cap" data-t="5.2"><span>학생은 알고 열람하고 고치고 설명을 요구할 권리가 있어요</span></div>
+</section>
+
+<!-- ================= S16 AUTOMATION LINE ================= -->
+<section class="scene" id="s-auto" data-dur="11" data-part="PART 04 · 자동 판단과 사람의 판단">
+  <div class="kicker" data-a="up@0.2">AUTOMATION</div>
+  <div class="h" data-a="up@0.35">어디까지 자동화할까</div>
+  <div class="card abs" style="left:120px;top:290px;width:760px;height:580px;padding:36px 44px" data-a="left@0.8">
+    <div style="display:flex;align-items:center;gap:20px"><div class="char" data-kind="robot" style="position:relative;width:110px;height:140px" data-talk="1-3"></div><div><div class="tag" style="color:var(--teal)">자동화해도 되는 것</div><div style="font-size:38px;font-weight:900">집계와 정렬</div></div></div>
+    <div style="font-size:30px;font-weight:600;line-height:1.9;margin-top:20px">
+      <div data-a="up@1.4">· 지표의 계산과 갱신</div><div data-a="up@1.7">· 결측 학생의 표시</div><div data-a="up@2">· 오류 유형별 자료 정렬</div><div data-a="up@2.3">· 기한 도래 알림</div>
+    </div>
+  </div>
+  <div class="abs" style="left:945px;top:270px;width:30px;height:620px;border-left:8px dashed var(--red)" data-a="growy@3.2"></div>
+  <div class="abs pill" style="left:800px;top:196px;background:var(--red);color:#fff;font-size:26px" data-a="pop@4">학습분석 도입의 한계선</div>
+  <div class="card abs" style="left:1040px;top:290px;width:760px;height:580px;padding:36px 44px;background:var(--navy);color:#fff" data-a="right@4.4">
+    <div style="display:flex;align-items:center;gap:20px"><div class="char" data-kind="teacher" style="position:relative;width:110px;height:140px" data-talk="5-8"></div><div><div class="tag" style="color:var(--mint)">사람이 해야 하는 것</div><div style="font-size:38px;font-weight:900">해석과 처우 결정</div></div></div>
+    <div style="font-size:30px;font-weight:600;line-height:1.9;margin-top:20px">
+      <div data-a="up@5">· 위험의 정의와 임계값</div><div data-a="up@5.3">· 개별 학생에 대한 판단</div><div data-a="up@5.6">· 개입 수준의 선택</div><div data-a="up@5.9">· 결과에 대한 설명</div>
+    </div>
+  </div>
+  <div class="cap" data-t="0.8"><span>계산은 기계에게 판단은 사람에게</span></div>
+  <div class="cap" data-t="6.4"><span>오른쪽을 자동화하면 <b>설명 책임</b>을 이행할 수 없어요</span></div>
+</section>
+
+<!-- ================= S17 PROCEDURE + 18→3 ================= -->
+<section class="scene" id="s-proc" data-dur="16" data-part="PART 05 · 학교 적용 설계">
+  <div class="kicker" data-a="up@0.2">05 · PROCEDURE</div>
+  <div class="h" data-a="up@0.35">도입 절차 다섯 단계</div>
+  <div class="abs" style="left:120px;top:280px;display:flex;gap:16px;align-items:stretch">
+    <div class="card" style="width:318px;padding:24px 26px" data-a="up@0.8"><div class="num">1</div><div style="font-size:30px;font-weight:800;margin-top:12px">결정 목록</div><div class="muted" style="font-size:22px;font-weight:600;margin-top:4px">3개 이내</div></div>
+    <div class="card" style="width:318px;padding:24px 26px;box-shadow:0 0 0 5px var(--teal)" data-a="up@1.1 pulse@3"><div class="num t">2</div><div style="font-size:30px;font-weight:800;margin-top:12px;color:var(--teal)">개입 설계</div><div class="muted" style="font-size:22px;font-weight:600;margin-top:4px">조치를 먼저 확정</div></div>
+    <div class="card" style="width:318px;padding:24px 26px" data-a="up@1.4"><div class="num">3</div><div style="font-size:30px;font-weight:800;margin-top:12px">지표 정의</div><div class="muted" style="font-size:22px;font-weight:600;margin-top:4px">최소 지표 정의표</div></div>
+    <div class="card" style="width:318px;padding:24px 26px" data-a="up@1.7"><div class="num">4</div><div style="font-size:30px;font-weight:800;margin-top:12px">파일럿</div><div class="muted" style="font-size:22px;font-weight:600;margin-top:4px">1학년·1교과·1학기</div></div>
+    <div class="card" style="width:318px;padding:24px 26px" data-a="up@2"><div class="num">5</div><div style="font-size:30px;font-weight:800;margin-top:12px">평가와 결정</div><div class="muted" style="font-size:22px;font-weight:600;margin-top:4px">확대·유지·중단</div></div>
+  </div>
+  <div class="abs" id="tiles" style="left:120px;top:520px;width:1100px;height:420px" data-a="fade@5"></div>
+  <div class="card abs" style="left:1280px;top:540px;width:520px;padding:34px 40px;text-align:center" data-a="right@5.4">
+    <div class="tag muted">CASE · 한 중학교의 대시보드</div>
+    <div style="font-size:120px;font-weight:900;line-height:1.15;margin-top:6px"><span id="tilecount">18</span><span style="font-size:48px">개</span></div>
+    <div style="font-size:26px;font-weight:700;color:var(--teal)" data-a="up@10">화면 열람률 ↑ · 개입 기록 축적</div>
+  </div>
+  <div class="cap" data-t="0.8"><span>핵심은 <b>개입 설계를 지표 정의보다 먼저</b> 두는 것</span></div>
+  <div class="cap" data-t="5.4"><span>지표 18개 교사들은 화면을 열지 않았어요</span></div>
+  <div class="cap" data-t="8.2"><span>결정 3개에 지표 하나씩 정의를 아는 <b>지표 3개</b>가 더 많은 결정을 도와요</span></div>
+  <div class="cap" data-t="12.4"><span>추가만 가능한 대시보드는 반드시 18개가 돼요 <b>교체·삭제 절차</b>도 필요해요</span></div>
+</section>
+
+<!-- ================= S18 SUMMARY ================= -->
+<section class="scene dark" id="s-sum" data-dur="17" data-part="WRAP-UP">
+  <div class="kicker" data-a="up@0.2">WRAP-UP</div>
+  <div class="h" data-a="up@0.35">오늘의 요약 다섯 문장</div>
+  <div class="abs" style="left:120px;top:270px;width:1180px;display:flex;flex-direction:column;gap:14px">
+    <div style="display:flex;gap:26px;align-items:center;background:rgba(255,255,255,.07);border-radius:22px;padding:22px 28px" data-a="left@1"><div class="num t">1</div><div><div style="font-size:36px;font-weight:800">지표는 활동을 센다</div><div style="font-size:24px;color:var(--ice);margin-top:2px">학습의 지표가 되려면 별도의 근거가 필요</div></div></div>
+    <div style="display:flex;gap:26px;align-items:center;background:rgba(255,255,255,.07);border-radius:22px;padding:22px 28px" data-a="left@3.6"><div class="num t">2</div><div><div style="font-size:36px;font-weight:800">관리하면 오른다</div><div style="font-size:24px;color:var(--ice);margin-top:2px">오른 것이 학습인지 지표인지 확인</div></div></div>
+    <div style="display:flex;gap:26px;align-items:center;background:rgba(255,255,255,.07);border-radius:22px;padding:22px 28px" data-a="left@6.2"><div class="num t">3</div><div><div style="font-size:36px;font-weight:800">개입이 먼저다</div><div style="font-size:24px;color:var(--ice);margin-top:2px">할 일이 없는 예측은 명단만 만든다</div></div></div>
+    <div style="display:flex;gap:26px;align-items:center;background:rgba(255,255,255,.07);border-radius:22px;padding:22px 28px" data-a="left@8.8"><div class="num t">4</div><div><div style="font-size:36px;font-weight:800">표시 방식이 낙인을 만든다</div><div style="font-size:24px;color:var(--ice);margin-top:2px">등급과 색 열람 환경이 보호의 실질</div></div></div>
+    <div style="display:flex;gap:26px;align-items:center;background:rgba(255,255,255,.07);border-radius:22px;padding:22px 28px" data-a="left@11.4"><div class="num t">5</div><div><div style="font-size:36px;font-weight:800">설명할 수 없으면 쓰지 않는다</div><div style="font-size:24px;color:var(--ice);margin-top:2px">근거를 문장으로 쓸 수 있는 것만</div></div></div>
+  </div>
+  <div class="char" data-kind="robot" style="left:1400px;top:360px;width:400px;height:540px" data-a="pop@0.6" data-talk="1-3,3.6-5.6,6.2-8,8.8-10.6,11.4-13.4"></div>
+  <div class="cap" data-t="1"><span>접속·진도·정답률은 <b>활동</b>의 지표예요</span></div>
+  <div class="cap" data-t="3.6"><span>지표를 관리 대상으로 삼으면 반드시 올라가요</span></div>
+  <div class="cap" data-t="6.2"><span>경보가 울리면 무엇을 할지부터 정하세요</span></div>
+  <div class="cap" data-t="8.8"><span>같은 데이터도 <b>보여 주는 방식</b>이 낙인을 좌우해요</span></div>
+  <div class="cap" data-t="11.4"><span>개별 학생 판단에는 <b>설명 가능한 근거</b>만 사용해요</span></div>
+</section>
+
+<!-- ================= S19 THINK ================= -->
+<section class="scene" id="s-think" data-dur="30" data-part="생각해볼 문제">
+  <div class="kicker" data-a="up@0.2">THINK ABOUT IT</div>
+  <div class="h" data-a="up@0.35">생각해볼 문제 🤔</div>
+  <div class="char" data-kind="student" data-mood="think" style="left:1480px;top:420px;width:340px;height:470px" data-a="right@0.6"></div>
+  <div class="abs" style="left:1560px;top:250px;font-size:120px;font-weight:900;color:var(--warm)" data-a="pop@1 float@0">?</div>
+  <div class="abs" style="left:120px;top:270px;width:1300px;display:flex;flex-direction:column;gap:22px">
+    <div class="card" style="display:flex;gap:26px;padding:26px 32px;align-items:flex-start" data-a="up@1.4"><div class="num t" style="width:64px;height:64px">Q1</div><div style="font-size:33px;font-weight:700;line-height:1.45">접속 시간이 길고 문항을 많이 푼 학생이 <span style="color:var(--teal)">더 많이 배웠다고 말할 수 있는 조건</span>은 무엇일까?</div></div>
+    <div class="card" style="display:flex;gap:26px;padding:26px 32px;align-items:flex-start" data-a="up@7.4"><div class="num t" style="width:64px;height:64px">Q2</div><div style="font-size:33px;font-weight:700;line-height:1.45">우리 학교 상황에서는 <span style="color:var(--teal)">재현율과 정밀도 중 무엇을 우선</span>해야 할까? 그 이유는?</div></div>
+    <div class="card" style="display:flex;gap:26px;padding:26px 32px;align-items:flex-start" data-a="up@13.4"><div class="num t" style="width:64px;height:64px">Q3</div><div style="font-size:33px;font-weight:700;line-height:1.45">학생에게 <span style="color:var(--teal)">자기 예측 점수</span>를 보여 주는 것은 도움이 될까 해가 될까?</div></div>
+    <div class="card" style="display:flex;gap:26px;padding:26px 32px;align-items:flex-start" data-a="up@19.4"><div class="num t" style="width:64px;height:64px">Q4</div><div style="font-size:33px;font-weight:700;line-height:1.45">내가 쓰는 대시보드 지표 하나를 골라 <span style="color:var(--teal)">정의·결측 처리·연결될 개입</span>을 한 문장씩 써 보자</div></div>
+  </div>
+  <div class="cap" data-t="1.4"><span>영상을 잠시 멈추고 생각해 보세요</span></div>
+  <div class="cap" data-t="25.4"><span>정답보다 <b>근거를 문장으로 쓰는 연습</b>이 중요해요</span></div>
+</section>
+
+<!-- ================= S20 OUTRO ================= -->
+<section class="scene dark" id="s-end" data-dur="10" data-part="NEXT WEEK">
+  <div class="abs pill" style="left:140px;top:250px;background:rgba(127,227,214,.15);color:#7FE3D6" data-a="left@0.3">NEXT WEEK · 7주차 예고</div>
+  <div class="abs" style="left:140px;top:340px;font-weight:900;font-size:80px;line-height:1.15;width:1100px" data-a="up@0.6">상호작용 촉진을 위한<br><span style="color:#7FE3D6">에듀테크 활용교육</span></div>
+  <div class="abs" style="left:144px;top:560px;font-size:32px;color:var(--ice);line-height:1.6;width:1000px" data-a="up@1.2">데이터로 보이지 않던 교실의 상호작용을 설계의 대상으로<br>팀 기반 협력학습으로 진행해요</div>
+  <div class="abs" style="left:144px;top:730px;font-size:28px;font-weight:700;line-height:1.8;color:#fff" data-a="up@2">📎 준비물 &nbsp;오늘의 지표 정의표 · 내 수업의 모둠 활동 1건 · 침묵한 학생 상황 메모</div>
+  <div class="abs" style="left:144px;top:900px;font-size:40px;font-weight:800" data-a="up@4">시청해 주셔서 감사합니다 🙌</div>
+  <div class="char" data-kind="teacher" style="left:1280px;top:380px;width:340px;height:470px" data-a="up@1" data-wave="3-8" data-talk="4-6"></div>
+  <div class="char" data-kind="robot" style="left:1560px;top:470px;width:280px;height:380px" data-a="up@1.4" data-wave="3.5-8"></div>
+</section>
+
+<div id="hud"></div>
+<div id="prog"></div>
+</div>
+
+<script>
+// ---------- character SVGs ----------
+function teacherSVG(){return `
+<svg viewBox="0 0 240 320">
+<ellipse cx="120" cy="310" rx="70" ry="9" fill="#1E2761" opacity=".12"/>
+<g class="bob">
+ <rect x="92" y="250" width="22" height="52" rx="8" fill="#2A2F45"/><rect x="126" y="250" width="22" height="52" rx="8" fill="#2A2F45"/>
+ <ellipse cx="100" cy="302" rx="18" ry="8" fill="#141B45"/><ellipse cx="140" cy="302" rx="18" ry="8" fill="#141B45"/>
+ <g transform="rotate(14 70 185)"><rect x="58" y="180" width="24" height="74" rx="12" fill="#1E2761"/><circle cx="70" cy="256" r="12" fill="#FFD7B5"/></g>
+ <path d="M68 266 Q66 172 120 166 Q174 172 172 266 Z" fill="#1E2761"/>
+ <path d="M104 168 L120 204 L136 168 Z" fill="#00877D"/>
+ <rect x="110" y="150" width="20" height="22" rx="6" fill="#F4C7A1"/>
+ <g class="arm" style="transform-box:view-box;transform-origin:170px 186px"><rect x="158" y="180" width="24" height="74" rx="12" fill="#1E2761" transform="rotate(-14 170 185)"/><circle cx="187" cy="255" r="12" fill="#FFD7B5"/></g>
+ <g class="head">
+  <circle cx="120" cy="106" r="54" fill="#FFDDBF"/>
+  <path d="M64 110 Q58 44 120 46 Q182 44 176 110 Q168 76 132 70 Q104 88 70 96 Z" fill="#2A2F45"/>
+  <circle cx="120" cy="44" r="18" fill="#2A2F45"/>
+  <circle cx="90" cy="130" r="9" fill="#F79C9C" opacity=".45"/><circle cx="150" cy="130" r="9" fill="#F79C9C" opacity=".45"/>
+  <g class="eyes"><ellipse cx="101" cy="110" rx="5.5" ry="6.5" fill="#1E2761"/><ellipse cx="139" cy="110" rx="5.5" ry="6.5" fill="#1E2761"/></g>
+  <circle cx="101" cy="110" r="16" fill="#fff" fill-opacity=".18" stroke="#1E2761" stroke-width="4"/><circle cx="139" cy="110" r="16" fill="#fff" fill-opacity=".18" stroke="#1E2761" stroke-width="4"/><path d="M117 110 L123 110" stroke="#1E2761" stroke-width="4"/>
+  <path class="smile" d="M109 136 Q120 146 131 136" stroke="#7A2E3A" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <ellipse class="mouth" cx="120" cy="139" rx="9" ry="1" fill="#7A2E3A"/>
+ </g>
+</g></svg>`}
+function studentSVG(mood){
+ const eyes = mood==='sleep'
+  ? `<g><path d="M92 112 Q100 118 108 112" stroke="#1E2761" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M132 112 Q140 118 148 112" stroke="#1E2761" stroke-width="4" fill="none" stroke-linecap="round"/></g>`
+  : `<g class="eyes"><ellipse cx="100" cy="110" rx="6" ry="7" fill="#1E2761"/><ellipse cx="140" cy="110" rx="6" ry="7" fill="#1E2761"/></g>`;
+ const arm = mood==='think'
+  ? `<g><rect x="150" y="150" width="24" height="64" rx="12" fill="#F2A65A" transform="rotate(-150 162 186)"/><circle cx="150" cy="142" r="12" fill="#FFD7B5"/></g>`
+  : `<g class="arm" style="transform-box:view-box;transform-origin:170px 186px"><rect x="158" y="180" width="24" height="70" rx="12" fill="#F2A65A" transform="rotate(-14 170 185)"/><circle cx="186" cy="251" r="12" fill="#FFD7B5"/></g>`;
+ return `<svg viewBox="0 0 240 320">
+<ellipse cx="120" cy="310" rx="70" ry="9" fill="#1E2761" opacity=".12"/>
+<g class="bob" ${mood==='sleep'?'style="transform:rotate(-6deg)"':''}>
+ <rect x="92" y="250" width="22" height="52" rx="8" fill="#3A4A8F"/><rect x="126" y="250" width="22" height="52" rx="8" fill="#3A4A8F"/>
+ <ellipse cx="100" cy="302" rx="18" ry="8" fill="#fff" stroke="#CADCFC" stroke-width="3"/><ellipse cx="140" cy="302" rx="18" ry="8" fill="#fff" stroke="#CADCFC" stroke-width="3"/>
+ <g transform="rotate(14 70 185)"><rect x="58" y="180" width="24" height="70" rx="12" fill="#F2A65A"/><circle cx="70" cy="252" r="12" fill="#FFD7B5"/></g>
+ <path d="M68 266 Q66 170 120 164 Q174 170 172 266 Z" fill="#F2A65A"/>
+ <path d="M96 166 Q120 192 144 166" stroke="#E08E3E" stroke-width="6" fill="none"/>
+ <rect x="116" y="200" width="8" height="30" rx="4" fill="#fff" opacity=".7"/>
+ ${arm}
+ <g class="head">
+  <circle cx="120" cy="106" r="54" fill="#FFDDBF"/>
+  <path d="M66 100 Q64 48 120 50 Q176 48 174 100 Q150 74 120 80 Q96 72 66 100 Z" fill="#5B3A29"/>
+  <circle cx="90" cy="130" r="9" fill="#F79C9C" opacity=".5"/><circle cx="150" cy="130" r="9" fill="#F79C9C" opacity=".5"/>
+  ${eyes}
+  ${mood==='sleep'?'<ellipse cx="120" cy="138" rx="7" ry="5" fill="#7A2E3A"/>':(mood==='think'?'<path d="M110 138 L130 136" stroke="#7A2E3A" stroke-width="4" stroke-linecap="round"/>':'<path class="smile" d="M109 136 Q120 146 131 136" stroke="#7A2E3A" stroke-width="4" fill="none" stroke-linecap="round"/><ellipse class="mouth" cx="120" cy="139" rx="9" ry="1" fill="#7A2E3A"/>')}
+ </g>
+</g></svg>`}
+function robotSVG(){return `
+<svg viewBox="0 0 240 320">
+<ellipse cx="120" cy="312" rx="60" ry="8" fill="#1E2761" opacity=".15"/>
+<g class="bob">
+ <line x1="120" y1="40" x2="120" y2="64" stroke="#0B6B63" stroke-width="6"/>
+ <circle class="bulb" cx="120" cy="34" r="10" fill="#F2A65A"/>
+ <circle cx="54" cy="108" r="12" fill="#0B6B63"/><circle cx="186" cy="108" r="12" fill="#0B6B63"/>
+ <rect x="58" y="62" width="124" height="94" rx="32" fill="#00877D"/>
+ <rect x="74" y="78" width="92" height="62" rx="20" fill="#0F1B3D"/>
+ <g class="eyes"><ellipse cx="102" cy="104" rx="8" ry="10" fill="#7FE3D6"/><ellipse cx="138" cy="104" rx="8" ry="10" fill="#7FE3D6"/></g>
+ <path class="smile" d="M110 124 Q120 131 130 124" stroke="#7FE3D6" stroke-width="4" fill="none" stroke-linecap="round"/>
+ <ellipse class="mouth" cx="120" cy="126" rx="9" ry="1" fill="#7FE3D6"/>
+ <g transform="rotate(16 66 186)"><rect x="54" y="176" width="22" height="62" rx="11" fill="#00877D"/><circle cx="65" cy="240" r="11" fill="#CADCFC"/></g>
+ <g class="arm" style="transform-box:view-box;transform-origin:174px 186px"><rect x="164" y="176" width="22" height="62" rx="11" fill="#00877D" transform="rotate(-16 174 186)"/><circle cx="191" cy="238" r="11" fill="#CADCFC"/></g>
+ <rect x="72" y="164" width="96" height="96" rx="28" fill="#F7F9FC" stroke="#CADCFC" stroke-width="4"/>
+ <g><rect class="rbar" x="92" y="200" width="12" height="40" rx="4" fill="#00877D"/><rect class="rbar" x="110" y="200" width="12" height="40" rx="4" fill="#1E2761"/><rect class="rbar" x="128" y="200" width="12" height="40" rx="4" fill="#F2A65A"/></g>
+ <ellipse cx="120" cy="280" rx="36" ry="12" fill="#1E2761"/>
+</g></svg>`}
+
+document.querySelectorAll('.char').forEach((el,i)=>{
+  const k=el.dataset.kind;
+  el.innerHTML = k==='teacher'?teacherSVG(): k==='robot'?robotSVG(): studentSVG(el.dataset.mood||'');
+  el._phase = i*0.77;
+  const rng = s => (s||'').split(',').filter(Boolean).map(r=>r.split('-').map(Number));
+  el._talk = rng(el.dataset.talk); el._wave = rng(el.dataset.wave);
+  el._eyes = el.querySelector('.eyes'); el._mouth=el.querySelector('.mouth'); el._smile=el.querySelector('.smile');
+  el._arm = el.querySelector('.arm'); el._bob=el.querySelector('.bob'); el._bulb=el.querySelector('.bulb');
+  el._bars=[...el.querySelectorAll('.rbar')];
+  el._kind=k; el._mood=el.dataset.mood||'';
+});
+
+// ---------- generated content ----------
+(function(){
+  const d=document.getElementById('dots'); const risk=[3,17,24,38,45,52,66,71,88,95];
+  for(let i=0;i<100;i++){const e=document.createElement('div');e.className='dot';e.style.left=(i%10)*62+'px';e.style.top=Math.floor(i/10)*62+'px';e.dataset.i=i;if(risk.includes(i))e.dataset.risk=1;d.appendChild(e)}
+  const t=document.getElementById('tiles'); const names=['접속 시간','진도율','정답률','제출률','재시도','게시글','댓글','체류 시간','로그인','동영상 시청','퀴즈 점수','출결','배지','포인트','순위','편집 수','클릭 수','설문'];
+  const keep=[2,3,11];
+  names.forEach((n,i)=>{const e=document.createElement('div');e.className='tile';e.textContent=n;e.style.left=(i%6)*180+'px';e.style.top=Math.floor(i/6)*130+'px';if(keep.includes(i))e.dataset.keep=1;t.appendChild(e)});
+})();
+
+// ---------- engine ----------
+const clamp=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const eOut=p=>1-Math.pow(1-p,3);
+const eBack=p=>{const c1=1.70158,c3=c1+1;return 1+c3*Math.pow(p-1,3)+c1*Math.pow(p-1,2)};
+const eIO=p=>p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2;
+function kf(t,keys){ if(t<=keys[0][0])return keys[0][1]; for(let i=1;i<keys.length;i++){ if(t<=keys[i][0]){const [t0,v0]=keys[i-1],[t1,v1]=keys[i];return v0+(v1-v0)*eIO((t-t0)/(t1-t0));}} return keys[keys.length-1][1]; }
+
+const SCENES=[...document.querySelectorAll('section.scene')].map(el=>({el,id:el.id,dur:+el.dataset.dur,part:el.dataset.part||''}));
+let acc=0; SCENES.forEach(s=>{s.start=acc;acc+=s.dur; s.anims=[...s.el.querySelectorAll('[data-a]')]; s.caps=[...s.el.querySelectorAll('.cap')]; s.chars=[...s.el.querySelectorAll('.char')];});
+const TOTAL=acc; window.TOTAL=TOTAL; window.SCENE_STARTS=SCENES.map(s=>s.start);
+document.querySelectorAll('[data-a]').forEach(el=>{
+  el._a=el.dataset.a.trim().split(/\s+/).map(tok=>{const m=tok.match(/^(\w+)@([\d.]+)(?::([\d.]+))?$/);return {type:m[1],d:+m[2],len:m[3]?+m[3]:null}});
+  if(el.dataset.to!==undefined) el._to=+el.dataset.to;
+});
+
+function applyAnim(el,lt){
+  let tx=0,ty=0,sc=1,sx=1,sy=1,rot=0,op=1,tr=false;
+  for(const a of el._a){
+    const len=a.len||(a.type==='count'?1.5:a.type==='draw'?1.2:0.6);
+    const p=clamp((lt-a.d)/len);
+    switch(a.type){
+      case 'up': ty+=50*(1-eOut(p)); op*=eOut(p); tr=true; break;
+      case 'down': ty-=50*(1-eOut(p)); op*=eOut(p); tr=true; break;
+      case 'left': tx-=90*(1-eOut(p)); op*=eOut(p); tr=true; break;
+      case 'right': tx+=90*(1-eOut(p)); op*=eOut(p); tr=true; break;
+      case 'pop': sc*= p<=0?0.4:(0.4+0.6*eBack(p)); op*=clamp(p*2.5); tr=true; break;
+      case 'fade': op*=p; break;
+      case 'out': op*=1-p; break;
+      case 'growy': sy*=eOut(p); el.style.transformOrigin='top'; tr=true; break;
+      case 'draw': el.style.strokeDashoffset=(1-eIO(p)); break;
+      case 'count': el.textContent=Math.round(eOut(p)*el._to).toLocaleString(); break;
+      case 'strike': el.style.setProperty('--s',eOut(p)); break;
+      case 'float': ty+=Math.sin(lt*2.2+a.d)*10; tr=true; break;
+      case 'pulse': if(lt>a.d) sc*=1+0.035*Math.sin((lt-a.d)*5); tr=true; break;
+    }
+  }
+  el.style.opacity=op;
+  if(tr) el.style.transform=`translate(${tx}px,${ty}px) scale(${sc*sx},${sc*sy}) rotate(${rot}deg)`;
+}
+function inR(t,rs){for(const [a,b] of rs) if(t>=a&&t<=b) return [a,b]; return null}
+function applyChar(el,lt){
+  const ph=el._phase;
+  if(el._bob) el._bob.style.transform = (el._mood==='sleep'?'rotate(-6deg) ':'')+`translateY(${Math.sin(lt*2.4+ph)*(el._kind==='robot'?7:3)}px)`;
+  if(el._eyes){ const b=((lt+ph)%3.4); el._eyes.style.transform=`scaleY(${b<0.14?0.12:1})`; }
+  const talk=inR(lt,el._talk);
+  const open= talk? Math.abs(Math.sin((lt-talk[0])*11))*(0.6+0.4*Math.sin(lt*3.7)) : 0;
+  if(el._mouth){ el._mouth.setAttribute('ry', 1+7*open); el._mouth.style.opacity= open>0.05?1:0; }
+  if(el._smile) el._smile.style.opacity = open>0.05?0:1;
+  if(el._arm){ const w=inR(lt,el._wave); let ang=0;
+    if(w){ const e=Math.min(1,(lt-w[0])/0.4, (w[1]-lt)/0.4); ang = (-150 + Math.sin((lt-w[0])*9)*18)*eOut(clamp(e)); }
+    el._arm.style.transform=`rotate(${ang}deg)`; }
+  if(el._bulb) el._bulb.style.opacity = 0.55+0.45*Math.sin(lt*4+ph);
+  el._bars.forEach((b,i)=>{const h=18+22*(0.5+0.5*Math.sin(lt*3+i*1.7)); b.setAttribute('y',240-h); b.setAttribute('height',h);});
+}
+
+const HOOKS={
+  's-acc':(lt,el)=>{
+    el.querySelectorAll('.dot').forEach(d=>{
+      const i=+d.dataset.i, isR=!!d.dataset.risk;
+      const appear=clamp((lt-0.6-i*0.02)/0.3); d.style.opacity=appear; d.style.transform=`scale(${0.3+0.7*eBack(appear)})`;
+      d.classList.toggle('risk', isR && lt>3);
+      d.classList.toggle('safe', lt>6.6);
+      d.classList.toggle('miss', isR && lt>9.6);
+    });
+  },
+  's-seesaw':(lt,el)=>{
+    const r=kf(lt,[[0,0],[1.6,0],[2.6,-10],[4.6,-10],[5.6,10],[7.6,10],[8.6,0],[9.6,-4],[10.6,4],[11.6,0]]);
+    el.querySelector('#plank').style.transform=`rotate(${r}deg)`;
+  },
+  's-self':(lt,el)=>{ el.querySelector('#ring').style.transform=`rotate(${lt*18}deg)`; },
+  's-pyr':(lt,el)=>{
+    const lamps=el.querySelectorAll('.lamp'); const off=clamp((lt-7.6)/0.8);
+    const cols=['#E0605E','#F2C14E','#2FB37F'];
+    lamps.forEach((l,i)=>{ l.style.background=cols[i]; l.style.filter=`grayscale(${off}) brightness(${1-0.5*off})`;
+      l.textContent=''; l.style.display='flex';l.style.alignItems='center';l.style.justifyContent='center';l.style.color='#fff';l.style.fontSize='44px';l.style.fontWeight='900';
+      if(off>0.5) l.textContent=['↗','→','↗'][i]; });
+  },
+  's-proc':(lt,el)=>{
+    const c=clamp((lt-7.4)/1.4);
+    el.querySelectorAll('.tile').forEach((t,i)=>{
+      const keep=!!t.dataset.keep; const ap=clamp((lt-5-i*0.05)/0.4);
+      if(keep){ const k=[2,3,11].indexOf(i); const ox=(i%6)*180, oy=Math.floor(i/6)*130; const e=eIO(c);
+        t.classList.toggle('keep',c>0.3); t.style.opacity=ap;
+        t.style.transform=`translate(${(250+k*230-ox)*e}px,${(150-oy)*e}px) scale(${(0.5+0.5*eBack(ap))*(1+0.25*e)})`; }
+      else { t.style.opacity=ap*(1-c); t.style.transform=`scale(${(0.5+0.5*eBack(ap))*(1-0.5*c)})`; }
+    });
+    el.querySelector('#tilecount').textContent = Math.round(18-15*eOut(c));
+    el.querySelector('#tilecount').style.color = c>0.5?'#00877D':'#1E2761';
+  }
+};
+
+const hud=document.getElementById('hud'), prog=document.getElementById('prog');
+function render(t){
+  for(const s of SCENES){
+    const lt=t-s.start;
+    if(lt<0||lt>=s.dur){ s.el.style.display='none'; continue; }
+    s.el.style.display='block';
+    const fin=clamp(lt/0.45), fout=clamp((s.dur-lt)/0.45);
+    s.el.style.opacity=Math.min(eOut(fin),eOut(fout));
+    s.el.style.transform=`scale(${1.03-0.03*eOut(fin)})`;
+    s.anims.forEach(el=>applyAnim(el,lt));
+    s.chars.forEach(el=>applyChar(el,lt));
+    let active=null; s.caps.forEach(c=>{ if(+c.dataset.t<=lt) active=c; });
+    s.caps.forEach(c=>{ if(c!==active){c.style.opacity=0;return;} const p=clamp((lt-(+c.dataset.t))/0.35); c.style.opacity=Math.min(p, fout); c.style.transform=`translateY(${12*(1-eOut(p))}px)`; });
+    if(HOOKS[s.id]) HOOKS[s.id](lt,s.el);
+    hud.textContent=s.part; hud.style.opacity = s.part && !s.el.classList.contains('dark') ? Math.min(fin,fout) : 0;
+  }
+  prog.style.width=(t/TOTAL*100)+'%';
+  const b1=document.getElementById('b1'),b2=document.getElementById('b2'),b3=document.getElementById('b3');
+  b1.style.transform=`translate(${Math.sin(t*.3)*40}px,${Math.cos(t*.25)*30}px)`;
+  b2.style.transform=`translate(${Math.cos(t*.22)*50}px,${Math.sin(t*.28)*30}px)`;
+  b3.style.transform=`translate(${Math.sin(t*.4)*60}px,${Math.cos(t*.35)*40}px)`;
+}
+window.render=render;
+render(0);
+</script>
+</body>
+</html>
