@@ -31,13 +31,4 @@ SERIES = {
         num=lambda n: f'PL{n}',
         numlabel=lambda n: f'Policy Lens {n}',
     ),
-    # 번외편 EX1 EX2 ... 남색 바탕 + 보라/청록 그라데이션
-    'special': dict(
-        theme=dict(bg='#0E1230', ink='#EEF0FF', acc='#8B7CFF', acc2='#3FD0C9', mute='#A3A8D6', dark=True),
-        cat='SPECIAL EDITION',
-        kicker='AI Insight Column 번외편',
-        footer='AI Insight Column',
-        num=lambda n: f'EX{n}',
-        numlabel=lambda n: f'번외편 {n}',
-    ),
 }
