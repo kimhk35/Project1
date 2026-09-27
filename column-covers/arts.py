@@ -4,7 +4,22 @@
 theme 키는 bg ink acc acc2 mute dark
 새 칼럼 표지를 만들 때 이 파일 끝에 함수를 추가한다
 """
-import math
+import json, math, os, subprocess
+
+KATEX = os.path.join(os.path.dirname(os.path.abspath(__file__)), '.katex')
+
+
+def tex(expr, x, y, w, h, color, size=30):
+    """LaTeX 수식을 KaTeX로 조판해 SVG foreignObject로 돌려준다 (처음 실행 때 .katex에 katex 설치)"""
+    dist = os.path.join(KATEX, 'node_modules', 'katex', 'dist')
+    if not os.path.exists(dist):
+        subprocess.run(['npm', 'install', '--silent', '--prefix', KATEX, 'katex@0.16'], check=True)
+    js = f"process.stdout.write(require('katex').renderToString({json.dumps(expr)}, {{output: 'html'}}))"
+    out = subprocess.run(['node', '-e', js], cwd=KATEX, capture_output=True, text=True, check=True).stdout
+    css = open(os.path.join(dist, 'katex.min.css')).read().replace('url(fonts/', f'url(file://{dist}/fonts/')
+    return (f'<foreignObject x="{x}" y="{y}" width="{w}" height="{h}"><div xmlns="http://www.w3.org/1999/xhtml" '
+            f'style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:{color};font-size:{size}px;white-space:nowrap">'
+            f'<style>{css}</style>{out}</div></foreignObject>')
 
 def art_prologue(c):
     # dot lattice: explicit structure (solid) vs implicit (faint)
@@ -267,15 +282,15 @@ def art_goal(c):
     s.append('</g>')
     s.append(f'<text x="447" y="34" class="lbl" fill="{acc}" text-anchor="middle">AI를 켜기 전에 한 줄</text>')
     # 답
-    s.append(f'<rect x="190" y="282" width="220" height="74" rx="37" fill="{ink}"/>')
-    s.append(f'<text x="300" y="332" font-family="Playfair Display" font-weight="900" font-size="34" fill="{bg}" text-anchor="middle">x = −1 <tspan font-family="Noto Serif KR" font-size="24" font-weight="700">또는</tspan> 3</text>')
+    s.append(f'<rect x="175" y="282" width="250" height="74" rx="37" fill="{ink}"/>')
+    s.append(tex(r'x=-1 \ \text{또는}\ x=3', 175, 282, 250, 74, bg, 20))
     # 붙여 넣기 → 답 : 대조할 기준 없음
     s.append(f'<path d="M150 232 C 150 270, 170 300, 186 312" fill="none" stroke="{ink}" stroke-width="2" stroke-dasharray="4 6" opacity=".55"/>')
     s.append(f'<text x="118" y="298" font-family="Noto Serif KR" font-weight="900" font-size="34" fill="{a2}" text-anchor="middle">?</text>')
     # 목표 카드 ↔ 답 : 대조
-    s.append(f'<path d="M450 196 C 452 250, 440 290, 414 312" fill="none" stroke="{acc}" stroke-width="3"/>')
+    s.append(f'<path d="M450 196 C 452 250, 446 292, 428 312" fill="none" stroke="{acc}" stroke-width="3"/>')
     s.append(f'<path d="M444 188 l6 -10 l6 10" fill="none" stroke="{acc}" stroke-width="3" stroke-linejoin="round"/>')
-    s.append(f'<path d="M424 298 l-12 16 l18 2" fill="none" stroke="{acc}" stroke-width="3" stroke-linejoin="round"/>')
+    s.append(f'<path d="M438 298 l-12 16 l18 2" fill="none" stroke="{acc}" stroke-width="3" stroke-linejoin="round"/>')
     s.append(f'<text x="466" y="262" class="lbl" fill="{acc}">대조</text>')
     # 판정 칸
     for k, t in enumerate(['예', '일부만', '아니오']):
