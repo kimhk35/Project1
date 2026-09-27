@@ -245,3 +245,42 @@ def art_blank(c):
     return '<svg viewBox="0 0 600 420">' + ''.join(s) + '</svg>'
 
 
+
+
+def art_goal(c):
+    ink, acc, bg, a2 = c['ink'], c['acc'], c['bg'], c['acc2']
+    s = []
+    # 통째로 붙여 넣은 프롬프트
+    s.append(f'<text x="40" y="34" class="lbl" fill="{ink}" opacity=".55">통째로 붙여 넣기</text>')
+    s.append(f'<rect x="30" y="48" width="250" height="178" rx="10" fill="none" stroke="{ink}" stroke-width="2" opacity=".55"/>')
+    for k, w in enumerate([210, 190, 214, 170, 200, 150, 120]):
+        s.append(f'<rect x="50" y="{68+k*16}" width="{w}" height="5" rx="2.5" fill="{ink}" opacity=".2"/>')
+    s.append(f'<text x="50" y="206" class="lbl" fill="{a2}">+ 풀어 줘</text>')
+    # 한 줄 목표 카드
+    s.append(f'<g transform="rotate(-3 445 120)">')
+    s.append(f'<rect x="318" y="58" width="258" height="130" rx="4" fill="#FFFDF8" stroke="{ink}" stroke-width="2.2"/>')
+    s.append(f'<rect x="318" y="58" width="258" height="10" fill="{acc}"/>')
+    s.append(f'<text x="338" y="102" class="lbl" fill="{ink}">내가 이 문제에서</text>')
+    s.append(f'<text x="338" y="124" class="lbl" fill="{ink}">알아내려는 것은</text>')
+    s.append(f'<path d="M338 160 C 380 152, 430 166, 470 156 S 530 150, 556 158" fill="none" stroke="{acc}" stroke-width="4" stroke-linecap="round"/>')
+    s.append(f'<text x="556" y="178" class="lbl" fill="{ink}" text-anchor="end">이다</text>')
+    s.append('</g>')
+    s.append(f'<text x="447" y="34" class="lbl" fill="{acc}" text-anchor="middle">AI를 켜기 전에 한 줄</text>')
+    # 답
+    s.append(f'<rect x="190" y="282" width="220" height="74" rx="37" fill="{ink}"/>')
+    s.append(f'<text x="300" y="332" font-family="Playfair Display" font-weight="900" font-size="34" fill="{bg}" text-anchor="middle">x = −1, 3</text>')
+    # 붙여 넣기 → 답 : 대조할 기준 없음
+    s.append(f'<path d="M150 232 C 150 270, 170 300, 186 312" fill="none" stroke="{ink}" stroke-width="2" stroke-dasharray="4 6" opacity=".55"/>')
+    s.append(f'<text x="118" y="298" font-family="Noto Serif KR" font-weight="900" font-size="34" fill="{a2}" text-anchor="middle">?</text>')
+    # 목표 카드 ↔ 답 : 대조
+    s.append(f'<path d="M450 196 C 452 250, 440 290, 414 312" fill="none" stroke="{acc}" stroke-width="3"/>')
+    s.append(f'<path d="M444 188 l6 -10 l6 10" fill="none" stroke="{acc}" stroke-width="3" stroke-linejoin="round"/>')
+    s.append(f'<path d="M424 298 l-12 16 l18 2" fill="none" stroke="{acc}" stroke-width="3" stroke-linejoin="round"/>')
+    s.append(f'<text x="466" y="262" class="lbl" fill="{acc}">대조</text>')
+    # 판정 칸
+    for k, t in enumerate(['예', '일부만', '아니오']):
+        x = 170 + k * 94
+        on = k == 1
+        s.append(f'<rect x="{x}" y="378" width="82" height="30" rx="15" fill="{acc if on else "none"}" stroke="{acc if on else ink}" stroke-width="1.6" opacity="{1 if on else .6}"/>')
+        s.append(f'<text x="{x+41}" y="398" class="lbl" fill="{bg if on else ink}" text-anchor="middle">{t}</text>')
+    return '<svg viewBox="0 0 600 420">' + ''.join(s) + '</svg>'
