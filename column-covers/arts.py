@@ -268,7 +268,7 @@ def art_goal(c):
     s.append(f'<text x="447" y="34" class="lbl" fill="{acc}" text-anchor="middle">AI를 켜기 전에 한 줄</text>')
     # 답
     s.append(f'<rect x="190" y="282" width="220" height="74" rx="37" fill="{ink}"/>')
-    s.append(f'<text x="300" y="332" font-family="Playfair Display" font-weight="900" font-size="34" fill="{bg}" text-anchor="middle">x = −1, 3</text>')
+    s.append(f'<text x="300" y="332" font-family="Playfair Display" font-weight="900" font-size="34" fill="{bg}" text-anchor="middle">x = −1 <tspan font-family="Noto Serif KR" font-size="24" font-weight="700">또는</tspan> 3</text>')
     # 붙여 넣기 → 답 : 대조할 기준 없음
     s.append(f'<path d="M150 232 C 150 270, 170 300, 186 312" fill="none" stroke="{ink}" stroke-width="2" stroke-dasharray="4 6" opacity=".55"/>')
     s.append(f'<text x="118" y="298" font-family="Noto Serif KR" font-weight="900" font-size="34" fill="{a2}" text-anchor="middle">?</text>')
