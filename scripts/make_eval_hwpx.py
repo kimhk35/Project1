@@ -23,6 +23,14 @@ ITEMS = [
 ]
 
 N_SHEETS = 3
+MIN_TOTAL = 76
+
+# 위원마다 1~3위 순서를 다르게 하되 세 명 합산은 동아출판, 미래엔, 비상교육 순
+SHEET_TOP3 = [
+    (DONGA, MIRAE, BISANG),
+    (MIRAE, DONGA, BISANG),
+    (DONGA, BISANG, MIRAE),
+]
 
 
 def gen_sheet(rng, bias):
@@ -31,36 +39,43 @@ def gen_sheet(rng, bias):
     for p in range(len(PUBLISHERS)):
         row = []
         for _, _, mx in ITEMS:
-            ratio = min(1.0, max(0.5, bias[p] + rng.uniform(-0.12, 0.12)))
+            ratio = min(1.0, max(0.7, bias[p] + rng.uniform(-0.08, 0.08)))
             row.append(round(mx * ratio))
         sheet.append(row)
     return sheet
 
 
+def gen_ranked_sheet(rng, top3):
+    while True:
+        bias = [rng.uniform(0.78, 0.86) for _ in PUBLISHERS]
+        for bonus, p in zip((0.12, 0.09, 0.06), top3):
+            bias[p] = 0.8 + bonus + rng.uniform(-0.01, 0.01)
+        sheet = gen_sheet(rng, bias)
+        t = [sum(r) for r in sheet]
+        if min(t) >= MIN_TOTAL and ordered(t, top3):
+            return sheet
+
+
 def generate(seed):
     rng = random.Random(seed)
     while True:
-        bias = [rng.uniform(0.68, 0.84) for _ in PUBLISHERS]
-        bias[DONGA] += 0.08
-        bias[MIRAE] += 0.06
-        bias[BISANG] += 0.04
-        sheets = [gen_sheet(rng, bias) for _ in range(N_SHEETS)]
+        sheets = [gen_ranked_sheet(rng, top3) for top3 in SHEET_TOP3]
         totals = [sum(sum(s[p]) for s in sheets) for p in range(len(PUBLISHERS))]
-        # 합계뿐 아니라 각 평가표도 같은 1~3위가 되어야 추천의견과 점수가 어긋나지 않는다
-        if all(ordered([sum(r) for r in s]) for s in sheets) and ordered(totals):
+        if ordered(totals, (DONGA, MIRAE, BISANG)):
             return sheets, totals
 
 
-def ordered(t):
-    others = max(v for p, v in enumerate(t) if p not in (DONGA, MIRAE, BISANG))
-    return t[DONGA] > t[MIRAE] > t[BISANG] > others
+def ordered(t, top3):
+    a, b, c = top3
+    others = max(v for p, v in enumerate(t) if p not in top3)
+    return t[a] > t[b] > t[c] > others
 
 
 RECOMMEND = [
     ("동아출판", "교육과정 성취기준을 충실히 반영하고 학습 분량과 내용 수준이 학생들의 학력 수준에 적합함. "
      "실생활 맥락의 도입 활동과 단계적 탐구 활동으로 개념을 자연스럽게 형성할 수 있으며 기본과 심화 문제의 난이도 배치가 균형적임. "
      "이전 학년과의 계열성을 고려한 단원 구성과 정확한 용어 및 기호 표기, 깔끔한 편집으로 가독성이 뛰어나 "
-     "세 위원 모두 최고점을 부여하여 1순위로 추천함."),
+     "세 위원 합산 최고점을 받아 1순위로 추천함."),
     ("미래엔", "단원 간 연계가 매끄럽고 수학적 오개념을 바로잡는 코너와 자기 평가 활동이 잘 갖추어져 있음. "
      "서술형 평가 문항과 교수학습 자료, 디지털 연계 자료가 풍부하여 다양한 수업 방법에 활용하기 좋으나 "
      "일부 단원의 학습 분량이 다소 많은 점을 고려하여 2순위로 추천함."),
@@ -75,15 +90,15 @@ OPINIONS = [
     "㈜미래엔 교과서는 단원 간 연계가 매끄럽고 서술형 평가 문항이 풍부하며 ㈜비상교육 교과서는 편집이 깔끔하고 가독성이 높다. "
     "종합적으로 1순위 동아출판㈜, 2순위 ㈜미래엔, 3순위 ㈜비상교육을 추천함.",
 
-    "동아출판㈜ 교과서는 내용 수준이 우리 학교 학생들의 학력 분포에 가장 잘 맞고 기본 문제와 심화 문제의 난이도 배치가 균형적이다. "
-    "공학적 도구 활용 활동과 협력 학습 과제가 구체적으로 안내되어 있어 학생 참여형 수업을 운영하기 쉽다. "
-    "㈜미래엔 교과서는 수학적 오개념을 짚어 주는 코너와 자기 평가 활동이 돋보이며 ㈜비상교육 교과서는 개념 정리와 예제 구성이 명확하다. "
-    "따라서 1순위 동아출판㈜, 2순위 ㈜미래엔, 3순위 ㈜비상교육으로 추천함.",
+    "㈜미래엔 교과서는 수학적 오개념을 짚어 주는 코너와 자기 평가 활동이 돋보이고 교수학습 자료와 디지털 연계 자료가 풍부하여 수업 활용도가 높다. "
+    "동아출판㈜ 교과서는 내용 수준이 학생들의 학력 분포에 잘 맞고 기본 문제와 심화 문제의 난이도 배치가 균형적이다. "
+    "㈜비상교육 교과서는 개념 정리와 예제 구성이 명확하여 자기주도 학습에 도움이 된다. "
+    "따라서 1순위 ㈜미래엔, 2순위 동아출판㈜, 3순위 ㈜비상교육으로 추천함.",
 
-    "동아출판㈜ 교과서는 이전 학년과의 계열성을 고려한 복습 코너와 다음 단원 예고가 잘 구성되어 학습의 흐름이 자연스럽다. "
-    "용어와 기호 표기가 정확하고 삽화와 도표가 내용 이해를 돕도록 배치되어 있으며 가격 면에서도 부담이 적다. "
-    "㈜미래엔 교과서는 교수학습 자료와 디지털 연계 자료가 풍부하고 ㈜비상교육 교과서는 종합적 사고력을 요구하는 프로젝트 과제가 우수하다. "
-    "이에 1순위 동아출판㈜, 2순위 ㈜미래엔, 3순위 ㈜비상교육을 추천함.",
+    "동아출판㈜ 교과서는 이전 학년과의 계열성을 고려한 복습 코너와 다음 단원 예고가 잘 구성되어 학습의 흐름이 자연스럽고 가격 면에서도 부담이 적다. "
+    "㈜비상교육 교과서는 종합적 사고력을 요구하는 프로젝트 과제가 우수하고 삽화와 도표가 내용 이해를 돕도록 배치되어 있다. "
+    "㈜미래엔 교과서는 서술형 평가 문항이 풍부하나 일부 단원의 학습 분량이 다소 많다. "
+    "이에 1순위 동아출판㈜, 2순위 ㈜비상교육, 3순위 ㈜미래엔을 추천함.",
 ]
 
 
