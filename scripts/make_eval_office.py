@@ -81,14 +81,14 @@ def write_xlsx(path, sheets, totals):
             ws.column_dimensions[chr(65 + c)].width = w
 
     ws = wb.create_sheet("총괄표")
-    title(ws, "검·인정도서 선정기준 평가 총괄표", 7)
+    title(ws, "검인정도서 선정기준 평가 총괄표", 7)
     ws.cell(row=2, column=1, value="과 목 : 수학")
     put_table(ws, 3, summary_rows(sheets, totals))
     for c, w in enumerate([22, 10, 10, 10, 10, 10, 14]):
         ws.column_dimensions[chr(65 + c)].width = w
 
     ws = wb.create_sheet("추천의견서")
-    title(ws, "추천 검·인정도서 및 추천 의견서", 3)
+    title(ws, "추천 검인정도서 및 추천 의견서", 3)
     ws.cell(row=2, column=1, value="과 목 : 수학")
     put_table(ws, 3, recommend_rows())
     for r in range(4, 7):
@@ -154,11 +154,11 @@ def write_docx(path, sheets, totals):
         doc_table(doc, score_rows(sheet), size=8)
         doc_table(doc, [["<종합의견 및 추천의견>"], [OPINIONS[k]]], size=9, left_cols=(0,))
 
-    heading(doc, "검·인정도서 선정기준 평가 총괄표")
+    heading(doc, "검인정도서 선정기준 평가 총괄표")
     doc.add_paragraph("과 목 : 수학")
     doc_table(doc, summary_rows(sheets, totals), size=10)
 
-    heading(doc, "추천 검·인정도서 및 추천 의견서")
+    heading(doc, "추천 검인정도서 및 추천 의견서")
     doc.add_paragraph("과 목 : 수학")
     t = doc_table(doc, recommend_rows(), size=10, left_cols=(2,))
     for row in t.rows:
