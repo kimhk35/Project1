@@ -86,8 +86,8 @@ def fig0():
 
     # 두 조직 패널
     for x, key, name, sub, items in [
-        (30, "del", "대의원회", "심의 · 의결 기구", ["학급 대표 42명 (학급당 2명)", "안건 심의와 의결", "학생참여예산 심의", "라온하제 사업 승인 · 평가"]),
-        (570, "raon", "라온하제", "기획 · 집행 기구", ["공개 모집 6개 부서", "연간 사업 기획과 실행", "행사 · 캠페인 · 홍보", "의결 사항 이행 · 결과 보고"]),
+        (30, "del", "대의원회", "심의 · 의결 기구", ["총 31명  회장단 3 + 학급 임원 28", "안건 심의와 의결", "학생참여예산 심의", "라온하제 사업 승인 · 평가"]),
+        (570, "raon", "라온하제", "기획 · 집행 기구", ["27명 내외  회장단 3 + 6개 부서", "연간 사업 기획과 실행", "행사 · 캠페인 · 홍보", "의결 사항 이행 · 결과 보고"]),
     ]:
         b.append(rect(x, 160, 400, 230, C[key + "_l"], C[key], 2, 18))
         tx = x + 28
@@ -117,17 +117,16 @@ def fig0():
     b.append(text(58, 526, "학급자치회", 18, 800, C["ink"], "start"))
     b.append(text(58, 552, "교육과정 속 학급자치 시간", 13, 600, C["ok"], "start"))
     b.append(text(58, 572, "월 2회 · 연 17시간", 13, 500, C["muted"], "start"))
-    x0 = 268
-    for g in range(3):
-        for c in range(7):
-            xx = x0 + g * 238 + c * 32
-            b.append(rect(xx, 522, 27, 44, "#fff", C["line"], 1.2, 6))
-            b.append(text(xx + 13.5, 544, f"{g + 1}-{c + 1}", 10, 600, C["muted"]))
+    b.append(text(930, 522, "14개 학급", 12.5, 700, C["ink"], "end"))
+    for c in range(14):
+        xx = 300 + c * 45
+        b.append(rect(xx, 536, 38, 38, "#fff", C["line"], 1.2, 8))
+        b.append(person(xx + 12, 557, 0.5, C["muted"]) + person(xx + 26, 557, 0.5, C["muted"]))
     b.append(line(200, 494, 200, 394, C["del"], 2.5, arrow="del"))
     b.append(text(212, 470, "대의원 선출 · 건의 전달", 12.5, 700, C["del"], "start"))
     b.append(line(800, 394, 800, 494, C["raon"], 2.5, arrow="raon"))
     b.append(text(788, 470, "활동 참여 · 결과 공유", 12.5, 700, C["raon"], "end"))
-    b.append(text(500, 618, "전교생이 학생회장단을 직접 선출하고 각 학급은 대의원을 선출한다", 13.5, 500, C["muted"]))
+    b.append(text(500, 618, "전교생이 학생회장단을 직접 선출하고 각 학급은 학급회장 · 부회장을 선출한다.", 13.5, 500, C["muted"]))
     return svg(W, H, "".join(b), "학생자치 전체 구조")
 
 
@@ -185,25 +184,25 @@ def fig2():
     b.append(f'<path d="M500,{top:.1f} A{r},{r} 0 0,1 500,{bot:.1f} A{r},{r} 0 0,1 500,{top:.1f} z" '
              f'fill="{C["lead"]}" stroke="{C["lead"]}" stroke-width="2"/>')
     # 왼쪽
-    b.append(text(265, 150, "대의원회", 26, 800, C["del"]))
-    b.append(text(265, 180, "심의 · 의결", 14, 600, C["muted"]))
-    b.append(lines(265, 232, ["학년대의원장 3", "서기 2", "학급 대의원 42"], 15, 600, C["text"]))
+    b.append(text(275, 150, "대의원회", 26, 800, C["del"]))
+    b.append(text(275, 182, "31명 · 심의 · 의결", 14.5, 700, C["muted"]))
+    b.append(lines(265, 232, ["학급회장 · 부회장 24", "학년대의원장 · 서기 포함", ""], 15, 600, C["text"]))
     b.append(text(265, 332, "학급 선거로 선출", 13, 600, C["del"]))
     # 오른쪽
-    b.append(text(735, 150, "라온하제", 26, 800, C["raon"]))
-    b.append(text(735, 180, "기획 · 집행", 14, 600, C["muted"]))
-    b.append(lines(735, 232, ["부서장 6 · 차장 6", "부원 18~30", "총무 1"], 15, 600, C["text"]))
+    b.append(text(725, 150, "라온하제", 26, 800, C["raon"]))
+    b.append(text(725, 182, "27명 내외 · 기획 · 집행", 14.5, 700, C["muted"]))
+    b.append(lines(735, 232, ["부서 부원 20 내외", "부서장 6 포함", ""], 15, 600, C["text"]))
     b.append(text(735, 332, "공개 모집으로 선발", 13, 600, C["raon"]))
     # 교집합
     b.append(person(470, 170, 1.0) + person(500, 160, 1.15) + person(530, 170, 1.0))
-    b.append(text(500, 222, "학생회장단", 18, 800, "#fff"))
-    b.append(text(500, 248, "회장 1", 13.5, 600, "#EDE6FF"))
-    b.append(text(500, 268, "부회장 2", 13.5, 600, "#EDE6FF"))
-    b.append(text(500, 300, "전교생", 12, 500, "#EDE6FF"))
-    b.append(text(500, 317, "직접 선출", 12, 500, "#EDE6FF"))
+    b.append(text(500, 222, "겹치는 인원 7", 17, 800, "#fff"))
+    b.append(text(500, 252, "학생회장단 3", 14, 700, "#fff"))
+    b.append(text(500, 272, "당연직", 12, 500, "#EDE6FF"))
+    b.append(text(500, 302, "학급 임원 4", 14, 700, "#fff"))
+    b.append(text(500, 322, "겸직", 12, 500, "#EDE6FF"))
     # 역할 태그
-    b.append(pill(340, 520, 250, 40, "대의원회에서  의장 · 부의장", C["del"], size=14))
-    b.append(pill(660, 520, 250, 40, "라온하제에서  대표 · 총괄", C["raon"], size=14))
+    b.append(pill(340, 520, 250, 40, "대의원회에서  의장단 3 · 학급 대표 4", C["del"], size=14))
+    b.append(pill(660, 520, 250, 40, "라온하제에서  대표단 3 · 부원 4", C["raon"], size=14))
     b.append(path("M480,410 C470,470 420,480 400,500", C["lead"], 2, arrow="lead"))
     b.append(path("M520,410 C530,470 580,480 600,500", C["lead"], 2, arrow="lead"))
     return svg(W, H, "".join(b), "학생회장단의 이중 소속")
@@ -246,15 +245,15 @@ def fig3():
     for i, x in enumerate([170, 500, 830]):
         g = i + 1
         b.append(line(x, 220, x, 236, L, 2))
-        b.append(obox(x, 236, 220, 52, f"{g}학년 대의원장", "학년 대의원 중 호선", "del"))
+        b.append(obox(x, 236, 220, 52, f"{g}학년 대의원장", f"{g}학년 협의회 대표", "del"))
         b.append(line(x, 288, x, 304, C["del"], 2))
-        b.append(rect(x - 150, 304, 300, 176, C["del_l"], C["del"], 1.5, 14))
-        b.append(text(x, 328, f"{g}학년 협의회  14명", 15, 800, C["del"]))
-        for c in range(7):
-            cx = x - 126 + c * 42
-            b.append(rect(cx - 17, 350, 34, 34, "#fff", C["del"], 1.2, 8) + text(cx, 367, f"{g}-{c + 1}", 10.5, 700, C["del"]))
-            b.append(person(cx - 7, 410, 0.55, C["del"]) + person(cx + 7, 410, 0.55, C["del"]))
-        b.append(text(x, 448, "학급별 반장 · 부반장", 12.5, 600, C["muted"]))
+    b.append(rect(30, 304, 940, 176, C["del_l"], C["del"], 1.5, 14))
+    b.append(text(500, 332, "학급 대의원 28명  (14개 학급 × 학급회장 · 부회장)", 16, 800, C["del"]))
+    for c in range(14):
+        cx = 92 + c * 63
+        b.append(rect(cx - 25, 356, 50, 58, "#fff", C["del"], 1.2, 10))
+        b.append(person(cx - 9, 388, 0.62, C["del"]) + person(cx + 9, 388, 0.62, C["del"]))
+    b.append(text(500, 446, "학년협의회는 학년별 학급회장 · 부회장으로 구성  학년대의원장과 서기는 학급 대의원 중 호선", 12.5, 600, C["muted"]))
     # 특별위원회
     b.append(rect(30, 510, 940, 130, C["soft"], C["line"], 1.5, 16))
     b.append(text(58, 540, "특별위원회", 17, 800, C["ink"], "start"))
@@ -264,7 +263,7 @@ def fig3():
         b.append(rect(x - 140, 532, 280, 84, "#fff", C["del"], 1.8, 12))
         b.append(text(x, 560, t, 16, 800, C["del"]))
         b.append(text(x, 588, s, 12.5, 500, C["muted"]))
-    b.append(text(970, 500, "대의원 42명 + 의장단 3명", 12.5, 700, C["del"], "end"))
+    b.append(text(970, 500, "대의원회 총 31명  의장단 3 + 학급 대의원 28", 12.5, 700, C["del"], "end"))
     return svg(W, H, "".join(b), "대의원회 조직도")
 
 
@@ -275,7 +274,7 @@ def fig4():
     b.append(obox(500, 20, 230, 62, "대표", "학생회장", "lead", badge="당연직"))
     b.append(rect(85, 30, 170, 44, "#fff", C["muted"], 1.5, 12, dash="5 4") + text(170, 52, "라온하제 지도교사", 13.5, 700, C["muted"]))
     b.append(line(255, 52, 385, 52, C["muted"], 1.5, dash="5 4"))
-    b.append(rect(745, 30, 170, 44, "#fff", C["raon"], 1.5, 12) + text(830, 46, "총무 1", 15, 800, C["raon"]) + text(830, 64, "예산 기록 · 물품", 11.5, 500, C["muted"]))
+    b.append(rect(745, 30, 170, 44, "#fff", C["raon"], 1.5, 12) + text(830, 46, "대의원 겸직 4", 15, 800, C["raon"]) + text(830, 64, "학급회장 · 부회장", 11.5, 500, C["muted"]))
     b.append(line(615, 52, 745, 52, C["raon"], 1.5))
     b.append(line(500, 82, 500, 112, L, 2))
     b.append(line(258, 112, 742, 112, L, 2))
@@ -298,10 +297,10 @@ def fig4():
             for i, dd in enumerate(duties[dname]):
                 b.append(text(x, 304 + i * 24, dd, 13, 600, C["text"]))
             b.append(line(x - 54, 360, x + 54, 360, C["raon_l"], 2))
-            b.append(lines(x, 384, ["부장 1", "차장 1", "부원 3~5"], 12.5, 600, C["muted"], lh=1.55))
+            b.append(lines(x, 384, ["부장 1", "부원 3", "4명 내외"], 12.5, 600, C["muted"], lh=1.55))
     b.append(rect(30, 504, 940, 76, C["raon_l"], "none", 0, 16))
-    b.append(text(500, 530, "희망 학생 공개 모집 → 지원서 · 면접 → 부서 배치", 16, 800, C["raon"]))
-    b.append(text(500, 556, "학급 대표(대의원)와 겸직 불가  학생회장단만 두 조직 당연직", 13.5, 600, C["muted"]))
+    b.append(text(500, 530, "회장단 3 + 6개 부서 × 4명 내외 = 27명 내외", 16, 800, C["raon"]))
+    b.append(text(500, 556, "대의원회와 겹치는 인원 7명  학생회장단 3 (당연직) · 학급회장 · 부회장 4 (겸직)", 13.5, 600, C["muted"]))
     return svg(W, H, "".join(b), "라온하제 조직도")
 
 
@@ -413,14 +412,14 @@ def fig7():
 def fig8():
     W, H = 1000, 300
     b = []
-    segs = [(5, "열기", "지난 결과 공유", "반장", C["ink"]), (10, "안건 발표", "건의 · 대의원회 전달 사항", "제안 학생", C["del"]),
-            (20, "토의", "모둠 토의 · 전체 토론", "학급 전체", C["lead"]), (7, "결정", "표결 · 합의 정리", "반장", C["raon"]),
-            (3, "닫기", "회의록 · 건의서 확정", "서기", C["ok"])]
+    segs = [(5, "열기", "지난 결과 공유", "학급회장", C["ink"]), (10, "안건 발표", "건의 · 대의원회 전달 사항", "제안 학생", C["del"]),
+            (20, "토의", "모둠 토의 · 전체 토론", "학급 전체", C["lead"]), (7, "결정", "표결 · 합의 정리", "학급회장", C["raon"]),
+            (3, "닫기", "회의록 · 건의서 확정", "학급부회장", C["ok"])]
     x = 30
     total = 45
     Wb = 940
     b.append(text(30, 30, "45분", 22, 800, C["ink"], "start"))
-    b.append(text(100, 30, "진행  반장    |    기록  부반장(서기)    |    담임  조력자", 14, 600, C["muted"], "start"))
+    b.append(text(100, 30, "진행  학급회장    |    기록  학급부회장    |    담임  조력자", 14, 600, C["muted"], "start"))
     for m, t, s, who, col in segs:
         w = Wb * m / total
         b.append(rect(x + 2, 64, w - 4, 70, col, rx=12))

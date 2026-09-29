@@ -1,6 +1,6 @@
 # 고천중학교 학생자치 활성화 개선안
 
-2027학년도 학생자치 개선안  대의원회와 라온하제의 역할 정립을 중심으로
+2027학년도 학생자치 개선안  대의원회와 라온하제의 역할 정립을 중심으로 (14학급, 대의원회 31명, 라온하제 27명 내외, 겹치는 인원 7명)
 
 ## 결과물 (out/)
 
@@ -41,4 +41,4 @@ python3 build/build_hwpx.py      # HWPX
 
 필요 도구  Python 3, playwright(Chromium), python-docx, PyMuPDF, lxml, Pillow, Pretendard와 Noto Serif KR 글꼴
 
-문서 표기 원칙  쌍따옴표와 온점을 쓰지 않고 인용은 「 」로 표기한다
+문서 표기 원칙  쌍따옴표를 쓰지 않고 인용은 「 」로 표기한다 온점은 문장 끝에만 쓴다 (content.py의 punctuate()가 자동으로 붙임)

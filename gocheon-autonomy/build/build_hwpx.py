@@ -940,13 +940,13 @@ def validate(parts, bin_names):
     for b in bin_names:
         if b not in items.values():
             errors.append("BinData 가 manifest 에 없음 %s" % b)
-    # 표기 원칙  쌍따옴표와 문장 끝 온점 금지
-    for t in sec.iter(HP + "t"):
-        s = t.text or ""
+    # 표기 원칙  쌍따옴표 금지, 온점은 문장 끝(…다.)에만 허용
+    for para in sec.iter(HP + "p"):
+        s = "".join(t.text or "" for t in para.iter(HP + "t"))
         if '"' in s:
             errors.append("쌍따옴표 발견 : %s" % s[:40])
-        if re.search(r"[^\d]\.(\s|$)", s):
-            errors.append("온점 발견 : %s" % s[:40])
+        if re.search(r"(?<![다\d])\.(?!\d)", s):
+            errors.append("문장 끝이 아닌 온점 : %s" % s[:40])
         if "**" in s:
             errors.append("굵게 표기 잔존 : %s" % s[:40])
     return errors
