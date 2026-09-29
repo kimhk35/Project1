@@ -6,7 +6,7 @@
 
 | 형식 | 파일 | 용도 |
 |---|---|---|
-| HWPX | 고천중_학생자치_개선안.hwpx | 한글 문서 편집·결재용 |
+| HWPX | 고천중_학생자치_개선안.hwpx | 한글 문서 편집과 결재용 |
 | DOCX | 고천중_학생자치_개선안.docx | MS Word 편집용 |
 | PDF | 고천중_학생자치_개선안.pdf | 배포·인쇄용 |
 | HTML | 고천중_학생자치_개선안.html | 웹 열람·공유용 |
@@ -27,7 +27,7 @@
 
 ## 다시 만들기 (build/)
 
-모든 형식은 `build/content.py` 하나를 원본으로 삼는다 내용을 고치면 아래 순서로 다시 생성한다
+모든 형식은 `build/content.py` 하나를 원본으로 삼는다. 내용을 고치면 아래 순서로 다시 생성한다.
 
 ```bash
 cd gocheon-autonomy
@@ -41,4 +41,8 @@ python3 build/build_hwpx.py      # HWPX
 
 필요 도구  Python 3, playwright(Chromium), python-docx, PyMuPDF, lxml, Pillow, Pretendard와 Noto Serif KR 글꼴
 
-문서 표기 원칙  쌍따옴표를 쓰지 않고 인용은 「 」로 표기한다 온점은 문장 끝에만 쓴다 (content.py의 punctuate()가 자동으로 붙임)
+문서 표기 원칙
+
+- 쌍따옴표를 쓰지 않고 인용은 「 」로 표기한다.
+- 문장 끝에는 반드시 온점을, 의문문에는 물음표를 쓴다. content.py의 punctuate()와 figs.py의 punct()가 자동으로 붙인다.
+- 가운데 점은 공식 명칭(자율·자치활동, 초·중등교육법) 외에는 쓰지 않는다.
