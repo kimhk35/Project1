@@ -14,7 +14,7 @@ body{background:var(--paper);color:var(--ink);font-family:var(--serif)}
 
 /* ---------- page frame ---------- */
 .page{position:relative;width:210mm;height:297mm;overflow:hidden;background:var(--paper);
-  padding:17mm 15mm 17mm;font-size:9.1pt;line-height:1.72;word-break:keep-all;overflow-wrap:break-word;
+  padding:17mm 15mm 17mm;font-size:9.1pt;line-height:1.72;word-break:keep-all;overflow-wrap:break-word;text-wrap:pretty;line-break:strict;
   page-break-after:always;break-after:page}
 .page.dark{background:var(--navy);color:#EDE7DA}
 .page.tint{background:var(--paper-2)}
@@ -43,7 +43,7 @@ body{background:var(--paper);color:var(--ink);font-family:var(--serif)}
 h3.sub{font-family:var(--sans);font-size:10pt;font-weight:800;color:var(--navy);margin:3.4mm 0 1.2mm;letter-spacing:-.01em;break-after:avoid}
 h3.sub .no{color:var(--accent);margin-right:.35em;font-family:var(--display)}
 .dark h3.sub{color:#fff}
-p{margin:0 0 2.1mm;text-align:justify}
+p{margin:0 0 2.1mm;text-align:left}
 p.lead{font-size:10.4pt;line-height:1.75;color:var(--ink)}
 .dropcap::first-letter{font-family:var(--serif);font-weight:900;float:left;font-size:34pt;line-height:.95;margin:1mm 2mm 0 0;color:var(--accent)}
 em.hl{font-style:normal;background:linear-gradient(transparent 58%,rgba(200,65,42,.18) 58%)}
@@ -368,3 +368,19 @@ body.web .page{margin:10mm auto;box-shadow:0 2mm 8mm rgba(20,34,58,.25);scroll-m
 .refs2 p.ref{display:grid;grid-template-columns:6mm 1fr;margin:0 0 1.1mm;text-align:left;break-inside:avoid}
 .refs2 p.ref span.rn{font-family:var(--display);font-weight:700;color:var(--ink-3)}
 .refs2 a{color:var(--teal);word-break:break-all}
+
+/* readability pass */
+.sb{display:inline-block;width:.42em}
+p,li,dd,td{text-align:left;hanging-punctuation:first}
+.note{font-size:7.3pt;line-height:1.6}
+.small{font-size:8pt;line-height:1.62}
+.card .src{font-size:7pt}
+.dek{letter-spacing:-.005em}
+h1,h2,h3,h4,.headline,.cs-sub{text-wrap:balance}
+figcaption,.figure figcaption,.cap{font-size:7.2pt;line-height:1.55}
+.card .src,.app .who{font-size:7.2pt}
+.ev{font-size:6.8pt}
+.card dt,.app dt{font-size:7pt}
+.refs-mini{font-size:7.1pt}
+.stat .s{font-size:7.1pt}
+.cont{margin-top:.4mm;line-height:1.3}

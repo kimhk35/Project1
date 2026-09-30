@@ -42,7 +42,7 @@
 정책기관 | Privacy in EdTech 프리프린트 2026 | https://arxiv.org/abs/2609.28137
 에듀테크 | Google Research 2026-09-17 The future of practice | https://research.google/blog/the-future-of-practice-enabling-teachers-to-create-learning-interactives-with-generative-ui/
 에듀테크 | Learning Commons 2026-09-22 Platform launch | https://learningcommons.org/news/ai-platform-launch/
-에듀테크 | Coursera 2026-09-09 Project Helix | https://investor.coursera.com/
+에듀테크 | Coursera 2026-09-09 Coursera Announces Project Helix | https://investor.coursera.com/news/news-details/2026/Coursera-Announces-Project-Helix-a-New-AI-Native-Platform-Connecting-Skills-Discovery-and-Personalized-Learning-to-Verified-Capability-and-Business-Outcomes/default.aspx
 에듀테크 | Makit AI Learning OS | https://www.makitai.com/
 에듀테크 | XAnge 2026-09-10 Ed.ai seed | https://www.xange.vc/press/ed-ai-seed
 에듀테크 | Pearson 2026-09-18 Pearson acquires ITS | https://plc.pearson.com/en-GB/news-and-insights/news/pearson-acquires-assessment-technology-provider-its

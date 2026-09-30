@@ -51,6 +51,24 @@ def resolve_tokens(html, pages):
     return re.sub(r'\{\{pg:([\w-]+)\}\}', pg, t)
 
 
+SENT_SKIP = {'svg', 'style', 'script', 'h1', 'h2', 'h3', 'h4', 'h5', 'title', 'a'}
+
+
+def sentence_gaps(pages):
+    """온점 없는 문장 사이에 조금 넓은 간격을 둔다 (…다 · …까 뒤의 띄어쓰기)"""
+    from bs4 import NavigableString
+    pat = re.compile(r'([가-힣](?:다|까))\s+(?=[가-힣A-Za-z0-9「(‘\'])')
+    for sec in pages:
+        if (sec.get('id') or '').startswith('p-sources'):
+            continue
+        for node in list(sec.find_all(string=True)):
+            if isinstance(node, NavigableString) and node.parent and not any(
+                    p.name in SENT_SKIP for p in [node.parent, *node.parent.parents] if p is not None and p.name):
+                t = str(node)
+                if pat.search(t):
+                    node.replace_with(NavigableString(pat.sub(lambda m: m.group(1) + '\u2002', t)))
+
+
 def number_figures(html):
     n = [0]
     def rep(m):
@@ -150,6 +168,8 @@ def load_pages(only=None):
         chunks.append(refs_pages())
     html = ''.join(chunks)
     html = html.replace('Heurēsis', 'PRAXIS').replace('HEURĒSIS', 'PRAXIS')
+    # 가독성 하한 · 6.5pt 미만 글자 크기는 6.6pt로 올린다
+    html = re.sub(r'font-size:\s*(?:[1-5](?:\.\d+)?|6(?:\.[0-4]\d*)?)pt', 'font-size:6.6pt', html)
     soup = BeautifulSoup(html, 'html.parser')
     pages = soup.find_all('section', class_='page')
     for i, sec in enumerate(pages, 1):
@@ -186,6 +206,7 @@ def main():
     css = open(os.path.join(SRC, 'praxis.css'), encoding='utf-8').read()
     only = [a for a in sys.argv[1:] if a.endswith('.html')]
     pages = load_pages(only)
+    sentence_gaps(pages)
     pages_html = resolve_tokens(None, pages)
     toc = build_toc(pages)
     half = (len(toc) + 1) // 2
