@@ -4,11 +4,11 @@ Heurēsis는 수학교육 연구와 교실 실천을 잇는 한국어 월간지�
 
 ## 1  파일과 도구
 
-- 조판 스타일  `praxis/praxis-vol01.css`  수정하지 말 것  필요한 변형은 요소의 style 속성으로
-- 그래픽  `praxis/praxis-art.js`  `<svg data-art="이름">`으로 호출  cover tangent contour steps eye waffle trajectories efficacy  새 차트는 인라인 SVG나 HTML div 막대로 직접 그린다
-- 기존 초안  `praxis/src/draft/*.html`  28쪽 버전  구조와 컴포넌트 예시로 참고하고 자기 섹션 초안은 확장의 출발점으로 쓴다
-- 자기 섹션 파일  `praxis/src/sections/NN-이름.html`  `.page` section 여러 개를 이어 쓴 조각
-- 검사  `cd praxis && NODE_PATH=$(npm root -g) node check.js src/sections/NN-이름.html <스크래치 PNG 폴더>`
+- 조판 스타일  `heuresis/heuresis-vol01.css`  수정하지 말 것  필요한 변형은 요소의 style 속성으로
+- 그래픽  `heuresis/heuresis-art.js`  `<svg data-art="이름">`으로 호출  cover tangent contour steps eye waffle trajectories efficacy  새 차트는 인라인 SVG나 HTML div 막대로 직접 그린다
+- 기존 초안  `heuresis/src/draft/*.html`  28쪽 버전  구조와 컴포넌트 예시로 참고하고 자기 섹션 초안은 확장의 출발점으로 쓴다
+- 자기 섹션 파일  `heuresis/src/sections/NN-이름.html`  `.page` section 여러 개를 이어 쓴 조각
+- 검사  `cd heuresis && NODE_PATH=$(npm root -g) node check.js src/sections/NN-이름.html <스크래치 PNG 폴더>`
   - OVERFLOW는 반드시 0  STYLE 위반도 0  bottom whitespace 경고는 가능한 한 없애기
   - PNG를 Read로 열어 눈으로 확인할 것  글이 잘리거나 겹치면 안 된다
 - 원천 자료  `/tmp/claude-0/-home-user-Project1/f0f25d68-6cd3-5d7b-9a69-213fcfdd4f27/scratchpad/sources/`
@@ -33,7 +33,7 @@ Heurēsis는 수학교육 연구와 교실 실천을 잇는 한국어 월간지�
 - 근거 수준 배지를 붙인다  `<span class="ev e1"><i></i>실증</span>` 동료심사 실험·종단·대규모  `e2` 종합 체계적 고찰·메타·척도  `e3` 질적·개념·프리프린트  `e4` 현장 운영자료·보도·제품
 - 인과를 과장하지 않는다  관찰연구는 관련으로  프리프린트는 후속 검증 필요로
 - PISA 2025 성취 하락처럼 원문에서 확인되지 않은 주장은 쓰지 않는다
-- 본문에서 인용한 모든 자료를 `praxis/refs/NN-이름.tsv`에 한 줄씩 적는다  형식  `저자\t연도\t제목\t출처(학술지·기관)\tDOI 또는 URL\t원천 브리핑 파일명`  맨 뒤 통합 참고문헌과 자료 출처는 편집장이 이것으로 만든다  섹션 안에 참고문헌 쪽을 따로 만들지 말 것  섹션 끝의 Further Reading 상자는 괜찮다
+- 본문에서 인용한 모든 자료를 `heuresis/refs/NN-이름.tsv`에 한 줄씩 적는다  형식  `저자\t연도\t제목\t출처(학술지·기관)\tDOI 또는 URL\t원천 브리핑 파일명`  맨 뒤 통합 참고문헌과 자료 출처는 편집장이 이것으로 만든다  섹션 안에 참고문헌 쪽을 따로 만들지 말 것  섹션 끝의 Further Reading 상자는 괜찮다
 
 ## 4  쪽 구조
 

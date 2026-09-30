@@ -63,6 +63,6 @@ htmlcov/
 *.local
 
 # Heurēsis 조판 작업 임시 파일
-praxis/_check_*
-praxis/preview/
-praxis/_*.html
+heuresis/_check_*
+heuresis/preview/
+heuresis/_*.html

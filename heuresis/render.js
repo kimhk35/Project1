@@ -4,7 +4,7 @@ const path = require('path');
 const { chromium } = require('playwright');
 
 (async () => {
-  const src = path.join(__dirname, 'praxis-vol01.html');
+  const src = path.join(__dirname, 'heuresis-vol01.html');
   const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || undefined });
   const page = await browser.newPage({ viewport: { width: 794, height: 1123 } });
   // 로컬에 설치된 폰트를 쓰도록 웹폰트 요청은 막는다
