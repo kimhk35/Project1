@@ -66,3 +66,5 @@ htmlcov/
 heuresis/_check_*
 heuresis/preview/
 heuresis/_*.html
+!heuresis/dist/
+heuresis/export/out/

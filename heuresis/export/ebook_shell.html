@@ -1,0 +1,23 @@
+<div id="eb-bar" role="toolbar" aria-label="전자책 도구">
+  <button id="eb-toc-btn" class="eb-btn" aria-label="차례 열기" title="차례 (T)">☰</button>
+  <div class="eb-brand"><b>Heurēsis</b><span>Vol.01 창간특집호</span></div>
+  <div class="eb-spacer"></div>
+  <button id="eb-prev" class="eb-btn" aria-label="이전 쪽" title="이전 (←)">‹</button>
+  <div id="eb-count" aria-live="polite">1 / 1</div>
+  <button id="eb-next" class="eb-btn" aria-label="다음 쪽" title="다음 (→)">›</button>
+  <div class="eb-spacer"></div>
+  <div class="eb-zoom" role="group" aria-label="확대 축소">
+    <button id="eb-zout" class="eb-btn" aria-label="축소" title="축소 (−)">−</button>
+    <button id="eb-zlabel" class="eb-btn eb-text" title="화면에 맞춤 (0)">100%</button>
+    <button id="eb-zin" class="eb-btn" aria-label="확대" title="확대 (+)">+</button>
+  </div>
+  <button id="eb-mode" class="eb-btn eb-text" title="펼침/단면 (S)">펼침</button>
+  <button id="eb-full" class="eb-btn" aria-label="전체 화면" title="전체 화면 (F)">⛶</button>
+</div>
+<aside id="eb-toc" aria-label="차례" hidden>
+  <div class="eb-toc-head"><b>차례</b><button id="eb-toc-close" class="eb-btn" aria-label="차례 닫기">×</button></div>
+  <ol id="eb-toc-list"></ol>
+  <div class="eb-toc-foot">←→ 쪽 넘김 · Home/End 처음과 끝 · + − 확대 축소 · 0 맞춤 · Ctrl+휠 확대 · 두 번 클릭 확대 · 확대 중 끌어서 이동 · S 펼침 전환 · F 전체 화면</div>
+</aside>
+<div id="eb-stage"><div id="eb-sizer"><div id="eb-spread"></div></div><div id="eb-hit-l" aria-hidden="true"></div><div id="eb-hit-r" aria-hidden="true"></div></div>
+<div id="eb-foot"><input id="eb-range" type="range" min="1" max="1" value="1" aria-label="쪽 이동"></div>
