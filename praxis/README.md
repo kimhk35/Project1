@@ -10,7 +10,7 @@
 | `PRAXIS_Vol01_창간특집호.pdf` | A4 인쇄판 |
 | `PRAXIS_Vol01_창간특집호.docx` | 편집 가능한 Word 흐름형 문서 (도표는 이미지) |
 | `PRAXIS_Vol01_창간특집호.html` | 웹판 · 데스크톱은 지면 보기 모바일은 반응형 흐름 |
-| `PRAXIS_Vol01_창간특집호_ebook.html` | HTML e-book · 펼침면 넘김 차례 서랍 키보드와 스와이프 |
+| `PRAXIS_Vol01_창간특집호_ebook.html` | HTML e-book · 펼침면 넘김 차례 서랍 키보드와 스와이프 · 확대 축소 50–400% (단추 · + − 0 키 · Ctrl+휠 · 두 번 누르기 · 두 손가락) |
 
 ## 소스 구조 (`src/`)
 
