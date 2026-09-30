@@ -1,0 +1,57 @@
+국외논문 | Koretsky 외 2026 The shifting landscape of assessment in STEM education in the age of generative AI · International Journal of STEM Education 13 59 | https://doi.org/10.1186/s40594-026-00648-5
+국외논문 | Colson · Ballard 2026 Teaching Hallucination Literacy · Medical Science Educator | https://doi.org/10.1007/s40670-026-02907-0
+국외논문 | Sheng-Tun Li 2026 AI amplifies experts not expertise · Nature Human Behaviour | https://www.nature.com/articles/s41562-026-02604-3
+국외논문 | Liang 외 2026 A systematic review of generative AI in education from a human–AI interaction perspective · British Journal of Educational Technology 57 | https://doi.org/10.1111/bjet.70055
+국외논문 | Köroğlu 외 2026 AI-supported lecturer decision-making · International Journal of Educational Technology in Higher Education 23 49 | https://doi.org/10.1186/s41239-026-00623-8
+국외논문 | Zhang · Li 2026 Teacher authority responsibility and platform governance · Discover Education 5 1040 | https://doi.org/10.1007/s44217-026-02214-1
+국외논문 | Chin-Siang Ang 2026 Educators’ and students’ views on AI in higher education | https://doi.org/10.1007/s44217-026-02174-6
+국외논문 | Zhengdao Li 외 2026 Large language models for teaching and learning in higher education · International Journal of Educational Technology in Higher Education 23 50 | https://doi.org/10.1186/s41239-026-00624-7
+국외논문 | Lodén · Lönngren · Ottander 2026 More than a Quick Search · Research in Science Education | https://doi.org/10.1007/s11165-026-10381-2
+국외논문 | Höper · Schulte 2026 Developing data awareness · ZDM Mathematics Education | https://doi.org/10.1007/s11858-026-01845-w
+국외논문 | Sadegh 외 2026 AI–VR feedback literacy RCT · BMC Medical Education | https://doi.org/10.1186/s12909-026-10500-7
+국외논문 | Amiruddin 외 2026 AI AR VR in science education mapping · D-I Science Education Research | https://doi.org/10.1186/s43031-026-00177-9
+국외논문 | Kiliç Şafak · Karaca Bozdağ 2026 Assessment profiles before AI question banks · BMC Medical Education | https://doi.org/10.1186/s12909-026-10422-4
+국외논문 | Deduwela 외 2026 Reliability of ChatGPT in scoring portfolios in professionalism · BMC Medical Education | https://doi.org/10.1186/s12909-026-10343-2
+국외논문 | Oreopoulos 외 2026 Making AI Tutoring Productive · NBER Working Paper 35621 | 
+국외논문 | 수학교육 AI 리빙 메타분석 2026 · arXiv 2601.18685 v4 | https://arxiv.org/abs/2601.18685
+국외논문 | Bassner 외 2026 Less stress better scores same learning · Computers and Education Artificial Intelligence 10 100537 | https://doi.org/10.1016/j.caeai.2025.100537
+국외논문 | Connell Pensky 외 2026 Can asynchronous learning modules about generative AI increase students’ knowledge skills and self-efficacy · Computers & Education 250 105640 | https://doi.org/10.1016/j.compedu.2026.105640
+국외논문 | Thoeni · Fryer 2026 AI chatbots in higher education Comparing expectations to evidence · Computers in Human Behavior Reports 22 101061 | https://doi.org/10.1016/j.chbr.2026.101061
+국외논문 | Hai Li 외 2026 AI teachable agent voice design · Computers & Education 254 105725 | https://doi.org/10.1016/j.compedu.2026.105725
+국외논문 | Jiayue Zhang 외 2026 Exploring ChatGPT’s potential in dialogic teaching · Acta Psychologica 268 107268 | https://doi.org/10.1016/j.actpsy.2026.107268
+국외논문 | Molemane · Mosia · Egara 2026 AI tutors in mathematics education systematic review · Discover Education | https://doi.org/10.1007/s44217-026-01872-5
+국외논문 | Apeadido 외 2026 AI chatbots as more knowledgeable others · Discover Artificial Intelligence | https://doi.org/10.1007/s44163-026-02113-2
+국외논문 | Scaffolding students–AI dialogue for safe educational interactions 2026 · Scientific Reports | https://www.nature.com/articles/s41598-026-69820-9
+국외논문 | Interpretable exercise recommendation with semantic enhancement and forgetting 2026 · International Journal of Computational Intelligence Systems | https://link.springer.com/article/10.1007/s44196-026-01574-8
+국외논문 | Moradi · Evans 2026 How AI anxiety and confidence shape student engagement · Discover Education | https://doi.org/10.1007/s44217-026-02078-5
+국외논문 | Broughton · Randolph · Ovalle 2026 AI agent translating standards into rubrics · Frontiers in Education | https://doi.org/10.3389/feduc.2026.1949296
+국외논문 | Satmaz · Toker · Girgin 2026 Technology-enhanced design thinking for mathematics teachers · Discover Education | https://doi.org/10.1007/s44217-026-02031-6
+국외논문 | Hur 외 2026 Cultivating AI literacy through generative AI as a collaborative partner · Discover Education | 
+국내논문 | 하오선 · 정주원 2026 생성형 AI 리터러시와 학습 유용성 인식의 관계 · 열린교육연구 34(2) 515–537 | https://doi.org/10.18230/tjye.2026.34.2.515
+국내논문 | 권태현 2026 생성형 AI 기반 쓰기 피드백의 효과와 학습자 반응 분석 · 국어교육학연구 61(1) 37–66 | https://doi.org/10.20880/kler.2026.61.1.37
+국내논문 | 박주현 외 2026 AI 기반 사회정서학습을 위한 교수설계전략 개발 · 교육정보미디어연구 32(2) 989–1021 | 
+국내논문 | 류경희 2026 생성형 AI는 일본어 문법교육에 도입할 수 있는가 · Foreign Languages Education 33(3) 109–128 | 
+국내논문 | 우길주 · 양지원 2026 AI 기반 기초 문해력 발달 양상 종단 분석 · KCI | 
+국내논문 | 이효정 2026 ChatGPT 활용 논증적 읽기-쓰기 수업 · KCI | 
+정책기관 | UNESCO 2026 The Algorithm in the Room | https://www.unesco.org/en/articles/algorithm-room-seeing-and-confronting-implications-ai-future-education
+정책기관 | UNESCO IESALC · UNU-IAS 2026 AI Implementation in Higher Education in Latin America and the Caribbean | https://www.iesalc.unesco.org/en/articles/ai-implementation-higher-education-latin-america-and-caribbean
+정책기관 | UNESCO Santiago 2026 AI in Education Observatory first meeting | https://www.unesco.org/en/articles/observatory-artificial-intelligence-education-latin-america-and-caribbean-holds-first-meeting-member
+정책기관 | OECD 2026 PISA 2025 Results Volume I Learning in the Digital World and AI use | 
+정책기관 | AFT · UFT · Microsoft 2026 National AI Safety and Privacy Standard for Schools | https://www.aft.org/press-release/aft-uft-and-microsoft-announce-national-ai-safety-privacy-standard-schools-protect
+정책기관 | Florida Department of Education 2026 Responsible AI in classrooms | https://www.fldoe.org/newsroom/latest-news/florida-sets-national-standard-for-responsible-ai-in-classroomsfrom-vpk-through-college.stml
+정책기관 | Privacy in EdTech 프리프린트 2026 | https://arxiv.org/abs/2609.28137
+에듀테크 | Google Research 2026-09-17 The future of practice | https://research.google/blog/the-future-of-practice-enabling-teachers-to-create-learning-interactives-with-generative-ui/
+에듀테크 | Learning Commons 2026-09-22 Platform launch | https://learningcommons.org/news/ai-platform-launch/
+에듀테크 | Coursera 2026-09-09 Project Helix | https://investor.coursera.com/
+에듀테크 | Makit AI Learning OS | https://www.makitai.com/
+에듀테크 | XAnge 2026-09-10 Ed.ai seed | https://www.xange.vc/press/ed-ai-seed
+에듀테크 | Pearson 2026-09-18 Pearson acquires ITS | https://plc.pearson.com/en-GB/news-and-insights/news/pearson-acquires-assessment-technology-provider-its
+에듀테크 | Ellucian Knowledge Graph | https://www.ellucian.com/artificial-intelligence/knowledge-graph
+에듀테크 | WhalesBot 2026-09-28 EliteMind | https://www.whalesbot.ai/blog/whalesbot-launches-elitemind-bringing-physical-ai-into-stem-ai-education
+에듀테크 | Kahoot! 2026-09-03 Back-to-school | https://kahoot.com/press/2026/09/03/kahoot-launches-new-experiences-to-boost-engagement-and-help-improve-learning-outcomes-this-back-to-school-season/
+보도 | The Guardian 2026-09-28 Multiverse AI teacher rating report | https://www.theguardian.com/technology/2026/sep/28/teachers-euan-blair-firm-report-horrendous-stress-ai-used-to-rate-their-work
+내부자료 | PRAXIS 편집부 교육 AI 연구·뉴스 데일리 브리핑 2026-09-01 ~ 2026-09-30 · 30회 |
+내부자료 | PRAXIS 편집부 교육 AI 월말 동향 및 연구주제 보고서 2026-09 |
+내부자료 | PRAXIS 편집부 EdTech Radar 데일리 2026-09-11 ~ 2026-09-30 · 20회 |
+내부자료 | PRAXIS 편집부 EdTech Weekly Review 2026-W37 · W38 · W39 |
+내부자료 | PRAXIS 편집부 EdTech Monthly Landscape 2026-09 |

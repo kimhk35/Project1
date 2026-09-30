@@ -1,0 +1,573 @@
+<!-- ================= SEPTEMBER LOG (1/8) OPENER ================= -->
+<section class="page" data-sec="SEPTEMBER LOG" data-title="9월의 기록" id="p-timeline" data-toc="9월의 기록|서른 날의 타임라인|날마다 무엇이 나왔나">
+  <style>
+/* ---------- september log (tl-) ---------- */
+.tl-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;border-top:.6mm solid var(--ink);border-bottom:.3mm solid var(--rule);padding:2.4mm 0 2.2mm}
+.tl-stats b{display:block;font-family:var(--display);font-weight:800;font-size:22pt;line-height:1;color:var(--accent)}
+.tl-stats b small{font-size:.45em;margin-left:.6mm}
+.tl-stats span{display:block;font-family:var(--sans);font-size:7pt;color:var(--ink-2);line-height:1.45;margin-top:1mm}
+.tl-legend{display:flex;flex-wrap:wrap;gap:1.6mm 3mm;margin:1mm 0 1.6mm}
+.tl-legend span{display:inline-flex;align-items:center;gap:1.2mm;font-family:var(--sans);font-size:7pt;color:var(--ink-2)}
+.tl-head{display:flex;justify-content:space-between;align-items:flex-end;gap:5mm;border-bottom:.6mm solid var(--ink);padding-bottom:1.8mm;margin-bottom:.6mm}
+.tl-head .headline{margin:1mm 0 0}
+.tl-head p{font-family:var(--sans);font-size:7.4pt;line-height:1.5;color:var(--ink-2);max-width:76mm;text-align:left;margin:0}
+.tl-day{display:grid;grid-template-columns:17mm 1fr;gap:0 3.6mm}
+.tl-date{text-align:right;padding-top:1.5mm}
+.tl-date b{display:block;font-family:var(--display);font-weight:800;font-size:19pt;line-height:.95;color:var(--navy);letter-spacing:-.02em}
+.tl-date i{display:block;font-style:normal;font-family:var(--sans);font-size:6.6pt;font-weight:800;color:var(--ink-2);margin-top:.6mm;letter-spacing:.04em}
+.tl-date em{display:block;font-style:normal;font-family:var(--sans);font-size:6.2pt;color:var(--ink-3);margin-top:.2mm}
+.tl-day.we .tl-date b,.tl-day.we .tl-date i{color:var(--accent)}
+.tl-body{position:relative;border-left:.7mm solid var(--navy);padding:1.5mm 0 1.3mm 4.2mm;border-bottom:.25mm dotted var(--rule)}
+.tl-body::before{content:"";position:absolute;left:-2.35mm;top:2.4mm;width:2.6mm;height:2.6mm;border-radius:50%;background:var(--paper);border:.7mm solid var(--accent)}
+.tl-day.we .tl-body::before{background:var(--accent)}
+.tl-day:last-child .tl-body{border-bottom:none}
+.tl-it{display:grid;grid-template-columns:11.5mm 1fr;gap:0 1.8mm;font-size:7.7pt;line-height:1.5;margin-bottom:.55mm;text-align:left}
+.tl-it p{margin:0;text-align:left}
+.tl-it p b{font-family:var(--sans);font-weight:800;font-size:.97em;color:var(--ink)}
+.tl-tag{font-family:var(--sans);font-size:5.9pt;font-weight:800;letter-spacing:.04em;color:#fff;background:var(--navy);padding:.25mm 0;text-align:center;height:max-content;margin-top:.55mm;line-height:1.45}
+.tl-tag.kr{background:var(--accent)}.tl-tag.po{background:var(--gold)}.tl-tag.et{background:var(--teal)}.tl-tag.nw{background:var(--ink-3)}
+.tl-it .ev{margin-left:1.2mm;vertical-align:.1mm}
+.tl-ref{font-family:var(--sans);font-size:6.7pt;color:var(--ink-3);line-height:1.5;margin:.3mm 0 0 13.3mm}
+.tl-ref b{color:var(--teal);font-weight:800}
+.tl-wk{font-family:var(--sans);font-size:7pt;font-weight:700;letter-spacing:.06em;color:var(--ink-3);margin-top:1mm}
+.tl-wk b{color:var(--navy)}
+.tl-sig{list-style:none;counter-reset:s}
+.tl-sig li{display:grid;grid-template-columns:7mm 1fr;gap:1.6mm;border-top:.25mm solid var(--rule);padding:1.4mm 0 1.2mm;font-size:8pt;line-height:1.55;text-align:left}
+.tl-sig li::before{counter-increment:s;content:counter(s,decimal-leading-zero);font-family:var(--display);font-weight:800;font-size:12pt;color:var(--accent);line-height:1.1}
+.tl-sig b{font-family:var(--sans);font-weight:800;color:var(--navy)}
+table.tl-tb td,table.tl-tb th{padding:1.1mm 1.4mm}
+table.tl-tb td.sc{font-family:var(--display);font-weight:800;font-size:9pt;color:var(--navy);text-align:center;white-space:nowrap}
+table.tl-tb th.sc{text-align:center}
+table.tl-tb td.hi{color:var(--accent)}
+.tl-note{font-family:var(--sans);font-size:6.6pt;color:var(--ink-3);line-height:1.5;margin-top:1.2mm}
+</style>
+  <div class="kicker">9월의 기록<span class="sep">/</span>SEPTEMBER LOG</div>
+  <h1 class="headline xl" style="margin:3mm 0 1mm">서른 날의 타임라인</h1>
+  <div class="cs-sub">날마다 무엇이 나왔나</div>
+  <p class="dek mt4">9월 1일 화요일부터 30일 수요일까지 교육 AI 연구와 정책 에듀테크의 흐름을 하루 단위로 다시 펼쳤다 큰 기사 뒤에 가려지기 쉬운 조사와 실험 정책과 제품을 날짜 위에 올려 한 달의 결을 보여 주려 한다</p>
+  <div class="byline">글 <b>PRAXIS 편집부</b> · 근거 교육 AI 연구·뉴스 데일리 브리핑 30편 · EdTech Radar 20편 · EdTech Weekly Review 3편</div>
+
+  <figure class="figure mt4" id="fig-tl-calendar">
+    <svg viewBox="0 0 680 262" role="img" aria-label="2026년 9월 날짜별 데일리 브리핑 수록 건수 달력">
+      <rect width="680" height="262" fill="#EFE8DA"/>
+      <g font-family="Noto Sans KR" font-size="10" font-weight="700" fill="#6B6F77" text-anchor="middle">
+        <text x="112" y="20">월</text><text x="194" y="20">화</text><text x="276" y="20">수</text><text x="358" y="20">목</text><text x="440" y="20">금</text><text x="522" y="20" fill="#C8412A">토</text><text x="604" y="20" fill="#C8412A">일</text>
+      </g>
+      <g font-family="Noto Sans KR" font-size="9" font-weight="800" fill="#14223A" text-anchor="end">
+        <text x="62" y="54">W36</text><text x="62" y="100">W37</text><text x="62" y="146">W38</text><text x="62" y="192">W39</text><text x="62" y="238">W40</text>
+      </g>
+      <!-- cells: x = 73 + col*82 , y = 30 + row*46 , w 78 h 42 -->
+      <g font-family="Noto Sans KR">
+        <!-- row 0 : 8/31 blank, 1-6 -->
+        <rect x="73" y="30" width="78" height="42" fill="none" stroke="#CFC5B2" stroke-dasharray="3 3"/>
+        <text x="79" y="44" font-size="9" fill="#6B6F77">8.31</text>
+      </g>
+      <g font-family="Noto Sans KR" font-size="9">
+        <rect x="155" y="30" width="78" height="42" fill="#C8412A"/><text x="161" y="44" fill="#fff" font-weight="700">1</text><text x="227" y="65" text-anchor="end" font-size="17" font-weight="900" fill="#fff">8</text>
+        <rect x="237" y="30" width="78" height="42" fill="#C8412A" opacity=".66"/><text x="243" y="44" fill="#fff" font-weight="700">2</text><text x="309" y="65" text-anchor="end" font-size="17" font-weight="900" fill="#fff">7</text>
+        <rect x="319" y="30" width="78" height="42" fill="#C8412A" opacity=".66"/><text x="325" y="44" fill="#fff" font-weight="700">3</text><text x="391" y="65" text-anchor="end" font-size="17" font-weight="900" fill="#fff">7</text>
+        <rect x="401" y="30" width="78" height="42" fill="#C8412A" opacity=".66"/><text x="407" y="44" fill="#fff" font-weight="700">4</text><text x="473" y="65" text-anchor="end" font-size="17" font-weight="900" fill="#fff">7</text>
+        <rect x="483" y="30" width="78" height="42" fill="#C8412A" opacity=".66"/><text x="489" y="44" fill="#fff" font-weight="700">5</text><text x="555" y="65" text-anchor="end" font-size="17" font-weight="900" fill="#fff">7</text>
+        <rect x="565" y="30" width="78" height="42" fill="#C8412A" opacity=".42"/><text x="571" y="44" fill="#14223A" font-weight="700">6</text><text x="637" y="65" text-anchor="end" font-size="17" font-weight="900" fill="#14223A">6</text>
+        <!-- row 1 : 7-13 -->
+        <rect x="73" y="76" width="78" height="42" fill="#C8412A"/><text x="79" y="90" fill="#fff" font-weight="700">7</text><text x="145" y="111" text-anchor="end" font-size="17" font-weight="900" fill="#fff">8</text>
+        <rect x="155" y="76" width="78" height="42" fill="#C8412A" opacity=".66"/><text x="161" y="90" fill="#fff" font-weight="700">8</text><text x="227" y="111" text-anchor="end" font-size="17" font-weight="900" fill="#fff">7</text>
+        <rect x="237" y="76" width="78" height="42" fill="#C8412A" opacity=".66"/><text x="243" y="90" fill="#fff" font-weight="700">9</text><text x="309" y="111" text-anchor="end" font-size="17" font-weight="900" fill="#fff">7</text>
+        <rect x="319" y="76" width="78" height="42" fill="#C8412A" opacity=".66"/><text x="325" y="90" fill="#fff" font-weight="700">10</text><text x="391" y="111" text-anchor="end" font-size="17" font-weight="900" fill="#fff">7</text>
+        <rect x="401" y="76" width="78" height="42" fill="#C8412A" opacity=".66"/><text x="407" y="90" fill="#fff" font-weight="700">11</text><text x="473" y="111" text-anchor="end" font-size="17" font-weight="900" fill="#fff">7</text>
+        <rect x="483" y="76" width="78" height="42" fill="#C8412A" opacity=".66"/><text x="489" y="90" fill="#fff" font-weight="700">12</text><text x="555" y="111" text-anchor="end" font-size="17" font-weight="900" fill="#fff">7</text>
+        <rect x="565" y="76" width="78" height="42" fill="#C8412A" opacity=".66"/><text x="571" y="90" fill="#fff" font-weight="700">13</text><text x="637" y="111" text-anchor="end" font-size="17" font-weight="900" fill="#fff">7</text>
+        <!-- row 2 : 14-20 -->
+        <rect x="73" y="122" width="78" height="42" fill="#C8412A" opacity=".66"/><text x="79" y="136" fill="#fff" font-weight="700">14</text><text x="145" y="157" text-anchor="end" font-size="17" font-weight="900" fill="#fff">7</text>
+        <rect x="155" y="122" width="78" height="42" fill="#C8412A" opacity=".66"/><text x="161" y="136" fill="#fff" font-weight="700">15</text><text x="227" y="157" text-anchor="end" font-size="17" font-weight="900" fill="#fff">7</text>
+        <rect x="237" y="122" width="78" height="42" fill="#C8412A" opacity=".66"/><text x="243" y="136" fill="#fff" font-weight="700">16</text><text x="309" y="157" text-anchor="end" font-size="17" font-weight="900" fill="#fff">7</text>
+        <rect x="319" y="122" width="78" height="42" fill="#C8412A" opacity=".66"/><text x="325" y="136" fill="#fff" font-weight="700">17</text><text x="391" y="157" text-anchor="end" font-size="17" font-weight="900" fill="#fff">7</text>
+        <rect x="401" y="122" width="78" height="42" fill="#C8412A" opacity=".66"/><text x="407" y="136" fill="#fff" font-weight="700">18</text><text x="473" y="157" text-anchor="end" font-size="17" font-weight="900" fill="#fff">7</text>
+        <rect x="483" y="122" width="78" height="42" fill="#C8412A" opacity=".42"/><text x="489" y="136" fill="#14223A" font-weight="700">19</text><text x="555" y="157" text-anchor="end" font-size="17" font-weight="900" fill="#14223A">6</text>
+        <rect x="565" y="122" width="78" height="42" fill="#C8412A" opacity=".22"/><text x="571" y="136" fill="#14223A" font-weight="700">20</text><text x="637" y="157" text-anchor="end" font-size="17" font-weight="900" fill="#14223A">5</text>
+        <!-- row 3 : 21-27 -->
+        <rect x="73" y="168" width="78" height="42" fill="#C8412A" opacity=".22"/><text x="79" y="182" fill="#14223A" font-weight="700">21</text><text x="145" y="203" text-anchor="end" font-size="17" font-weight="900" fill="#14223A">5</text>
+        <rect x="155" y="168" width="78" height="42" fill="#C8412A"/><text x="161" y="182" fill="#fff" font-weight="700">22</text><text x="227" y="203" text-anchor="end" font-size="17" font-weight="900" fill="#fff">8</text>
+        <rect x="237" y="168" width="78" height="42" fill="#C8412A" opacity=".42"/><text x="243" y="182" fill="#14223A" font-weight="700">23</text><text x="309" y="203" text-anchor="end" font-size="17" font-weight="900" fill="#14223A">6</text>
+        <rect x="319" y="168" width="78" height="42" fill="#C8412A" opacity=".66"/><text x="325" y="182" fill="#fff" font-weight="700">24</text><text x="391" y="203" text-anchor="end" font-size="17" font-weight="900" fill="#fff">7</text>
+        <rect x="401" y="168" width="78" height="42" fill="#C8412A" opacity=".66"/><text x="407" y="182" fill="#fff" font-weight="700">25</text><text x="473" y="203" text-anchor="end" font-size="17" font-weight="900" fill="#fff">7</text>
+        <rect x="483" y="168" width="78" height="42" fill="#C8412A" opacity=".66"/><text x="489" y="182" fill="#fff" font-weight="700">26</text><text x="555" y="203" text-anchor="end" font-size="17" font-weight="900" fill="#fff">7</text>
+        <rect x="565" y="168" width="78" height="42" fill="#C8412A" opacity=".66"/><text x="571" y="182" fill="#fff" font-weight="700">27</text><text x="637" y="203" text-anchor="end" font-size="17" font-weight="900" fill="#fff">7</text>
+        <!-- row 4 : 28-30 -->
+        <rect x="73" y="214" width="78" height="42" fill="#C8412A"/><text x="79" y="228" fill="#fff" font-weight="700">28</text><text x="145" y="249" text-anchor="end" font-size="17" font-weight="900" fill="#fff">8</text>
+        <rect x="155" y="214" width="78" height="42" fill="#C8412A"/><text x="161" y="228" fill="#fff" font-weight="700">29</text><text x="227" y="249" text-anchor="end" font-size="17" font-weight="900" fill="#fff">8</text>
+        <rect x="237" y="214" width="78" height="42" fill="#C8412A" opacity=".66"/><text x="243" y="228" fill="#fff" font-weight="700">30</text><text x="309" y="249" text-anchor="end" font-size="17" font-weight="900" fill="#fff">7</text>
+      </g>
+      <!-- radar marks : gold bar under cells 11-30 -->
+      <g fill="#B08A3E">
+        <rect x="401" y="118" width="78" height="3"/><rect x="483" y="118" width="78" height="3"/><rect x="565" y="118" width="78" height="3"/>
+        <rect x="73" y="164" width="78" height="3"/><rect x="155" y="164" width="78" height="3"/><rect x="237" y="164" width="78" height="3"/><rect x="319" y="164" width="78" height="3"/><rect x="401" y="164" width="78" height="3"/><rect x="483" y="164" width="78" height="3"/><rect x="565" y="164" width="78" height="3"/>
+        <rect x="73" y="210" width="78" height="3"/><rect x="155" y="210" width="78" height="3"/><rect x="237" y="210" width="78" height="3"/><rect x="319" y="210" width="78" height="3"/><rect x="401" y="210" width="78" height="3"/><rect x="483" y="210" width="78" height="3"/><rect x="565" y="210" width="78" height="3"/>
+        <rect x="73" y="256" width="78" height="3"/><rect x="155" y="256" width="78" height="3"/><rect x="237" y="256" width="78" height="3"/>
+      </g>
+      <!-- legend -->
+      <g font-family="Noto Sans KR" font-size="9" fill="#3A3F48">
+        <text x="330" y="230" font-weight="800" fill="#14223A">수록 건수</text>
+        <rect x="392" y="221" width="14" height="12" fill="#C8412A" opacity=".22"/><text x="410" y="231">5</text>
+        <rect x="424" y="221" width="14" height="12" fill="#C8412A" opacity=".42"/><text x="442" y="231">6</text>
+        <rect x="456" y="221" width="14" height="12" fill="#C8412A" opacity=".66"/><text x="474" y="231">7</text>
+        <rect x="488" y="221" width="14" height="12" fill="#C8412A"/><text x="506" y="231">8</text>
+        <rect x="530" y="225" width="18" height="4" fill="#B08A3E"/><text x="552" y="231">레이더 발행일</text>
+        <text x="330" y="249" font-size="8.4" fill="#6B6F77">행 머리는 ISO 주차 · 9월 1일은 화요일</text>
+      </g>
+    </svg>
+    <figcaption><b>그림 1 9월의 수록 달력</b> 칸의 숫자는 그날 교육 AI 연구·뉴스 데일리 브리핑이 선별해 실은 자료 건수다 브리핑 머리에 적힌 건수를 우선했고 적혀 있지 않은 날은 번호가 붙은 항목을 셌다 금색 띠는 EdTech Radar가 발행된 날(9월 11일~30일)이다</figcaption>
+  </figure>
+
+  <div class="tl-stats mt4">
+    <div><b>208<small>건</small></b><span>30편 데일리 브리핑의 수록 건수 합계 · 같은 논문이 다른 날 다시 실린 경우도 각각 셌다</span></div>
+    <div><b>8<small>건</small></b><span>하루 최다 수록 · 9월 1일 7일 22일 28일 29일</span></div>
+    <div><b>5<small>건</small></b><span>하루 최소 수록 · 9월 20일과 21일 신규 자료 중심 편성</span></div>
+    <div><b>20<small>편</small></b><span>EdTech Radar 발행 · 주간 리뷰는 W37 W38 W39 세 편</span></div>
+  </div>
+
+  <div class="grid g-7-5 mt4" style="gap:6mm">
+    <div>
+      <h3 class="sub" style="margin-top:0">서른 개의 아침</h3>
+      <p>PRAXIS 편집부는 9월 내내 매일 아침 교육 AI 연구·뉴스 브리핑을 받았고 11일부터는 신규 에듀테크를 추적하는 레이더가 더해졌다 다음 네 면은 그 기록을 날짜순으로 다시 편 연대기다 날마다 두세 건을 골랐고 이 호의 다른 기사에서 크게 다룬 연구는 한 줄 안내로 줄였다</p>
+      <p>날짜는 자료가 처음 발표된 날이 아니라 브리핑과 레이더에 실린 날이다 몇 달 전에 공개된 논문이 뒤늦게 소개된 경우도 있어 일부는 괄호에 원 발표일을 적었다 공급사 발표와 보도는 효과의 근거가 아니므로 근거 미터를 달지 않았다 마지막 세 면은 에듀테크 주간 리뷰 세 편을 한 면씩 정리했다</p>
+    </div>
+    <div class="box">
+      <h4><span class="tag">HOW TO READ</span>표지 읽는 법</h4>
+      <div class="tl-legend">
+        <span><i class="tl-tag kr" style="width:11mm">국내</i>국내 연구</span>
+        <span><i class="tl-tag" style="width:11mm">국외</i>국외 연구</span>
+        <span><i class="tl-tag po" style="width:11mm">정책</i>정부·기관</span>
+        <span><i class="tl-tag et" style="width:11mm">에듀테크</i>제품·서비스</span>
+        <span><i class="tl-tag nw" style="width:11mm">보도</i>언론 보도</span>
+      </div>
+      <p class="small">막대 다섯 칸은 근거 미터다 5 무작위 시험 4 준실험·체계적 고찰 3 대규모 조사·종단·신뢰도 검증 2 질적·설계·사전공개 1 개념·논평 <span class="ev" data-l="3"><i><b></b><b></b><b></b><b></b><b></b></i>예시</span></p>
+      <p class="small" style="margin:0"><b style="color:var(--teal);font-family:var(--sans)">→</b> 표시는 같은 날 실린 자료 가운데 이 호의 다른 면에서 자세히 다룬 것을 가리킨다 주말은 주홍색 점으로 표시했다</p>
+    </div>
+  </div>
+  <div class="cont">→ {{next}}면에 계속</div>
+</section>
+
+<!-- ================= SEPTEMBER LOG (2/8) DAYS 01-08 ================= -->
+<section class="page even" data-sec="SEPTEMBER LOG" data-title="9월의 기록" id="p-timeline2">
+  <div class="cont from">← {{prev}}면에서 계속</div>
+  <div class="tl-head">
+    <div><div class="kicker">9월의 기록<span class="sep">/</span>DAYS 01–08</div><h2 class="headline s">정규 교과와 1년 유예 사이</h2></div>
+    <p>첫 주에는 AI를 교과서와 인력 체계 안으로 들이는 국내 정책과 저학년 사용을 멈춘 뉴욕시의 결정이 나란히 나왔다 연구 쪽은 참여와 학습을 구분하라는 경고가 이어졌다</p>
+  </div>
+  <div class="tl">
+    <div class="tl-day"><div class="tl-date"><b>01</b><i>화</i><em>8건</em></div><div class="tl-body">
+      <div class="tl-it"><span class="tl-tag po">정책</span><p><b>교육부</b> AI 관련 16개 과목 인정교과서를 현장 교원 중심으로 개발하고 2027년 시범 적용한다 AI 교육이 캠프와 선도학교에서 정규 교과 체제로 옮겨 가는 신호(발표 8월 27일)</p></div>
+      <div class="tl-it"><span class="tl-tag">국외</span><p><b>Schindler 외 · ZDM</b> 수학교육 AI 체계적 문헌고찰 13편을 기술과 교육 기능의 2차원 틀로 다시 묶었다 같은 LLM도 수업에서 맡는 역할에 따라 따로 평가해야 한다는 제안 <span class="ev" data-l="4"><i><b></b><b></b><b></b><b></b><b></b></i>메타리뷰</span></p></div>
+      <div class="tl-it"><span class="tl-tag">국외</span><p><b>Ni·Zhou · Scientific Reports</b> 중국 24개 대학 영어교사 186명 한 학기 추적 불필요한 인지부하가 클수록 교수실재감이 낮았고 AI 숙련도가 이를 완충했다 <span class="ev" data-l="3"><i><b></b><b></b><b></b><b></b><b></b></i>종단 혼합방법</span></p></div>
+      <div class="tl-ref"><b>→</b> Hur 외 고등학생 AI 리터러시 프로젝트 {{pg:p-literacy2}}면</div>
+    </div></div>
+    <div class="tl-day"><div class="tl-date"><b>02</b><i>수</i><em>7건</em></div><div class="tl-body">
+      <div class="tl-it"><span class="tl-tag po">정책</span><p><b>교육부·한국과학창의재단</b> 디지털튜터 1,700명 모집(신규 1,200명 재교육 500명) 교사 개인 역량이 아니라 보조인력으로 활용 격차에 대응한다</p></div>
+      <div class="tl-it"><span class="tl-tag po">정책</span><p><b>2027학년도 수능 시행세부계획</b> 반입 금지 예시 품목에 스마트안경을 명시했다 시험 보안의 대상이 보이지 않는 실시간 AI 보조로 넓어졌다</p></div>
+      <div class="tl-it"><span class="tl-tag">국외</span><p><b>Mohammed 외</b> 미국 공학 수업 AI 사용자 47명 중 83.0%가 문제해결이 쉬워졌다고 했지만 검증에 AI를 쓴 비율은 51.1%에 그쳤다 <span class="ev" data-l="2"><i><b></b><b></b><b></b><b></b><b></b></i>탐색적 조사</span></p></div>
+    </div></div>
+    <div class="tl-day"><div class="tl-date"><b>03</b><i>목</i><em>7건</em></div><div class="tl-body">
+      <div class="tl-it"><span class="tl-tag po">정책</span><p><b>뉴욕시</b> 2-K~8학년 약 60만 명의 학생용 생성형 AI를 1년 유예하고 고교는 최대 5만 명 규모 제한 파일럿으로 운영한다 금지와 허용 사이의 연령별 차등 모형</p></div>
+      <div class="tl-it"><span class="tl-tag">국외</span><p><b>Stanford SCALE 브리프</b> AI 튜터를 인간관계의 강도로 나눴다 소개된 수학 플랫폼 연구에서 181,000명 중 권장 사용량에 이른 학생은 5%였다 <span class="ev" data-l="2"><i><b></b><b></b><b></b><b></b><b></b></i>연구 브리프</span></p></div>
+      <div class="tl-it"><span class="tl-tag">국외</span><p><b>Xiu 외 · Frontiers</b> 5개국 K-12 교사 1,405명 준비도·기관지원·사용경험이 긍정 신념 분산의 50%를 설명했지만 표절·창의성 우려는 6~7%만 설명했다 <span class="ev" data-l="3"><i><b></b><b></b><b></b><b></b><b></b></i>국제 조사</span></p></div>
+    </div></div>
+    <div class="tl-day"><div class="tl-date"><b>04</b><i>금</i><em>7건</em></div><div class="tl-body">
+      <div class="tl-it"><span class="tl-tag po">정책</span><p><b>미국심리학회 APA</b> 5~18세 에듀테크 보고서 화면 참여와 클릭을 학습으로 착각하지 말고 앱 밖의 전이와 독립 수행을 보라는 10개 권고 <span class="ev" data-l="2"><i><b></b><b></b><b></b><b></b><b></b></i>전문가 종합</span></p></div>
+      <div class="tl-it"><span class="tl-tag">국외</span><p><b>Bokhove 외 · ZDM</b> 영국 초등 839명과 대학 232명의 수학 로그 약 63만 건 도움요청과 피드백이 많다고 정확도가 늘지는 않았다 <span class="ev" data-l="3"><i><b></b><b></b><b></b><b></b><b></b></i>대규모 로그</span></p></div>
+      <div class="tl-it"><span class="tl-tag po">정책</span><p><b>인천시교육청</b> 12명 규모 AI 교육행정 혁신 추진단 출범 6개월간 학교업무를 분석해 반복·대량 업무의 AI 적용을 검토한다</p></div>
+      <div class="tl-ref"><b>→</b> Oreopoulos 외 NUMI 무작위 현장실험 {{pg:p-spot}}면</div>
+    </div></div>
+    <div class="tl-day we"><div class="tl-date"><b>05</b><i>토</i><em>7건</em></div><div class="tl-body">
+      <div class="tl-it"><span class="tl-tag po">정책</span><p><b>유럽평의회</b> 46개 회원국 대상 AI 리터러시 권고 채택 22개 원칙과 인간·기술·실천의 3차원 모형</p></div>
+      <div class="tl-it"><span class="tl-tag po">정책</span><p><b>서울시교육청</b> 학생 AI·디지털 리터러시 진단검사 9월 7~18일 시행 윤리적·비판적 활용과 AI 협업까지 재고 결과는 11월 2일 발표</p></div>
+      <div class="tl-it"><span class="tl-tag">국외</span><p><b>Zhang·Shi·Lu · Frontiers</b> 중국 대학생 1,484명 AI 불안은 정서조절을 거쳐 학업동기와 부적으로 연결됐다 <span class="ev" data-l="3"><i><b></b><b></b><b></b><b></b><b></b></i>대규모 설문</span></p></div>
+    </div></div>
+    <div class="tl-day we"><div class="tl-date"><b>06</b><i>일</i><em>6건</em></div><div class="tl-body">
+      <div class="tl-it"><span class="tl-tag">국외</span><p><b>Bereznikova 외 · ETR&amp;D</b> 자기 전문영역 안에서 ChatGPT와 소크라테스식 대화를 하자 비판적 사고 점수가 27.8에서 30.0으로 올랐다 AI 신뢰는 그대로 <span class="ev" data-l="3"><i><b></b><b></b><b></b><b></b><b></b></i>피험자 내 실험</span></p></div>
+      <div class="tl-it"><span class="tl-tag kr">국내</span><p><b>임보라 외 · 교육정보미디어연구</b> 초·중등교사 200명 평가 영역은 중요도 3.36 수행도 2.74로 수업 영역보다 격차가 컸다 <span class="ev" data-l="3"><i><b></b><b></b><b></b><b></b><b></b></i>설문 IPA</span></p></div>
+      <div class="tl-it"><span class="tl-tag kr">국내</span><p><b>한승목·박종도 · 정보관리학회지</b> 대학생·대학원생 106명 군집분석 콘텐츠 소비는 적극적이나 신뢰도 평가와 윤리가 낮은 무비판적 이용자 집단 확인 <span class="ev" data-l="3"><i><b></b><b></b><b></b><b></b><b></b></i>군집분석</span></p></div>
+      <div class="tl-ref"><b>→</b> Deduwela GPT-5 채점 {{pg:p-spot3}}면 · Moradi·Evans {{pg:p-clinic4}}면 · 가나 GPT-4o 가능성 연구 {{pg:p-clinic2}}면</div>
+    </div></div>
+    <div class="tl-day"><div class="tl-date"><b>07</b><i>월</i><em>8건</em></div><div class="tl-body">
+      <div class="tl-it"><span class="tl-tag kr">국내</span><p><b>한국교육과정평가원 관련 보도</b> 초·중등 교사 1,659명 중 62.9%가 생성형 AI를 수업·평가에 쓴다 수학은 50.5%로 교과 중 가장 낮았고 루브릭 채점 보조는 32.6%</p></div>
+      <div class="tl-it"><span class="tl-tag">국외</span><p><b>시드니대·Barker Institute</b> 45개국 이상 271편 리뷰 효과는 도구보다 학습자·과제·상호작용·맥락의 조합에 달렸고 깊은 학습의 근거는 부족 <span class="ev" data-l="2"><i><b></b><b></b><b></b><b></b><b></b></i>연구 리뷰</span></p></div>
+      <div class="tl-it"><span class="tl-tag">국외</span><p><b>Studies in Educational Evaluation 101639</b> AI 피드백 3시점 추적 평가적 피드백의 성취 연관은 시간이 지나며 약해지고 교수적 피드백은 사회적 지원을 거쳐 이어졌다 <span class="ev" data-l="3"><i><b></b><b></b><b></b><b></b><b></b></i>종단 연구</span></p></div>
+    </div></div>
+    <div class="tl-day"><div class="tl-date"><b>08</b><i>화</i><em>7건</em></div><div class="tl-body">
+      <div class="tl-it"><span class="tl-tag">국외</span><p><b>Cho · Educational Psychology Review</b> AI-GLM 틀 생성형 AI가 대신 설명하고 풀어 줄 때 생성적 학습의 자리를 학습자에게 되돌리는 설계를 제안(게재 8월 18일) <span class="ev" data-l="1"><i><b></b><b></b><b></b><b></b><b></b></i>이론 연구</span></p></div>
+      <div class="tl-it"><span class="tl-tag">국외</span><p><b>ZDM 사례연구</b> 현직 수학교사 8명이 AI 기반 전문성 개발 모듈 10개에 참여 AI가 학생 반응 시뮬레이션과 수업 결정 성찰의 파트너가 됐다 <span class="ev" data-l="2"><i><b></b><b></b><b></b><b></b><b></b></i>사례연구</span></p></div>
+      <div class="tl-ref"><b>→</b> UNESCO 「The Algorithm in the Room」 공개 {{pg:p-feature3}}면</div>
+    </div></div>
+  </div>
+  <div class="cont">→ {{next}}면에 계속</div>
+</section>
+
+<!-- ================= SEPTEMBER LOG (3/8) DAYS 09-16 ================= -->
+<section class="page" data-sec="SEPTEMBER LOG" data-title="9월의 기록" id="p-timeline3">
+  <div class="cont from">← {{prev}}면에서 계속</div>
+  <div class="tl-head">
+    <div><div class="kicker">9월의 기록<span class="sep">/</span>DAYS 09–16</div><h2 class="headline s">PISA와 디지털 학습 주간</h2></div>
+    <p>둘째 주는 국제 지표의 주였다 PISA 2025와 UNESCO 디지털 학습 주간이 겹쳤고 레이더가 가동되면서 학생 데이터를 모델 학습에 쓰지 말라는 규칙이 제품 선택의 기준으로 올라왔다</p>
+  </div>
+  <div class="tl">
+    <div class="tl-day"><div class="tl-date"><b>09</b><i>수</i><em>7건</em></div><div class="tl-body">
+      <div class="tl-it"><span class="tl-tag">국외</span><p><b>OECD · PISA 2025 1권</b> 91개 국가·경제권 15세 약 76만 명 OECD 평균 약 5명 중 1명이 학교 과제에 AI를 거의 매일 쓴다 AI 정보 평가를 배울 기회는 유리한 학생에게 더 많았다 <span class="ev" data-l="3"><i><b></b><b></b><b></b><b></b><b></b></i>국제 대규모 조사</span></p></div>
+      <div class="tl-it"><span class="tl-tag">국외</span><p><b>Digital Education Council</b> 35개국 45,398명 조사 교수 64%가 AI 연수를 받았다지만 교수가 지도할 준비가 됐다고 본 학생은 29% <span class="ev" data-l="3"><i><b></b><b></b><b></b><b></b><b></b></i>대규모 설문</span></p></div>
+      <div class="tl-it"><span class="tl-tag kr">국내</span><p><b>정윤리 외 · 교육과정평가연구</b> 영재학교 교사연구자 4명의 두 학기 실행연구 LLM 채점은 업무를 덜었지만 같은 답안 재채점 불일치와 필기체 인식 오류가 남았다 <span class="ev" data-l="2"><i><b></b><b></b><b></b><b></b><b></b></i>실행연구</span></p></div>
+      <div class="tl-ref"><b>→</b> 리빙 메타분석 LLAMA LIMA {{pg:p-spot}}면</div>
+    </div></div>
+    <div class="tl-day"><div class="tl-date"><b>10</b><i>목</i><em>7건</em></div><div class="tl-body">
+      <div class="tl-it"><span class="tl-tag po">정책</span><p><b>UNESCO 디지털 학습 주간</b> 25개국 이상 교육장관 공동성명 AI 시대에도 교육은 인권이자 공공재 교사 판단권과 학습자 데이터 권리 등 8개 우선과제</p></div>
+      <div class="tl-it"><span class="tl-tag">국외</span><p><b>Schorcht 외 · ZDM</b> LLM 4종 문제 6개 프롬프트 4종 30회 반복 2,880개 풀이 내용 품질은 모델과 과제 교수맥락 품질은 프롬프트가 좌우했다 <span class="ev" data-l="3"><i><b></b><b></b><b></b><b></b><b></b></i>실험·평가 연구</span></p></div>
+      <div class="tl-it"><span class="tl-tag kr">국내</span><p><b>Gwak 외 · ILE</b> 초등 3·4학년 128명 놀이성과 사회정서적 지원이 AI 자기효능감을 예측했다 <span class="ev" data-l="3"><i><b></b><b></b><b></b><b></b><b></b></i>혼합방법</span></p></div>
+      <div class="tl-ref"><b>→</b> Bassner Iris {{pg:p-spot}}면 · Connell Pensky · Thoeni·Fryer · Jiayue Zhang EEG {{pg:p-spot2}}면</div>
+    </div></div>
+    <div class="tl-day"><div class="tl-date"><b>11</b><i>금</i><em>7건</em></div><div class="tl-body">
+      <div class="tl-it"><span class="tl-tag">국외</span><p><b>Nie 외 · Frontiers</b> 생성형 AI 평가 리터러시 척도 GAA-LS 18문항 5요인 486명과 798명으로 검증 CFI .954 전체 α=.93 <span class="ev" data-l="3"><i><b></b><b></b><b></b><b></b><b></b></i>척도 타당화</span></p></div>
+      <div class="tl-it"><span class="tl-tag">국외</span><p><b>Zhao 외 · HSSC</b> GenAI STEM 실증연구 체계적 고찰 학습지원 가능성과 함께 과의존 정확성 검증 교사 중재의 필요가 반복됐다 <span class="ev" data-l="4"><i><b></b><b></b><b></b><b></b><b></b></i>체계적 고찰</span></p></div>
+      <div class="tl-it"><span class="tl-tag et">에듀테크</span><p><b>레이더 첫 호</b> Magic EdTech ezSuite 출시(9월 9일) 교재·평가·미디어를 모듈형 콘텐츠로 한 원천에서 관리하는 운영 솔루션</p></div>
+      <div class="tl-ref"><b>→</b> Köroğlu 외 교수자 결정지원 {{pg:p-feature}}면 · Coursera Project Helix {{pg:p-radar2}}면</div>
+    </div></div>
+    <div class="tl-day we"><div class="tl-date"><b>12</b><i>토</i><em>7건</em></div><div class="tl-body">
+      <div class="tl-it"><span class="tl-tag">국외</span><p><b>Çaylan-Ergene 외 · IJMEST</b> 예비 수학교사 54명 162개 문제-해답 쌍 ChatGPT에게서 유효한 답을 더 많이 받은 집단이 더 유용하다고 평가 <span class="ev" data-l="2"><i><b></b><b></b><b></b><b></b><b></b></i>탐색 연구</span></p></div>
+      <div class="tl-it"><span class="tl-tag">국외</span><p><b>Xing 외 · BJET</b> 토론 스레드 7,188개와 발화 117,000여 개 AI의 권위적 안내는 학생 주도성으로 이어졌지만 높은 주도성은 과제이탈도 늘렸다 <span class="ev" data-l="3"><i><b></b><b></b><b></b><b></b><b></b></i>대규모 발화 분석</span></p></div>
+      <div class="tl-it"><span class="tl-tag et">에듀테크</span><p><b>이화여대 사범대–코드프레소 등</b> 예비교사용 AI 에이전트 4종 개발 추진 레이더가 꼽은 이날의 국내 교원양성 신호</p></div>
+      <div class="tl-ref"><b>→</b> Hai Li 외 음성 설계 {{pg:p-spot2}}면 · Ed.ai Kahoot! {{pg:p-radar3}}면</div>
+    </div></div>
+    <div class="tl-day we"><div class="tl-date"><b>13</b><i>일</i><em>7건</em></div><div class="tl-body">
+      <div class="tl-it"><span class="tl-tag">국외</span><p><b>Imran·Bulathwela</b> Eedi 응답 20,964건으로 정답 속 숨은 오개념 탐지 탐지율은 최대 84%였지만 실제 유병률에서는 거짓 경보가 진짜 탐지의 약 8배 <span class="ev" data-l="2"><i><b></b><b></b><b></b><b></b><b></b></i>워크숍 논문</span></p></div>
+      <div class="tl-it"><span class="tl-tag">국외</span><p><b>SafeTutors 벤치마크</b> 수학·물리·화학 AI 튜터의 교수학적 실패 비율이 여러 턴 대화에서 17.7%에서 77.8%로 늘었다 <span class="ev" data-l="2"><i><b></b><b></b><b></b><b></b><b></b></i>사전공개</span></p></div>
+      <div class="tl-it"><span class="tl-tag po">정책</span><p><b>캘리포니아 AB 1159</b> 식별 가능한 학생 정보를 생성형 AI 학습에 쓰지 못하게 한 법(9월 10일 서명) 레이더는 이를 도입 심사의 핵심 질문으로 봤다</p></div>
+      <div class="tl-ref"><b>→</b> ScholarSail {{pg:p-radar4}}면</div>
+    </div></div>
+    <div class="tl-day"><div class="tl-date"><b>14</b><i>월</i><em>7건</em></div><div class="tl-body">
+      <div class="tl-it"><span class="tl-tag">국외</span><p><b>Frontiers in Psychology 미니리뷰</b> AI 답을 확인했는가보다 검증의 질과 의존의 조정 그리고 학습으로의 연결을 봐야 한다 <span class="ev" data-l="2"><i><b></b><b></b><b></b><b></b><b></b></i>미니리뷰</span></p></div>
+      <div class="tl-it"><span class="tl-tag">국외</span><p><b>Fu·Weng · TATE</b> 연구 143편 범위 고찰로 교사교육자의 AI Empowerment Framework 제안 개인 역량보다 미시·중간·거시 요인을 함께 본다 <span class="ev" data-l="2"><i><b></b><b></b><b></b><b></b><b></b></i>범위 고찰</span></p></div>
+      <div class="tl-it"><span class="tl-tag et">에듀테크</span><p><b>레이더 판정</b> 최근 72시간 신규 출시 확정 0건 대신 Ed.ai의 프랑스 500개교 배치와 미국 50개 주 수학 교육과정 정렬을 확장 신호로 분석</p></div>
+    </div></div>
+    <div class="tl-day"><div class="tl-date"><b>15</b><i>화</i><em>7건</em></div><div class="tl-body">
+      <div class="tl-it"><span class="tl-tag">국외</span><p><b>Digital Education Council</b> 학생 88%가 학습에 AI를 쓰지만 57%는 평가에서 AI 사용 안내가 부족하다고 답했다 교수의 AI 피드백 생성 활용은 6% <span class="ev" data-l="3"><i><b></b><b></b><b></b><b></b><b></b></i>대규모 설문</span></p></div>
+      <div class="tl-it"><span class="tl-tag">국외</span><p><b>Niousha 외</b> AI 튜터 피드백과 연결된 코드 제출 10,235건 피드백의 질뿐 아니라 학생이 실제로 반영했는지를 평가 축으로 세웠다 <span class="ev" data-l="3"><i><b></b><b></b><b></b><b></b><b></b></i>대규모 로그</span></p></div>
+      <div class="tl-it"><span class="tl-tag et">에듀테크</span><p><b>EduverseSTEM·Assessable</b> VR·STEM 장기 구독 패키지 출시와 교사 최종판단형 AI 글쓰기 평가의 상용화 확인</p></div>
+      <div class="tl-ref"><b>→</b> 두 제품 {{pg:p-radar4}}면</div>
+    </div></div>
+    <div class="tl-day"><div class="tl-date"><b>16</b><i>수</i><em>7건</em></div><div class="tl-body">
+      <div class="tl-it"><span class="tl-tag">국외</span><p><b>Le 외 · BJET</b> 예비교사 AI 리터러시 연수 설계기반연구 자기효능감은 올랐지만 자기보고 역량과 실제 수업안 수행 사이의 간극이 남았다 <span class="ev" data-l="2"><i><b></b><b></b><b></b><b></b><b></b></i>설계기반연구</span></p></div>
+      <div class="tl-it"><span class="tl-tag">국외</span><p><b>Zhai 외</b> 학습자 33,700명 기록 2,300만 건으로 단기 성취와 장기 참여를 함께 최적화하는 강화학습 튜터 제안 <span class="ev" data-l="2"><i><b></b><b></b><b></b><b></b><b></b></i>사전공개</span></p></div>
+      <div class="tl-it"><span class="tl-tag et">에듀테크</span><p><b>SchoolAI · 미국 Midland 학군</b> 6~12학년 교사 선택제로 도입 실시간 대화 관찰과 안전 경보 활동 경계를 함께 배치했다</p></div>
+      <div class="tl-ref"><b>→</b> 박주현 외 AI 기반 SEL {{pg:p-clinic4}}면 · AFT·UFT·Microsoft 학교 AI 표준 {{pg:p-feature3}}면</div>
+    </div></div>
+  </div>
+  <div class="cont">→ {{next}}면에 계속</div>
+</section>
+
+<!-- ================= SEPTEMBER LOG (4/8) DAYS 17-23 ================= -->
+<section class="page even" data-sec="SEPTEMBER LOG" data-title="9월의 기록" id="p-timeline4">
+  <div class="cont from">← {{prev}}면에서 계속</div>
+  <div class="tl-head">
+    <div><div class="kicker">9월의 기록<span class="sep">/</span>DAYS 17–23</div><h2 class="headline s">현장으로 나간 AI 튜터</h2></div>
+    <p>셋째 주에는 에듀테크 코리아 페어가 열렸고 실제 수업에서 AI 튜터를 평가한 연구가 잇달았다 형성활동은 좋아졌지만 최종 성취의 차이는 작거나 불분명했다</p>
+  </div>
+  <div class="tl">
+    <div class="tl-day"><div class="tl-date"><b>17</b><i>목</i><em>7건</em></div><div class="tl-body">
+      <div class="tl-it"><span class="tl-tag">국외</span><p><b>Mikhasenko 외</b> 입자물리 입문 강좌를 연구문제형 과제 10개로 바꾸고 AI를 허용했다 산출물은 야심찼지만 AI 없이 쓰는 기초 역량 확보는 불안정했다 <span class="ev" data-l="2"><i><b></b><b></b><b></b><b></b><b></b></i>설계기반 사례</span></p></div>
+      <div class="tl-it"><span class="tl-tag">국외</span><p><b>Tao 외 · CAEAI</b> K-12 실증연구 22편에서 위험을 심리적 안녕 지적 주체성 생태적 환경의 세 영역으로 정리 <span class="ev" data-l="2"><i><b></b><b></b><b></b><b></b><b></b></i>범위 고찰</span></p></div>
+      <div class="tl-it"><span class="tl-tag nw">보도</span><p><b>San Francisco Chronicle</b> AI 읽기 튜터 Amira를 두고 약 1,000명이 화면시간·투명성·음성데이터 문제를 제기했다</p></div>
+      <div class="tl-ref"><b>→</b> 하오선·정주원 청소년 3,959명 {{pg:p-literacy}}면</div>
+    </div></div>
+    <div class="tl-day"><div class="tl-date"><b>18</b><i>금</i><em>7건</em></div><div class="tl-body">
+      <div class="tl-it"><span class="tl-tag kr">국내</span><p><b>김건우·박선주 · 정보교육학회논문지</b> 교사 PC에서 도는 소형 LLM 서비스 AMOND 학교 업무 질의 90개 비교에서 역할 맥락은 성능을 높였지만 RAG를 더하자 오히려 떨어졌다 <span class="ev" data-l="2"><i><b></b><b></b><b></b><b></b><b></b></i>개발연구</span></p></div>
+      <div class="tl-it"><span class="tl-tag">국외</span><p><b>Ayubian 외 · Education Sciences</b> 교사 GenAI 실증 105편 아프리카와 오세아니아는 각 2편 횡단 자기보고에 기대 실제 수업 변화의 근거가 부족 <span class="ev" data-l="4"><i><b></b><b></b><b></b><b></b><b></b></i>체계적 고찰</span></p></div>
+      <div class="tl-it"><span class="tl-tag et">에듀테크</span><p><b>McGraw Hill</b> 교실 음성으로 질문·학생발화를 분석해 교사를 코칭하는 TeachFX 인수 AI의 적용 축이 교사의 수업행동으로 넓어졌다</p></div>
+      <div class="tl-ref"><b>→</b> Google Learning Interactives {{pg:p-radar2}}면</div>
+    </div></div>
+    <div class="tl-day we"><div class="tl-date"><b>19</b><i>토</i><em>6건</em></div><div class="tl-body">
+      <div class="tl-it"><span class="tl-tag">국외</span><p><b>Bartoš · Discover Education</b> 지식추적과 제한형 LLM 튜터를 묶은 파이프라인 357명 원점수는 g=.21 우세였으나 보정 사후 차이는 유의하지 않았다(p=.127) <span class="ev" data-l="4"><i><b></b><b></b><b></b><b></b><b></b></i>준실험</span></p></div>
+      <div class="tl-it"><span class="tl-tag">국외</span><p><b>Luo · ETR&amp;D</b> 글쓰기 AI 맞춤화 실증 23편 프롬프트 13편 파인튜닝 7편 통합 구조 3편 피드백을 비판적으로 쓰는 학습자 행동은 덜 연구됐다 <span class="ev" data-l="4"><i><b></b><b></b><b></b><b></b><b></b></i>체계적 고찰</span></p></div>
+      <div class="tl-it"><span class="tl-tag et">에듀테크</span><p><b>에듀테크 코리아 페어</b> 로봇팔로 피지컬 AI를 배우는 라쿤봇 교실 언어·비언어 데이터를 읽는 ALC 등 국내 신호가 한꺼번에 포착됐다</p></div>
+      <div class="tl-ref"><b>→</b> Makit AI Learning OS {{pg:p-radar3}}면</div>
+    </div></div>
+    <div class="tl-day we"><div class="tl-date"><b>20</b><i>일</i><em>5건</em></div><div class="tl-body">
+      <div class="tl-it"><span class="tl-tag">국외</span><p><b>Almanza Cabe 외 · Frontiers</b> 페루 대학생 5,487명 도덕적 추론과 책임 있는 AI 사용의 관련 β=.31 하위영역 중 비판적 알고리즘 인식이 가장 낮았다 <span class="ev" data-l="3"><i><b></b><b></b><b></b><b></b><b></b></i>대규모 설문</span></p></div>
+      <div class="tl-it"><span class="tl-tag">국외</span><p><b>Mesenhöller·Böhme · Frontiers</b> 독일 교사 100명 짧은 연수 뒤 유용성과 용이성 인식은 올랐지만 사용 의도는 달라지지 않았다 <span class="ev" data-l="2"><i><b></b><b></b><b></b><b></b><b></b></i>단일집단 파일럿</span></p></div>
+      <div class="tl-it"><span class="tl-tag et">에듀테크</span><p><b>티처빌 AI</b> 학사일정과 시간표 배정을 묶은 학교 단위 AI 교무실 공개 10월 정식 출시 예고 교사 개인에서 학교 단위로 옮겨 가는 흐름</p></div>
+    </div></div>
+    <div class="tl-day"><div class="tl-date"><b>21</b><i>월</i><em>5건</em></div><div class="tl-body">
+      <div class="tl-it"><span class="tl-tag">국외</span><p><b>Computers 게재 논문</b> AI 접근 여부 과제 시점 사용 검증을 분리해 AI 보조 수행과 AI 없이 남는 학습을 비교하는 평가 틀 <span class="ev" data-l="1"><i><b></b><b></b><b></b><b></b><b></b></i>방법론 틀</span></p></div>
+      <div class="tl-it"><span class="tl-tag">국외</span><p><b>Scientific Reports</b> 중국 대학생들은 학업 스트레스와 외로움 속에서 생성형 AI를 판단받지 않는 도움요청 공간으로 여겼다 <span class="ev" data-l="2"><i><b></b><b></b><b></b><b></b><b></b></i>질적 연구</span></p></div>
+      <div class="tl-it"><span class="tl-tag et">에듀테크</span><p><b>Google AI Educator Series</b> 30분 실습과 디지털 배지를 묶은 교사 AI 연수 행사 연수가 짧은 수행과 확인의 단위로 쪼개지는 신호</p></div>
+      <div class="tl-ref"><b>→</b> 대화 스캐폴딩 · 해석가능 문제추천 {{pg:p-clinic3}}면</div>
+    </div></div>
+    <div class="tl-day"><div class="tl-date"><b>22</b><i>화</i><em>8건</em></div><div class="tl-body">
+      <div class="tl-it"><span class="tl-tag">국외</span><p><b>Zumel Dumlao 외 · 미시간대</b> 학생 156,135명 10년 행정자료 ChatGPT 공개 뒤 AI에 취약한 평가 비중이 큰 과목에서도 성적·낙제율의 유의한 변화는 없었다 <span class="ev" data-l="4"><i><b></b><b></b><b></b><b></b><b></b></i>이중차분 · 사전공개</span></p></div>
+      <div class="tl-it"><span class="tl-tag">국외</span><p><b>Clerc 외</b> 8~9학년 116명 2시간 AI 리터러시 워크숍을 받은 학생은 재질문이 잦고 답의 정확성 판별과 과제 수행이 나았다 <span class="ev" data-l="4"><i><b></b><b></b><b></b><b></b><b></b></i>통제집단 교실연구</span></p></div>
+      <div class="tl-it"><span class="tl-tag kr">국내</span><p><b>권성룡 · 초등수학교육</b> 초등수학 AI 문헌 16편 분석 생성형 AI가 핵심 사고의 기회를 대신할 가능성을 역량 외주화로 해석했다 <span class="ev" data-l="2"><i><b></b><b></b><b></b><b></b><b></b></i>서술 문헌고찰</span></p></div>
+      <div class="tl-ref">레이더 신규 확인 0건 판정 · 후보를 억지로 채우지 않았다</div>
+    </div></div>
+    <div class="tl-day"><div class="tl-date"><b>23</b><i>수</i><em>6건</em></div><div class="tl-body">
+      <div class="tl-it"><span class="tl-tag po">정책</span><p><b>유럽 교육 지역 EEA</b> AI와 디지털 기술이 접근·교수·학습에 미치는 영향을 다룬 새 보고서들을 소개하며 대표성 있는 종단연구를 요구했다</p></div>
+      <div class="tl-it"><span class="tl-tag po">정책</span><p><b>CRPE</b> K-12 AI 도입에서 주 단위 정책이 불균등하고 실증 근거가 부족할 수 있다고 지적 공통의 최소 안전·평가 기준이 과제</p></div>
+      <div class="tl-it"><span class="tl-tag po">정책</span><p><b>NC State EngageAI Institute</b> K-12 학습 참여를 위한 상호작용 내러티브 AI 연구에 NSF가 5년간 2천만 달러를 지원한다</p></div>
+      <div class="tl-ref"><b>→</b> Learning Commons 교육 AI 플랫폼 {{pg:p-radar2}}면</div>
+    </div></div>
+  </div>
+  <div class="cont">→ {{next}}면에 계속</div>
+</section>
+
+<!-- ================= SEPTEMBER LOG (5/8) DAYS 24-30 ================= -->
+<section class="page" data-sec="SEPTEMBER LOG" data-title="9월의 기록" id="p-timeline5">
+  <div class="cont from">← {{prev}}면에서 계속</div>
+  <div class="tl-head">
+    <div><div class="kicker">9월의 기록<span class="sep">/</span>DAYS 24–30</div><h2 class="headline s">증거와 책임의 마지막 주</h2></div>
+    <p>마지막 주에는 채점의 반복 안정성과 교사 판단노동 기관 거버넌스를 다룬 연구가 몰렸다 이 호의 커버스토리와 특집이 기대는 논문 다수가 28~29일에 나왔다</p>
+  </div>
+  <div class="tl">
+    <div class="tl-day"><div class="tl-date"><b>24</b><i>목</i><em>7건</em></div><div class="tl-body">
+      <div class="tl-it"><span class="tl-tag">국외</span><p><b>Public First · Seldon·Bunting</b> 잉글랜드 청소년 4,000명 87%가 AI를 써 봤고 학교가 매우 잘 준비시킨다는 응답은 9% 사실 확인에서 AI를 사람보다 믿는다 47% 대 21% <span class="ev" data-l="3"><i><b></b><b></b><b></b><b></b><b></b></i>대규모 여론조사</span></p></div>
+      <div class="tl-it"><span class="tl-tag po">정책</span><p><b>전북교육청</b> 지역 단위 AI 리터러시 교육 가이드라인 7장 20조 9월 1일 시행 인간 주체성과 비판적 검증 등 5대 원칙</p></div>
+      <div class="tl-it"><span class="tl-tag et">에듀테크</span><p><b>Horowitz Andreessen Academy</b> 9월 22일 공개 고교 졸업자 대상 1년 전일제 등록금 없는 프로젝트·Co-op형 대안 교육기관</p></div>
+      <div class="tl-ref"><b>→</b> Köroğlu 외 {{pg:p-feature}}면 · Zhengdao Li 외 {{pg:p-spot3}}면 · Pearson의 ITS 인수 {{pg:p-radar4}}면</div>
+    </div></div>
+    <div class="tl-day"><div class="tl-date"><b>25</b><i>금</i><em>7건</em></div><div class="tl-body">
+      <div class="tl-it"><span class="tl-tag">국외</span><p><b>Zagami · ETHE</b> 호주 대학생 484명 성취가 높을수록 AI를 덜 적극적으로 썼지만 거부가 아니라 검증과 최종 판단을 자신에게 남기는 경계적 수용이었다 <span class="ev" data-l="3"><i><b></b><b></b><b></b><b></b><b></b></i>혼합방법</span></p></div>
+      <div class="tl-it"><span class="tl-tag">국외</span><p><b>Lee·Wu · ETHE</b> 대학원 통계 97명 RAG 챗봇 질의 2,819건 4분의 1 이상은 아예 쓰지 않았고 성취가 떨어진 집단은 절차적 질문에 머물렀다 <span class="ev" data-l="3"><i><b></b><b></b><b></b><b></b><b></b></i>학습분석</span></p></div>
+      <div class="tl-it"><span class="tl-tag">국외</span><p><b>Bilgiç·Sever · ETHE</b> 학생 971명과 교수 135명 모두 책임 있는 사용에 찬성했지만 교수는 기관 지침 부족을 학생은 책임 분담의 불확실성을 꼽았다 <span class="ev" data-l="3"><i><b></b><b></b><b></b><b></b><b></b></i>순차 혼합방법</span></p></div>
+      <div class="tl-ref"><b>→</b> Glite · Ellucian {{pg:p-radar4}}면</div>
+    </div></div>
+    <div class="tl-day we"><div class="tl-date"><b>26</b><i>토</i><em>7건</em></div><div class="tl-body">
+      <div class="tl-it"><span class="tl-tag">국외</span><p><b>Brevik 외 · Frontiers</b> 서술형 시험을 LLM 4종이 채점 ChatGPT 가중 κ=.718 정확 일치 50.0% 세션 반복과 파일 조건에 따라 안정성이 달라졌다 <span class="ev" data-l="3"><i><b></b><b></b><b></b><b></b><b></b></i>신뢰도 검증</span></p></div>
+      <div class="tl-it"><span class="tl-tag">국외</span><p><b>Delgado-Togra·Quezada-Lozano</b> 교육자동화 실증 58편 핵심은 교사 대체가 아니라 무엇을 위임하고 어떤 판단을 남길지의 업무·책임 재분배 <span class="ev" data-l="4"><i><b></b><b></b><b></b><b></b><b></b></i>체계적 고찰</span></p></div>
+      <div class="tl-it"><span class="tl-tag et">에듀테크</span><p><b>OpenAI MentalHealthBench</b> 22개국 전문가 80명 이상이 참여한 정신건강 대화 벤치마크 공개 레이더는 신규 제품 0건으로 판정하고 안전 신호로 분류</p></div>
+      <div class="tl-ref"><b>→</b> Broughton 외 WIDA {{pg:p-clinic4}}면</div>
+    </div></div>
+    <div class="tl-day we"><div class="tl-date"><b>27</b><i>일</i><em>7건</em></div><div class="tl-body">
+      <div class="tl-it"><span class="tl-tag kr">국내</span><p><b>박채원·임규연</b> 중등교사 150명 AI 리터러시가 실제 사용으로 이어지는 경로에서 AI 학습 불안의 감소와 수용의도가 순차적으로 매개했다 <span class="ev" data-l="3"><i><b></b><b></b><b></b><b></b><b></b></i>매개분석</span></p></div>
+      <div class="tl-it"><span class="tl-tag kr">국내</span><p><b>백민경·박찬흥</b> 가정 교사 15명이 AI로 만든 문항·루브릭·예시답안 15개 중 9개가 정합 정합성은 자동 생성보다 교사의 수정에서 만들어졌다 <span class="ev" data-l="2"><i><b></b><b></b><b></b><b></b><b></b></i>질적 다사례</span></p></div>
+      <div class="tl-it"><span class="tl-tag">국외</span><p><b>Ou 외</b> 대학생 AI 의존성 척도 442명 EFA와 1,804명 CFA 과도한 신뢰 검색 의존 생성 의존의 3요인 <span class="ev" data-l="3"><i><b></b><b></b><b></b><b></b><b></b></i>척도 개발</span></p></div>
+      <div class="tl-ref"><b>→</b> Chin-Siang Ang {{pg:p-feature2}}면 · 하오선·정주원 {{pg:p-literacy}}면</div>
+    </div></div>
+    <div class="tl-day"><div class="tl-date"><b>28</b><i>월</i><em>8건</em></div><div class="tl-body">
+      <div class="tl-it"><span class="tl-tag">국외</span><p><b>Melanou 외 · JCAL</b> 87명 한 학기 3시점 추적 AI 조건의 추가 성취 이점은 없었고 반성적 AI 사용이 비판적 사고와 관련됐다 <span class="ev" data-l="4"><i><b></b><b></b><b></b><b></b><b></b></i>종단 준실험</span></p></div>
+      <div class="tl-it"><span class="tl-tag">국외</span><p><b>Di Paolo·Clark·Wachter · Communications Psychology</b> 학교를 인지생태로 보고 생성형 AI가 지식노동을 재배치하며 교육학적 격차와 목표 격차를 키울 수 있다고 논증 <span class="ev" data-l="1"><i><b></b><b></b><b></b><b></b><b></b></i>관점 논문</span></p></div>
+      <div class="tl-it"><span class="tl-tag po">정책</span><p><b>개인정보보호위원회</b> 생성형 AI 이용자 개인정보 보호 가이드를 학교용 프롬프트·과제 데이터 규칙으로 옮길 필요(발간 5월 19일)</p></div>
+      <div class="tl-ref"><b>→</b> Molemane 외 {{pg:p-clinic2}}면 · Satmaz 외 {{pg:p-practice}}면 · Learning Commons · WhalesBot {{pg:p-radar2}}면</div>
+    </div></div>
+    <div class="tl-day"><div class="tl-date"><b>29</b><i>화</i><em>8건</em></div><div class="tl-body">
+      <div class="tl-it"><span class="tl-tag">국외</span><p><b>커버스토리의 출발점</b> Koretsky 외의 STEM 평가 편집 논문과 권태현 Liang 외가 이날 함께 실렸다 {{pg:p-cover-story}}면</p></div>
+      <div class="tl-it"><span class="tl-tag">국외</span><p><b>거버넌스의 두 축</b> Zhang·Li의 교사 권한·책임 비대칭과 UNESCO IESALC의 대학 200곳 조사 87%와 26% {{pg:p-feature}}면</p></div>
+      <div class="tl-it"><span class="tl-tag et">에듀테크</span><p><b>MagicSchool 9월 업데이트</b> 프레젠테이션·이미지 생성과 서식 보존 내보내기를 한 흐름으로 묶어 교사의 자료 제작 과정을 바꿨다</p></div>
+      <div class="tl-ref"><b>→</b> Lodén 외 {{pg:p-literacy}}면 · QwenWork {{pg:p-radar4}}면</div>
+    </div></div>
+    <div class="tl-day"><div class="tl-date"><b>30</b><i>수</i><em>7건</em></div><div class="tl-body">
+      <div class="tl-it"><span class="tl-tag">국외</span><p><b>마지막 날의 세 편</b> Colson·Ballard 환각 리터러시와 Sheng-Tun Li 논평 {{pg:p-cover-story3}}면 · Sadegh 외 AI–VR 무작위 시험 {{pg:p-affect}}면</p></div>
+      <div class="tl-it"><span class="tl-tag et">에듀테크</span><p><b>Instructure EdTech Top 40</b> 상위 LTI 도구의 85%가 교육 목적형 K-12 기관의 관심이 도구 수에서 통합과 증거로 옮겨 가는 신호</p></div>
+      <div class="tl-ref"><b>→</b> Höper·Schulte {{pg:p-literacy2}}면 · Kiliç Şafak · 류경희 {{pg:p-spot3}}면 · Kahoot! EDU Q3 {{pg:p-radar3}}면</div>
+    </div></div>
+  </div>
+  <div class="cont">→ {{next}}면 주간 리뷰로 계속</div>
+</section>
+
+<!-- ================= SEPTEMBER LOG (6/8) WEEKLY W37 ================= -->
+<section class="page even tint" data-sec="SEPTEMBER LOG" data-title="9월의 기록" id="p-timeline-w37">
+  <div class="cont from">← {{prev}}면에서 계속</div>
+  <div class="kicker">주간 리뷰<span class="sep">/</span>WEEKLY REVIEW · 2026-W37</div>
+  <h1 class="headline m">운영체계가 되려는 교육 AI</h1>
+  <div class="tl-wk">검토기간 <b>9월 4일 ~ 10일</b> · 출처 EdTech Weekly Review 2026-W37</div>
+  <p class="dek mt2">이번 주 에듀테크의 무게중심은 하나의 생성 도구에서 학습·콘텐츠·평가·역량·거버넌스를 잇는 운영체계로 옮겨 갔다 플랫폼 통합과 다국어 공공 인프라 역할 기반 역량훈련이 같은 방향을 가리켰다</p>
+  <div class="grid g-7-5 mt4" style="gap:6mm">
+    <div>
+      <h3 class="sub" style="margin-top:0">핵심 신호 다섯</h3>
+      <ol class="tl-sig">
+        <li><span><b>AI 네이티브 운영체계</b> 생성 기능보다 콘텐츠·학습·평가·분석을 얼마나 잇는가가 경쟁점이 됐다</span></li>
+        <li><span><b>검증된 학습</b> 학습 완료보다 실제 역량과 그 증거를 확인하는 구조가 중요해졌다</span></li>
+        <li><span><b>다국어와 주권형 AI</b> 저자원 언어와 공공재형 교육 AI 인프라가 넓어졌다</span></li>
+        <li><span><b>역할 기반 AI 리터러시</b> 일반적 사용법에서 직무·역할별 수행역량 훈련으로 구체화됐다</span></li>
+        <li><span><b>진위 스택</b> AI 탐지·요약·번역·학습도구가 하나의 생산성 흐름으로 묶였다</span></li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4><span class="tag">SAME WEEK</span>같은 주 연구 브리핑에서</h4>
+      <ul class="list small">
+        <li>APA 보고서 화면 참여와 학습을 구분하라(4일)</li>
+        <li>KICE 관련 보도 교사 62.9% 생성형 AI 활용 수학 50.5%(7일)</li>
+        <li>PISA 2025 1권 AI 거의 매일 사용 약 5명 중 1명(9일)</li>
+        <li>UNESCO 디지털 학습 주간과 교육장관 공동성명(10일)</li>
+      </ul>
+      <p class="small" style="margin:0">제품이 운영체계를 말하는 사이 연구와 정책은 사용량이 아니라 사용의 조건을 물었다</p>
+    </div>
+  </div>
+  <h3 class="sub mt4"><span class="no">TOP 5</span>이번 주의 서비스</h3>
+  <table class="tbl tl-tb">
+    <thead><tr><th>서비스</th><th>국가 · 발표</th><th>핵심</th><th class="sc">교육</th><th class="sc">혁신</th><th class="sc">연구</th><th class="sc">도입 난이도</th><th class="sc">한국 적용</th></tr></thead>
+    <tbody>
+      <tr><td class="k">Magic EdTech ezSuite</td><td>미국 · 09-09</td><td>콘텐츠 운영 통합</td><td class="sc">8.6</td><td class="sc">8.7</td><td class="sc hi">9.4</td><td class="sc">7.2</td><td class="sc">8.1</td></tr>
+      <tr><td class="k">Coursera Project Helix</td><td>미국 · 09-09</td><td>스킬·학습·검증 연결</td><td class="sc">8.1</td><td class="sc">8.8</td><td class="sc hi">9.2</td><td class="sc">6.4</td><td class="sc">7.4</td></tr>
+      <tr><td class="k">Bodhan AI Education Stack</td><td>인도 · 09-04</td><td>27개 언어 AI 인프라</td><td class="sc">8.3</td><td class="sc">9.1</td><td class="sc hi">9.3</td><td class="sc">6.8</td><td class="sc">6.7</td></tr>
+      <tr><td class="k">Security Journey AI Advantage</td><td>미국 · 09-10</td><td>역할 기반 AI 역량훈련</td><td class="sc">7.6</td><td class="sc">7.8</td><td class="sc">8.4</td><td class="sc">5.8</td><td class="sc">6.9</td></tr>
+      <tr><td class="k">Lynote.ai</td><td>싱가포르 · 09-10</td><td>탐지·번역·요약·학습도구</td><td class="sc">7.9</td><td class="sc">7.4</td><td class="sc">7.8</td><td class="sc">4.3</td><td class="sc">7.5</td></tr>
+    </tbody>
+  </table>
+  <p class="tl-note">점수는 EdTech Weekly Review의 10점 만점 분석 점수로 학습효과의 근거가 아니다 도입 난이도는 높을수록 기관 도입이 어렵다는 뜻이다 Project Helix는 {{pg:p-radar2}}면 참조</p>
+  <div class="grid g3 mt4" style="gap:5mm">
+    <div class="box acc">
+      <h4><span class="tag">WATCH</span>다음 주에 볼 것</h4>
+      <ul class="list small">
+        <li>Project Helix의 적응형 평가 구조와 초기 고객 사례</li>
+        <li>ezSuite의 가격·한국어·데이터 처리 위치·표준 연동</li>
+        <li>AI 탐지기 정책과 AI 허용 평가로의 전환 사례</li>
+        <li>에듀테크 코리아 페어 전후의 국내 발표</li>
+      </ul>
+    </div>
+    <div class="box">
+      <h4><span class="tag">KOREA</span>학교급별 적용 시나리오</h4>
+      <ul class="list small">
+        <li><b>초등</b> 교사 주도의 자료 재구성·번역·수준별 자료 생성으로 제한</li>
+        <li><b>중등</b> 오개념 진단과 형성평가 보충학습 추천</li>
+        <li><b>고등</b> AI 활용 수행평가와 역량 포트폴리오 연계</li>
+        <li><b>교원연수</b> 역할 기반 진단 → 개인화 연수 → 수행증거 → 인증</li>
+      </ul>
+    </div>
+    <div class="box teal">
+      <h4><span class="tag">ETHICS</span>도입 전 점검</h4>
+      <ul class="list small">
+        <li>추론된 역량정보의 목적제한·보존기간·삭제권</li>
+        <li>AI 탐지는 오탐과 편향 때문에 인간 검토와 이의제기 절차가 필수</li>
+        <li>교재·문항은행을 AI에 넣을 때 저작권과 모델학습 사용범위 구분</li>
+      </ul>
+    </div>
+  </div>
+  <div class="cont">→ {{next}}면에 계속</div>
+</section>
+
+<!-- ================= SEPTEMBER LOG (7/8) WEEKLY W38 ================= -->
+<section class="page tint" data-sec="SEPTEMBER LOG" data-title="9월의 기록" id="p-timeline-w38">
+  <div class="cont from">← {{prev}}면에서 계속</div>
+  <div class="kicker">주간 리뷰<span class="sep">/</span>WEEKLY REVIEW · 2026-W38</div>
+  <h1 class="headline m">워크플로 안으로 들어간 AI</h1>
+  <div class="tl-wk">검토기간 <b>9월 12일 ~ 18일</b> · 출처 EdTech Weekly Review 2026-W38</div>
+  <p class="dek mt2">챗봇을 하나 더 붙이는 경쟁이 아니었다 학교개선 진단과 평가·채점 학습 오케스트레이션 교사 코칭까지 AI가 교육 워크플로의 서로 다른 층으로 파고들었다 개인정보와 감사로그 교사 통제는 부가 기능이 아니라 도입을 가르는 조건이 됐다</p>
+  <div class="grid g-7-5 mt4" style="gap:6mm">
+    <div>
+      <h3 class="sub" style="margin-top:0">주간 신호 지도</h3>
+      <table class="tbl tl-tb">
+        <thead><tr><th>날짜</th><th>서비스·신호</th><th>유형</th><th>의미</th></tr></thead>
+        <tbody>
+          <tr><td class="k">9/12</td><td>WestEd My School Improvement Partner</td><td>신규</td><td>학교개선 진단·결정으로 진입</td></tr>
+          <tr><td class="k">9/12</td><td>Teachfloor</td><td>업데이트</td><td>파일 기반 AI 평가와 학습분석 연동</td></tr>
+          <tr><td class="k">9/13</td><td>ScholarSail · IntelliPlan</td><td>신규 포착</td><td>회상전략과 AI 학습계획</td></tr>
+          <tr><td class="k">9/14</td><td>Ed.ai</td><td>확장</td><td>손글씨 수학 AI 채점의 미국 확장</td></tr>
+          <tr><td class="k">9/14</td><td>AFT·Microsoft 표준</td><td>정책</td><td>학생데이터·모델훈련 기준 강화</td></tr>
+          <tr><td class="k">9/15</td><td>EduverseSTEM</td><td>신규</td><td>XR·STEM 프로젝트·교실관리</td></tr>
+          <tr><td class="k">9/15</td><td>Assessable</td><td>상용화</td><td>교사 최종판단형 AI 평가</td></tr>
+          <tr><td class="k">9/16</td><td>SchoolAI</td><td>학군 도입</td><td>실시간 관찰·안전경보·교사 선택권</td></tr>
+          <tr><td class="k">9/16</td><td>AI 루킷</td><td>국내 공개</td><td>온디바이스 AI·메이커 수업</td></tr>
+          <tr><td class="k">9/17</td><td>CMU × Simplilearn</td><td>신규 과정</td><td>RAG·MCP·다중 에이전트·보안 교육</td></tr>
+          <tr><td class="k">9/18</td><td>Google Learning Interactives</td><td>연구 파일럿</td><td>교사가 생성하는 시뮬레이션</td></tr>
+          <tr><td class="k">9/18</td><td>Kahoot! · TeachFX</td><td>업데이트·인수</td><td>기기 없는 형성평가와 교사코칭</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <h3 class="sub" style="margin-top:0">TOP 5 한 줄 요약</h3>
+      <ol class="tl-sig">
+        <li><span><b>Google Learning Interactives</b> 생성의 단위가 자료에서 학습경험으로 바뀌었다</span></li>
+        <li><span><b>Ed.ai · Assessable · Teachfloor</b> AI 평가가 기능에서 평가 워크플로 전체로 넓어졌다</span></li>
+        <li><span><b>SchoolAI</b> AI 튜터의 효과를 모델 성능과 교사 개입 구조로 함께 봐야 한다</span></li>
+        <li><span><b>TeachFX</b> 학생이 아니라 교사의 실제 수업행동을 코칭한다 감시 오용의 위험도 커진다</span></li>
+        <li><span><b>정책·개인정보 표준</b> 경쟁력의 중심이 기능에서 데이터 거버넌스로 옮겨 갔다</span></li>
+      </ol>
+      <p class="tl-note">Ed.ai·Kahoot! {{pg:p-radar3}}면 · Assessable·EduverseSTEM·ScholarSail {{pg:p-radar4}}면 · Learning Interactives {{pg:p-radar2}}면</p>
+    </div>
+  </div>
+  <h3 class="sub mt4"><span class="no">CHECK</span>한국 학교 적용 체크</h3>
+  <table class="tbl tl-tb">
+    <thead><tr><th style="width:24%">확인 항목</th><th>이번 주 관찰에서의 의미</th></tr></thead>
+    <tbody>
+      <tr><td class="k">학생자료의 모델학습 재사용</td><td>금지 여부를 계약서에 명시하고 홍보문구가 아니라 실제 약관으로 확인한다</td></tr>
+      <tr><td class="k">교사 최종판단</td><td>자동 채점·그룹화·경보가 성적과 배치의 최종 결정이 되지 않도록 승인 단계를 둔다</td></tr>
+      <tr><td class="k">감사로그·설명가능성</td><td>AI 제안과 교사 수정 학생 재응답을 추적할 수 있어야 연구와 책임성이 확보된다</td></tr>
+      <tr><td class="k">한국어·수식·손글씨</td><td>해외 제품은 영어 중심 성능과 한국 수학 표기·필기 인식의 차이를 따로 검증한다</td></tr>
+      <tr><td class="k">데이터 최소화</td><td>음성·대화로그·필기·성적을 모두 모으는 서비스일수록 목적별 보존기간을 나눈다</td></tr>
+    </tbody>
+  </table>
+  <div class="grid g2 mt4" style="gap:5mm">
+    <div class="box acc">
+      <h4><span class="tag">WATCH</span>지켜볼 흐름</h4>
+      <ul class="list small">
+        <li>AI 기능이 자료 생성에서 평가·교사코칭·학교개선·대화 오케스트레이션으로 수직 확장</li>
+        <li>RAG·MCP·다중 에이전트·감사로그 같은 개발 용어가 교원연수와 서비스 설계로 내려온다</li>
+        <li>기기 제한과 개인정보 규제 인간 검토 요구가 제품 UX와 구매조건을 바꾼다</li>
+        <li>Google AI Educator Series 한국 도입과 에듀테크 코리아 페어 이후의 현지화</li>
+      </ul>
+    </div>
+    <div class="box">
+      <h4><span class="tag">LIMIT</span>읽을 때 주의</h4>
+      <p class="small">주간 리뷰는 9월 12~18일 데일리 레이더와 18일 추가 검증을 합친 것이다 공급사가 밝힌 효과는 독립 연구와 구분했고 가격·한국어·데이터 처리 조건이 공개되지 않은 항목은 추정하지 않았다 인수·투자·학군 도입은 신규 출시와 따로 읽어야 한다</p>
+    </div>
+  </div>
+  <div class="cont">→ {{next}}면에 계속</div>
+</section>
+
+<!-- ================= SEPTEMBER LOG (8/8) WEEKLY W39 ================= -->
+<section class="page even tint" data-sec="SEPTEMBER LOG" data-title="9월의 기록" id="p-timeline-w39">
+  <div class="cont from">← {{prev}}면에서 계속</div>
+  <div class="kicker">주간 리뷰<span class="sep">/</span>WEEKLY REVIEW · 2026-W39</div>
+  <h1 class="headline m">실행하고 검증하는 AI</h1>
+  <div class="tl-wk">검토기간 <b>9월 21일 ~ 25일</b> · 보완 9월 19일~25일 · 25일 오전 기준 중간 종합 · 출처 EdTech Weekly Review 2026-W39</div>
+  <p class="dek mt2">콘텐츠를 만드는 AI에서 학습과 행정의 과정을 구조화하고 실행하고 검증하는 AI로 시장이 움직였다 교사가 승인하는 시뮬레이션과 평가 인프라 통합 대학 규칙을 집행하는 에이전트가 같은 방향을 가리켰다</p>
+  <h3 class="sub mt4"><span class="no">TOP 5</span>이번 주의 서비스와 신호</h3>
+  <table class="tbl tl-tb">
+    <thead><tr><th>서비스·신호</th><th>발표</th><th>무엇이 달라졌나</th><th class="sc">교사</th><th class="sc">연구</th></tr></thead>
+    <tbody>
+      <tr><td class="k">Google Learning Interactives</td><td>9/17</td><td>교사가 학습목표를 승인하는 STEM 시뮬레이션 생성 · 미국 교사 12명 평균 품질평가 8/10(공급사 연구)</td><td class="sc">8.8</td><td class="sc hi">9.5</td></tr>
+      <tr><td class="k">Makit AI Learning OS</td><td>9/17</td><td>PDF나 한 문장 주제에서 실행형 수업·운영·진단까지 · 한국어 지원</td><td class="sc">8.6</td><td class="sc hi">9.4</td></tr>
+      <tr><td class="k">Pearson × ITS 인수</td><td>9/18</td><td>원격감독·수행평가·지속 인증을 평가 인프라로 통합 · 데이터 집중과 벤더 종속 위험</td><td class="sc">7.2</td><td class="sc">9.2</td></tr>
+      <tr><td class="k">Horowitz Andreessen Academy</td><td>9/22</td><td>2027년 9월 약 50명 첫 기수 계획 · 등록금 없는 프로젝트·Co-op · proof of work 선발</td><td class="sc">6.8</td><td class="sc">8.9</td></tr>
+      <tr><td class="k">Ellucian 지식그래프</td><td>9/24</td><td>약 1만 개 고등교육 프로세스를 정책과 연결해 업무를 실행·기록 · 자동 실행 전 인간 승인 필요</td><td class="sc">6.8</td><td class="sc">9.1</td></tr>
+    </tbody>
+  </table>
+  <p class="tl-note">점수는 EdTech Weekly Review의 10점 만점 분석 점수이며 순위는 학습효과의 확정 순위가 아니다 제품별 상세는 레이더 {{pg:p-radar}}면부터</p>
+  <div class="grid g2 mt4" style="gap:6mm">
+    <div>
+      <h3 class="sub" style="margin-top:0">시장의 네 축</h3>
+      <table class="tbl tl-tb">
+        <thead><tr><th>축</th><th>이번 주 변화</th><th>연구가 물을 것</th></tr></thead>
+        <tbody>
+          <tr><td class="k">수업 생성</td><td>정적 자료 → 교사 승인형 인터랙티브</td><td>학습목표 정렬과 생산적 고투</td></tr>
+          <tr><td class="k">평가</td><td>문항 제작 → 전달·감독·지속 인증 통합</td><td>AI 허용 평가의 타당도와 보안</td></tr>
+          <tr><td class="k">운영</td><td>챗봇 → 정책 기반 실행 에이전트</td><td>권한·인간 승인·감사로그</td></tr>
+          <tr><td class="k">교육모형</td><td>학위·강의 → 프로젝트·과정증거·Co-op</td><td>proof of work의 공정성</td></tr>
+        </tbody>
+      </table>
+      <h3 class="sub">기타 주간 신호</h3>
+      <ul class="list small">
+        <li><b>Glite</b> 9월 24일 출시 중상급 영어 유창성 AI 튜터</li>
+        <li><b>Napster × GEMS</b> 교사 디지털 트윈 구상 저작권과 정체성의 새 경계</li>
+        <li><b>Perlego–Leeds</b> 기능 사용로그를 접근성 성과로 잇는 운영 사례</li>
+        <li><b>Tapestry 조사</b> 유아교육에서 AI 이용과 보호 우려가 함께 증가</li>
+      </ul>
+    </div>
+    <div>
+      <div class="box acc">
+        <h4><span class="tag">WATCH</span>다음 주 관찰 목록</h4>
+        <ul class="list small">
+          <li>교사-in-the-loop가 마케팅 문구에서 품질보증 절차로 바뀌는지 승인·수정·거절 데이터가 공개되는지</li>
+          <li>Pearson × ITS 이후 AI 문항생성·원격감독·지속 인증 결합 제품과 개인정보 통제</li>
+          <li>Glite의 가격·개인정보·학교 라이선스</li>
+          <li>HAA의 선발·교육과정 세부와 Ellucian의 배치 실패사례·이의제기 절차</li>
+        </ul>
+      </div>
+      <div class="box mt4">
+        <h4><span class="tag">KOREA</span>한국 학교 적용 전략</h4>
+        <ul class="list small">
+          <li><b>단기</b> 샘플 인터랙티브와 실행형 수업을 소규모 수학 단원에서 쓰되 교사가 목표·정답·힌트·오개념 가능성을 먼저 검토</li>
+          <li><b>중기</b> AI 문항생성·자동채점은 교사 검토가 있는 형성평가부터 적용하고 수정이력과 학생 이의제기를 기록</li>
+          <li><b>장기</b> 지식그래프형 에이전트보다 학칙·교육과정·상담 절차를 기계가 읽을 규칙과 버전으로 먼저 정리</li>
+          <li><b>형평성</b> proof of work와 말하기 유창성은 가정 자원 격차의 영향을 받으므로 기회 접근 지표를 함께 분석</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="endnote mt4"><p class="small" style="margin:0">W39 리뷰는 주가 끝나기 전인 9월 25일 오전 기준 중간 종합이다 26일 이후 레이더는 신규 확인 0건을 두 번 기록했고 28~30일에는 Learning Commons Platform WhalesBot MagicSchool QwenWork Kahoot! EDU Q3 등을 상세 분석했다 날짜별 흐름은 {{pg:p-timeline5}}면에서 이어 볼 수 있다<span class="endmark">■</span></p></div>
+</section>

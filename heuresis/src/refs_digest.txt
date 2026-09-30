@@ -1,0 +1,44 @@
+국외논문 | Brevik 외 2026 LLM 서술형 시험 채점의 인간 일치도와 반복 안정성 비교(원제 미확인) · Frontiers in Education | https://doi.org/10.3389/feduc.2026.1904452
+국외논문 | Zumel Dumlao 외 2026 Generative AI Availability, Grades, and Student Satisfaction at a Large University · arXiv 2607.21534 | https://arxiv.org/abs/2607.21534
+국외논문 | Nie 외 2026 Development and validation of the generative AI assessment literacy scale for higher education students · Frontiers in Education 11 | https://doi.org/10.3389/feduc.2026.1934632
+국외논문 | Mikhasenko 외 2026 AI in Particle Physics Education: Research Problems and Foundational Skills · arXiv 2609.05719 | https://doi.org/10.48550/arXiv.2609.05719
+국외논문 | Bartoš 2026 지식추적과 제약형 LLM 튜터를 결합한 적응형 파이프라인의 현장평가(원제 미확인) · Discover Education | https://doi.org/10.1007/s44217-026-02172-8
+국외논문 | Melanou 외 2026 생성형 AI 튜터 조건과 반성적 사용에 대한 한 학기 종단 준실험(원제 미확인) · Journal of Computer Assisted Learning | https://doi.org/10.1002/jcal.70322
+국외논문 | Nawahdah 외 2026 정서 인식형 음성·아바타 튜터 비교 실험(원제 미확인) · International Journal of Educational Technology in Higher Education 23 | https://doi.org/10.1186/s41239-026-00600-1
+국외논문 | Lee·Wu 2026 대학원 통계과목 RAG 챗봇의 한 학기 질의 로그 분석(원제 미확인) · International Journal of Educational Technology in Higher Education 23 | https://doi.org/10.1186/s41239-026-00615-8
+국외논문 | Clerc 외 2026 Teaching Students to Question the Machine: An AI Literacy Intervention Improves Students’ Regulation of LLM Use in a Science Task · arXiv 2604.01955 | https://doi.org/10.48550/arXiv.2604.01955
+국외논문 | Tao 외 2026 Potential risks of generative artificial intelligence integration into K-12 education: A scoping review · Computers and Education: Artificial Intelligence 10 | https://doi.org/10.1016/j.caeai.2026.100561
+국외논문 | Şan·Orhan Karsak 2026 대학생 AI 인지구조의 단어연상 분석(원제 미확인) · International Journal of Educational Technology in Higher Education 23 | https://doi.org/10.1186/s41239-026-00621-w
+국외논문 | Ou 외 2026 대학생 AI 의존성 척도 USAIDS 개발과 타당화(원제 미확인) · Psicologia: Reflexão e Crítica | https://doi.org/10.1186/s41155-026-00414-0
+국외논문 | Shojaei 외 2026 Helpful or harmful? GenAI dependence, critical thinking disposition, and employability · Frontiers in Education | https://doi.org/10.3389/feduc.2026.1885990
+국외논문 | Davor 외 2026 Artificial intelligence-supported learning and higher-order cognitive outcomes: the mediating role of metacognitive self-regulation · Frontiers in Education | https://doi.org/10.3389/feduc.2026.1855869
+국외논문 | Jaiswal·Nanda 2026 기술적 문제해결에서 GenAI 참여의 ICAP 패턴(원제 미확인) · International Journal of STEM Education 13 | https://doi.org/10.1186/s40594-026-00646-7
+국외논문 | Zagami 2026 고성취 대학생의 생성형 AI 경계적 수용(원제 미확인) · International Journal of Educational Technology in Higher Education 23 | https://doi.org/10.1186/s41239-026-00625-6
+국외논문 | Xiu 외 2026 K–12 In-Service Teachers’ Beliefs About Generative AI in Classrooms: Insights from the United States, India, Qatar, Colombia, and the Philippines · Frontiers in Education | https://doi.org/10.3389/feduc.2026.1929017
+국외논문 | Ni·Zhou 2026 Dynamic interplay between cognitive load and teaching presence among university English teachers in generative AI-augmented instruction: a longitudinal mixed-methods study · Scientific Reports | https://www.nature.com/articles/s41598-026-68470-1
+국외논문 | Miranda 외 2026 10시간 TPACK 기반 AI 리터러시 연수의 교사 인식 변화(원제 미확인) · Education Sciences 16(9) | https://www.mdpi.com/2227-7102/16/9/1537
+국외논문 | Mesenhöller·Böhme 2026 Empowering teachers to use AI for differentiation · Frontiers in Education | https://doi.org/10.3389/feduc.2026.1875856
+국외논문 | Ayubian 외 2026 Teachers and Generative AI: A Systematic Review of Adoption, Competence, Professional Development, and Socio-Technical Experiences · Education Sciences 16(9) | https://doi.org/10.3390/educsci16091501
+국외논문 | Delgado-Togra·Quezada-Lozano 2026 교육 자동화와 교사 역할 변화에 관한 체계적 문헌고찰(원제 미확인) · Frontiers in Education | https://doi.org/10.3389/feduc.2026.1876239
+국외논문 | Patiño Hernández 외 2026 AI 대응 교수법을 향한 교사교육 연구 스코핑 리뷰(원제 미확인) · Frontiers in Education | https://doi.org/10.3389/feduc.2026.1949296
+국외논문 | Blundell 외 2026 Teachers’ TPACK Considerations Regarding Opportunities and Challenges of Using GenAI in K-12 Education · Technology, Knowledge and Learning | https://doi.org/10.1007/s10758-026-10002-x
+국외논문 | Zhang·Shi·Lu 2026 The relationship between AI anxiety and academic motivation among university students: the mediating role of emotion regulation and the moderating role of gender · Frontiers in Psychology | https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2026.1918525/full
+국외논문 | Isaee 외 2026 긍정심리와 AI를 결합한 EFL 수업의 군집 준실험(원제 미확인) · Discover Education | https://doi.org/10.1007/s44217-026-02151-z
+국외논문 | Gong·Li 2026 The paradox of AI cognitive substitution: a moderated mediation model of the relationship between teacher support and student creativity · Frontiers in Education | https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2026.1902745/full
+국외논문 | Gwak 외 2026 Playfulness and social–emotional support as predictors of elementary students’ AI self-efficacy · Interactive Learning Environments | https://doi.org/10.1080/10494820.2026.2667458
+국외논문 | Schindler·Cevikbas·Lilienthal 2026 Artificial intelligence in mathematics education: a two-dimensional conceptual framework and meta-review · ZDM Mathematics Education | https://link.springer.com/article/10.1007/s11858-026-01827-y
+국외논문 | Schorcht·Müller·Buchholtz 2026 No one-size-fits-all: a study of prompt techniques and large language models to enhance AI’s mathematics educational quality · ZDM Mathematics Education 58 | https://doi.org/10.1007/s11858-026-01784-6
+국외논문 | Imran·Bulathwela 2026 The Correct Answer Trap: Pedagogically-Grounded Detection and Feedback for Hidden Misconceptions · arXiv 2606.23205 | https://arxiv.org/abs/2606.23205
+국외논문 | Çaylan-Ergene 외 2026 Pre-service mathematics teachers’ views on the usefulness of ChatGPT: the validity of the obtained responses matters! · International Journal of Mathematical Education in Science and Technology | https://doi.org/10.1080/0020739X.2026.2687118
+정책기관 | Council of Europe 2026 New Council of Europe recommendation places education at the heart of response to AI | https://www.coe.int/en/web/portal/-/new-council-of-europe-recommendation-places-education-at-the-heart-of-response-to-ai
+정책기관 | American Psychological Association 2026 Children’s and Adolescents’ Learning with Educational Technology | https://www.apa.org/pubs/reports/children-adolescent-learning-educational-technology
+정책기관 | Seldon·Bunting 2026 Britain’s Greatest Education Opportunity Ever: Young People’s Views on AI and Education · Public First | https://www.publicfirst.co.uk/seldon-bunting-report
+국외논문 | Bilgiç·Sever 2026 AI 윤리 책임에 대한 학생·교수 인식의 순차 혼합방법 연구(원제 미확인) · International Journal of Educational Technology in Higher Education 23 | https://doi.org/10.1186/s41239-026-00601-0
+국내논문 | 김화경·송민호·최인용 2026 파인 튜닝 기반 수학 서술형 자동 채점: 학습 데이터 규모와 과제 특성의 영향을 중심으로 · 수학교육 65(2) | https://doi.org/10.63311/mathedu.26.6521
+국내논문 | 한형종·권혜성 2026 Agentic AI의 교육적 활용에 대한 초등교사 인식 탐색 · 교육정보미디어연구 32(4) | https://doi.org/10.15833/kaeim.2026.32.4.018
+국내논문 | 김건우·박선주 2026 sLLM 기반 교사 업무용 AI 서비스(AMOND) 설계 및 개발 · 정보교육학회논문지 30(4) | https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003375914
+국내논문 | 백민경·박찬흥 2026 교사–AI 협업 서·논술형 평가 설계의 정합성 형성 과정(원제 미확인) · 교육정보미디어연구 32(4) | https://doi.org/10.15833/kaeim.2026.32.4.025
+국내논문 | 박채원·임규연 2026 중등교사의 AI 리터러시와 실제 사용의 관계에서 AI 불안감과 수용의도의 매개효과(원제 미확인) · 교육정보미디어연구 32(4) | https://doi.org/10.15833/kaeim.2026.32.4.015
+국내논문 | 최현재·신승기 2026 초등학생의 생성형 AI 리터러시 함양을 위한 교육적 미들웨어 AL-G 개발 및 타당화 · 정보교육학회논문지 30(4) | https://kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003375918
+국내논문 | 권성룡 2026 초등수학교육에서 인공지능 활용 연구의 출현 양상과 초등교사교육을 위한 시사점 · 초등수학교육 29(3) | https://doi.org/10.7468/jksmec.2026.29.3.455
+국내논문 | 임보라 외 2026 AI 활용 수업 및 평가에 대한 초·중등교사의 인식과 정책 요구 분석: 중요도-수행도 분석(IPA)을 중심으로 · 교육정보미디어연구 32(2) | https://kci.go.kr/kciportal/landing/article.kci?arti_id=ART003331618

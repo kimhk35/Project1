@@ -1,0 +1,507 @@
+<!-- ================= EDTECH CATALOGUE (1/10) 에듀테크 도감 ================= -->
+<section class="page tint" data-sec="EDTECH CATALOGUE" data-title="에듀테크 도감" id="p-catalog"
+         data-toc="에듀테크 도감|레이더 밖의 도구들|9월에 포착된 신호 32선">
+  <style>
+    .ct-head{display:flex;justify-content:space-between;align-items:flex-end;gap:4mm;border-bottom:.6mm solid var(--ink);padding-bottom:1.6mm;margin-bottom:3.4mm}
+    .ct-line{font-family:var(--serif);font-size:11pt;font-weight:800;color:var(--ink);margin-top:.8mm;letter-spacing:-.01em}
+    .ct-rng{font-family:var(--display);font-size:22pt;font-weight:800;color:var(--accent);line-height:1;white-space:nowrap}
+    .ct-grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:4mm;height:241mm}
+    .ct-grid .app{display:flex;flex-direction:column;font-size:8pt;line-height:1.58}
+    .ct-grid .app dl{grid-template-columns:12.5mm 1fr;gap:.9mm 2mm}
+    .ct-grid .app .top{margin-bottom:1.8mm}
+    .ct-grid .app .scores{padding-top:.4mm}
+    .ct-bd{display:flex;align-items:center;gap:1.6mm;margin-top:1.2mm;flex-wrap:wrap}
+    .ct-cat{font-family:var(--sans);font-size:6.3pt;font-weight:700;color:var(--ink-3);letter-spacing:.04em}
+    .ct-ed{font-size:5.8pt;color:var(--teal);font-weight:700;letter-spacing:.04em}
+    .ct-spec{margin-top:auto;border-top:.3mm dashed var(--rule);padding-top:1.4mm;display:grid;grid-template-columns:1.15fr 1fr 1fr;gap:2.4mm;
+      font-family:var(--sans);font-size:6.5pt;line-height:1.45;color:var(--ink-2)}
+    .ct-spec .ev{font-size:6pt;letter-spacing:0;white-space:normal}
+    .ct-spec .ev i b{height:2.4mm;width:1.1mm}
+    .ct-spec > span > b{display:block;font-size:6pt;font-weight:800;letter-spacing:.1em;color:var(--navy)}
+    .ct-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;border-top:.6mm solid var(--ink);padding-top:2.4mm}
+    .ct-stats .stat .v{font-size:26pt}
+    .ct-read{display:grid;grid-template-columns:1fr 1fr;gap:1mm 6mm}
+    .ct-read p{font-family:var(--sans);font-size:7.3pt;line-height:1.55;margin:0 0 1mm;text-align:left}
+    .ct-read p b{color:var(--navy)}
+    .ct-tbl{font-size:6.9pt;line-height:1.35}
+    .ct-tbl th{font-size:6.2pt;padding:1.1mm 1.2mm;letter-spacing:.06em}
+    .ct-tbl td{padding:.8mm 1.2mm;vertical-align:middle}
+    .ct-tbl td b{font-weight:800;color:var(--ink)}
+    .ct-tbl td.ct-n{font-family:var(--display);font-weight:800;color:var(--accent);font-size:8pt}
+    .ct-tbl td.ct-d .dots{font-size:6.6pt;letter-spacing:.02em}
+    .ct-tbl tr.ct-sep td{border-top:.45mm solid var(--navy)}
+    .ct-tbl tbody tr:nth-child(odd) td{background:rgba(255,255,255,.45)}
+  </style>
+  <div class="kicker">에듀테크 도감<span class="sep">/</span>EDTECH CATALOGUE · 32 SIGNALS</div>
+  <h1 class="headline">레이더 밖의 도구들<br>9월에 포착된 신호 32선</h1>
+  <p class="dek">TOP 10에 들지 못했다고 덜 중요한 것은 아니다 9월 한 달 데일리 레이더와 주간·월간 보고서에 걸린 도구·서비스·정책 신호 가운데 레이더 기사에서 다루지 않은 32건을 일곱 갈래로 정리했다 출시와 업데이트 프리뷰와 파일럿 투자와 정책을 구분하고 확인되지 않은 가격과 한국어 지원은 미확인으로 남겼다</p>
+  <div class="byline">글 <b>PRAXIS 편집부</b> · 근거 EdTech Radar 데일리 2026-09-11~30 · 주간 리뷰 W37–W39 · 9월 월간 랜드스케이프 · 공급사·기관 공식 발표</div>
+
+  <figure class="figure mt4" id="fig-catalog-map">
+    <svg viewBox="0 0 680 350" role="img" aria-label="에듀테크 도감 32선의 분류와 상태별 건수 및 발표 주체 지역">
+      <rect width="680" height="350" fill="#fff"/>
+      <g font-family="Noto Sans KR">
+        <text x="16" y="22" font-size="11" font-weight="800" fill="#14223A">분류 × 상태로 본 32선</text>
+        <text x="16" y="37" font-size="8" fill="#6B6F77">편집부 분류 집계 · 원의 크기와 숫자는 건수</text>
+        <!-- column headers -->
+        <g font-size="8" font-weight="700" fill="#14223A" text-anchor="middle">
+          <text x="190" y="58">출시</text><text x="190" y="69">공개</text>
+          <text x="248" y="63">업데이트</text>
+          <text x="306" y="58">프리뷰</text><text x="306" y="69">파일럿</text>
+          <text x="364" y="58">도입</text><text x="364" y="69">실증</text>
+          <text x="422" y="58">투자</text><text x="422" y="69">인수</text>
+          <text x="480" y="58">연수</text><text x="480" y="69">과정</text>
+          <text x="538" y="58">정책</text><text x="538" y="69">연구</text>
+          <text x="600" y="63" fill="#C8412A">계</text>
+        </g>
+        <!-- row bands -->
+        <g fill="#EFE8DA">
+          <rect x="16" y="107" width="648" height="30"/><rect x="16" y="167" width="648" height="30"/><rect x="16" y="227" width="648" height="30"/>
+        </g>
+        <line x1="16" y1="76" x2="664" y2="76" stroke="#14223A" stroke-width="1.2"/>
+        <line x1="16" y1="287" x2="664" y2="287" stroke="#14223A" stroke-width="1.2"/>
+        <g font-size="9" font-weight="700" fill="#14223A" text-anchor="end">
+          <text x="150" y="95">수업설계·콘텐츠</text>
+          <text x="150" y="125">평가·피드백</text>
+          <text x="150" y="155">튜터·학습</text>
+          <text x="150" y="185">피지컬 AI·STEM</text>
+          <text x="150" y="215">교사 지원·연수</text>
+          <text x="150" y="245">기관·데이터</text>
+          <text x="150" y="275">정책·거버넌스</text>
+        </g>
+        <!-- cells: r = 5 + 2.5n -->
+        <g font-size="8.5" font-weight="800" fill="#fff" text-anchor="middle">
+          <circle cx="190" cy="92" r="7.5" fill="#C8412A"/><text x="190" y="95">1</text>
+          <circle cx="248" cy="92" r="10" fill="#4F8F88"/><text x="248" y="95">2</text>
+          <circle cx="190" cy="122" r="7.5" fill="#C8412A"/><text x="190" y="125">1</text>
+          <circle cx="364" cy="122" r="7.5" fill="#E0735A"/><text x="364" y="125">1</text>
+          <circle cx="538" cy="122" r="7.5" fill="#14223A"/><text x="538" y="125">1</text>
+          <circle cx="190" cy="152" r="12.5" fill="#C8412A"/><text x="190" y="155">3</text>
+          <circle cx="248" cy="152" r="7.5" fill="#4F8F88"/><text x="248" y="155">1</text>
+          <circle cx="306" cy="152" r="10" fill="#6B6F77"/><text x="306" y="155">2</text>
+          <circle cx="364" cy="152" r="7.5" fill="#E0735A"/><text x="364" y="155">1</text>
+          <circle cx="190" cy="182" r="10" fill="#C8412A"/><text x="190" y="185">2</text>
+          <circle cx="422" cy="182" r="7.5" fill="#B08A3E"/><text x="422" y="185">1</text>
+          <circle cx="306" cy="212" r="7.5" fill="#6B6F77"/><text x="306" y="215">1</text>
+          <circle cx="364" cy="212" r="7.5" fill="#E0735A"/><text x="364" y="215">1</text>
+          <circle cx="422" cy="212" r="7.5" fill="#B08A3E"/><text x="422" y="215">1</text>
+          <circle cx="480" cy="212" r="15" fill="#2E6B66"/><text x="480" y="215">4</text>
+          <circle cx="190" cy="242" r="10" fill="#C8412A"/><text x="190" y="245">2</text>
+          <circle cx="306" cy="242" r="7.5" fill="#6B6F77"/><text x="306" y="245">1</text>
+          <circle cx="364" cy="242" r="7.5" fill="#E0735A"/><text x="364" y="245">1</text>
+          <circle cx="538" cy="242" r="7.5" fill="#14223A"/><text x="538" y="245">1</text>
+          <circle cx="538" cy="272" r="15" fill="#14223A"/><text x="538" y="275">4</text>
+        </g>
+        <!-- row totals -->
+        <g font-size="10" font-weight="800" fill="#C8412A" text-anchor="middle">
+          <text x="600" y="96">3</text><text x="600" y="126">3</text><text x="600" y="156">7</text><text x="600" y="186">3</text>
+          <text x="600" y="216">7</text><text x="600" y="246">5</text><text x="600" y="276">4</text>
+        </g>
+        <!-- column totals -->
+        <g font-size="10" font-weight="800" fill="#14223A" text-anchor="middle">
+          <text x="150" y="304" text-anchor="end" font-size="9" font-weight="700">계</text>
+          <text x="190" y="304">9</text><text x="248" y="304">3</text><text x="306" y="304">4</text><text x="364" y="304">4</text>
+          <text x="422" y="304">2</text><text x="480" y="304">4</text><text x="538" y="304">6</text>
+          <text x="600" y="304" fill="#C8412A">32</text>
+        </g>
+        <!-- region bar: 460px / 32 = 14.375 -->
+        <text x="150" y="332" text-anchor="end" font-size="9" font-weight="700" fill="#14223A">발표 주체</text>
+        <rect x="160" y="318" width="215.6" height="20" fill="#14223A"/>
+        <rect x="375.6" y="318" width="115" height="20" fill="#C8412A"/>
+        <rect x="490.6" y="318" width="86.3" height="20" fill="#4F8F88"/>
+        <rect x="576.9" y="318" width="43.1" height="20" fill="#B08A3E"/>
+        <g font-size="8" font-weight="700" fill="#fff">
+          <text x="166" y="331">미국 15</text>
+          <text x="381" y="331">한국 8</text>
+          <text x="496" y="331">기타 6</text>
+          <text x="594" y="331">3</text>
+        </g>
+        <text x="626" y="325" font-size="6.5" fill="#6B6F77">미확인·</text>
+        <text x="626" y="335" font-size="6.5" fill="#6B6F77">글로벌</text>
+      </g>
+    </svg>
+    <figcaption><b>그림 에듀테크 도감 32선의 지도</b> 상태는 9월 발표의 성격이다 출시·공개는 신규 서비스와 전시 공개 도입·실증은 학군 도입·수상·운영 데이터 공개를 묶었다 기타 6은 싱가포르·중국·UAE·인도·일본·영국 오른쪽 끝 3은 국가 미확인 또는 글로벌 항목이다 편집부 분류이며 효과의 크기와 무관하다</figcaption>
+  </figure>
+
+  <div class="ct-stats mt4">
+    <div class="stat"><div class="v">32</div><div class="l">도감에 실은 신호</div><div class="s">레이더 기사에서 다룬 TOP 10과 추가 신호 7건은 제외 {{pg:p-radar}}면</div></div>
+    <div class="stat"><div class="v">8</div><div class="l">한국 발 신호</div><div class="s">에듀테크 코리아 페어 전후 공개된 교구·교실분석·교무 AI가 중심</div></div>
+    <div class="stat"><div class="v">13</div><div class="l">가격 미확인</div><div class="s">가격을 공개하지 않은 항목 금액까지 공개한 것은 AI 루킷과 CMU 과정뿐</div></div>
+    <div class="stat"><div class="v">11</div><div class="l">편집부 평가 포함</div><div class="s">레이더 보고서에 점수가 없어 편집부가 매긴 항목 카드에 따로 표시</div></div>
+  </div>
+
+  <div class="box acc mt4">
+    <h4><span class="tag">HOW TO READ</span>카드 읽는 법</h4>
+    <div class="ct-read">
+      <p><b>상태 배지</b> 출시·공개는 주홍 업데이트와 도입·실증은 청록 프리뷰·파일럿과 연수·과정은 네이비 투자·인수와 정책·연구는 금색 틀로 표시했다 발표일은 원출처 기준이며 출시일이 불분명하면 포착으로 적었다</p>
+      <p><b>교사 · 연구 점</b> 교사는 지금 교실에서 써 볼 만한 정도 연구는 실증연구 대상으로서의 가치다 레이더 보고서 점수를 5점으로 환산했다 10점 척도는 2로 나눠 반올림 등급 표현은 매우 높음 5 높음 4 중 3으로 하고 구간 표현은 낮은 쪽을 택했다</p>
+      <p><b>편집부 평가</b> 보고서에 점수가 없는 항목은 편집부가 매겼고 점수 아래 편집부 평가라고 적었다 교사 점수가 없을 때는 보고서의 교육적 활용도를 썼다</p>
+      <p><b>교실 장면</b> 실제 도입 사례가 아니라 레이더 보고서와 편집부가 제안한 활용 예시다 가격과 한국어는 소스에 적힌 것만 옮기고 없으면 미확인으로 두었다 공급사 발표는 효과의 근거가 아니며 근거 수준 막대는 대부분 1단계다 카드 위 주홍 띠는 한국 발 신호</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EDTECH CATALOGUE (2/10) ================= -->
+<section class="page tint" data-sec="EDTECH CATALOGUE" data-title="에듀테크 도감" id="p-catalog2">
+  <div class="ct-head"><div><div class="kicker">에듀테크 도감<span class="sep">/</span>수업설계·콘텐츠 생성 <span class="sep">/</span> 평가·피드백</div><div class="ct-line">교사의 자료 제작 흐름을 통째로 묶는 도구와 채점·탐지·안전 평가의 새 기준</div></div><div class="ct-rng">01–04</div></div>
+  <div class="ct-grid">
+    <div class="app mini">
+      <div class="top">
+        <div style="display:flex;gap:3mm"><span class="rank">01</span><div><h4>Magic EdTech ezSuite</h4><div class="who">Magic EdTech · 미국 · 2026-09-09 · AI 네이티브 콘텐츠 운영</div><div class="ct-bd"><span class="stat-badge">출시</span><span class="ct-cat">수업설계·콘텐츠</span></div></div></div>
+        <div class="scores"><b>교사</b><span class="dots">●●●●<span class="off">●</span></span><br><b>연구</b><span class="dots">●●●●●</span></div>
+      </div>
+      <dl><dt>무엇인가</dt><dd>교재·평가·미디어를 따로 만들지 않고 컴포넌트 단위의 단일 원본으로 관리하는 콘텐츠 운영 솔루션 모듈형 저작과 동기화 업데이트 다채널 출판을 한 흐름으로 묶는다</dd><dt>차별점</dt><dd>인쇄 중심 워크플로를 컴포넌트 기반의 단일 원본 구조로 바꾼다는 점</dd><dt>교실 장면</dt><dd>학교나 출판사가 교재를 구조화해 수업자료·형성평가·적응형 학습 자원으로 다시 쓰는 장면 개인 교사보다 기관 단위 도입에 맞다</dd><dt>한국 적용</dt><dd>교과서·문항은행을 구조화하려는 출판사와 교육청 연구에 참고할 모델 교육과정 정렬 품질을 먼저 검증해야 한다</dd><dt>주의</dt><dd>교재·문항을 AI로 재구성할 때 원저작권과 2차적저작물 범위를 확인한다 AI 생성물은 교사 검토를 기본값으로 둔다</dd></dl>
+      <div class="ct-spec"><span><b>가격</b>견적형 · 데모와 기관 협의</span><span><b>한국어</b>미확인</span><span><b>근거 수준</b><span class="ev" data-l="1"><i><b></b><b></b><b></b><b></b><b></b></i>기업 발표</span></span></div>
+    </div>
+    <div class="app mini">
+      <div class="top">
+        <div style="display:flex;gap:3mm"><span class="rank">02</span><div><h4>Articulate Frontline · 360 AI · Nova</h4><div class="who">Articulate · 미국 · 2026-09-10 · 학습 콘텐츠 제작 에이전트</div><div class="ct-bd"><span class="stat-badge t">업데이트</span><span class="ct-cat">수업설계·콘텐츠</span></div></div></div>
+        <div class="scores"><b>교사</b><span class="dots">●●●●<span class="off">●</span></span><br><b>연구</b><span class="dots">●●●●<span class="off">●</span></span></div>
+      </div>
+      <dl><dt>무엇인가</dt><dd>회사가 10년 만의 대규모 플랫폼 현대화라고 부른 개편 Frontline은 교육 부서 밖 팀도 교육콘텐츠를 만들게 하는 AI 네이티브 제품이고 Nova는 제작 기능 전반을 구동하는 통합 AI 에이전트다</dd><dt>차별점</dt><dd>슬라이드·강좌 자동 생성에서 여러 제작·분석 단계를 조율하는 에이전트 구조로 옮겨 간다</dd><dt>교실 장면</dt><dd>대학 강의자료나 교원연수 과정의 초안을 에이전트가 만들고 교수설계자가 목표·평가·활동의 정렬을 검증한다</dd><dt>한국 적용</dt><dd>기업 HRD 중심 제품이라 학교보다 대학·교육대학원·연수기관의 선택 도입 대상이다 라이선스 조건 확인이 먼저다</dd><dt>주의</dt><dd>초안 자동화가 설계 판단을 대신하지 않도록 사람 검토 단계를 명시한다 학습효과의 독립 근거는 없다</dd></dl>
+      <div class="ct-spec"><span><b>가격</b>미확인 · 라이선스 확인 필요</span><span><b>한국어</b>미확인</span><span><b>근거 수준</b><span class="ev" data-l="1"><i><b></b><b></b><b></b><b></b><b></b></i>기업 발표</span></span></div>
+    </div>
+    <div class="app mini">
+      <div class="top">
+        <div style="display:flex;gap:3mm"><span class="rank">03</span><div><h4>MagicSchool 9월 업데이트</h4><div class="who">Magic School Inc · 미국 · 2026-09-23 · 교사용 자료 제작 플랫폼</div><div class="ct-bd"><span class="stat-badge t">업데이트</span><span class="ct-cat">수업설계·콘텐츠</span></div></div></div>
+        <div class="scores"><b>교사</b><span class="dots">●●●●<span class="off">●</span></span><br><b>연구</b><span class="dots">●●●●<span class="off">●</span></span></div>
+      </div>
+      <dl><dt>무엇인가</dt><dd>프레젠테이션·이미지 생성기와 서식을 유지하는 Word·Google Docs 내보내기 교사 프로필을 쓰는 어시스턴트 Raina 개선을 한 번에 배포했다 작업에 따라 OpenAI·Anthropic·Google 모델을 나눠 쓴다고 밝혔다</dd><dt>차별점</dt><dd>Canva for Education·Adobe Express·Copilot·Brisk와 경쟁하며 교사 도구·학생 공간·관리 기능을 한 플랫폼에 묶었다</dd><dt>교실 장면</dt><dd>이차함수 단원 슬라이드 초안을 만들고 그래프 축과 수식을 교사가 확인한 뒤 난이도별 활동지로 바꾼다</dd><dt>한국 적용</dt><dd>개별 교사의 시범 사용은 무난하나 학교 단위는 처리계약·국외 이전·SSO·생성물 검수 규정이 먼저다</dd><dt>주의</dt><dd>시간 절감·참여 수치는 회사가 인용한 자기보고다 수식·그래프 정확성과 생성 이미지 저작권은 독립 검증이 없다</dd></dl>
+      <div class="ct-spec"><span><b>가격</b>교사용 무료 · Plus · 기관 Enterprise 견적형</span><span><b>한국어</b>미확인 · UI와 출력 품질 검증 안 됨</span><span><b>근거 수준</b><span class="ev" data-l="1"><i><b></b><b></b><b></b><b></b><b></b></i>기업 발표</span></span></div>
+    </div>
+    <div class="app mini korea">
+      <div class="top">
+        <div style="display:flex;gap:3mm"><span class="rank">04</span><div><h4>LoroTOPIK</h4><div class="who">이포넷 E4NET · 한국 · 2026-09-18 · 한국어능력시험 학습·AI 쓰기 채점</div><div class="ct-bd"><span class="stat-badge t">수상·확산</span><span class="ct-cat">평가·피드백</span></div></div></div>
+        <div class="scores"><b>교사</b><span class="dots">●●●●<span class="off">●</span></span><br><b>연구</b><span class="dots">●●●●<span class="off">●</span></span></div>
+      </div>
+      <dl><dt>무엇인가</dt><dd>비영어권 학습자의 TOPIK 읽기·듣기·쓰기 학습을 모국어 해설로 돕는다 18개 언어 해설과 공식 루브릭 기반 9개 기준 쓰기 채점 약점 분석과 학습계획 추천을 제공하며 2026 K-에듀테크 콘테스트 최우수상을 받았다</dd><dt>차별점</dt><dd>일반 번역·챗봇이 아니라 TOPIK 평가구조와 기관용 관리에 특화했다</dd><dt>교실 장면</dt><dd>대학 외국인 학생·세종학당·다문화 교실에서 학생은 쓰기 피드백을 받고 교사는 분석 보고서로 보충수업을 짠다</dd><dt>한국 적용</dt><dd>높음 국내 대학과 우즈베키스탄 실증 6개국 MOU를 서비스가 명시한다</dd><dt>주의</dt><dd>쓰기 원문과 학습기록의 다국어 AI 처리·데이터 이전 범위를 확인한다 언어별 채점 공정성은 검증 과제다 회사는 ISO 27001 인증을 안내한다</dd></dl>
+      <div class="ct-spec"><span><b>가격</b>웹 무료 시작 · 기관 문의형</span><span><b>한국어</b>지원 · 한국어와 18개 언어 해설</span><span><b>근거 수준</b><span class="ev" data-l="1"><i><b></b><b></b><b></b><b></b><b></b></i>수상·기업 안내</span></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EDTECH CATALOGUE (3/10) ================= -->
+<section class="page tint" data-sec="EDTECH CATALOGUE" data-title="에듀테크 도감" id="p-catalog3">
+  <div class="ct-head"><div><div class="kicker">에듀테크 도감<span class="sep">/</span>평가·피드백 <span class="sep">/</span> 튜터·학습</div><div class="ct-line">탐지와 정서 안전 평가 그리고 교사가 설계하고 지켜보는 AI 튜터</div></div><div class="ct-rng">05–08</div></div>
+  <div class="ct-grid">
+    <div class="app mini">
+      <div class="top">
+        <div style="display:flex;gap:3mm"><span class="rank">05</span><div><h4>Lynote.ai</h4><div class="who">Lynote.ai · 싱가포르 · 2026-09-10 · AI 탐지·학습 생산성 통합</div><div class="ct-bd"><span class="stat-badge">출시</span><span class="ct-cat">평가·피드백</span></div></div></div>
+        <div class="scores"><b>교사</b><span class="dots">●●●●<span class="off">●</span></span><br><b>연구</b><span class="dots">●●●●<span class="off">●</span></span></div>
+      </div>
+      <dl><dt>무엇인가</dt><dd>AI 텍스트·이미지 탐지기와 Humanizer YouTube 요약 AI 노트 번역 플래시카드를 한 워크플로에 묶은 플랫폼 학생과 교육자를 명시적 사용자로 둔다</dd><dt>차별점</dt><dd>학생 생산성 도구와 진위판별 기능을 한 흐름에 통합했다</dd><dt>교실 장면</dt><dd>AI 허용 과제에서 탐지 결과를 판정이 아닌 대화의 출발점으로 쓰고 학생이 작성 과정을 스스로 설명하게 한다</dd><dt>한국 적용</dt><dd>학교의 학업진실성 정책과 함께 다뤄야 할 도구 탐지 점수만으로 부정행위를 판정하는 것은 부적절하다</dd><dt>주의</dt><dd>탐지기의 오탐과 편향 때문에 인간 검토와 이의제기 절차가 필수다 Humanizer 기능은 학업진실성 회피에 악용될 수 있다</dd></dl>
+      <div class="ct-spec"><span><b>가격</b>핵심 기능 무료 체험</span><span><b>한국어</b>미확인</span><span><b>근거 수준</b><span class="ev" data-l="1"><i><b></b><b></b><b></b><b></b><b></b></i>기업 발표</span></span></div>
+    </div>
+    <div class="app mini">
+      <div class="top">
+        <div style="display:flex;gap:3mm"><span class="rank">06</span><div><h4>MentalHealthBench</h4><div class="who">OpenAI · 미국 · 2026-09-25 · 정신건강 대화 AI 안전 평가 벤치마크</div><div class="ct-bd"><span class="stat-badge g">벤치마크</span><span class="ct-cat">평가·피드백</span></div></div></div>
+        <div class="scores"><b>교사</b><span class="dots">●●<span class="off">●●●</span></span><br><b>연구</b><span class="dots">●●●●<span class="off">●</span></span></div>
+      </div>
+      <dl><dt>무엇인가</dt><dd>일상 스트레스부터 위기 상황까지 정신건강 대화에서 AI 응답을 평가하는 공개 벤치마크 22개국 면허 전문가 80명 이상이 참여했고 13~17세 청소년을 포함한 합성 대화를 쓴다 공감·정확성·위기 인식·위해 회피·사용자 주체성을 나눠 본다</dd><dt>차별점</dt><dd>금지 응답 여부만이 아니라 맥락·공감·주체성·위기 인식을 함께 보는 다차원 루브릭</dd><dt>교실 장면</dt><dd>학교가 쓰는 AI의 정서지원 응답을 교과 정확성·공감·위기 인식·전문가 이관 네 항목으로 점검하는 기준표로 쓴다</dd><dt>한국 적용</dt><dd>교실 앱이 아니라 평가 루브릭의 참고 모델 한국어와 한국 청소년 맥락의 타당도는 따로 검증해야 한다</dd><dt>주의</dt><dd>벤치마크 점수는 임상 효과나 학교상담의 안전성을 뜻하지 않는다 채점에 다른 언어모델을 써 채점 편향 가능성이 있다</dd></dl>
+      <div class="ct-spec"><span><b>가격</b>공개 벤치마크</span><span><b>한국어</b>미확인</span><span><b>근거 수준</b><span class="ev" data-l="2"><i><b></b><b></b><b></b><b></b><b></b></i>벤치마크 개발</span></span></div>
+    </div>
+    <div class="app mini">
+      <div class="top">
+        <div style="display:flex;gap:3mm"><span class="rank">07</span><div><h4>SchoolAI · Midland 학군 도입</h4><div class="who">SchoolAI Inc · 미국 · 2026-09-15 포착 · 교사 설계형 AI 튜터·학급 관찰</div><div class="ct-bd"><span class="stat-badge t">학군 도입</span><span class="ct-cat">튜터·학습</span></div></div></div>
+        <div class="scores"><b>교사</b><span class="dots">●●●●<span class="off">●</span></span><br><b>연구</b><span class="dots">●●●●●</span></div>
+      </div>
+      <dl><dt>무엇인가</dt><dd>교사가 Space라는 학습 활동을 설계하면 학생은 AI와 대화하고 교사는 Mission Control에서 막힘과 참여를 실시간으로 본다 Midland 학군은 6~12학년 교사에게 선택적 사용권을 주고 연수·안전 경보를 함께 배치했다</dd><dt>차별점</dt><dd>범용 챗봇과 달리 학생별 대화를 한 화면에서 보고 활동 경계와 안전 라우팅을 교사가 정한다</dd><dt>교실 장면</dt><dd>일차함수 기울기 Space에서 AI는 답 대신 탐색 질문을 던지고 교사는 같은 오개념을 보인 학생을 소집단으로 묶는다</dd><dt>한국 적용</dt><dd>한 단원·비식별 계정·교사 2~3명의 통제된 파일럿이 적절하다 수식 입력과 교육과정 정렬 NEIS 연동을 먼저 본다</dd><dt>주의</dt><dd>실시간 대화 관찰은 상시 감시 효과를 낳을 수 있고 안전 경보를 징계나 자동 판정에 써서는 안 된다 FERPA·COPPA 준수는 회사 주장이다</dd></dl>
+      <div class="ct-spec"><span><b>가격</b>무료 체험 연 5회 Space 실행 · Pro·Scale 상담형</span><span><b>한국어</b>미확인 · 60개 이상 실시간 번역 표방</span><span><b>근거 수준</b><span class="ev" data-l="1"><i><b></b><b></b><b></b><b></b><b></b></i>학군 보도·기업 자료</span></span></div>
+    </div>
+    <div class="app mini korea">
+      <div class="top">
+        <div style="display:flex;gap:3mm"><span class="rank">08</span><div><h4>엘리스 헬피챗</h4><div class="who">엘리스 · 한국 · 2026-09-16~19 · 역할별 교육용 AI 챗</div><div class="ct-bd"><span class="stat-badge">전시 공개</span><span class="ct-cat">튜터·학습</span></div></div></div>
+        <div class="scores"><b>교사</b><span class="dots">●●●<span class="off">●●</span></span><br><b>연구</b><span class="dots">●●●●<span class="off">●</span></span><br><span class="ct-ed">편집부 평가</span></div>
+      </div>
+      <dl><dt>무엇인가</dt><dd>교사용 한글 문서 뷰어와 학생용 대화 제한 화면처럼 사용자 역할에 따라 다른 기능을 에듀테크 코리아 페어에서 공개했다 자체 교육모델 헬피 에듀는 정답을 바로 주기보다 단계적 질문으로 학습을 이끈다고 내세운다</dd><dt>차별점</dt><dd>같은 모델을 모두에게 똑같이 주지 않고 학생과 교사의 화면과 권한을 나눠 설계했다</dd><dt>교실 장면</dt><dd>학생은 제한된 튜터 화면에서 풀이의 다음 단계를 묻고 교사는 별도 화면에서 한글 문서 자료로 수업을 준비한다</dd><dt>한국 적용</dt><dd>국내 서비스로 한글 문서 환경을 전제했다 전시 공개 단계라 학교 계약 조건은 확인이 필요하다</dd><dt>주의</dt><dd>대화 제한이 과의존을 줄이는지 지나친 제한이 질문의 질과 탐색을 해치지 않는지에 대한 실증이 아직 없다</dd></dl>
+      <div class="ct-spec"><span><b>가격</b>미확인</span><span><b>한국어</b>국내 서비스 · 세부 미확인</span><span><b>근거 수준</b><span class="ev" data-l="1"><i><b></b><b></b><b></b><b></b><b></b></i>전시 공개</span></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EDTECH CATALOGUE (4/10) ================= -->
+<section class="page tint" data-sec="EDTECH CATALOGUE" data-title="에듀테크 도감" id="p-catalog4">
+  <div class="ct-head"><div><div class="kicker">에듀테크 도감<span class="sep">/</span>튜터·학습</div><div class="ct-line">노트·계획·멘토·디지털 트윈 학생 곁의 AI는 형태가 다양해졌다</div></div><div class="ct-rng">09–12</div></div>
+  <div class="ct-grid">
+    <div class="app mini">
+      <div class="top">
+        <div style="display:flex;gap:3mm"><span class="rank">09</span><div><h4>Gemini Notebook 학습도구</h4><div class="who">Google · 미국 · 2026-09-15~16 · 노트 기반 학습 공간</div><div class="ct-bd"><span class="stat-badge t">업데이트</span><span class="ct-cat">튜터·학습</span></div></div></div>
+        <div class="scores"><b>교사</b><span class="dots">●●●<span class="off">●●</span></span><br><b>연구</b><span class="dots">●●●●<span class="off">●</span></span><br><span class="ct-ed">편집부 평가</span></div>
+      </div>
+      <dl><dt>무엇인가</dt><dd>Gemini Notebook에 노트와의 실시간 대화 집중 학습용 대화형 학습 개요 새 퀴즈 형식을 순차 배포한다 정적 노트 요약에서 진단·대화·연습·재구성이 이어지는 학습 공간으로 옮겨 간다</dd><dt>차별점</dt><dd>노트를 학습의 출발점으로 삼아 대화와 퀴즈를 한 공간에서 잇는다</dd><dt>교실 장면</dt><dd>학생이 수업 노트로 퀴즈를 풀고 틀린 개념을 대화로 되짚은 뒤 며칠 뒤 다시 퀴즈로 확인한다</dd><dt>한국 적용</dt><dd>계정·연령·요금제·언어에 따라 제공 범위가 다르다 학생 계정 정책부터 확인해야 한다</dd><dt>주의</dt><dd>개인화가 장기 학습·전이·메타인지 향상으로 이어지는지는 별도 검증이 필요하다 과의존도 함께 재야 한다</dd></dl>
+      <div class="ct-spec"><span><b>가격</b>미확인 · 요금제별 상이</span><span><b>한국어</b>미확인</span><span><b>근거 수준</b><span class="ev" data-l="1"><i><b></b><b></b><b></b><b></b><b></b></i>기업 발표</span></span></div>
+    </div>
+    <div class="app mini">
+      <div class="top">
+        <div style="display:flex;gap:3mm"><span class="rank">10</span><div><h4>IntelliPlan</h4><div class="who">IntelliPlan · 국가 미확인 · 2026-09 신규 포착 · AI 학습 플래너</div><div class="ct-bd"><span class="stat-badge n">신규 포착</span><span class="ct-cat">튜터·학습</span></div></div></div>
+        <div class="scores"><b>교사</b><span class="dots">●●●<span class="off">●●</span></span><br><b>연구</b><span class="dots">●●●●●</span></div>
+      </div>
+      <dl><dt>무엇인가</dt><dd>Canvas·StudentVue·Schoology에서 과제를 불러와 마감일·난이도·배점·가용시간으로 우선순위를 계산해 주간 계획을 만든다 Gemini 기반 일정계획과 단계별 AI 튜터 노트 기반 플래시카드를 붙였다</dd><dt>차별점</dt><dd>LMS 과제에서 AI 우선순위 실제 시간표 튜터로 이어지는 데이터 흐름을 한 앱에 담았다</dd><dt>교실 장면</dt><dd>AI가 짠 계획을 학생이 얼마나 따르는지와 과제 지연·성취의 관계를 자기조절학습 관점에서 살핀다</dd><dt>한국 적용</dt><dd>해외 LMS 중심이라 국내 공교육 즉시 도입성은 낮다 과제에서 계획과 튜터로 이어지는 데이터 흐름은 학습분석 연구 모형으로 쓸 만하다</dd><dt>주의</dt><dd>공식 사이트가 8월에 데스크톱 1.0.0을 제공해 최초 출시일을 확정할 수 없다 학교 계정 자격증명을 저장하며 13세 미만은 보호자 동의나 학교 대리 방식이다</dd></dl>
+      <div class="ct-spec"><span><b>가격</b>무료 · 공식 약관 기준</span><span><b>한국어</b>미확인</span><span><b>근거 수준</b><span class="ev" data-l="1"><i><b></b><b></b><b></b><b></b><b></b></i>공식 사이트</span></span></div>
+    </div>
+    <div class="app mini">
+      <div class="top">
+        <div style="display:flex;gap:3mm"><span class="rank">11</span><div><h4>Ele AI Mentor</h4><div class="who">ETERC 상하이 · 중국 · 2026-09-18 · 공학 학습 AI 멘토</div><div class="ct-bd"><span class="stat-badge">발표</span><span class="ct-cat">튜터·학습</span></div></div></div>
+        <div class="scores"><b>교사</b><span class="dots">●●●<span class="off">●●</span></span><br><b>연구</b><span class="dots">●●●●<span class="off">●</span></span></div>
+      </div>
+      <dl><dt>무엇인가</dt><dd>자원이 부족한 공립학교의 공학 학습에 단계적 가이드를 주는 AI 멘토 12년 STEM 교사연수 경험과 5,000시간 이상의 수업녹화 수천 개 수업안을 바탕으로 설계했고 수개월 교실 사용을 거쳤다고 기관이 밝혔다</dd><dt>차별점</dt><dd>일반 챗봇보다 공학적 사고와 공학 정체성 형성이라는 학습이론을 앞세운다</dd><dt>교실 장면</dt><dd>로봇·항공·제조 프로젝트에서 학생이 설계 선택을 설명하면 AI가 정답 대신 힌트와 질문으로 사고를 이끈다</dd><dt>한국 적용</dt><dd>중간 이하 한국어와 국내 교육과정 적합성을 확인해야 한다</dd><dt>주의</dt><dd>기관 발표 자료라 독립 효과 검증이 부족하다 데이터 출처·학습자 개인정보·모델 투명성을 확인해야 한다</dd></dl>
+      <div class="ct-spec"><span><b>가격</b>소비자 가격 미공개 · 비영리·파트너 후원 배포</span><span><b>한국어</b>미확인</span><span><b>근거 수준</b><span class="ev" data-l="1"><i><b></b><b></b><b></b><b></b><b></b></i>기관 발표</span></span></div>
+    </div>
+    <div class="app mini">
+      <div class="top">
+        <div style="display:flex;gap:3mm"><span class="rank">12</span><div><h4>Napster Learn × GEMS Education</h4><div class="who">Napster · GEMS Education · UAE · 2026-09-18 보도 · 교사 디지털 트윈</div><div class="ct-bd"><span class="stat-badge n">파일럿</span><span class="ct-cat">튜터·학습</span></div></div></div>
+        <div class="scores"><b>교사</b><span class="dots">●●<span class="off">●●●</span></span><br><b>연구</b><span class="dots">●●●●<span class="off">●</span></span><br><span class="ct-ed">편집부 평가</span></div>
+      </div>
+      <dl><dt>무엇인가</dt><dd>GEMS School of Research and Innovation에서 AI 에이전트와 디지털 페르소나를 공동 설계·시험한다 교사의 자료·강의·논문을 학습한 트윈이 수업 밖 질문에 답하고 교사에게 학생 질문과 지원 필요 지점을 돌려주는 구상이다</dd><dt>차별점</dt><dd>교사의 목소리를 흉내 내는 것보다 교사 지식과 수업 맥락을 교사 책임 아래 구조화하는 것이 설계의 핵심이다</dd><dt>교실 장면</dt><dd>방과 후 학생 질문에 트윈이 답하고 교사는 다음 날 질문 요약을 보고 수업을 조정한다</dd><dt>한국 적용</dt><dd>교사 음성·초상·저작물의 권리와 책임 소재에 대한 합의가 먼저 필요한 단계다</dd><dt>주의</dt><dd>현지 저장과 모델 훈련 미사용은 공급자 설명이다 잘못된 대리 발화의 책임 교사 자료의 삭제·이동권 동의 설계가 과제이며 독립 효과 검증은 없다</dd></dl>
+      <div class="ct-spec"><span><b>가격</b>미확인</span><span><b>한국어</b>미확인</span><span><b>근거 수준</b><span class="ev" data-l="1"><i><b></b><b></b><b></b><b></b><b></b></i>언론 보도</span></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EDTECH CATALOGUE (5/10) ================= -->
+<section class="page tint" data-sec="EDTECH CATALOGUE" data-title="에듀테크 도감" id="p-catalog5">
+  <div class="ct-head"><div><div class="kicker">에듀테크 도감<span class="sep">/</span>튜터·학습 <span class="sep">/</span> 피지컬 AI·STEM</div><div class="ct-line">다국어 인프라에서 온디바이스 보드와 로봇팔까지 화면 밖으로 나온 AI</div></div><div class="ct-rng">13–16</div></div>
+  <div class="ct-grid">
+    <div class="app mini">
+      <div class="top">
+        <div style="display:flex;gap:3mm"><span class="rank">13</span><div><h4>Bodhan AI 교육 스택</h4><div class="who">Bodhan AI · AI4Bharat · 인도 · 2026-09-04 · 다국어 교육 AI 인프라</div><div class="ct-bd"><span class="stat-badge">공개</span><span class="ct-cat">튜터·학습</span></div></div></div>
+        <div class="scores"><b>교사</b><span class="dots">●●●●<span class="off">●</span></span><br><b>연구</b><span class="dots">●●●●●</span></div>
+      </div>
+      <dl><dt>무엇인가</dt><dd>IIT Madras가 인큐베이팅한 Bodhan AI가 AI4Bharat와 함께 음성인식·음성합성·번역·OCR 모델과 6~12학년용 학생 튜터·교사 보조 봇을 공개했다 모델은 27개 인도 언어를 다루고 학생 튜터는 22개 언어로 텍스트·음성 질문을 받는다</dd><dt>차별점</dt><dd>공개 가중치 모델과 호스팅 API 학생·교사 도구를 공공 인프라 형태로 함께 내놓았다</dd><dt>교실 장면</dt><dd>학생은 자기 언어로 묻고 교사 봇은 수업안·퀴즈·과제를 만들되 교사가 검토·수정 권한을 쥔다</dd><dt>한국 적용</dt><dd>다문화·언어취약 학생을 위한 쉬운 한국어·다국어 설명 연구의 참고 모델이다</dd><dt>주의</dt><dd>언어별 성능 차이가 평가 공정성 차이로 이어질 수 있다 공개 가중치 모델과 호스팅 API의 데이터 처리 조건을 따로 확인한다</dd></dl>
+      <div class="ct-spec"><span><b>가격</b>미확인 · 공개 가중치 모델과 호스팅 API</span><span><b>한국어</b>해당 없음 · 인도 언어 대상</span><span><b>근거 수준</b><span class="ev" data-l="1"><i><b></b><b></b><b></b><b></b><b></b></i>기관 발표</span></span></div>
+    </div>
+    <div class="app mini korea">
+      <div class="top">
+        <div style="display:flex;gap:3mm"><span class="rank">14</span><div><h4>AI 루킷</h4><div class="who">창의와교육 · 한국 · 2026-09-13 포착 · 온디바이스 AI 메이커 보드</div><div class="ct-bd"><span class="stat-badge">전시 공개</span><span class="ct-cat">피지컬 AI·STEM</span></div></div></div>
+        <div class="scores"><b>교사</b><span class="dots">●●●●<span class="off">●</span></span><br><b>연구</b><span class="dots">●●●●●</span></div>
+      </div>
+      <dl><dt>무엇인가</dt><dd>AI 카메라·ESP32-S3 코딩 보드·LCD를 한 장치에 묶은 교육용 스마트 보드 얼굴·색상·QR·라인 인식 모델을 기본 제공하고 학생이 학습시킨 이미지 모델을 올려 PC 없이 실행한다</dd><dt>차별점</dt><dd>카메라·보드·LCD를 통합하고 PC 없는 실행과 국내 교육지원을 앞세운다</dd><dt>교실 장면</dt><dd>재활용품 분류모델을 만들어 혼동행렬을 계산하고 분류 결과에 따라 모터가 수거함 문을 연다 상대도수·정밀도와 데이터 편향을 함께 다룬다</dd><dt>한국 적용</dt><dd>높음 국내 교재·AS·가격 접근성이 좋아 자유학기·정보·과학·수학 융합 수업에 맞다</dd><dt>주의</dt><dd>얼굴 인식 예제는 미성년자 개인정보와 편향 위험이 커 사물분류로 대체하는 편이 낫다 모델 학습 단계의 업로드 위치를 확인한다</dd></dl>
+      <div class="ct-spec"><span><b>가격</b>공개 판매가 105,600원 · 소비자가 132,000원</span><span><b>한국어</b>한국어 사용자료 확인</span><span><b>근거 수준</b><span class="ev" data-l="1"><i><b></b><b></b><b></b><b></b><b></b></i>판매·전시 자료</span></span></div>
+    </div>
+    <div class="app mini korea">
+      <div class="top">
+        <div style="display:flex;gap:3mm"><span class="rank">15</span><div><h4>라쿤봇 RaccoonBot</h4><div class="who">로보메이션 · 한국 · 2026-09-18 · 피지컬 AI 교육용 로봇팔</div><div class="ct-bd"><span class="stat-badge">전시 공개</span><span class="ct-cat">피지컬 AI·STEM</span></div></div></div>
+        <div class="scores"><b>교사</b><span class="dots">●●●<span class="off">●●</span></span><br><b>연구</b><span class="dots">●●●●<span class="off">●</span></span></div>
+      </div>
+      <dl><dt>무엇인가</dt><dd>에듀테크 코리아 페어에서 공개한 4축 로봇팔 코드 입력에서 실제 동작 관찰 수정으로 이어지는 반복 학습과 원격 피지컬 컴퓨팅 체험을 내세운다 AI 추론 기능의 구체 사양은 제한적으로만 공개됐다</dd><dt>차별점</dt><dd>화면 속 코딩을 실물 동작과 즉각 피드백으로 넓힌다</dd><dt>교실 장면</dt><dd>좌표·벡터·비례·함수를 로봇팔의 물체 이동 과제와 연결한 수학 모델링 수업</dd><dt>한국 적용</dt><dd>높음 국내 기업이며 학교와 공부방·교습소로의 확장 의도를 밝혔다</dd><dt>주의</dt><dd>실물 장비 안전과 원격제어 계정·접속 보안 카메라·센서를 쓸 때의 개인정보 범위를 미리 확인한다</dd></dl>
+      <div class="ct-spec"><span><b>가격</b>미확인</span><span><b>한국어</b>가능성 높음 · 앱스토어 표기는 영어</span><span><b>근거 수준</b><span class="ev" data-l="1"><i><b></b><b></b><b></b><b></b><b></b></i>전시 공개</span></span></div>
+    </div>
+    <div class="app mini">
+      <div class="top">
+        <div style="display:flex;gap:3mm"><span class="rank">16</span><div><h4>KIDZBot 피지컬 AI 로보틱스</h4><div class="who">KIDZ AI · Classover Robix · 미국 · 2026-09-18 · AI 네이티브 로보틱스 생태계</div><div class="ct-bd"><span class="stat-badge g">투자</span><span class="ct-cat">피지컬 AI·STEM</span></div></div></div>
+        <div class="scores"><b>교사</b><span class="dots">●●●<span class="off">●●</span></span><br><b>연구</b><span class="dots">●●●●<span class="off">●</span></span></div>
+      </div>
+      <dl><dt>무엇인가</dt><dd>추가 자금조달과 전용 로보틱스 자회사 설립을 발표했다 소프트웨어·커리큘럼·교사연수·여러 제조사 하드웨어를 묶고 지속 메모리·추론·센서 피드백·적응형 학습을 표방한다</dd><dt>차별점</dt><dd>단일 로봇 키트보다 소프트웨어·데이터·교사연수·여러 하드웨어를 묶는 플랫폼 전략</dd><dt>교실 장면</dt><dd>고등학교 피지컬 AI 프로젝트나 방과후·캠프에서 로봇 제작·코딩·센서 실험을 반복한다</dd><dt>한국 적용</dt><dd>낮음에서 중간 국내 지원·언어·교육과정 정합성이 확인되지 않았다</dd><dt>주의</dt><dd>기업 보도자료 중심이라 학습효과의 독립 검증이 부족하다 학생 데이터와 지속 메모리의 결합에 대한 거버넌스가 핵심이다</dd></dl>
+      <div class="ct-spec"><span><b>가격</b>미확인</span><span><b>한국어</b>미확인</span><span><b>근거 수준</b><span class="ev" data-l="1"><i><b></b><b></b><b></b><b></b><b></b></i>기업 보도자료</span></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EDTECH CATALOGUE (6/10) ================= -->
+<section class="page tint" data-sec="EDTECH CATALOGUE" data-title="에듀테크 도감" id="p-catalog6">
+  <div class="ct-head"><div><div class="kicker">에듀테크 도감<span class="sep">/</span>교사 지원·연수</div><div class="ct-line">교원양성 에이전트 수업 담화 분석 교실 인텔리전스 AI 교무실</div></div><div class="ct-rng">17–20</div></div>
+  <div class="ct-grid">
+    <div class="app mini korea">
+      <div class="top">
+        <div style="display:flex;gap:3mm"><span class="rank">17</span><div><h4>PAIES 예비교사 AI 에이전트</h4><div class="who">이화여대 사범대학 · 코드프레소 · AXMOS · 자란다 · 한국 · 2026-09-11 보도 · 교원양성 AI</div><div class="ct-bd"><span class="stat-badge n">개발 협력</span><span class="ct-cat">교사 지원·연수</span></div></div></div>
+        <div class="scores"><b>교사</b><span class="dots">●●●●<span class="off">●</span></span><br><b>연구</b><span class="dots">●●●●●</span></div>
+      </div>
+      <dl><dt>무엇인가</dt><dd>교직·전공 11개 교과목을 AI 융합으로 다시 설계하고 예비교사용 AI 에이전트 4종 개발을 지원하는 협력 단일 앱이 아니라 교원양성 교육과정과 에이전트를 결합하는 구상이다</dd><dt>차별점</dt><dd>교사에게 범용 챗봇을 주는 대신 교원양성 교육과정과 에이전트를 결합한다</dd><dt>교실 장면</dt><dd>예비교사가 수업설계·교과전문성·평가·행정 등 역할별 에이전트의 도움으로 수업안을 만들고 오류를 검증한다</dd><dt>한국 적용</dt><dd>국내 교원양성 맥락의 직접 사례 에이전트 기능 정의와 실제 사용 데이터는 아직 확인되지 않았다</dd><dt>주의</dt><dd>개발·협력 단계다 AI 의존과 최종 의사결정 책임을 교원양성 과정 안에서 명시적으로 다뤄야 한다</dd></dl>
+      <div class="ct-spec"><span><b>가격</b>해당 없음 · 교원양성 과정</span><span><b>한국어</b>국내</span><span><b>근거 수준</b><span class="ev" data-l="1"><i><b></b><b></b><b></b><b></b><b></b></i>협력 보도</span></span></div>
+    </div>
+    <div class="app mini">
+      <div class="top">
+        <div style="display:flex;gap:3mm"><span class="rank">18</span><div><h4>TeachFX · McGraw Hill 인수</h4><div class="who">McGraw Hill · TeachFX · 미국 · 2026-09-17 · 수업 담화 분석 AI 코칭</div><div class="ct-bd"><span class="stat-badge g">인수</span><span class="ct-cat">교사 지원·연수</span></div></div></div>
+        <div class="scores"><b>교사</b><span class="dots">●●●<span class="off">●●</span></span><br><b>연구</b><span class="dots">●●●●●</span></div>
+      </div>
+      <dl><dt>무엇인가</dt><dd>휴대폰이나 노트북으로 수업 음성을 녹음해 화자를 분리하고 교사의 질문 방식·학생 발화 비중·설명 요구 상호작용을 분석한다 교사에게는 개인 코치 형태로 학교 리더에게는 집계된 경향으로 돌려준다</dd><dt>차별점</dt><dd>학생이 아니라 교사의 실제 수업 담화를 분석 대상으로 삼는다</dd><dt>교실 장면</dt><dd>수학 수업의 질문 유형과 학생 설명량을 교사가 스스로 돌아보는 성찰 자료로 쓴다</dd><dt>한국 적용</dt><dd>자발적으로 참여한 교사의 성찰용 파일럿이 현실적이다 교원평가와 연결하면 노사·개인정보 쟁점이 커진다</dd><dt>주의</dt><dd>교실 음성은 민감정보다 동의·원본 보존기간·화자 식별·평가 사용 제한을 계약으로 확인한다 {{pg:p-radar4}}면 Multiverse 사례 참고</dd></dl>
+      <div class="ct-spec"><span><b>가격</b>미확인</span><span><b>한국어</b>미확인</span><span><b>근거 수준</b><span class="ev" data-l="1"><i><b></b><b></b><b></b><b></b><b></b></i>인수 발표</span></span></div>
+    </div>
+    <div class="app mini korea">
+      <div class="top">
+        <div style="display:flex;gap:3mm"><span class="rank">19</span><div><h4>ALC Active Learning Classroom</h4><div class="who">노원비하인드 · KENTECH 연구소기업 · 한국 · 2026-09-18 · 교실 인텔리전스</div><div class="ct-bd"><span class="stat-badge t">수상·실증</span><span class="ct-cat">교사 지원·연수</span></div></div></div>
+        <div class="scores"><b>교사</b><span class="dots">●●●<span class="off">●●</span></span><br><b>연구</b><span class="dots">●●●●●</span></div>
+      </div>
+      <dl><dt>무엇인가</dt><dd>교실의 언어적·비언어적 학습과정 데이터를 분석해 교사의 상황 인식과 의사결정을 돕는 플랫폼 2026 에듀테크 어워드 AI 활용혁신 부문 최우수상을 받았고 초·중·고·대학생 1,500명 이상 적용 실증이 보도됐다</dd><dt>차별점</dt><dd>개별 학생 튜터가 아니라 교실 전체를 분석 단위로 삼는다</dd><dt>교실 장면</dt><dd>소그룹 수학 토론에서 참여 편중과 발화·비언어 신호를 요약해 교사의 개입 판단을 돕는다</dd><dt>한국 적용</dt><dd>높음 국내 학교·대학 실증과 공공·군·HRD 확대가 보도됐다</dd><dt>주의</dt><dd>영상·음성·행동 데이터의 수집 범위와 비식별화 보존기간 학생·보호자 고지 모델 편향을 최우선으로 본다 센서·모델·정확도 사양은 제한적으로 공개됐다</dd></dl>
+      <div class="ct-spec"><span><b>가격</b>미확인</span><span><b>한국어</b>국내</span><span><b>근거 수준</b><span class="ev" data-l="1"><i><b></b><b></b><b></b><b></b><b></b></i>수상·실증 보도</span></span></div>
+    </div>
+    <div class="app mini korea">
+      <div class="top">
+        <div style="display:flex;gap:3mm"><span class="rank">20</span><div><h4>티처빌 AI</h4><div class="who">테크빌교육 · 한국 · 2026-09-18 공개 · 학교 단위 AI 교무실</div><div class="ct-bd"><span class="stat-badge n">프리뷰</span><span class="ct-cat">교사 지원·연수</span></div></div></div>
+        <div class="scores"><b>교사</b><span class="dots">●●●●<span class="off">●</span></span><br><b>연구</b><span class="dots">●●●<span class="off">●●</span></span><br><span class="ct-ed">편집부 평가</span></div>
+      </div>
+      <dl><dt>무엇인가</dt><dd>학교 단위 전용 모델을 표방하며 AI 교무실에 학교 캘린더·학사일정·수업시수 편제·전담교사 시간표 배정·AI 교무수첩을 묶었다고 발표했다 10월 정식 출시를 예고했다</dd><dt>차별점</dt><dd>교사 개인 도구를 넘어 학교 공동업무와 행정을 묶는 학교 단위 AI</dd><dt>교실 장면</dt><dd>교무부가 학사일정과 시수 편제 초안을 만들고 담당 교사가 검토·승인한다</dd><dt>한국 적용</dt><dd>높음 교사 개인용에서 학교와 교육청 단위로 넓히는 국내 교무 흐름을 겨냥한다</dd><dt>주의</dt><dd>교무정보 접근권한과 역할별 권한 분리 학생·교직원 개인정보 처리 범위 오류 시 승인절차를 확인한다 업무경감은 재작업률과 정확도로도 잰다</dd></dl>
+      <div class="ct-spec"><span><b>가격</b>미확인</span><span><b>한국어</b>국내</span><span><b>근거 수준</b><span class="ev" data-l="1"><i><b></b><b></b><b></b><b></b><b></b></i>기업 발표</span></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EDTECH CATALOGUE (7/10) ================= -->
+<section class="page tint" data-sec="EDTECH CATALOGUE" data-title="에듀테크 도감" id="p-catalog7">
+  <div class="ct-head"><div><div class="kicker">에듀테크 도감<span class="sep">/</span>교사 지원·연수 <span class="sep">/</span> 기관·데이터</div><div class="ct-line">프롬프트를 넘어 설계와 검증을 가르치는 연수 그리고 학교개선 AI</div></div><div class="ct-rng">21–24</div></div>
+  <div class="ct-grid">
+    <div class="app mini">
+      <div class="top">
+        <div style="display:flex;gap:3mm"><span class="rank">21</span><div><h4>Build With LLMs</h4><div class="who">CMU 컴퓨터과학대 경영자교육 × Simplilearn · 미국 · 2026-09-16 · AI 시스템 설계 과정</div><div class="ct-bd"><span class="stat-badge n">과정 개설</span><span class="ct-cat">교사 지원·연수</span></div></div></div>
+        <div class="scores"><b>교사</b><span class="dots">●●●●<span class="off">●</span></span><br><b>연구</b><span class="dots">●●●●●</span></div>
+      </div>
+      <dl><dt>무엇인가</dt><dd>RAG·도구호출·MCP·다중 에이전트·신뢰성·보안을 묶은 8주 실시간 온라인 인증과정 캡스톤에서 근거충실도·도구 정확성·아첨·탈옥 저항성을 평가한다 첫 공개 코호트는 2026-11-05부터 2027-02-11까지</dd><dt>차별점</dt><dd>짧은 온라인 모듈과 달리 실시간 수업과 MCP·인간 승인·감사로그·레드팀을 캡스톤에 함께 요구한다</dd><dt>교실 장면</dt><dd>교원연수에서 오개념 진단 어시스턴트를 설계하고 교사가 승인해야만 피드백이 학생에게 가도록 도구 권한을 제한한다</dd><dt>한국 적용</dt><dd>영어·가격·시간·API 계약 부담이 커 정규 연수보다 대학원 프로젝트나 연구팀 공동개발에 맞다</dd><dt>주의</dt><dd>Python과 머신러닝 선수지식이 필요하다 학습성과의 독립 검증은 없다 캡스톤에는 실제 학생자료 대신 합성 데이터를 쓴다</dd></dl>
+      <div class="ct-spec"><span><b>가격</b>4,000달러 · 정상가 4,500달러</span><span><b>한국어</b>미확인 · 공개 페이지 영어</span><span><b>근거 수준</b><span class="ev" data-l="1"><i><b></b><b></b><b></b><b></b><b></b></i>과정 공지</span></span></div>
+    </div>
+    <div class="app mini">
+      <div class="top">
+        <div style="display:flex;gap:3mm"><span class="rank">22</span><div><h4>Google AI Educator Series</h4><div class="who">Google for Education · ISTE-ASCD · 글로벌 · 2026-09-03 · 09-19 · 교사 AI 마이크로크리덴셜</div><div class="ct-bd"><span class="stat-badge n">연수</span><span class="ct-cat">교사 지원·연수</span></div></div></div>
+        <div class="scores"><b>교사</b><span class="dots">●●●●<span class="off">●</span></span><br><b>연구</b><span class="dots">●●●<span class="off">●●</span></span><br><span class="ct-ed">편집부 평가</span></div>
+      </div>
+      <dl><dt>무엇인가</dt><dd>9월 3일 무료 교원 연수 모듈을 공개했고 9월 19일에는 30분 단위 실습과 공식 디지털 배지를 결합한 배지어톤을 열었다 현장 사례·모듈 안내·실시간 지원·간단한 확인평가를 묶은 짧은 반복형 연수다</dd><dt>차별점</dt><dd>일회성 긴 강의 대신 짧은 수행과 확인 배지로 모듈화했다</dd><dt>교실 장면</dt><dd>교사가 10~15분 미션을 수행해 산출물을 내고 한 달 뒤 수업 적용 기록을 남긴다</dd><dt>한국 적용</dt><dd>Google 한국 블로그를 통해 한국 도입이 발표돼 접근성이 높다</dd><dt>주의</dt><dd>배지 취득이 실제 수업역량이나 학생성과를 증명하지는 않는다 이수 뒤 수업 적용 증거를 따로 모아야 한다</dd></dl>
+      <div class="ct-spec"><span><b>가격</b>무료 연수 모듈</span><span><b>한국어</b>한국 도입 발표</span><span><b>근거 수준</b><span class="ev" data-l="1"><i><b></b><b></b><b></b><b></b><b></b></i>연수 공지</span></span></div>
+    </div>
+    <div class="app mini">
+      <div class="top">
+        <div style="display:flex;gap:3mm"><span class="rank">23</span><div><h4>Purdue × LEGO Education 연수</h4><div class="who">Purdue University · LEGO Education · 미국 · 2026-09-25 보도 · AI·코딩·로봇 교원 연수</div><div class="ct-bd"><span class="stat-badge n">연수</span><span class="ct-cat">교사 지원·연수</span></div></div></div>
+        <div class="scores"><b>교사</b><span class="dots">●●●●<span class="off">●</span></span><br><b>연구</b><span class="dots">●●●●<span class="off">●</span></span></div>
+      </div>
+      <dl><dt>무엇인가</dt><dd>인디애나 6~8학년 STEM 교원을 대상으로 LEGO Education Computer Science & AI 키트로 AI·코딩·로봇을 수업 활동으로 옮기는 Brick by Brick 연수 7월 23일 워크숍 이후 영상과 자료를 온라인으로 제공한다</dd><dt>차별점</dt><dd>개념 강의보다 교구·코딩·협업 문제를 실제 수업 흐름으로 옮기도록 돕는다</dd><dt>교실 장면</dt><dd>로봇 경로 과제에서 교사가 학생 오류를 언제 바로잡고 언제 탐구로 남길지를 연습한다</dd><dt>한국 적용</dt><dd>교구 비용과 국내 교육과정 정렬 한국어 교사자료를 먼저 확인해야 한다</dd><dt>주의</dt><dd>9월 자료는 7월 프로그램의 후속 보도다 참가 교사의 수업 변화·학생 성과·비용 데이터는 공개되지 않았다</dd></dl>
+      <div class="ct-spec"><span><b>가격</b>미확인</span><span><b>한국어</b>미확인</span><span><b>근거 수준</b><span class="ev" data-l="1"><i><b></b><b></b><b></b><b></b><b></b></i>연수 보도</span></span></div>
+    </div>
+    <div class="app mini">
+      <div class="top">
+        <div style="display:flex;gap:3mm"><span class="rank">24</span><div><h4>WestEd My School Improvement Partner</h4><div class="who">WestEd · 미국 · 2026-09-12 · 학교개선 AI 코칭</div><div class="ct-bd"><span class="stat-badge">출시</span><span class="ct-cat">기관·데이터</span></div></div></div>
+        <div class="scores"><b>교사</b><span class="dots">●●●<span class="off">●●</span></span><br><b>연구</b><span class="dots">●●●●<span class="off">●</span></span><br><span class="ct-ed">편집부 평가</span></div>
+      </div>
+      <dl><dt>무엇인가</dt><dd>학교개선의 진단과 의사결정 과정에 AI를 들이는 코칭 도구 주간 리뷰는 AI가 학교개선 의사결정 층위로 진입한 신규 신호로 분류했다</dd><dt>차별점</dt><dd>AI의 적용 대상이 수업 자료에서 학교개선 의사결정으로 넓어지는 신호</dd><dt>교실 장면</dt><dd>학교 리더십 팀이 개선 목표와 자료를 정리하고 AI 제안은 교직원 협의의 초안으로만 쓴다</dd><dt>한국 적용</dt><dd>학교자체평가·학교컨설팅과 연결해 볼 만하지만 한국어와 국내 지표 연동은 확인되지 않았다</dd><dt>주의</dt><dd>레이더가 확인한 공개 정보가 적어 기능과 데이터 처리의 세부는 미확인이다 AI 제안이 학교 평가 결과로 굳지 않게 한다</dd></dl>
+      <div class="ct-spec"><span><b>가격</b>미확인</span><span><b>한국어</b>미확인</span><span><b>근거 수준</b><span class="ev" data-l="1"><i><b></b><b></b><b></b><b></b><b></b></i>신규 발표</span></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EDTECH CATALOGUE (8/10) ================= -->
+<section class="page tint" data-sec="EDTECH CATALOGUE" data-title="에듀테크 도감" id="p-catalog8">
+  <div class="ct-head"><div><div class="kicker">에듀테크 도감<span class="sep">/</span>기관·데이터</div><div class="ct-line">대학 플랫폼 접근성 로그 도구 포트폴리오 대안 고등교육</div></div><div class="ct-rng">25–28</div></div>
+  <div class="ct-grid">
+    <div class="app mini">
+      <div class="top">
+        <div style="display:flex;gap:3mm"><span class="rank">25</span><div><h4>리쓰메이칸 Education AI Platform</h4><div class="who">Ritsumeikan University · 일본 · 2026-09-18 · 대학 교육 DX 플랫폼</div><div class="ct-bd"><span class="stat-badge n">추진 계획</span><span class="ct-cat">기관·데이터</span></div></div></div>
+        <div class="scores"><b>교사</b><span class="dots">●●<span class="off">●●●</span></span><br><b>연구</b><span class="dots">●●●●<span class="off">●</span></span><br><span class="ct-ed">편집부 평가</span></div>
+      </div>
+      <dl><dt>무엇인가</dt><dd>AI 학습지원·교육 IR·디지털 학생증·학습경로 관리·외부 학습자원을 한 축으로 묶는 교육 AI 플랫폼을 추진한다 학습데이터를 쌓고 시각화해 학생의 성찰과 필요한 학습기회 연결을 돕는다</dd><dt>차별점</dt><dd>개별 챗봇이 아니라 대학의 학습데이터와 지원체계를 플랫폼화하고 거버넌스를 병행한다</dd><dt>교실 장면</dt><dd>학생이 자기 학습기록 대시보드를 보고 다음 학습기회를 고른다</dd><dt>한국 적용</dt><dd>대학 LMS와 학생지원을 통합할 때 데이터의 목적·설명책임·안심 사용을 학생과 함께 논의하는 절차가 참고점이다</dd><dt>주의</dt><dd>개혁 계획과 사례 공유 단계라 장기 학습효과는 별도로 검증해야 한다</dd></dl>
+      <div class="ct-spec"><span><b>가격</b>해당 없음 · 기관 계획</span><span><b>한국어</b>미확인</span><span><b>근거 수준</b><span class="ev" data-l="1"><i><b></b><b></b><b></b><b></b><b></b></i>기관 계획</span></span></div>
+    </div>
+    <div class="app mini">
+      <div class="top">
+        <div style="display:flex;gap:3mm"><span class="rank">26</span><div><h4>Perlego × 리즈대학 접근성 데이터</h4><div class="who">Perlego · University of Leeds · 영국 · 2026-09-23 · 디지털 교재 접근성 운영</div><div class="ct-bd"><span class="stat-badge t">운영 데이터</span><span class="ct-cat">기관·데이터</span></div></div></div>
+        <div class="scores"><b>교사</b><span class="dots">●●●●<span class="off">●</span></span><br><b>연구</b><span class="dots">●●●●<span class="off">●</span></span></div>
+      </div>
+      <dl><dt>무엇인가</dt><dd>2년 운영자료에서 기능 사용 약 70만 8천 회 Read Aloud 40,871회 난독 친화 글꼴 2,532회 글자크기 변경 11,391회가 기록됐다 이용자는 평균 18권 이상을 열람했고 시험기간 라이선스 상한으로 인한 접근 거절은 없었다고 보고됐다</dd><dt>차별점</dt><dd>접근성 기능을 부가 옵션이 아니라 학습행동 데이터로 본다</dd><dt>교실 장면</dt><dd>읽어주기·글자크기 설정을 진단 라벨이 아니라 학생이 고른 학습전략으로 다룬다</dd><dt>한국 적용</dt><dd>디지털 교재 계약에서 접근성 기능 사용률과 접근 실패를 품질지표로 넣을 근거가 된다</dd><dt>주의</dt><dd>기관·기업이 공개한 기술통계로 인과효과가 아니다 접근성 기능 사용을 개인의 민감정보로 역추론해서는 안 된다</dd></dl>
+      <div class="ct-spec"><span><b>가격</b>미확인</span><span><b>한국어</b>미확인</span><span><b>근거 수준</b><span class="ev" data-l="1"><i><b></b><b></b><b></b><b></b><b></b></i>운영 기술통계</span></span></div>
+    </div>
+    <div class="app mini">
+      <div class="top">
+        <div style="display:flex;gap:3mm"><span class="rank">27</span><div><h4>Instructure EdTech Top 40</h4><div class="who">Instructure · LearnPlatform · 미국 · 2026-09-24 · 도구 사용·증거 보고서</div><div class="ct-bd"><span class="stat-badge g">보고서</span><span class="ct-cat">기관·데이터</span></div></div></div>
+        <div class="scores"><b>교사</b><span class="dots">●●●<span class="off">●●</span></span><br><b>연구</b><span class="dots">●●●●●</span></div>
+      </div>
+      <dl><dt>무엇인가</dt><dd>2025–26 보고서는 K-12 기관이 도구를 늘리기보다 공통 인프라·목적 적합성·증거 수준을 중시한다고 본다 상위 LTI 도구의 85%가 교육 목적형 도구라고 설명한다</dd><dt>차별점</dt><dd>도구 사용량·증거 수준·계약관리를 한 틀에서 결합한다</dd><dt>교실 장면</dt><dd>교육청이 도구 포트폴리오를 정비하며 사용량·근거·중복 기능을 함께 본다</dd><dt>한국 적용</dt><dd>목록을 그대로 쓰기보다 사용도·교육과정 정합성·개인정보·교사 부담·효과 근거의 다기준 평가표로 옮기는 편이 유용하다</dd><dt>주의</dt><dd>미국 K-12의 접근·사용량 분석으로 효과 지표가 아니다 낮은 사용량이 소수 학생에게 중요한 도구를 없애는 근거로 오용될 수 있다</dd></dl>
+      <div class="ct-spec"><span><b>가격</b>보고서 무료 · 양식 제출 · 제품은 기관 문의</span><span><b>한국어</b>미확인 · 한국어 보고서 확인 안 됨</span><span><b>근거 수준</b><span class="ev" data-l="1"><i><b></b><b></b><b></b><b></b><b></b></i>사용량 보고서</span></span></div>
+    </div>
+    <div class="app mini">
+      <div class="top">
+        <div style="display:flex;gap:3mm"><span class="rank">28</span><div><h4>Horowitz Andreessen Academy</h4><div class="who">HAA · 미국 · 2026-09-22 · AI 시대 대안 고등교육</div><div class="ct-bd"><span class="stat-badge">출범 발표</span><span class="ct-cat">기관·데이터</span></div></div></div>
+        <div class="scores"><b>교사</b><span class="dots">●●●<span class="off">●●</span></span><br><b>연구</b><span class="dots">●●●●●</span></div>
+      </div>
+      <dl><dt>무엇인가</dt><dd>고교 졸업 청년 대상 1년 전일제 대면 과정 프로젝트·단기 과정·기업 Co-op을 결합하고 성적보다 proof of work로 선발한다 2027년 9월 약 50명 첫 기수 예정 학위·인증이 없는 비인가 과정이다</dd><dt>차별점</dt><dd>도구가 아니라 AI 도구를 프로젝트·수업·현장실습에 묶는 교육기관 모델</dd><dt>교실 장면</dt><dd>대학 AI융합전공이나 영재교육에서 8~12주 축소판으로 운영해 학생이 도구를 만들고 오류 사례·사용자 테스트를 함께 제출한다</dd><dt>한국 적용</dt><dd>고교·대학·기업 연계 캡스톤이나 마이크로크리덴셜 실증으로 축소 적용하는 편이 현실적이다</dd><dt>주의</dt><dd>샌프란시스코 이주·거주비 부담 특정 기업 생태계 종속 proof of work 선발의 형평성 문제가 있고 학습성과 데이터는 없다</dd></dl>
+      <div class="ct-spec"><span><b>가격</b>첫 기수 수업료 없음 · 거주비는 본인 부담</span><span><b>한국어</b>미확인 · 현지 대면</span><span><b>근거 수준</b><span class="ev" data-l="1"><i><b></b><b></b><b></b><b></b><b></b></i>출범 발표</span></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EDTECH CATALOGUE (9/10) ================= -->
+<section class="page tint" data-sec="EDTECH CATALOGUE" data-title="에듀테크 도감" id="p-catalog9">
+  <div class="ct-head"><div><div class="kicker">에듀테크 도감<span class="sep">/</span>정책·거버넌스</div><div class="ct-line">기능보다 먼저 묻게 된 것 데이터 재사용 동의 권한 공개</div></div><div class="ct-rng">29–32</div></div>
+  <div class="ct-grid">
+    <div class="app mini">
+      <div class="top">
+        <div style="display:flex;gap:3mm"><span class="rank">29</span><div><h4>캘리포니아 AB 1159</h4><div class="who">캘리포니아주 · 미국 · 2026-09-10 서명 · 학생 데이터 AI 학습 제한</div><div class="ct-bd"><span class="stat-badge g">법 서명</span><span class="ct-cat">정책·거버넌스</span></div></div></div>
+        <div class="scores"><b>교사</b><span class="dots">●●<span class="off">●●●</span></span><br><b>연구</b><span class="dots">●●●●<span class="off">●</span></span><br><span class="ct-ed">교사 편집부 평가</span></div>
+      </div>
+      <dl><dt>무엇인가</dt><dd>식별 가능한 학생 정보를 생성형 AI 학습에 쓰는 것을 금지하고 보호 범위를 고등교육까지 넓힌다 주요 조항은 2027-01-01 고등교육 보호체계 HESIPA는 2027-07-01부터 작동한다 비식별 정보의 제품 개선 활용과 적응학습 자체를 전면 금지하지는 않는다</dd><dt>차별점</dt><dd>학생 데이터가 모델 개선에 재사용되는가를 도입 심사의 핵심 질문으로 만든다</dd><dt>교실 장면</dt><dd>학교가 새 AI 앱 평가표에 모델 학습 재사용·보존기간·비식별화 방식·삭제권·관리자 통제·제3자 제공 항목을 추가한다</dd><dt>한국 적용</dt><dd>국내에 직접 적용되지 않지만 조달 체크리스트의 여섯 항목을 설계할 때 참고틀이 된다</dd><dt>주의</dt><dd>성적·시험결과·음성·위치까지 넓은 학생정보를 포함하므로 비식별 처리의 실제 기준을 계약서로 확인해야 한다</dd></dl>
+      <div class="ct-spec"><span><b>가격</b>해당 없음</span><span><b>한국어</b>해당 없음</span><span><b>근거 수준</b><span class="ev" data-l="1"><i><b></b><b></b><b></b><b></b><b></b></i>법·정책</span></span></div>
+    </div>
+    <div class="app mini">
+      <div class="top">
+        <div style="display:flex;gap:3mm"><span class="rank">30</span><div><h4>Amira Learning 학부모 논쟁</h4><div class="who">샌프란시스코 · 미국 · 2026-09-16 보도 · 초등 AI 읽기 도구</div><div class="ct-bd"><span class="stat-badge g">논쟁</span><span class="ct-cat">정책·거버넌스</span></div></div></div>
+        <div class="scores"><b>교사</b><span class="dots">●●<span class="off">●●●</span></span><br><b>연구</b><span class="dots">●●●●<span class="off">●</span></span><br><span class="ct-ed">편집부 평가</span></div>
+      </div>
+      <dl><dt>무엇인가</dt><dd>약 1,000명의 학부모·교사 등이 화면시간과 AI 도구 사용 제한 투명성 옵트아웃을 요구했다는 보도 회사는 음성 기반 읽기 지원이 생성형 챗봇이 아니라 음성인식·튜터링 시스템이라고 설명했다</dd><dt>차별점</dt><dd>정확도 외에 동의·설명·거부권·사용시간·독립 근거를 도입평가 항목으로 끌어올렸다</dd><dt>교실 장면</dt><dd>학교가 음성 AI를 들이기 전 보호자 고지·거부권·사용시간 한도를 안내문에 명시한다</dd><dt>한국 적용</dt><dd>초등 음성 AI 도입을 심의할 때 동의·설명·거부권·사용시간을 평가 지표에 넣을 근거가 된다</dd><dt>주의</dt><dd>보도 시점의 주장과 회사 설명을 정리한 것으로 법적·기술적 감사 결과가 아니다</dd></dl>
+      <div class="ct-spec"><span><b>가격</b>해당 없음</span><span><b>한국어</b>해당 없음</span><span><b>근거 수준</b><span class="ev" data-l="1"><i><b></b><b></b><b></b><b></b><b></b></i>언론 보도</span></span></div>
+    </div>
+    <div class="app mini korea">
+      <div class="top">
+        <div style="display:flex;gap:3mm"><span class="rank">31</span><div><h4>한국 AI 에이전트 보안 지침</h4><div class="who">한국 정부 · 한국 · 2026-09-15 Reuters 보도 · 자율 에이전트 보안</div><div class="ct-bd"><span class="stat-badge g">정책 착수</span><span class="ct-cat">정책·거버넌스</span></div></div></div>
+        <div class="scores"><b>교사</b><span class="dots">●●●<span class="off">●●</span></span><br><b>연구</b><span class="dots">●●●●<span class="off">●</span></span><br><span class="ct-ed">편집부 평가</span></div>
+      </div>
+      <dl><dt>무엇인가</dt><dd>자율 AI 에이전트의 권한과 보안을 다루는 지침을 개발한다는 보도 교육용 에이전트가 LMS·평가·학생기록·메시지 발송과 연결될수록 프롬프트 인젝션과 과도한 도구 권한 잘못된 자동조치가 개인정보·평가 공정성 문제로 번진다</dd><dt>차별점</dt><dd>에이전트의 오류를 교육적 실수를 넘어 개인정보와 평가 공정성의 문제로 다룬다</dd><dt>교실 장면</dt><dd>학교가 에이전트 도입 전에 최소권한·감사로그·인간 승인·중지 시험을 점검표로 확인한다</dd><dt>한국 적용</dt><dd>지침이 학교·교육청 조달 기준에 반영되는지가 다음 관찰 지점이다</dd><dt>주의</dt><dd>개발 착수 보도 단계로 지침의 내용과 일정은 확인되지 않았다</dd></dl>
+      <div class="ct-spec"><span><b>가격</b>해당 없음</span><span><b>한국어</b>국내</span><span><b>근거 수준</b><span class="ev" data-l="1"><i><b></b><b></b><b></b><b></b><b></b></i>정책 보도</span></span></div>
+    </div>
+    <div class="app mini">
+      <div class="top">
+        <div style="display:flex;gap:3mm"><span class="rank">32</span><div><h4>에듀테크 프라이버시 유예 연구</h4><div class="who">arXiv 2609.28137 · 국가 미확인 · 2026-09-23 · 혼합방법 프리프린트</div><div class="ct-bd"><span class="stat-badge g">연구</span><span class="ct-cat">정책·거버넌스</span></div></div></div>
+        <div class="scores"><b>교사</b><span class="dots">●●<span class="off">●●●</span></span><br><b>연구</b><span class="dots">●●●●<span class="off">●</span></span><br><span class="ct-ed">편집부 평가</span></div>
+      </div>
+      <dl><dt>무엇인가</dt><dd>에듀테크 종사자 12명 인터뷰와 플랫폼 48개의 정책 감사를 결합했다 평균 Cohen κ=.781 AI 기능이 보이는데도 33%는 의미 있는 AI 공개가 없었고 73%는 책임성과 침해 대응을 일반적으로만 적었다</dd><dt>차별점</dt><dd>인터뷰와 정책 감사를 결합해 조직의 우선순위와 공개 문서를 함께 본다</dd><dt>교실 장면</dt><dd>학교 관리자가 약관의 AI 공개·보존기간·제3자 모델·사고 대응 설명을 점검표로 확인한다</dd><dt>한국 적용</dt><dd>국내 서비스 약관을 같은 틀로 코딩하는 후속 연구가 가능하다</dd><dt>주의</dt><dd>동료심사 전 사전공개 논문이며 인터뷰 표본이 12명이다 교육용 안전 주장만으로 충분하지 않다는 근거로 읽는다</dd></dl>
+      <div class="ct-spec"><span><b>가격</b>해당 없음</span><span><b>한국어</b>해당 없음</span><span><b>근거 수준</b><span class="ev" data-l="2"><i><b></b><b></b><b></b><b></b><b></b></i>프리프린트</span></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EDTECH CATALOGUE (10/10) 한눈에 보기 ================= -->
+<section class="page tint" data-sec="EDTECH CATALOGUE" data-title="에듀테크 도감" id="p-catalog10">
+  <div class="kicker">에듀테크 도감<span class="sep">/</span>AT A GLANCE</div>
+  <h1 class="headline s">한눈에 보기 · 32선 비교표</h1>
+  <table class="tbl ct-tbl">
+    <thead><tr><th>#</th><th>서비스·신호</th><th>분류</th><th>상태</th><th>한국어</th><th>가격</th><th>교사</th><th>연구</th><th>평가</th></tr></thead>
+    <tbody>
+<tr><td class="ct-n">01</td><td><b>Magic EdTech ezSuite</b></td><td>수업설계·콘텐츠</td><td>출시</td><td>미확인</td><td>견적형</td><td class="ct-d"><span class="dots">●●●●<span class="off">●</span></span></td><td class="ct-d"><span class="dots">●●●●●</span></td><td>보고서</td></tr>
+<tr><td class="ct-n">02</td><td><b>Articulate Frontline · 360 AI · Nova</b></td><td>수업설계·콘텐츠</td><td>업데이트</td><td>미확인</td><td>미확인</td><td class="ct-d"><span class="dots">●●●●<span class="off">●</span></span></td><td class="ct-d"><span class="dots">●●●●<span class="off">●</span></span></td><td>보고서</td></tr>
+<tr><td class="ct-n">03</td><td><b>MagicSchool 9월 업데이트</b></td><td>수업설계·콘텐츠</td><td>업데이트</td><td>미확인</td><td>무료·견적</td><td class="ct-d"><span class="dots">●●●●<span class="off">●</span></span></td><td class="ct-d"><span class="dots">●●●●<span class="off">●</span></span></td><td>보고서</td></tr>
+<tr><td class="ct-n">04</td><td><b>LoroTOPIK</b></td><td>평가·피드백</td><td>수상·확산</td><td>지원</td><td>무료·문의</td><td class="ct-d"><span class="dots">●●●●<span class="off">●</span></span></td><td class="ct-d"><span class="dots">●●●●<span class="off">●</span></span></td><td>보고서</td></tr>
+<tr><td class="ct-n">05</td><td><b>Lynote.ai</b></td><td>평가·피드백</td><td>출시</td><td>미확인</td><td>무료 체험</td><td class="ct-d"><span class="dots">●●●●<span class="off">●</span></span></td><td class="ct-d"><span class="dots">●●●●<span class="off">●</span></span></td><td>보고서</td></tr>
+<tr><td class="ct-n">06</td><td><b>MentalHealthBench</b></td><td>평가·피드백</td><td>벤치마크</td><td>미확인</td><td>공개</td><td class="ct-d"><span class="dots">●●<span class="off">●●●</span></span></td><td class="ct-d"><span class="dots">●●●●<span class="off">●</span></span></td><td>보고서</td></tr>
+<tr><td class="ct-n">07</td><td><b>SchoolAI · Midland 학군 도입</b></td><td>튜터·학습</td><td>학군 도입</td><td>미확인</td><td>체험·상담</td><td class="ct-d"><span class="dots">●●●●<span class="off">●</span></span></td><td class="ct-d"><span class="dots">●●●●●</span></td><td>보고서</td></tr>
+<tr><td class="ct-n">08</td><td><b>엘리스 헬피챗</b></td><td>튜터·학습</td><td>전시 공개</td><td>국내</td><td>미확인</td><td class="ct-d"><span class="dots">●●●<span class="off">●●</span></span></td><td class="ct-d"><span class="dots">●●●●<span class="off">●</span></span></td><td>편집부</td></tr>
+<tr><td class="ct-n">09</td><td><b>Gemini Notebook 학습도구</b></td><td>튜터·학습</td><td>업데이트</td><td>미확인</td><td>미확인</td><td class="ct-d"><span class="dots">●●●<span class="off">●●</span></span></td><td class="ct-d"><span class="dots">●●●●<span class="off">●</span></span></td><td>편집부</td></tr>
+<tr><td class="ct-n">10</td><td><b>IntelliPlan</b></td><td>튜터·학습</td><td>신규 포착</td><td>미확인</td><td>무료</td><td class="ct-d"><span class="dots">●●●<span class="off">●●</span></span></td><td class="ct-d"><span class="dots">●●●●●</span></td><td>보고서</td></tr>
+<tr><td class="ct-n">11</td><td><b>Ele AI Mentor</b></td><td>튜터·학습</td><td>발표</td><td>미확인</td><td>미공개</td><td class="ct-d"><span class="dots">●●●<span class="off">●●</span></span></td><td class="ct-d"><span class="dots">●●●●<span class="off">●</span></span></td><td>보고서</td></tr>
+<tr><td class="ct-n">12</td><td><b>Napster Learn × GEMS Education</b></td><td>튜터·학습</td><td>파일럿</td><td>미확인</td><td>미확인</td><td class="ct-d"><span class="dots">●●<span class="off">●●●</span></span></td><td class="ct-d"><span class="dots">●●●●<span class="off">●</span></span></td><td>편집부</td></tr>
+<tr><td class="ct-n">13</td><td><b>Bodhan AI 교육 스택</b></td><td>튜터·학습</td><td>공개</td><td>해당 없음</td><td>미확인</td><td class="ct-d"><span class="dots">●●●●<span class="off">●</span></span></td><td class="ct-d"><span class="dots">●●●●●</span></td><td>보고서</td></tr>
+<tr><td class="ct-n">14</td><td><b>AI 루킷</b></td><td>피지컬 AI·STEM</td><td>전시 공개</td><td>지원</td><td>공개</td><td class="ct-d"><span class="dots">●●●●<span class="off">●</span></span></td><td class="ct-d"><span class="dots">●●●●●</span></td><td>보고서</td></tr>
+<tr><td class="ct-n">15</td><td><b>라쿤봇 RaccoonBot</b></td><td>피지컬 AI·STEM</td><td>전시 공개</td><td>부분</td><td>미확인</td><td class="ct-d"><span class="dots">●●●<span class="off">●●</span></span></td><td class="ct-d"><span class="dots">●●●●<span class="off">●</span></span></td><td>보고서</td></tr>
+<tr><td class="ct-n">16</td><td><b>KIDZBot 피지컬 AI 로보틱스</b></td><td>피지컬 AI·STEM</td><td>투자</td><td>미확인</td><td>미확인</td><td class="ct-d"><span class="dots">●●●<span class="off">●●</span></span></td><td class="ct-d"><span class="dots">●●●●<span class="off">●</span></span></td><td>보고서</td></tr>
+<tr><td class="ct-n">17</td><td><b>PAIES 예비교사 AI 에이전트</b></td><td>교사 지원·연수</td><td>개발 협력</td><td>국내</td><td>해당 없음</td><td class="ct-d"><span class="dots">●●●●<span class="off">●</span></span></td><td class="ct-d"><span class="dots">●●●●●</span></td><td>보고서</td></tr>
+<tr><td class="ct-n">18</td><td><b>TeachFX · McGraw Hill 인수</b></td><td>교사 지원·연수</td><td>인수</td><td>미확인</td><td>미확인</td><td class="ct-d"><span class="dots">●●●<span class="off">●●</span></span></td><td class="ct-d"><span class="dots">●●●●●</span></td><td>보고서</td></tr>
+<tr><td class="ct-n">19</td><td><b>ALC Active Learning Classroom</b></td><td>교사 지원·연수</td><td>수상·실증</td><td>국내</td><td>미확인</td><td class="ct-d"><span class="dots">●●●<span class="off">●●</span></span></td><td class="ct-d"><span class="dots">●●●●●</span></td><td>보고서</td></tr>
+<tr><td class="ct-n">20</td><td><b>티처빌 AI</b></td><td>교사 지원·연수</td><td>프리뷰</td><td>국내</td><td>미확인</td><td class="ct-d"><span class="dots">●●●●<span class="off">●</span></span></td><td class="ct-d"><span class="dots">●●●<span class="off">●●</span></span></td><td>편집부</td></tr>
+<tr><td class="ct-n">21</td><td><b>Build With LLMs</b></td><td>교사 지원·연수</td><td>과정 개설</td><td>미확인</td><td>공개</td><td class="ct-d"><span class="dots">●●●●<span class="off">●</span></span></td><td class="ct-d"><span class="dots">●●●●●</span></td><td>보고서</td></tr>
+<tr><td class="ct-n">22</td><td><b>Google AI Educator Series</b></td><td>교사 지원·연수</td><td>연수</td><td>한국 도입</td><td>무료</td><td class="ct-d"><span class="dots">●●●●<span class="off">●</span></span></td><td class="ct-d"><span class="dots">●●●<span class="off">●●</span></span></td><td>편집부</td></tr>
+<tr><td class="ct-n">23</td><td><b>Purdue × LEGO Education 연수</b></td><td>교사 지원·연수</td><td>연수</td><td>미확인</td><td>미확인</td><td class="ct-d"><span class="dots">●●●●<span class="off">●</span></span></td><td class="ct-d"><span class="dots">●●●●<span class="off">●</span></span></td><td>보고서</td></tr>
+<tr><td class="ct-n">24</td><td><b>WestEd My School Improvement Partner</b></td><td>기관·데이터</td><td>출시</td><td>미확인</td><td>미확인</td><td class="ct-d"><span class="dots">●●●<span class="off">●●</span></span></td><td class="ct-d"><span class="dots">●●●●<span class="off">●</span></span></td><td>편집부</td></tr>
+<tr><td class="ct-n">25</td><td><b>리쓰메이칸 Education AI Platform</b></td><td>기관·데이터</td><td>추진 계획</td><td>미확인</td><td>해당 없음</td><td class="ct-d"><span class="dots">●●<span class="off">●●●</span></span></td><td class="ct-d"><span class="dots">●●●●<span class="off">●</span></span></td><td>편집부</td></tr>
+<tr><td class="ct-n">26</td><td><b>Perlego × 리즈대학 접근성 데이터</b></td><td>기관·데이터</td><td>운영 데이터</td><td>미확인</td><td>미확인</td><td class="ct-d"><span class="dots">●●●●<span class="off">●</span></span></td><td class="ct-d"><span class="dots">●●●●<span class="off">●</span></span></td><td>보고서</td></tr>
+<tr><td class="ct-n">27</td><td><b>Instructure EdTech Top 40</b></td><td>기관·데이터</td><td>보고서</td><td>미확인</td><td>무료·문의</td><td class="ct-d"><span class="dots">●●●<span class="off">●●</span></span></td><td class="ct-d"><span class="dots">●●●●●</span></td><td>보고서</td></tr>
+<tr><td class="ct-n">28</td><td><b>Horowitz Andreessen Academy</b></td><td>기관·데이터</td><td>출범 발표</td><td>미확인</td><td>무료</td><td class="ct-d"><span class="dots">●●●<span class="off">●●</span></span></td><td class="ct-d"><span class="dots">●●●●●</span></td><td>보고서</td></tr>
+<tr><td class="ct-n">29</td><td><b>캘리포니아 AB 1159</b></td><td>정책·거버넌스</td><td>법 서명</td><td>해당 없음</td><td>해당 없음</td><td class="ct-d"><span class="dots">●●<span class="off">●●●</span></span></td><td class="ct-d"><span class="dots">●●●●<span class="off">●</span></span></td><td>혼합</td></tr>
+<tr><td class="ct-n">30</td><td><b>Amira Learning 학부모 논쟁</b></td><td>정책·거버넌스</td><td>논쟁</td><td>해당 없음</td><td>해당 없음</td><td class="ct-d"><span class="dots">●●<span class="off">●●●</span></span></td><td class="ct-d"><span class="dots">●●●●<span class="off">●</span></span></td><td>편집부</td></tr>
+<tr><td class="ct-n">31</td><td><b>한국 AI 에이전트 보안 지침</b></td><td>정책·거버넌스</td><td>정책 착수</td><td>국내</td><td>해당 없음</td><td class="ct-d"><span class="dots">●●●<span class="off">●●</span></span></td><td class="ct-d"><span class="dots">●●●●<span class="off">●</span></span></td><td>편집부</td></tr>
+<tr><td class="ct-n">32</td><td><b>에듀테크 프라이버시 유예 연구</b></td><td>정책·거버넌스</td><td>연구</td><td>해당 없음</td><td>해당 없음</td><td class="ct-d"><span class="dots">●●<span class="off">●●●</span></span></td><td class="ct-d"><span class="dots">●●●●<span class="off">●</span></span></td><td>편집부</td></tr>
+    </tbody>
+  </table>
+  <div class="grid g2 mt4" style="gap:5mm">
+    <div class="box">
+      <h4><span class="tag">TABLE NOTE</span>표 읽기</h4>
+      <p class="small">한국어 칸의 국내는 국내 기업·기관 서비스 부분은 활용 가능성만 확인된 경우 해당 없음은 법·연구처럼 따질 수 없는 항목이다 가격 칸의 공개는 금액 공개 평가 칸의 보고서는 레이더 점수 환산 혼합은 교사 점수만 편집부가 매긴 경우다</p>
+    </div>
+    <div class="box teal">
+      <h4><span class="tag">PATTERN</span>32선이 말하는 것</h4>
+      <p class="small">교사 점수 5를 받은 항목은 없고 연구 점수 5는 11건이다 가격 미확인이 13건이고 한국어 지원을 확인한 해외 서비스는 드물다 지금 교실에 바로 권할 도구보다 소규모 파일럿과 교사 수정 로그로 검증할 대상이 많다는 뜻이다</p>
+    </div>
+  </div>
+</section>
