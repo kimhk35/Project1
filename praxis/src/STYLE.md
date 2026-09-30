@@ -35,7 +35,7 @@ A4 고정 페이지(210×297mm)다 한 `<section class="page">`가 한 면이다
 - 여러 면에 걸친 기사 · 첫 면 끝에 `<div class="cont">→ {{next}}면에 계속</div>`, 다음 면 맨 위에 `<div class="cont from">← {{prev}}면에서 계속</div>`
 - 다른 면 참조는 `{{pg:p-clinic2}}면` 처럼 토큰을 쓴다 (빌드가 쪽번호로 바꾼다)
 
-## 3 컴포넌트 (heuresis.css 에 정의됨 · 새 CSS가 꼭 필요하면 섹션 파일 안 `<style>`에 섹션 접두어 클래스로만 추가)
+## 3 컴포넌트 (praxis.css 에 정의됨 · 새 CSS가 꼭 필요하면 섹션 파일 안 `<style>`에 섹션 접두어 클래스로만 추가)
 
 ```html
 <div class="kicker">한글 분류<span class="sep">/</span>ENGLISH LABEL</div>
@@ -96,11 +96,11 @@ URL 은 소스에 있는 것만 · 없으면 비워 둔다 · 서지 안에도 �
 ## 6 검증 (반드시 끝까지)
 
 ```bash
-cd /home/user/Project1/heuresis/src
+cd /home/user/Project1/praxis/src
 python3 build.py p12_teachers.html     # 내 파일만 빌드 → _build/preview_p12_teachers.html + 표기 규칙 검사 (둘 다 0이어야 한다)
 HTML=preview_p12_teachers.html NODE_PATH=$(npm root -g) node render.js check   # 넘침 검사 · overflowing 0
 HTML=preview_p12_teachers.html NODE_PATH=$(npm root -g) node render.js shots   # 스크린샷 → _build/shots_preview_p12_teachers/p001.png …
 ```
 - 스크린샷을 Read 도구로 **모든 면을 직접 보고** 확인한다 · 넘침 · 겹침 · 아래쪽에 큰 빈 공간(면의 15% 이상)이 없도록 분량을 조절한다
-- 여러 에이전트가 동시에 작업한다 · 미리보기 파일과 스크린샷 폴더는 파일 이름별로 분리된다 · 미리보기에서 쪽번호와 {{pg:…}} 참조는 ?? 나 임시 번호로 보여도 괜찮다 · 다른 섹션 파일·heuresis.css·build.py·render.js 는 수정하지 않는다
+- 여러 에이전트가 동시에 작업한다 · 미리보기 파일과 스크린샷 폴더는 파일 이름별로 분리된다 · 미리보기에서 쪽번호와 {{pg:…}} 참조는 ?? 나 임시 번호로 보여도 괜찮다 · 다른 섹션 파일·praxis.css·build.py·render.js 는 수정하지 않는다
 - git 커밋·푸시는 하지 않는다

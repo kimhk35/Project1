@@ -158,18 +158,18 @@ body{background:var(--stage);font-family:var(--sans)}
   function toggleToc(o){o=o===undefined?!drawer.classList.contains('open'):o;drawer.classList.toggle('open',o);tocBtn.setAttribute('aria-expanded',o)}
   tocBtn.onclick=function(){toggleToc()};
   drawer.addEventListener('click',function(e){var b=e.target.closest('button[data-go]');if(b){go(+b.getAttribute('data-go'));toggleToc(false)}});
-  document.getElementById('modeBtn').onclick=function(){forced=spreadMode()?'single':'spread';store('heu-mode',forced);render(false)};
-  var root=document.documentElement,th=read('heu-theme');if(th)root.setAttribute('data-theme',th);
+  document.getElementById('modeBtn').onclick=function(){forced=spreadMode()?'single':'spread';store('praxis-mode',forced);render(false)};
+  var root=document.documentElement,th=read('praxis-theme');if(th)root.setAttribute('data-theme',th);
   document.getElementById('themeBtn').onclick=function(){
     var dark=root.getAttribute('data-theme')?root.getAttribute('data-theme')==='dark':!matchMedia('(prefers-color-scheme: light)').matches;
-    var t=dark?'light':'dark';root.setAttribute('data-theme',t);store('heu-theme',t);
+    var t=dark?'light':'dark';root.setAttribute('data-theme',t);store('praxis-theme',t);
   };
   document.getElementById('fsBtn').onclick=function(){
     if(!document.fullscreenElement){(document.documentElement.requestFullscreen||function(){}).call(document.documentElement)}else{document.exitFullscreen()}
   };
-  forced=read('heu-mode');
-  var tip=document.getElementById('tip');if(!read('heu-tip'))tip.classList.add('show');
-  document.getElementById('tipX').onclick=function(){tip.classList.remove('show');store('heu-tip','1')};
+  forced=read('praxis-mode');
+  var tip=document.getElementById('tip');if(!read('praxis-tip'))tip.classList.add('show');
+  document.getElementById('tipX').onclick=function(){tip.classList.remove('show');store('praxis-tip','1')};
   window.addEventListener('resize',function(){render(false)});
   var m=/p=(\d+)/.exec(location.hash);cur=m?Math.max(1,Math.min(N,+m[1])):1;
   render(false);

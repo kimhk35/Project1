@@ -166,7 +166,9 @@ class Writer:
         fid = node.get('id')
         png = os.path.join(B, 'charts', f'{fid}.png') if fid else None
         if png and os.path.exists(png):
-            self.doc.add_picture(png, width=Mm(160))
+            from PIL import Image
+            w, h = Image.open(png).size
+            self.doc.add_picture(png, width=Mm(min(160, 105 * w / h)))
             self.doc.paragraphs[-1].alignment = WD_ALIGN_PARAGRAPH.CENTER
         cap = node.find('figcaption')
         if cap:
@@ -313,9 +315,15 @@ class Writer:
         if 'byline' in cls or 'note' in cls or 'cap' in cls or 'refs-mini' in cls:
             p = self.doc.add_paragraph(); self.runs(p, node, 8.5, SANS, GREY); return
         if 'pull' in cls:
+            sm = node.find('small')
+            if sm:
+                sm.extract()
             p = self.doc.add_paragraph()
             para_border(p, 'C8412A', 'top', 16); para_border(p, 'CFC5B2', 'bottom', 6)
-            self.runs(p, node, 13, SERIF, NAVY, True); return
+            self.runs(p, node, 13, SERIF, NAVY, True)
+            if sm:
+                q = self.doc.add_paragraph(); self.runs(q, sm, 8.5, SANS, GREY)
+            return
         if name == 'figure':
             return self.figure(node)
         if name == 'table':

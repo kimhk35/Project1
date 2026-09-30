@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """PRAXIS 창간특집호 빌드 스크립트
 
-페이지 조각(p0*.html)과 heuresis.css 로부터 세 가지 HTML 을 만든다
+페이지 조각(p0*.html)과 praxis.css 로부터 세 가지 HTML 을 만든다
   - print.html   PDF 렌더링용 (로컬 폰트)
   - web edition  반응형 웹판
   - e-book       페이지 넘김 뷰어
@@ -49,6 +49,17 @@ def resolve_tokens(html, pages):
         k = m.group(1)
         return f'{ids[k]:02d}' if k in ids else '??'
     return re.sub(r'\{\{pg:([\w-]+)\}\}', pg, t)
+
+
+def number_figures(html):
+    n = [0]
+    def rep(m):
+        n[0] += 1
+        title = re.sub(r'^\s*그림\s*(?:\d+(?![년월일]))?\s*', '', m.group(2))
+        title = re.sub(r'^P(\d)[a-z]?\s+', r'제안 \1 ', title)
+        title = re.sub(r'^(?:[A-Z]\d?[a-z]?|\d{2})\s+', '', title)
+        return f'{m.group(1)}<b>그림 {n[0]} {title}</b>'
+    return re.sub(r'(<figcaption[^>]*>\s*)<b[^>]*>(.*?)</b>', rep, html, flags=re.S)
 
 
 def build_toc(pages):
@@ -106,14 +117,14 @@ def refs_pages():
             pages.append(cur); cur = []; cap = REF_PER_PAGE[1]
     if cur:
         pages.append(cur)
-    out, num = [], 0
+    out, num, shown_parts = [], 0, set()
     for i, pg in enumerate(pages):
-        body, last_part = [], None
+        body = []
         for it in pg:
             if it[0] == 'part':
-                if it[1] != last_part and (it[1] == '자료 출처' or i == 0):
+                if it[1] not in shown_parts:
                     body.append(f'<h4 class="refpart">{it[1]}</h4>')
-                last_part = it[1]
+                    shown_parts.add(it[1])
                 body.append(f'<h5>{it[2]}</h5>')
             else:
                 num += 1
@@ -172,7 +183,7 @@ def page(title, head, body, body_cls=''):
 
 def main():
     os.makedirs(BUILD, exist_ok=True)
-    css = open(os.path.join(SRC, 'heuresis.css'), encoding='utf-8').read()
+    css = open(os.path.join(SRC, 'praxis.css'), encoding='utf-8').read()
     only = [a for a in sys.argv[1:] if a.endswith('.html')]
     pages = load_pages(only)
     pages_html = resolve_tokens(None, pages)
@@ -180,6 +191,9 @@ def main():
     half = (len(toc) + 1) // 2
     pages_html = pages_html.replace('<!--TOC1-->', ''.join(toc[:half])).replace('<!--TOC2-->', ''.join(toc[half:]))
     pages_html = pages_html.replace('{{npages}}', str(len(pages)))
+    pages_html = number_figures(pages_html)
+    m = re.search(r'이번 호가 인용한 (\d+)건', pages_html)
+    pages_html = pages_html.replace('{{nrefs}}', m.group(1) if m else '')
     print(f'pages: {len(pages)}')
     if only:
         pv = 'preview_' + os.path.splitext(os.path.basename(only[0]))[0] + '.html'
