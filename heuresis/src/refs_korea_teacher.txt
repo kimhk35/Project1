@@ -1,0 +1,77 @@
+국외논문 | Ayubian 외 2026 Teachers and Generative AI: A Systematic Review of Adoption Competence Professional Development and Socio-Technical Experiences · Education Sciences 16(9) 1501 | https://doi.org/10.3390/educsci16091501
+국외논문 | Fu · Weng 2026 Building the AI Empowerment Framework for Teacher Education: A scoping review of teacher educators’ roles competencies practices and influencing factors · Teaching and Teacher Education 179 105594 | https://doi.org/10.1016/j.tate.2026.105594
+국외논문 | Le Xiu 외 2026 K–12 In-Service Teachers’ Beliefs About Generative AI in Classrooms: Insights from the United States India Qatar Colombia and the Philippines · Frontiers in Education | https://doi.org/10.3389/feduc.2026.1929017
+국외논문 | Blundell 외 2026 Teachers’ TPACK Considerations Regarding Opportunities and Challenges of Using GenAI in K-12 Education · Technology Knowledge and Learning | https://doi.org/10.1007/s10758-026-10002-x
+국외논문 | Yuan · Wang · Wang · He 2026 K-12 교사의 생성형 AI 동기·참여 체계적 문헌고찰(원제 미확인) · Educational Review | https://doi.org/10.1016/j.edurev.2026.100787
+국외논문 | University of Sydney · Barker Institute 2026 학교 생성형 AI 연구 271편 글로벌 리뷰(원제 미확인) | https://www.sydney.edu.au/news-opinion/news/2026/09/03/australia-lacks-evidence-on-genai-in-schools--landmark-global-re.html
+국외논문 | 저자 미확인 2026 온라인·하이브리드 교육의 AI 체계적 리뷰(원제 미확인) · Studies in Educational Evaluation 90 101656 | https://www.sciencedirect.com/science/article/pii/S0191491X26000994
+국외논문 | Bilgiç · Sever 2026 학생·교수의 AI 윤리 책임 인식 순차 혼합연구(원제 미확인) · International Journal of Educational Technology in Higher Education 23 Article 35 |
+정책기관 | Digital Education Council 2026 AI in Higher Education Global Survey 2026 | https://www.digitaleducationcouncil.com/resource-library-items/ai-in-higher-education-global-survey-2026
+국외논문 | Mesenhöller · Böhme 2026 Empowering teachers to use AI for differentiation · Frontiers in Education | https://doi.org/10.3389/feduc.2026.1875856
+국외논문 | Miranda · Vegliante · Marzano 2026 10시간 TPACK 기반 AI 리터러시 연수 연구(원제 미확인) · Education Sciences | https://doi.org/10.3390/educsci16091537
+국외논문 | Karakaya Özyer · Aydın 2026 Generative Artificial Intelligence Meets Assessment: Experimental Insights into Teacher Candidates’ Attitudes and Acceptance · International Journal of Education in Mathematics Science and Technology 14(1) 21–45 | https://doi.org/10.46328/ijemst.5190
+국외논문 | Le 외 2026 Development and evaluation of artificial intelligence literacy training for teacher education students · British Journal of Educational Technology | https://doi.org/10.1111/bjet.70047
+국외논문 | Satmaz · Toker · Girgin 2026 Technology-enhanced design thinking for mathematics teachers · Discover Education | https://doi.org/10.1007/s44217-026-02031-6
+국외논문 | Broughton · Randolph · Ovalle 2026 AI 에이전트의 WIDA 기준 루브릭 번역과 직무연계 전문학습(원제 미확인) · Frontiers in Education | https://doi.org/10.3389/feduc.2026.1923508
+국외논문 | Çaylan-Ergene · Ergene · Kontorovich 2026 Pre-service mathematics teachers’ views on the usefulness of ChatGPT: the validity of the obtained responses matters · International Journal of Mathematical Education in Science and Technology | https://doi.org/10.1080/0020739X.2026.2687118
+국외논문 | Pinto 외 2026 Artificial Intelligence in Initial Teacher Training for Pre-Service Primary School Teachers in Mathematics: A Systematic Review · Frontiers in Education | https://doi.org/10.3389/feduc.2026.1934366
+국외논문 | Walkington 외 2026 Mathematics Teachers’ Interactions with a Multi-Agent System for Personalized Problem Generation · AIED 2026 · arXiv | https://doi.org/10.48550/arXiv.2604.12066
+국외논문 | Walkington · Beauchamp · Pruitt-Britton · Feng 2026 Mathematics teachers using generative AI to pose math problems related to students’ interests · Journal of Mathematics Teacher Education | https://doi.org/10.1007/s10857-026-09743-4
+국외논문 | Ni · Zhou 2026 Dynamic interplay between cognitive load and teaching presence among university English teachers in generative AI-augmented instruction: a longitudinal mixed-methods study · Scientific Reports | https://www.nature.com/articles/s41598-026-68470-1
+국외논문 | Delgado-Togra · Quezada-Lozano 2026 교육자동화와 교사 역할 체계적 문헌고찰(원제 미확인) · Frontiers in Education | https://doi.org/10.3389/feduc.2026.1876239
+국외논문 | Connell Pensky 외 2026 Can asynchronous learning modules about generative AI increase students’ knowledge skills and self-efficacy for genAI · Computers and Education 250 105640 | https://doi.org/10.1016/j.compedu.2026.105640
+국외논문 | Oreopoulos 외 2026 Making AI Tutoring Productive: Evidence from a Mastery-Based Math Practice Experiment · NBER Working Paper 35621 | https://www.nber.org/papers/w35621
+국외논문 | Hai Li 외 2026 I Hear You: Enhancing Middle School Mathematics Engagement and Learning Outcomes through Teachable Agent Voice Design · Computers and Education 254 105725 | https://doi.org/10.1016/j.compedu.2026.105725
+국외논문 | Svetec · Divjak · Kadoić 2026 학습분석의 교육개입 실행 조건 Delphi 연구(원제 미확인) · International Journal of Educational Technology in Higher Education 23 Article 45 |
+정책기관 | UNESCO IESALC · UNU-IAS 2026 AI Implementation in Higher Education in Latin America and the Caribbean | https://www.iesalc.unesco.org/en/articles/new-unesco-iesalc-study-reveals-widespread-ai-adoption-higher-education-across-latin-america-and
+보도 | Associated Press 2026 Microsoft commits to sweeping AI privacy rules for students · AFT · UFT · Microsoft 학교 AI 안전·개인정보 표준 | https://apnews.com/article/89b040631d635e0d8673f1e9aa9a6e28
+보도 | Midland Daily News 2026 Midland Public Schools takes first steps in using SchoolAI | https://www.ourmidland.com/news/article/midland-schools-schoolai-ai-22422338.php
+에듀테크 | Articulate 2026 Frontline · Articulate 360 AI · Nova 발표 |
+에듀테크 | Google for Education 2026 AI Educator Series · Badge-a-thon | https://www.googleforeducommunity.com/t5/Events/eb-p/educator-events/page/3?byPassHideMessagesFromListFilter=true&depth=0&sort_by=occasionStartTime
+에듀테크 | UMU Technology Japan 2026 UMU AGL AI 활용 연수 솔루션 | https://prtimes.jp/main/html/rd/p/000000259.000086740.html
+에듀테크 | McGraw Hill 2026 McGraw Hill Acquires TeachFX | https://www.mheducation.com/about-us/news-insights/press-releases/mcgraw-hill-acquires-teachfx-expanding-commitment-to-great-teaching-with-ai-coaching-tool-designed-by-educators.html
+국내논문 | 임보라 · 조민주 · 박현빈 · 김하은 · 정유미 2026 AI 활용 수업 및 평가에 대한 초·중등교사의 인식과 정책 요구 분석: 중요도-수행도 분석(IPA)을 중심으로 · 교육정보미디어연구 32(2) 773–806 | https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003331618
+국내논문 | 박채원 · 임규연 2026 중등교사 AI 리터러시·AI 불안·수용의도와 실제 사용(원제 미확인) · 교육정보미디어연구 32(4) 2235–2259 |
+국내논문 | 한형종 · 권혜성 2026 Agentic AI의 교육적 활용에 대한 초등교사 인식 탐색 · 교육정보미디어연구 32(4) 2315–2341 | https://doi.org/10.15833/kaeim.2026.32.4.018
+국내논문 | 백민경 · 박찬흥 2026 교사–AI 협업 서·논술형 평가 산출물의 정합성(원제 미확인) · 교육정보미디어연구 32(4) 2501–2525 |
+국내논문 | 손태권 2026 인공지능 챗봇 환경에서 초등 예비교사의 문화적·수학적 발문 양상 분석 · 초등수학교육 29(2) 177–192 | https://doi.org/10.7468/jksmec.2026.29.2.177
+국내논문 | 권성룡 2026 초등수학교육에서 인공지능 활용 연구의 출현 양상과 초등교사교육을 위한 시사점 · 초등수학교육 29(3) | https://doi.org/10.7468/jksmec.2026.29.3.455
+국내논문 | 김건우 · 박선주 2026 sLLM 기반 교사 업무용 AI 서비스(AMOND) 설계 및 개발 · 정보교육학회논문지 30(4) 825–835 | https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003375914
+국내논문 | 정윤리 · 김유정 · 권정인 · 채상미 · 신병철 2026 AI 기반 과정 중심 평가 시스템의 교육적 의미 탐색: 실행연구를 중심으로 · 교육과정평가연구 29(2) 141–164 | https://doi.org/10.29221/jce.2026.29.2.141
+국내논문 | 김화경 · 송민호 · 최인용 2026 파인 튜닝 기반 수학 서술형 자동 채점: 학습 데이터 규모와 과제 특성의 영향을 중심으로 · 수학교육 65(2) 223–246 | https://doi.org/10.63311/mathedu.26.6521
+국내논문 | 김민아 · 김병우 · 허완규 · 이봉주 2026 현장 맥락을 반영한 인공지능 융합 학교수학 교수·학습 설계 원리 개발 · 수학교육 65(1) 1–21 | https://www.kci.go.kr/kciportal/landing/article.kci?arti_id=ART003314688
+국내논문 | 한승목 · 박종도 2026 고등교육 학습자의 AI 리터러시 프로파일에 따른 생성형 AI 활용 행태 차이 분석 · 정보관리학회지 43(2) 115–140 | https://doi.org/10.3743/KOSIM.2026.43.2.115
+국내논문 | 민채원 · 박은경 2026 고등학생의 정보 리터러시 분석과 개선 방안: 수원시 J 고등학교를 중심으로 · 한국비블리아학회지 37(2) 215–235 | https://doi.org/10.14699/kbiblia.2026.37.2.215
+국내논문 | 최현재 · 신승기 2026 초등학생의 생성형 AI 리터러시 함양을 위한 교육적 미들웨어 AL-G 개발 및 타당화 · 정보교육학회논문지 30(4) 877–892 | https://kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003375918
+국내논문 | Gwak · Jang · Kim · Yang · Lee · Kim 2026 Playfulness and social–emotional support as predictors of elementary students’ AI self-efficacy · Interactive Learning Environments | https://doi.org/10.1080/10494820.2026.2667458
+국내논문 | 이청민 · 이슬아 · 김수진 2025 AI 디지털교과서 정책 도입 과정의 담론 양상 · 교육연구논총 46(4) | https://doi.org/10.18612/cnujes.2025.46.4.37
+국내논문 | 하오선 · 정주원 2026 생성형 AI 리터러시와 학습 유용성 인식의 관계: 중·고등학교 비교 연구 · 열린교육연구 34(2) 515–537 | https://doi.org/10.18230/tjye.2026.34.2.515
+국내논문 | 박주현 · 이은서 · 김유민 · 이채린 · 임철일 2026 AI 기반 사회정서학습을 위한 교수설계전략 개발 · 교육정보미디어연구 32(2) 989–1021 | https://kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003331938
+국내논문 | 권태현 2026 생성형 AI 기반 쓰기 피드백의 효과와 학습자 반응 분석 · 국어교육학연구 61(1) 37–66 | https://doi.org/10.20880/kler.2026.61.1.37
+국내논문 | 류경희 2026 생성형 AI는 일본어 문법교육에 도입할 수 있는가 · Foreign Languages Education 33(3) 109–128 |
+국내논문 | 우길주 · 양지원 2026 AI 기반 기초 문해력 발달 양상 종단 분석 · KCI |
+국내논문 | 이효정 2026 ChatGPT 활용 논증적 읽기-쓰기 수업 · KCI |
+정책기관 | 교육부 2026 초·중등 인공지능 교육을 이끄는 AI 중점학교 1,141개교 본격 운영 | https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=105557&lev=0&m=020402&opType=N&page=1&s=moe&searchType=null&statusYN=W
+정책기관 | 교육부 2026 인공지능(AI) 교과 교원이 주도하여 교육자료부터 인정교과서까지 만든다 | https://www.moe.go.kr/
+보도 | 뉴스1 2026 대학 AI 활용 윤리 가이드라인 최종안 배포 · 교육부 · 한국대학교육협의회 | https://www.news1.kr/amp/society/education/6271700
+보도 | 연합뉴스 2026 전국 디지털튜터 양성센터 교육생 1,700명 모집 · 교육부 · 한국과학창의재단 | https://www.yna.co.kr/view/AKR20260901052600530
+보도 | 매일신문 2026 AI 스마트 글라스 부정행위 우려 교육부 수능 반입 금지 품목에 명시 | https://www.imaeil.com/page/view/2026090115521420582
+보도 | 뉴스1 2026 학생 98% 교사 72%가 생성형 AI 사용 · 교육혁신포럼 NEIF 2026 | https://www.news1.kr/society/education/6277386
+정책기관 | 한국교원대학교 · 충청북도교육청 2026 AI·디지털 교육 혁신 연수 안내 | https://dt.knue.ac.kr/
+보도 | 연합뉴스 2026 인천교육청 AI 교육행정 혁신 추진단 출범 | https://www.yna.co.kr/view/AKR20260903107400065
+보도 | 뉴시스 2026 서·논술형 평가 확대한다고 다 해결되나 국교위 내부서도 우려 | https://www.newsis.com/view/NISX20260904_0003777239
+정책기관 | 서울특별시교육청 2026 학생 AI·디지털 리터러시 진단검사 | https://literacy.sen.go.kr/main.do
+보도 | 파이낸셜뉴스 2026 초·중등 교사 생성형 AI 활용 실태 · 한국교육과정평가원 관련 보도(원제 미확인) | https://www.fnnews.com/news/202609061117518750
+정책기관 | 한국교육개발원 교육정책네트워크 2026 AI 기반 서·논술형 평가의 현장 안착과 실천 과제 · 연구보고서 CRM2026-31 | https://edpolicy.kedi.re.kr/
+정책기관 | 전북특별자치도교육청 2026 전북 AI 리터러시 교육 가이드라인 | https://v.daum.net/v/20260804143615375
+정책기관 | 한국연구재단 윤리정책법무팀 2026 대학 연구자를 위한 생성형 AI 연구윤리 가이드 · CRE 연구윤리정보포털 |
+정책기관 | 개인정보보호위원회 2026 생성형 AI 서비스 이용자를 위한 개인정보 보호 가이드 | https://pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12084
+보도 | PR Newswire Korea 2026 이화여대 사범대학 PAIES 기반 예비교사 AI 에이전트 보도(원제 미확인) |
+보도 | 연합뉴스 2026 에듀테크 코리아 페어 교육부·산업부 행사 보도(원제 미확인) |
+에듀테크 | Makit AI Labs 2026 Makit AI Learning OS · K-에듀테크 콘테스트 최우수상 | https://www.makitai.com/
+에듀테크 | E4NET 2026 LoroTOPIK · K-에듀테크 콘테스트 최우수상 | https://web.loro.im/ko
+에듀테크 | 노원비하인드 2026 ALC Active Learning Classroom · 에듀테크 어워드 AI 활용혁신 부문 | https://noonebehind.co.kr/
+에듀테크 | 엘리스 2026 헬피챗 · 에듀테크 코리아 페어 공개 | https://vsai.kr/articles/1114121
+에듀테크 | 테크빌교육 2026 티처빌 AI 관련 보도 | https://www.cstimes.com/news/articleViewAmp.html?idxno=721176
+에듀테크 | 창의와교육 2026 AI 루킷 |
+보도 | Reuters 2026 South Korea to develop security guidelines for autonomous AI agents |
