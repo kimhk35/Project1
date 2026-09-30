@@ -65,5 +65,5 @@ htmlcov/
 # PRAXIS 작업 임시 파일
 praxis/_check_*
 praxis/preview/
-praxis/PRAXIS_Vol01_*.pdf
+praxis/*_Vol01_*.pdf
 praxis/praxis-vol01.html

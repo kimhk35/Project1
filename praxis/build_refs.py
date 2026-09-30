@@ -57,7 +57,7 @@ def fmt(e):
 def page(title_html, items, n, total, sid=None):
     idattr = f' id="{sid}"' if sid else ''
     return f'''<section class="page"{idattr}>
-  <div class="rh"><span><b>PRAXIS</b> · Vol.01</span><span class="sec">References &amp; Sources · {n}/{total}</span></div>
+  <div class="rh"><span><b>Heurēsis</b> · Vol.01</span><span class="sec">References &amp; Sources · {n}/{total}</span></div>
   <div class="inner">
 {title_html}
     <div class="refs cols3">

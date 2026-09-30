@@ -1,4 +1,4 @@
-// PRAXIS Vol.01 — 표지와 오프너의 수학적 그래픽을 인라인 SVG로 그린다
+// Heurēsis Vol.01 — 표지와 오프너의 수학적 그래픽을 인라인 SVG로 그린다
 (function () {
   const NS = 'http://www.w3.org/2000/svg';
   const el = (tag, attrs, parent) => {

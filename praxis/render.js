@@ -1,4 +1,4 @@
-// PRAXIS 조판 파일을 PDF와 쪽별 미리보기 PNG로 렌더링하고 넘침을 검사한다
+// Heurēsis 조판 파일을 PDF와 쪽별 미리보기 PNG로 렌더링하고 넘침을 검사한다
 // 사용법  NODE_PATH=$(npm root -g) node render.js [--png]
 const path = require('path');
 const { chromium } = require('playwright');
@@ -31,7 +31,7 @@ const { chromium } = require('playwright');
   });
   console.log(issues.length ? issues.join('\n') : 'no overflow');
 
-  await page.pdf({ path: path.join(__dirname, 'PRAXIS_Vol01_창간특집호.pdf'), width: '210mm', height: '297mm', printBackground: true, preferCSSPageSize: true });
+  await page.pdf({ path: path.join(__dirname, 'Heuresis_Vol01_창간특집호.pdf'), width: '210mm', height: '297mm', printBackground: true, preferCSSPageSize: true });
 
   if (process.argv.includes('--png')) {
     const dir = process.env.PNG_DIR || path.join(__dirname, 'preview');

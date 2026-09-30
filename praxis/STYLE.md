@@ -1,6 +1,6 @@
-# PRAXIS 조판·집필 가이드  작업자용
+# Heurēsis 조판·집필 가이드  작업자용
 
-PRAXIS는 수학교육 연구와 교실 실천을 잇는 한국어 월간지다  창간특집호 Vol.01은 A4 약 112쪽이며 연구의 깊이와 대중지의 읽는 맛을 함께 갖춘다
+Heurēsis는 수학교육 연구와 교실 실천을 잇는 한국어 월간지다  창간특집호 Vol.01은 A4 약 112쪽이며 연구의 깊이와 대중지의 읽는 맛을 함께 갖춘다
 
 ## 1  파일과 도구
 
@@ -39,7 +39,7 @@ PRAXIS는 수학교육 연구와 교실 실천을 잇는 한국어 월간지다 
 
 ```html
 <section class="page" data-sec="cover">            <!-- 특집이면 class="page clinic" 또는 "page teacher" -->
-  <div class="rh"><span><b>PRAXIS</b> · Cover Story</span><span class="sec">정답 이후의 수학 · 2/14</span></div>
+  <div class="rh"><span><b>Heurēsis</b> · Cover Story</span><span class="sec">정답 이후의 수학 · 2/14</span></div>
   <div class="inner">
     ... 내용 ...
   </div>
