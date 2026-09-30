@@ -1,7 +1,7 @@
 """export/out/ir.json으로 편집 가능한 DOCX를 만든다
 사용법  python3 export/make_docx.py  →  dist/Heuresis_Vol01_창간특집호.docx
 """
-import json, os
+import json, os, re
 from docx import Document
 from docx.enum.section import WD_SECTION
 from docx.enum.table import WD_TABLE_ALIGNMENT
@@ -253,6 +253,7 @@ class Builder:
             if not pg['sec']: continue
             lab = next((''.join(r['t'] for r in b['r']) for b in pg['b'] if b['t'] == 'label'), '')
             head = next((''.join(r['t'] for r in b['r']).replace('\n', ' ') for b in pg['b'] if b['t'] == 'h'), '')
+            lab = re.sub(r'\s*·\s*\d+\s*/\s*\d+\s*$', '', lab)
             p = d.add_paragraph(style='Normal'); p.alignment = WD_ALIGN_PARAGRAPH.LEFT
             r1 = p.add_run(lab.upper() + '\n'); set_font(r1, MONO, 7.5, color=ACCENT[''])
             r2 = p.add_run(head); set_font(r2, SERIF, 12, True, INK)
