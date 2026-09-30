@@ -115,7 +115,7 @@
   // 난이도 표시와 여학생 자기효능감  Herset & Bjerke 2026
   function efficacy(svg) {
     const base = 190, scale = v => (v - 60) * 7;
-    [['표시 없음', 81.21, '#1B2A41'], ['어려움 표시', 75.82, '#C8372D']].forEach(([n, v, c], i) => {
+    [['비교 기준', 81.21, '#1B2A41'], ['어려움 표시', 75.82, '#C8372D']].forEach(([n, v, c], i) => {
       const x = 40 + i * 120, h = scale(v);
       el('rect', { x, y: base - h, width: 70, height: h, fill: c }, svg);
       const t = el('text', { x: x + 35, y: base - h - 8, 'text-anchor': 'middle', 'font-family': 'Playfair Display', 'font-weight': 900, 'font-size': 20, fill: c }, svg); t.textContent = v.toFixed(2);
