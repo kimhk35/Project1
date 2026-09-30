@@ -1,0 +1,24 @@
+국외논문 | Deduwela 외 2026 Reliability of ChatGPT in scoring medical undergraduates’ portfolio in professionalism · BMC Medical Education | https://link.springer.com/article/10.1186/s12909-026-10343-2
+국외논문 | Brevik · Jerpseth · Lafontan 2026 보건학 석사 서술형 시험에서 LLM 등급 채점과 인간 채점 비교 (원제 미확인) · Frontiers in Education | https://doi.org/10.3389/feduc.2026.1904452
+국외논문 | Oreopoulos 외 2026 Making AI Tutoring Productive Evidence from a Mastery-Based Math Practice Experiment · NBER Working Paper 35621 | https://www.nber.org/papers/w35621
+국외논문 | Lodén · Lönngren · Ottander 2026 More than a Quick Search Interplay between Students’ use of Scientific Concepts and Online Search Strategies · Research in Science Education | https://doi.org/10.1007/s11165-026-10381-2
+국외논문 | Jiayue Zhang 외 2026 Exploring ChatGPT’s potential in dialogic teaching A comparative neurocognitive study of AI and human instruction · Acta Psychologica 268 107268 | https://doi.org/10.1016/j.actpsy.2026.107268
+국외논문 | Sadegh 외 2026 AI–VR 복합 중재가 피드백 리터러시 행동에 미친 영향 무작위대조시험 (원제 미확인) · BMC Medical Education | https://doi.org/10.1186/s12909-026-10500-7
+국외논문 | Thoeni · Fryer 2026 AI chatbots in higher education Comparing expectations to evidence · Computers in Human Behavior Reports 22 101061 | https://doi.org/10.1016/j.chbr.2026.101061
+국외논문 | Liang 외 2026 A systematic review of generative AI in education Empirical insights from a human–AI interaction perspective · British Journal of Educational Technology 57 1221–1271 | https://doi.org/10.1111/bjet.70055
+국내논문 | 하오선 · 정주원 2026 생성형 AI 리터러시와 학습 유용성 인식의 관계 중·고등학교 비교 연구 · 열린교육연구 34(2) 515–537 | https://doi.org/10.18230/tjye.2026.34.2.515
+국외논문 | Nie 외 2026 Development and validation of the generative AI assessment literacy scale for higher education students · Frontiers in Education 11 | https://doi.org/10.3389/feduc.2026.1934632
+국외논문 | Kiliç Şafak · Karaca Bozdağ 2026 AI 문항은행 전 5개년 평가 기준선 분석 (원제 미확인) · BMC Medical Education | https://doi.org/10.1186/s12909-026-10422-4
+정책기관 | 서울특별시교육청 2026 학생 AI·디지털 리터러시 진단검사 (2026-09-07~18 시행) | https://literacy.sen.go.kr/main.do
+국외논문 | Koretsky 외 2026 The shifting landscape of assessment in STEM education in the age of generative AI · International Journal of STEM Education 13 59 | https://doi.org/10.1186/s40594-026-00648-5
+국외논문 | Colson · Ballard 2026 Teaching Hallucination Literacy · Medical Science Educator | https://doi.org/10.1007/s40670-026-02907-0
+국외논문 | Bassner 외 2026 Less stress, better scores, same learning The dissociation of performance and learning in AI-supported programming education · Computers and Education Artificial Intelligence 10 100537 | https://doi.org/10.1016/j.caeai.2025.100537
+국외논문 | Schorcht · Müller · Buchholtz 2026 No one-size-fits-all A study of prompt techniques and large language models to enhance AI’s mathematics educational quality · ZDM Mathematics Education 58 1057–1071 | https://doi.org/10.1007/s11858-026-01784-6
+국외논문 | Wei Liu 외 2026 TD-GAE A multimodal large language model framework for adaptive and explainable guided art learning · Journal of King Saud University Computer and Information Sciences | https://link.springer.com/article/10.1007/s44443-026-01270-9
+국외논문 | Amiruddin 외 2026 과학교육의 AI·AR·VR 연구 서지계량 지도 (원제 미확인) · D-I Science Education Research | https://doi.org/10.1186/s43031-026-00177-9
+국외논문 | Moradi · Evans 2026 How AI anxiety and confidence shape student engagement in higher education · Discover Education | https://link.springer.com/article/10.1007/s44217-026-02078-5
+국외논문 | Connell Pensky 외 2026 Can asynchronous learning modules about generative AI increase students’ knowledge, skills, and self-efficacy for genAI? · Computers & Education 250 105640 | https://doi.org/10.1016/j.compedu.2026.105640
+정책기관 | Valentini 2026 AI Implementation in Higher Education in Latin America and the Caribbean · UNESCO IESALC with UNU-IAS | https://www.iesalc.unesco.org/en/articles/new-unesco-iesalc-study-reveals-widespread-ai-adoption-higher-education-across-latin-america-and
+국외논문 | Köroğlu 외 2026 AI-Supported lecturer decision-making in higher education A socio-technical perspective · International Journal of Educational Technology in Higher Education | https://doi.org/10.1186/s41239-026-00623-8
+국외논문 | Xufeng Zhang · Han Li 2026 Teacher authority, responsibility, and platform governance in generative AI-supported classrooms · Discover Education 5 1040 | https://doi.org/10.1007/s44217-026-02214-1
+정책기관 | UNESCO 2026 The algorithm in the room Seeing and confronting the implications of AI for the future of education | https://www.unesco.org/en/articles/algorithm-room-seeing-and-confronting-implications-ai-future-education
