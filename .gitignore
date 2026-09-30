@@ -62,9 +62,7 @@ htmlcov/
 # 로컬 전용 설정
 *.local
 
-# PRAXIS 작업 임시 파일
+# Heurēsis 조판 작업 임시 파일
 praxis/_check_*
 praxis/preview/
-praxis/*_Vol01_*.pdf
-praxis/praxis-vol01.html
 praxis/_*.html

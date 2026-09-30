@@ -86,7 +86,7 @@ items = [fmt(e) for e in papers]
 field_items = ['<p style="text-indent:0;padding-left:0;margin-top:1mm"><b style="font-family:var(--mono);color:var(--red);letter-spacing:.1em">현장·정책·제품 자료</b></p>'] + [fmt(e) for e in field]
 allitems = items + field_items
 import json, subprocess
-sources = open(os.path.join(here, 'src', 'sources_page.html'), encoding='utf-8').read()
+sources = open(os.path.join(here, 'src', 'sources_page.html'), encoding='utf-8').read().replace('{PAPERS}', str(len(papers))).replace('{FIELD}', str(len(field)))
 json.dump({'head': head1, 'items': allitems, 'sources': sources}, open(os.path.join(here, 'src', 'refs_items.json'), 'w', encoding='utf-8'), ensure_ascii=False)
 subprocess.run(['node', os.path.join(here, 'paginate_refs.js')], check=True, env={**os.environ, 'NODE_PATH': subprocess.run(['npm', 'root', '-g'], capture_output=True, text=True).stdout.strip()})
 print(f'{len(papers)} papers, {len(field)} field items')

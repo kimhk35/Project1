@@ -150,7 +150,7 @@ table.t td.k{font-weight:700;color:var(--ink);white-space:nowrap}
 .checklist li::before{content:'';position:absolute;left:0;top:1.1mm;width:2.6mm;height:2.6mm;border:.7pt solid var(--ink)}
 .cont{font-family:var(--mono);font-size:6.6pt;letter-spacing:.12em;color:var(--red);text-align:right;margin-top:1mm}
 .clinic .cont{color:var(--teal)} .teacher .cont{color:var(--ochre)}
-.refs{font-family:var(--sans);font-size:7.1pt;line-height:1.6;color:var(--ink2)}
+.refs{font-family:var(--sans);font-size:6.9pt;line-height:1.55;color:var(--ink2)}
 .refs p{margin-bottom:1.2mm;break-inside:avoid;padding-left:3mm;text-indent:-3mm}
 .refs b{color:var(--ink)}
 .lab-app{break-inside:avoid;display:grid;grid-template-columns:34mm 1fr;gap:5mm;padding:3.6mm 0;border-top:1pt solid var(--ink)}
