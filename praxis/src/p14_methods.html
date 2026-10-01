@@ -1,0 +1,419 @@
+<!-- ================= METHODS LAB (1/5) 자동채점 신뢰도 ================= -->
+<section class="page" data-sec="METHODS LAB" data-title="메소드 랩" id="p-methods" data-toc="메소드 랩|AI 시대 교육연구의 측정 도구상자|자동채점 신뢰도에서 멀티모달까지">
+  <style>
+    .ml-idx{display:grid;grid-template-columns:repeat(5,1fr);gap:3mm;border-top:.6mm solid var(--ink);border-bottom:.3mm solid var(--rule);padding:2mm 0 1.6mm;margin-top:3mm}
+    .ml-idx div{font-family:var(--sans);font-size:7pt;line-height:1.45;color:var(--ink-2)}
+    .ml-idx b{display:block;font-family:var(--display);font-size:14pt;font-weight:800;color:var(--accent);line-height:1}
+    .ml-idx strong{display:block;font-size:7.6pt;font-weight:800;color:var(--navy);margin:.6mm 0 .2mm}
+    .ml-eq{font-family:var(--serif);font-size:9pt;background:#fff;border-left:.8mm solid var(--accent);padding:1.4mm 3mm;margin:1.4mm 0 2.2mm;line-height:1.55;text-align:left}
+    .ml-eq i{font-style:italic}
+    .ml-eq small{display:block;font-family:var(--sans);font-size:6.8pt;color:var(--ink-3)}
+    .ml-pair .box h4 .tag{letter-spacing:.12em}
+    .ml-pair .box{font-size:7.9pt;line-height:1.58}
+    .ml-pair .list li{margin-bottom:.9mm}
+    .ml-lead{font-family:var(--sans);font-size:8.6pt;line-height:1.62;color:var(--ink-2);text-align:left;margin-bottom:2mm}
+  </style>
+  <div class="kicker">메소드 랩<span class="sep">/</span>METHODS LAB</div>
+  <h1 class="headline m">AI 시대 교육연구의 측정 도구상자</h1>
+  <p class="dek">AI가 채점하고 로그와 몸의 신호를 기록하는 시대에 연구의 약점은 대개 모델이 아니라 측정에서 나온다 9월의 실제 연구를 예로 다섯 가지 방법을 비전공자도 따라올 수 있게 풀었다</p>
+  <div class="byline">글 <b>PRAXIS 편집부</b> · 근거 2026년 9월 교육 AI 연구 브리핑 · 도식은 모두 개념도</div>
+  <div class="ml-idx">
+    <div><b>01</b><strong>채점 신뢰도</strong>ICC · κ · 일치율 · G 이론</div>
+    <div><b>02</b><strong>과정 로그</strong>과정 마이닝 · 순차 패턴 · 상태전이</div>
+    <div><b>03</b><strong>멀티모달 측정</strong>EDA · HRV · 시선 · EEG</div>
+    <div><b>04</b><strong>검정력과 무효과</strong>사전등록 · 동등성 · 설계효과</div>
+    <div><b>05</b><strong>측정동일성</strong>DIF · 잠재프로파일 · 잠재전이</div>
+  </div>
+
+  <h3 class="sub"><span class="no">01</span>자동채점·LLM 채점의 신뢰도 · 상관이 높다고 일치하는 것은 아니다</h3>
+  <div class="grid g-7-5" style="gap:6mm">
+    <div>
+      <p>상관계수는 두 점수가 함께 오르내리는지만 본다 LLM이 모든 답안에 1점씩 후하게 주어도 상관은 거의 1이다 채점에서 묻는 것은 <em class="hl">같은 답안에 같은 점수를 주는가</em>다 이를 잡는 지표가 절대합치 급내상관 ICC(A,1)이다 채점자 사이의 체계적 차이까지 오차로 센다</p>
+      <div class="ml-eq">ICC(A,1) = <i>σ</i><sup>2</sup><sub>학생</sub> ÷ ( <i>σ</i><sup>2</sup><sub>학생</sub> + <i>σ</i><sup>2</sup><sub>채점자</sub> + <i>σ</i><sup>2</sup><sub>오차</sub> )<small>A는 절대합치 · C는 일관성(채점자 평균 차이 무시) · 1은 단일 채점자 기준</small></div>
+      <p>Deduwela 외(BMC Medical Education 9월 5일)는 교수자가 채점한 성찰 포트폴리오 156개를 GPT-5로 다시 채점해 ICC(A,1) .816 Pearson r .82 Spearman ρ .80을 함께 보고했고 세 번 반복 채점 간 ICC(C,1)은 .959였다 {{pg:p-spot3}}면 절대합치와 반복 안정성을 따로 보고한 본보기다 다만 의학교육의 결과다</p>
+      <p>등급형 채점은 가중 κ와 일치율을 함께 본다 Brevik 외(Frontiers in Education 9월 24일)에서 ChatGPT의 가중 κ는 .718(95% CI .578–.859)이었지만 정확 일치는 50.0% ±1등급 일치는 90.6%였다 LLM은 극단 등급을 덜 쓰는 중앙집중 경향을 보였고 세션 반복과 파일 업로드 조건에 따라 안정성이 달라졌다</p>
+    </div>
+    <figure class="figure" id="fig-ml-agree">
+      <svg viewBox="0 0 260 318" role="img" aria-label="상관과 일치의 차이 그리고 Bland-Altman 그림 개념도">
+        <rect width="260" height="318" fill="#EFE8DA"/>
+        <g font-family="Noto Sans KR">
+          <text x="12" y="17" font-size="9.6" font-weight="800" fill="#14223A">A 상관은 높지만 일치는 낮다</text>
+          <line x1="36" y1="140" x2="240" y2="140" stroke="#6B6F77"/><line x1="36" y1="140" x2="36" y2="26" stroke="#6B6F77"/>
+          <line x1="36" y1="140" x2="236" y2="30" stroke="#6B6F77" stroke-dasharray="4 3"/>
+          <g fill="#C8412A"><circle cx="56" cy="112.5" r="3.4"/><circle cx="76" cy="102.6" r="3.4"/><circle cx="96" cy="89.4" r="3.4"/><circle cx="116" cy="80.6" r="3.4"/><circle cx="136" cy="67.4" r="3.4"/><circle cx="156" cy="57.5" r="3.4"/><circle cx="176" cy="47.6" r="3.4"/><circle cx="196" cy="34.4" r="3.4"/></g>
+          <text x="206" y="74" font-size="7.6" fill="#6B6F77">완전 일치선</text>
+          <text x="120" y="118" font-size="7.8" font-weight="700" fill="#C8412A">LLM이 일관되게 후함</text>
+          <text x="120" y="129" font-size="7.4" fill="#3A3F48">r은 높고 ICC(A,1)은 낮아진다</text>
+          <text x="138" y="153" font-size="7.6" fill="#3A3F48" text-anchor="middle">사람 점수</text>
+          <text x="26" y="84" font-size="7.6" fill="#3A3F48" text-anchor="middle" transform="rotate(-90 26 84)">LLM 점수</text>
+          <line x1="12" y1="166" x2="248" y2="166" stroke="#CFC5B2"/>
+          <text x="12" y="184" font-size="9.6" font-weight="800" fill="#14223A">B Bland–Altman 차이 그림</text>
+          <line x1="36" y1="296" x2="240" y2="296" stroke="#6B6F77"/><line x1="36" y1="296" x2="36" y2="196" stroke="#6B6F77"/>
+          <line x1="36" y1="265" x2="240" y2="265" stroke="#6B6F77" stroke-dasharray="2 3"/>
+          <line x1="36" y1="238" x2="240" y2="238" stroke="#C8412A" stroke-width="1.6"/>
+          <line x1="36" y1="218" x2="240" y2="218" stroke="#4F8F88" stroke-dasharray="5 3"/>
+          <line x1="36" y1="258" x2="240" y2="258" stroke="#4F8F88" stroke-dasharray="5 3"/>
+          <g fill="#14223A"><circle cx="48" cy="243.4" r="3"/><circle cx="64" cy="230.8" r="3"/><circle cx="80" cy="239.8" r="3"/><circle cx="96" cy="234.4" r="3"/><circle cx="112" cy="245.2" r="3"/><circle cx="128" cy="227.2" r="3"/><circle cx="144" cy="238" r="3"/><circle cx="160" cy="241.6" r="3"/><circle cx="176" cy="232.6" r="3"/></g>
+          <text x="248" y="214" font-size="7.2" fill="#4F8F88" text-anchor="end">+1.96SD</text>
+          <text x="248" y="234" font-size="7.2" font-weight="700" fill="#C8412A" text-anchor="end">평균 차이</text>
+          <text x="248" y="254" font-size="7.2" fill="#4F8F88" text-anchor="end">−1.96SD</text>
+          <text x="248" y="276" font-size="7.2" fill="#6B6F77" text-anchor="end">차이 0</text>
+          <text x="138" y="309" font-size="7.6" fill="#3A3F48" text-anchor="middle">두 점수의 평균</text>
+          <text x="26" y="246" font-size="7.6" fill="#3A3F48" text-anchor="middle" transform="rotate(-90 26 246)">LLM − 사람</text>
+        </g>
+      </svg>
+      <figcaption><b>그림 M1 상관과 일치는 다른 질문이다</b> 개념도 · 점은 설명을 위한 가상 값이다 B의 빨간 선은 체계적 편향 초록 점선은 일치 한계이며 점수 구간마다 차이가 커지거나 쏠리는지를 보여 준다</figcaption>
+    </figure>
+  </div>
+  <table class="tbl mt2">
+    <thead><tr><th style="width:17%">지표</th><th style="width:34%">무엇을 묻나</th><th>보고할 때 적을 것</th></tr></thead>
+    <tbody>
+      <tr><td class="k">가중 κ · QWK</td><td>등급이 어긋날 때 얼마나 멀리 어긋나나</td><td>선형 또는 이차 가중 여부와 신뢰구간</td></tr>
+      <tr><td class="k">정확 · 인접 일치</td><td>몇 %가 같은 등급이고 ±1 안에 드나</td><td>척도 범주 수 우연 일치 수준과 함께</td></tr>
+      <tr><td class="k">반복 채점 안정성</td><td>같은 모델이 같은 답안에 같은 점수를 다시 주나</td><td>반복 횟수 날짜 세션 모델 버전 온도 묶음 크기</td></tr>
+      <tr><td class="k">일반화가능도 이론</td><td>오차가 학생 문항 채점자 반복 가운데 어디서 오나</td><td>G 연구의 분산 성분과 D 연구의 채점자·문항 수 시뮬레이션</td></tr>
+    </tbody>
+  </table>
+  <div class="grid g2 mt4 ml-pair" style="gap:5mm">
+    <div class="box acc">
+      <h4><span class="tag">MISTAKES</span>흔한 실수</h4>
+      <ul class="list small">
+        <li>상관 하나로 신뢰도를 주장한다 체계적 관대·엄격은 상관에 드러나지 않는다</li>
+        <li>ICC의 모형과 단위를 적지 않는다 ICC(C,k)는 ICC(A,1)보다 늘 후하게 나온다</li>
+        <li>한 번의 실행 결과만 보고한다 같은 프롬프트라도 날짜와 세션에 따라 흔들린다</li>
+      </ul>
+    </div>
+    <div class="box teal">
+      <h4><span class="tag">CHECKLIST</span>보고 체크리스트</h4>
+      <ul class="list check small">
+        <li>ICC(A,1)과 가중 κ를 신뢰구간과 함께 보고했다</li>
+        <li>정확·인접 일치와 점수 구간별 혼동행렬을 실었다</li>
+        <li>Bland–Altman으로 평균 차이와 일치 한계를 보였다</li>
+        <li>반복 3회 이상의 안정성과 모델 버전 프롬프트를 공개했다</li>
+      </ul>
+    </div>
+  </div>
+  <div class="cont">→ {{next}}면에 계속</div>
+</section>
+
+<!-- ================= METHODS LAB (2/5) 과정 로그 ================= -->
+<section class="page" data-sec="METHODS LAB" data-title="메소드 랩" id="p-methods2">
+  <div class="cont from">← {{prev}}면에서 계속</div>
+  <h3 class="sub" style="margin-top:0"><span class="no">02</span>과정 로그 · 점수가 말하지 않는 경로를 읽는다</h3>
+  <p class="ml-lead">최종 점수는 도착지만 알려 준다 AI와 함께 배우는 교실에서 연구자가 알고 싶은 것은 대개 가는 길이다 오답 다음에 무엇을 했는가 힌트를 본 뒤 다시 시도했는가 질문을 어떻게 고쳐 썼는가 과정 로그는 이 경로를 사건의 순서로 남기고 과정 마이닝 순차 패턴 분석 상태전이 모형은 그 순서를 요약한다</p>
+  <figure class="figure" id="fig-ml-process">
+    <svg viewBox="0 0 680 236" role="img" aria-label="이벤트 로그에서 상태전이망으로 가는 과정 개념도">
+      <rect width="680" height="236" fill="#EFE8DA"/>
+      <g font-family="Noto Sans KR">
+        <text x="14" y="20" font-size="10" font-weight="800" fill="#14223A">① 이벤트 로그 · 가상 예시</text>
+        <g font-size="8" fill="#3A3F48">
+          <rect x="14" y="30" width="222" height="18" fill="#14223A"/>
+          <g fill="#fff" font-weight="700"><text x="20" y="43">학생</text><text x="62" y="43">활동</text><text x="170" y="43">시각</text></g>
+          <text x="20" y="62">S07</text><text x="62" y="62">문항 3 시도</text><text x="170" y="62">10:02:11</text>
+          <text x="20" y="80">S07</text><text x="62" y="80" fill="#C8412A" font-weight="700">오답</text><text x="170" y="80">10:02:40</text>
+          <text x="20" y="98">S07</text><text x="62" y="98">AI 힌트 요청</text><text x="170" y="98">10:02:52</text>
+          <text x="20" y="116">S07</text><text x="62" y="116">풀이 수정</text><text x="170" y="116">10:03:31</text>
+          <text x="20" y="134">S07</text><text x="62" y="134" fill="#4F8F88" font-weight="700">재시도 정답</text><text x="170" y="134">10:03:58</text>
+          <text x="20" y="152">S12</text><text x="62" y="152" fill="#C8412A" font-weight="700">오답</text><text x="170" y="152">10:04:03</text>
+          <text x="20" y="170">S12</text><text x="62" y="170">다음 문항으로 이동</text><text x="170" y="170">10:04:05</text>
+          <g stroke="#CFC5B2"><line x1="14" y1="67" x2="236" y2="67"/><line x1="14" y1="85" x2="236" y2="85"/><line x1="14" y1="103" x2="236" y2="103"/><line x1="14" y1="121" x2="236" y2="121"/><line x1="14" y1="139" x2="236" y2="139"/><line x1="14" y1="157" x2="236" y2="157"/><line x1="14" y1="175" x2="236" y2="175"/></g>
+        </g>
+        <text x="14" y="196" font-size="7.8" fill="#3A3F48">최소 세 열 · 사례 ID 활동 이름 시각</text>
+        <text x="14" y="210" font-size="7.8" fill="#3A3F48">활동 이름을 어떻게 묶느냐가 분석의 절반이다</text>
+        <path d="M246 100 L270 100" stroke="#14223A" stroke-width="2"/><path d="M270 95 L278 100 L270 105 Z" fill="#14223A"/>
+        <text x="292" y="20" font-size="10" font-weight="800" fill="#14223A">② 상태전이망 · 화살표 굵기 = 전이 빈도</text>
+        <g font-size="8.6" font-weight="700" text-anchor="middle">
+          <rect x="292" y="84" width="72" height="30" rx="15" fill="#14223A"/><text x="328" y="103" fill="#fff">시도</text>
+          <rect x="410" y="84" width="72" height="30" rx="15" fill="#C8412A"/><text x="446" y="103" fill="#fff">오답</text>
+          <rect x="530" y="36" width="92" height="30" rx="15" fill="#B08A3E"/><text x="576" y="55" fill="#fff">힌트·질문</text>
+          <rect x="530" y="132" width="92" height="30" rx="15" fill="#6B6F77"/><text x="576" y="151" fill="#fff">건너뛰기</text>
+          <rect x="560" y="186" width="100" height="30" rx="15" fill="#4F8F88"/><text x="610" y="205" fill="#fff">재시도 정답</text>
+        </g>
+        <g fill="none" stroke="#14223A">
+          <path d="M364 99 L406 99" stroke-width="3.5"/>
+          <path d="M482 92 C505 70 510 58 526 52" stroke-width="4.5"/>
+          <path d="M482 106 C505 128 510 140 526 145" stroke-width="1.6"/>
+          <path d="M600 66 C640 100 640 160 620 184" stroke-width="3.2"/>
+          <path d="M530 58 C470 30 380 40 336 82" stroke-width="1.6" stroke-dasharray="4 3"/>
+          <path d="M560 200 C470 210 360 180 330 118" stroke-width="2" stroke-dasharray="4 3"/>
+        </g>
+        <g fill="#14223A"><path d="M406 94 L414 99 L406 104 Z"/><path d="M522 47 L531 51 L524 57 Z"/><path d="M522 141 L531 146 L522 150 Z"/><path d="M614 182 L618 190 L624 183 Z"/></g>
+        <g font-size="7.6" fill="#3A3F48">
+          <text x="394" y="134">오류 직후 행동이</text><text x="394" y="146">학습의 갈림길</text>
+          <text x="382" y="36">돌아가 다시 시도</text>
+          <text x="400" y="222">다음 문항으로 순환</text>
+        </g>
+      </g>
+    </svg>
+    <figcaption><b>그림 M2 로그에서 전이망으로</b> 개념도 · 표와 화살표 굵기는 가상 예시다 실제 연구에서는 전이 확률과 사례 수를 함께 표시한다</figcaption>
+  </figure>
+  <div class="grid g2 mt4" style="gap:6mm">
+    <div>
+      <p><b>과정 마이닝</b>은 사건 로그에서 실제로 일어난 흐름도를 찾아내는 방법이다 학생 집단별 흐름도를 비교하거나 교사가 설계한 이상적 경로와 실제 경로가 얼마나 맞는지 적합도를 볼 수 있다 <b>순차 패턴 분석</b>은 오답 다음 힌트 다음 재시도처럼 자주 나오는 순서를 지지도로 세고 <b>상태전이 모형</b>은 한 상태에서 다음 상태로 옮겨 갈 확률을 행렬로 요약한다 보이지 않는 이해 상태까지 모형에 넣으면 은닉 마르코프 모형이나 잠재전이분석으로 이어진다</p>
+      <div class="ml-eq">전이확률 <i>P</i>(오답 → 힌트) = 오답 뒤에 힌트가 온 횟수 ÷ 오답 뒤에 무엇이든 온 횟수<small>행마다 합이 1 · 학생별로 계산하면 다층모형의 결과변수가 된다</small></div>
+      <p>9월의 두 연구가 좋은 예다 Oreopoulos 외의 NBER 워킹페이퍼는 중학생 6,000여 명의 무작위 실험에서 오류 후 행동 로그를 분석했다 AI 지원 학생은 문항을 덜 풀었지만 오류 직후 다음 시도의 정답률이 높았고 정답으로 돌아오는 데 필요한 시도가 줄었다 {{pg:p-spot}}면 평균 점수만 봤다면 느려졌다는 사실만 남았을 것이다</p>
+    </div>
+    <div>
+      <p>Lodén 외(Research in Science Education 9월 28일)는 상급중등 학생 쌍의 화면과 대화를 녹화해 선형 일회성 무작위 검색에 더해 목표지향 정교화 텍스트–이미지 전환 분절 검색을 찾아냈다 복잡한 과제에서는 검색시간이 약 3배로 늘었고 11쌍 가운데 5쌍만 정답에 이르렀다 {{pg:p-literacy}}면 이 연구는 질적 영상 분석이지만 찾아낸 전략 범주는 그대로 로그의 활동 이름이 될 수 있다 질적 코딩으로 범주를 만들고 순차 분석으로 규모를 키우는 순서가 자연스럽다</p>
+      <p>AI 대화 로그를 쓸 때는 한 가지를 더 기억하자 학생의 질의 수정은 이해의 흔적이면서 동시에 도구 사용 습관의 흔적이다 같은 경로라도 교과 개념어가 들어갔는지를 함께 코딩해야 해석이 가능하다</p>
+      <p>과정 지표를 결과와 잇는 것이 마지막 단계다 오류 후 재시도율이나 정답 회복까지의 시도 수를 학생 단위 변수로 만들어 지연 검사와 전이 점수를 예측하는 다층모형에 넣으면 경로가 배움과 관련되는지를 검증할 수 있다 이때 조건 배정이 무작위여도 과정 지표 자체는 학생이 고른 행동이므로 매개 해석에는 신중해야 한다</p>
+    </div>
+  </div>
+  <div class="grid g2 mt2 ml-pair" style="gap:5mm">
+    <div class="box acc">
+      <h4><span class="tag">MISTAKES</span>흔한 실수</h4>
+      <ul class="list small">
+        <li>로그가 많은 학생이 결과를 지배한다 학생 단위로 가중하거나 다층으로 묶는다</li>
+        <li>활동 이름을 사후에 바꾸며 패턴을 찾는다 코딩 규칙은 분석 전에 고정한다</li>
+        <li>흐름도를 인과로 읽는다 힌트 뒤에 정답이 왔다고 힌트 덕분인 것은 아니다</li>
+        <li>로그가 남지 않는 행동 곧 종이 풀이 짝 대화를 없는 것으로 친다</li>
+      </ul>
+    </div>
+    <div class="box teal">
+      <h4><span class="tag">CHECKLIST</span>보고 체크리스트</h4>
+      <ul class="list check small">
+        <li>사례 ID 활동 시각의 정의와 활동 코딩 규칙을 부록에 실었다</li>
+        <li>결측·중복 이벤트 처리와 세션 분리 기준을 적었다</li>
+        <li>전이확률과 함께 사례 수 곧 분모를 보고했다</li>
+        <li>과정 지표가 지연 검사나 전이 성과를 예측하는지 검증했다</li>
+        <li>로그 수집 범위와 보존 기간을 참여자에게 알렸다</li>
+      </ul>
+    </div>
+  </div>
+  <div class="cont">→ {{next}}면에 계속</div>
+</section>
+
+<!-- ================= METHODS LAB (3/5) 멀티모달 ================= -->
+<section class="page" data-sec="METHODS LAB" data-title="메소드 랩" id="p-methods3">
+  <div class="cont from">← {{prev}}면에서 계속</div>
+  <h3 class="sub" style="margin-top:0"><span class="no">03</span>멀티모달 측정 · 몸의 신호는 마음을 직접 말하지 않는다</h3>
+  <p class="ml-lead">피부전도 EDA 심박변이도 HRV 시선 추적 뇌파 EEG는 설문이 놓치는 순간의 반응을 잡는다 불안한 학생이 피드백 직후 얼마나 빨리 가라앉는지 어디를 보고 어디를 피하는지를 초 단위로 볼 수 있다 그러나 신호 하나가 곧 불안이나 몰입이라는 역추론은 이 분야의 가장 흔한 함정이다</p>
+  <figure class="figure" id="fig-ml-multi">
+    <svg viewBox="0 0 680 232" role="img" aria-label="사건에 맞춰 동기화한 네 가지 신호의 개념도">
+      <rect width="680" height="232" fill="#14223A"/>
+      <g font-family="Noto Sans KR">
+        <rect x="318" y="30" width="150" height="182" fill="#1F3354"/>
+        <text x="393" y="24" font-size="8" font-weight="700" fill="#E0735A" text-anchor="middle">피드백 후 회복 구간</text>
+        <g stroke="#E0735A" stroke-dasharray="3 3"><line x1="150" y1="30" x2="150" y2="212"/><line x1="318" y1="30" x2="318" y2="212"/><line x1="530" y1="30" x2="530" y2="212"/></g>
+        <g font-size="7.6" fill="#E0735A" font-weight="700"><text x="154" y="40">문항 제시</text><text x="322" y="40">오답 피드백</text><text x="534" y="40">재도전</text></g>
+        <g font-size="8.4" font-weight="700" fill="#fff">
+          <text x="14" y="66">EDA 피부전도</text><text x="14" y="110">HRV 심박 간격</text><text x="14" y="154">시선 AOI</text><text x="14" y="198">EEG 세타 대역</text>
+        </g>
+        <g font-size="7" fill="#9FA9BC"><text x="14" y="77">각성의 크기</text><text x="14" y="121">자율신경 조절</text><text x="14" y="165">어디를 보는가</text><text x="14" y="209">인지 부하 후보</text></g>
+        <path d="M110 70 C140 68 170 66 200 66 C240 66 280 67 318 66 C328 66 334 48 344 46 C360 44 380 56 410 62 C440 66 470 66 500 66 C520 66 540 60 560 58 C590 58 620 63 666 64" fill="none" stroke="#E0735A" stroke-width="2"/>
+        <g stroke="#4F8F88" stroke-width="2">
+          <line x1="116" y1="98" x2="116" y2="112"/><line x1="140" y1="98" x2="140" y2="112"/><line x1="165" y1="98" x2="165" y2="112"/><line x1="189" y1="98" x2="189" y2="112"/><line x1="214" y1="98" x2="214" y2="112"/><line x1="238" y1="98" x2="238" y2="112"/><line x1="263" y1="98" x2="263" y2="112"/><line x1="287" y1="98" x2="287" y2="112"/><line x1="311" y1="98" x2="311" y2="112"/>
+          <line x1="330" y1="98" x2="330" y2="112"/><line x1="347" y1="98" x2="347" y2="112"/><line x1="364" y1="98" x2="364" y2="112"/><line x1="381" y1="98" x2="381" y2="112"/><line x1="399" y1="98" x2="399" y2="112"/><line x1="419" y1="98" x2="419" y2="112"/><line x1="441" y1="98" x2="441" y2="112"/><line x1="464" y1="98" x2="464" y2="112"/>
+          <line x1="488" y1="98" x2="488" y2="112"/><line x1="512" y1="98" x2="512" y2="112"/><line x1="536" y1="98" x2="536" y2="112"/><line x1="560" y1="98" x2="560" y2="112"/><line x1="584" y1="98" x2="584" y2="112"/><line x1="608" y1="98" x2="608" y2="112"/><line x1="632" y1="98" x2="632" y2="112"/><line x1="656" y1="98" x2="656" y2="112"/>
+        </g>
+        <g>
+          <rect x="110" y="142" width="40" height="14" fill="#6B6F77"/><rect x="150" y="142" width="120" height="14" fill="#4F8F88"/><rect x="270" y="142" width="48" height="14" fill="#B08A3E"/>
+          <rect x="318" y="142" width="36" height="14" fill="#6B6F77"/><rect x="354" y="142" width="54" height="14" fill="#C8412A"/><rect x="408" y="142" width="60" height="14" fill="#B08A3E"/><rect x="468" y="142" width="62" height="14" fill="#4F8F88"/><rect x="530" y="142" width="136" height="14" fill="#4F8F88"/>
+        </g>
+        <path d="M110 192 C120 186 128 198 138 192 C148 186 156 198 166 192 C176 186 184 198 194 192 C204 186 212 198 222 192 C232 186 240 198 250 192 C260 186 268 198 278 192 C288 186 296 198 306 192 C316 180 326 204 336 188 C346 176 356 206 366 186 C376 176 386 206 396 188 C406 180 416 202 426 190 C436 184 446 198 456 192 C466 186 476 198 486 192 C496 186 504 198 514 192 C524 186 532 198 542 192 C552 186 560 198 570 192 C580 186 588 198 598 192 C608 186 616 198 626 192 C636 186 646 198 666 192" fill="none" stroke="#C9CFDA" stroke-width="1.4"/>
+        <g font-size="7" fill="#C9CFDA">
+          <rect x="560" y="170" width="8" height="8" fill="#4F8F88"/><text x="572" y="177">문제</text>
+          <rect x="600" y="170" width="8" height="8" fill="#B08A3E"/><text x="612" y="177">힌트</text>
+          <rect x="560" y="158" width="0" height="0"/>
+          <rect x="632" y="170" width="8" height="8" fill="#C8412A"/><text x="644" y="177">회피</text>
+        </g>
+      </g>
+    </svg>
+    <figcaption><b>그림 M3 사건에 맞춘 네 신호</b> 개념도 · 파형은 모양만 흉내 낸 가상 신호다 분석 단위는 사건 전후의 구간이고 회복 속도와 시선 회피 재도전까지의 시간이 후보 지표가 된다</figcaption>
+  </figure>
+  <div class="grid g-7-5 mt4" style="gap:6mm">
+    <div>
+      <p>9월에 이 함정을 잘 보여 준 연구가 Jiayue Zhang 외(Acta Psychologica 268)다 대학생 34명을 ChatGPT 대화수업과 초보 인간교사 수업에 무작위 배정했더니 파지 점수는 비슷했지만 ChatGPT 집단의 전이 점수가 더 낮았다 EEG에서는 ChatGPT 조건에서 전반적으로 높은 세타가 나타났고 저자들은 이를 효율적 심층학습보다 텍스트 상호작용에 따른 시각적 인지노력으로 해석했다 {{pg:p-spot2}}면 같은 세타 증가를 몰입의 증거로 읽었다면 정반대 결론이 났을 것이다 행동 결과인 전이 점수가 해석의 닻이 되었다</p>
+      <p>Sadegh 외(BMC Medical Education 9월 29일)는 의대 4학년 68명의 AI–VR 시험에서 생리 신호 없이 감독자 관찰 점수와 성찰문 36편을 썼다 두 중재 간 평균 차이는 유의하지 않았지만(p=.149) 또래대화 조건의 성찰문에서 정서적 위협 감소가 더 자주 나타났다 {{pg:p-affect}}면 멀티모달 측정은 바로 이런 과정 차이를 시간 축 위에서 확인하려는 시도다</p>
+    </div>
+    <table class="tbl" style="align-self:start">
+      <thead><tr><th>신호</th><th>무엇의 후보인가</th><th>주요 함정</th></tr></thead>
+      <tbody>
+        <tr><td class="k">EDA</td><td>각성의 크기와 반응 시점</td><td>기온 땀 움직임 개인차 큼</td></tr>
+        <tr><td class="k">HRV</td><td>자율신경 조절과 회복</td><td>말하기 호흡 자세에 민감 짧은 구간은 불안정</td></tr>
+        <tr><td class="k">시선</td><td>주의 배분과 회피</td><td>보정 오차 VR 헤드셋 착용 차이</td></tr>
+        <tr><td class="k">EEG</td><td>부하 주의 상태의 후보</td><td>역추론 잡음 긴 준비 시간 작은 표본</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="grid g4 mt2 moves" style="gap:4mm">
+    <div><b>1 수집과 동기화</b><span>모든 장비를 같은 시계에 묶고 문항 제시 피드백 재도전 같은 사건 표지를 기록한다</span></div>
+    <div><b>2 전처리와 기준선</b><span>휴식 기준선을 따로 재고 잡음 제거와 결측 판정 규칙을 자료를 보기 전에 정한다</span></div>
+    <div><b>3 사건 구간 특징</b><span>사건 전후 구간의 반응 크기 회복 시간 시선 회피 비율처럼 가설에 묶인 소수 지표만 뽑는다</span></div>
+    <div><b>4 모형과 수렴</b><span>학생 안의 반복 측정을 다층 성장모형으로 분석하고 행동 결과와 자기보고로 교차 확인한다</span></div>
+  </div>
+  <div class="grid g2 mt4 ml-pair" style="gap:5mm">
+    <div class="box acc">
+      <h4><span class="tag">MISTAKES</span>흔한 실수</h4>
+      <ul class="list small">
+        <li>신호 하나를 정서 이름으로 부른다 EDA 상승은 불안일 수도 흥분일 수도 있다</li>
+        <li>특징을 수십 개 뽑아 유의한 것만 보고한다 다중비교로 우연이 결과가 된다</li>
+        <li>개인 기준선 없이 집단 평균을 비교한다</li>
+        <li>센서 결측을 조용히 지운다 불안이 큰 학생일수록 움직임 잡음과 이탈이 많을 수 있다</li>
+      </ul>
+    </div>
+    <div class="box teal">
+      <h4><span class="tag">CHECKLIST</span>보고 체크리스트</h4>
+      <ul class="list check small">
+        <li>장비 표집률 동기화 방법과 사건 표지를 적었다</li>
+        <li>기준선 구간 전처리 잡음 제거 기준을 사전에 정했다</li>
+        <li>신호별 결측률과 제외 사유를 조건별로 보고했다</li>
+        <li>신호 지표를 행동 결과와 자기보고에 연결해 수렴타당도를 보였다</li>
+        <li>미성년자 생체정보의 동의 보관 파기 계획을 밝혔다</li>
+      </ul>
+    </div>
+  </div>
+  <div class="cont">→ {{next}}면에 계속</div>
+</section>
+
+<!-- ================= METHODS LAB (4/5) 검정력 ================= -->
+<section class="page" data-sec="METHODS LAB" data-title="메소드 랩" id="p-methods4">
+  <div class="cont from">← {{prev}}면에서 계속</div>
+  <h3 class="sub" style="margin-top:0"><span class="no">04</span>검정력·사전등록·무효과 · 유의하지 않음을 제대로 읽는 법</h3>
+  <p class="ml-lead">검정력은 실제로 효과가 있을 때 그것을 찾아낼 확률이다 표본이 작으면 효과가 있어도 유의하지 않게 나오기 쉽고 운 좋게 유의하게 나온 효과는 부풀려진다 그래서 검정력이 낮은 연구는 무효과도 효과도 믿기 어렵다</p>
+  <div class="grid g-5-7" style="gap:6mm">
+    <div>
+      <p>표본 크기를 가늠하는 간단한 어림셈이 있다 두 집단 비교에서 양측 유의수준 .05와 검정력 .80을 원하면 집단당 필요한 인원은 대략 16을 효과크기 d의 제곱으로 나눈 값이다</p>
+      <div class="ml-eq">집단당 <i>n</i> ≈ 16 ÷ <i>d</i><sup>2</sup><small>d=.5 → 약 64명 · d=.3 → 약 178명 · d=.2 → 약 400명 (근사)</small></div>
+      <p>학급 단위로 배정하면 필요한 인원이 더 늘어난다 같은 반 학생은 서로 닮기 때문이다</p>
+      <div class="ml-eq">설계효과 = 1 + (<i>m</i> − 1) × <i>ρ</i><small>m 학급당 인원 · ρ 급내상관 · 편집부 예시 계산 m=25 ρ=.10이면 3.4배</small></div>
+      <p><b>사전등록</b>은 자료를 보기 전에 가설 1차 결과변수 분석 모형 제외 기준 표본 크기를 공개 기록으로 남기는 일이다 결과를 본 뒤 결과변수를 바꾸는 유혹을 막는다 학술지가 결과와 무관하게 게재를 약속하는 등록보고서 형식도 있다</p>
+    </div>
+    <figure class="figure" id="fig-ml-null">
+      <svg viewBox="0 0 400 290" role="img" aria-label="신뢰구간과 최소 의미 효과로 결과를 해석하는 네 경우 개념도">
+        <rect width="400" height="290" fill="#EFE8DA"/>
+        <g font-family="Noto Sans KR">
+          <rect x="170" y="30" width="80" height="226" fill="#4F8F88" opacity=".16"/>
+          <line x1="210" y1="30" x2="210" y2="256" stroke="#14223A" stroke-width="1.4"/>
+          <line x1="170" y1="30" x2="170" y2="256" stroke="#4F8F88" stroke-dasharray="4 3"/><line x1="250" y1="30" x2="250" y2="256" stroke="#4F8F88" stroke-dasharray="4 3"/>
+          <text x="210" y="22" font-size="8" font-weight="700" fill="#14223A" text-anchor="middle">효과 0</text>
+          <text x="170" y="270" font-size="7.4" fill="#4F8F88" text-anchor="middle">−δ</text><text x="250" y="270" font-size="7.4" fill="#4F8F88" text-anchor="middle">+δ</text>
+          <text x="210" y="283" font-size="7.4" fill="#3A3F48" text-anchor="middle">음영 = 교육적으로 의미 없는 작은 효과의 범위 (사전에 정함)</text>
+          <g stroke-width="3" stroke-linecap="round">
+            <line x1="268" y1="62" x2="352" y2="62" stroke="#C8412A"/><line x1="182" y1="112" x2="238" y2="112" stroke="#4F8F88"/>
+            <line x1="120" y1="162" x2="340" y2="162" stroke="#6B6F77"/><line x1="216" y1="212" x2="244" y2="212" stroke="#B08A3E"/>
+          </g>
+          <g fill="#14223A"><circle cx="310" cy="62" r="4"/><circle cx="210" cy="112" r="4"/><circle cx="230" cy="162" r="4"/><circle cx="230" cy="212" r="4"/></g>
+          <g font-size="8.4" font-weight="800" fill="#14223A">
+            <text x="12" y="58">A 효과가 있다</text><text x="12" y="108">B 사실상 동등하다</text><text x="12" y="158">C 판단할 수 없다</text><text x="12" y="208">D 유의하지만 작다</text>
+          </g>
+          <g font-size="7.2" fill="#3A3F48">
+            <text x="12" y="70">구간이 0과 δ 밖</text><text x="12" y="120">구간 전체가 음영 안</text><text x="12" y="170">구간이 넓어 0과 δ 모두 포함</text><text x="12" y="220">0은 밖이지만 음영 안</text>
+          </g>
+          <text x="340" y="176" font-size="7.2" fill="#6B6F77" text-anchor="end">검정력 부족의 전형</text>
+        </g>
+      </svg>
+      <figcaption><b>그림 M4 무효과를 네 가지로 나눠 읽기</b> 개념도 · 가로선은 가상의 95% 신뢰구간이다 C만이 흔히 말하는 무효과의 실체인 경우가 많다 B를 주장하려면 동등성 검정 TOST가 필요하다</figcaption>
+    </figure>
+  </div>
+  <h3 class="sub">9월의 두 사례 · 튼튼한 무효과와 약한 문헌</h3>
+  <div class="grid g2" style="gap:6mm">
+    <p>Thoeni와 Fryer(Computers in Human Behavior Reports 22)는 약 500명의 대학생을 대상으로 한 학기 동안 RAG 기반 챗봇을 무작위 현장실험으로 검증했고 흥미 자기효능감 참여 학업성취 어느 지표에서도 유의한 효과를 찾지 못했다 {{pg:p-spot2}}면 이런 무효과가 정책 근거가 되려면 두 가지가 더 필요하다 신뢰구간이 그림 M4의 B처럼 좁은지 그리고 학생이 실제로 얼마나 썼는지 곧 구현 충실도다 원문에서 사용량이 효과를 얼마나 설명했는지는 브리핑 단계에서 확인되지 않았다</p>
+    <p>반대편에는 Liang 외(British Journal of Educational Technology 57)의 체계적 고찰이 있다 생성형 AI 실증연구 56편을 검토했더니 많은 연구가 통계 보고가 불충분하고 효과크기와 표본 규모가 검정력 기준에 못 미쳤다 {{pg:p-cover-story3}}면 작은 표본 연구가 쌓인 문헌에서 유의한 결과만 모으면 효과가 과대평가된다 사전 검정력 분석과 효과크기·신뢰구간 보고가 필요한 이유다 Sadegh 외의 p=.149도 68명을 세 조건으로 나눈 규모에서 읽어야 한다</p>
+  </div>
+  <div class="grid g2 mt2 ml-pair" style="gap:5mm">
+    <div class="box acc">
+      <h4><span class="tag">MISTAKES</span>흔한 실수</h4>
+      <ul class="list small">
+        <li>p가 .05를 넘으면 효과가 없다고 쓴다 차이를 확인하지 못했을 뿐이다</li>
+        <li>사후 검정력을 관찰된 효과로 계산해 변명한다 사전 분석만 의미가 있다</li>
+        <li>학급 배정을 하고 학생 단위로 분석한다 표준오차가 작게 나온다</li>
+        <li>결과변수를 여럿 재고 유의한 것만 1차 결과로 승격한다</li>
+      </ul>
+    </div>
+    <div class="box teal">
+      <h4><span class="tag">CHECKLIST</span>보고 체크리스트</h4>
+      <ul class="list check small">
+        <li>근거 있는 최소 의미 효과로 사전 검정력 분석을 했다</li>
+        <li>1차 결과 분석 모형 제외 기준을 사전등록했다</li>
+        <li>모든 결과의 효과크기와 95% 신뢰구간을 보고했다</li>
+        <li>무효과에는 동등성 검정이나 베이즈 인자를 곁들였다</li>
+        <li>사용량과 구현 충실도를 결과와 함께 제시했다</li>
+      </ul>
+    </div>
+  </div>
+  <div class="cont">→ {{next}}면에 계속</div>
+</section>
+
+<!-- ================= METHODS LAB (5/5) 측정동일성 ================= -->
+<section class="page" data-sec="METHODS LAB" data-title="메소드 랩" id="p-methods5">
+  <div class="cont from">← {{prev}}면에서 계속</div>
+  <h3 class="sub" style="margin-top:0"><span class="no">05</span>측정동일성·DIF·잠재프로파일 · 같은 자로 재고 있는가</h3>
+  <p class="ml-lead">중학생과 고등학생의 AI 리터러시 평균을 비교하려면 먼저 같은 문항이 두 학교급에서 같은 뜻으로 작동해야 한다 고등학생에게 쉬운 표현이 중학생에게는 낯설다면 평균 차이는 능력 차이가 아니라 자의 차이일 수 있다 이를 확인하는 절차가 측정동일성 검증이고 문항 하나 수준에서 보는 것이 차별문항기능 DIF다</p>
+  <figure class="figure" id="fig-ml-inv">
+    <svg viewBox="0 0 680 214" role="img" aria-label="측정동일성 네 단계와 잠재전이분석 개념도">
+      <rect width="680" height="214" fill="#EFE8DA"/>
+      <g font-family="Noto Sans KR">
+        <text x="14" y="20" font-size="10" font-weight="800" fill="#14223A">① 측정동일성의 네 계단</text>
+        <g font-size="8.4" font-weight="700" fill="#fff">
+          <rect x="14" y="150" width="76" height="46" fill="#6B6F77"/><text x="22" y="168">형태</text>
+          <rect x="94" y="120" width="76" height="76" fill="#4F8F88"/><text x="102" y="138">측정 · 약</text>
+          <rect x="174" y="90" width="76" height="106" fill="#14223A"/><text x="182" y="108">절편 · 강</text>
+          <rect x="254" y="60" width="76" height="136" fill="#B08A3E"/><text x="262" y="78">엄격</text>
+        </g>
+        <g font-size="7.2" fill="#fff">
+          <text x="22" y="182">같은 요인 구조</text>
+          <text x="102" y="152">요인부하량이</text><text x="102" y="163">같다</text>
+          <text x="182" y="122">문항 절편이</text><text x="182" y="133">같다</text>
+          <text x="262" y="92">잔차 분산이</text><text x="262" y="103">같다</text>
+        </g>
+        <path d="M212 84 L212 44" stroke="#C8412A" stroke-width="1.6"/><path d="M207 48 L212 38 L217 48 Z" fill="#C8412A"/>
+        <text x="220" y="42" font-size="7.8" font-weight="800" fill="#C8412A">여기부터 평균 비교</text>
+        <text x="14" y="52" font-size="7.4" fill="#3A3F48">관계 비교는 측정 동일성</text><text x="14" y="63" font-size="7.4" fill="#3A3F48">평균 비교는 절편 동일성이 전제</text>
+        <line x1="350" y1="14" x2="350" y2="200" stroke="#CFC5B2"/>
+        <text x="366" y="20" font-size="10" font-weight="800" fill="#14223A">② 잠재프로파일에서 잠재전이로</text>
+        <g font-size="7.8" font-weight="700" text-anchor="middle">
+          <text x="420" y="42" fill="#6B6F77">1시점</text><text x="610" y="42" fill="#6B6F77">2시점</text>
+          <rect x="370" y="52" width="100" height="34" fill="#4F8F88"/><text x="420" y="73" fill="#fff">적극 검증형</text>
+          <rect x="370" y="100" width="100" height="34" fill="#C8412A"/><text x="420" y="121" fill="#fff">낙관적 의존형</text>
+          <rect x="370" y="148" width="100" height="34" fill="#6B6F77"/><text x="420" y="169" fill="#fff">소극 사용형</text>
+          <rect x="560" y="52" width="100" height="34" fill="#4F8F88"/><text x="610" y="73" fill="#fff">적극 검증형</text>
+          <rect x="560" y="100" width="100" height="34" fill="#C8412A"/><text x="610" y="121" fill="#fff">낙관적 의존형</text>
+          <rect x="560" y="148" width="100" height="34" fill="#6B6F77"/><text x="610" y="169" fill="#fff">소극 사용형</text>
+        </g>
+        <g fill="none" stroke="#14223A">
+          <path d="M470 69 L556 69" stroke-width="3.4"/><path d="M470 117 L556 117" stroke-width="3"/><path d="M470 165 L556 165" stroke-width="3"/>
+          <path d="M470 124 C510 124 520 76 556 74" stroke-width="1.6" stroke-dasharray="4 3"/>
+          <path d="M470 158 C510 158 520 126 556 124" stroke-width="1.4" stroke-dasharray="4 3"/>
+        </g>
+        <text x="513" y="200" font-size="7.4" fill="#3A3F48" text-anchor="middle">화살표 = 집단 사이 이동 확률 · 프로파일 이름은 가상</text>
+      </g>
+    </svg>
+    <figcaption><b>그림 M5 같은 자로 재고 같은 사람을 따라간다</b> 개념도 · 프로파일 이름과 화살표 굵기는 설명용 가상 예시다 낙관적 의존형은 유용성 인식은 높고 검증 행동은 낮은 집단을 가리키는 9월 브리핑의 가설적 명칭이다</figcaption>
+  </figure>
+  <div class="grid g2 mt4" style="gap:6mm">
+    <div>
+      <p>하오선·정주원(열린교육연구 34(2))은 전국 중·고등학생 3,959명의 생성형 AI 리터러시를 비판적 평가 소통 창의적 활용 윤리 역량으로 나눠 분석했고 고등학생의 리터러시와 유용성 인식이 중학생보다 높았다 {{pg:p-literacy2}}면 이런 학교급 비교를 이어 가려면 네 하위요인이 두 학교급에서 절편 동일성까지 성립하는지를 먼저 보고해야 한다 브리핑 요약만으로는 이 검증 여부를 확인할 수 없어 원문 확인이 필요하다</p>
+      <p>좋은 대조 사례가 Nie 외(Frontiers in Education 9월 10일)의 생성형 AI 평가 리터러시 척도다 대학생 486명과 798명 두 표본으로 18문항 5요인 구조를 검증했고 CFI .954 TLI .944 RMSEA .047 SRMR .042를 보고했으며 성별 전공 AI 사용빈도에 따른 측정동일성도 지지되었다 다만 대학생 척도라 중학생에게 쓰려면 번안과 동일성 검증을 다시 해야 한다</p>
+    </div>
+    <div>
+      <p><b>DIF</b>는 능력이 같은 두 집단의 학생이 한 문항에서 다른 정답 확률을 보이는 현상이다 AI가 만든 문항을 도입할 때 특히 중요하다 Kiliç Şafak·Karaca Bozdağ(BMC Medical Education)는 AI 문항은행 전에 5개년 평가 기준선을 세우고 생성 문항은 전문가 검토와 전향적 문항수준 심리측정 검증을 거쳐야 한다고 결론지었다 사람이 만든 문항과 AI 문항의 DIF 비교가 그다음 단계다</p>
+      <p><b>잠재프로파일분석 LPA</b>는 응답 패턴이 비슷한 학생을 보이지 않는 집단으로 묶고 <b>잠재전이분석 LTA</b>는 시점 사이에 그 집단을 옮겨 가는 확률을 추정한다 집단 수는 BIC 같은 정보기준 엔트로피 가장 작은 집단의 크기 해석 가능성을 함께 보고 정한다 시점마다 프로파일의 뜻이 같아야 이동을 말할 수 있으므로 여기에도 동일성 가정이 들어간다</p>
+    </div>
+  </div>
+  <div class="grid g2 mt2 ml-pair" style="gap:5mm">
+    <div class="box acc">
+      <h4><span class="tag">MISTAKES</span>흔한 실수</h4>
+      <ul class="list small">
+        <li>동일성 검증 없이 학교급 평균을 비교한다</li>
+        <li>적합도 차이 기준 하나만으로 기계적으로 판정하고 부분 동일성 선택 근거를 적지 않는다</li>
+        <li>LPA 집단 수를 해석이 쉬운 쪽으로 고른다 작은 집단은 재현되지 않기 쉽다</li>
+        <li>프로파일 이름을 결과처럼 쓴다 이름은 연구자가 붙인 해석이다</li>
+      </ul>
+    </div>
+    <div class="box teal">
+      <h4><span class="tag">CHECKLIST</span>보고 체크리스트</h4>
+      <ul class="list check small">
+        <li>형태 측정 절편 동일성 단계별 적합도와 변화량을 표로 실었다</li>
+        <li>DIF 방법 효과크기 기준과 처리 결정을 적었다</li>
+        <li>LPA 후보 모형 전부의 정보기준 엔트로피 집단 크기를 보고했다</li>
+        <li>LTA 전이확률과 시점 간 프로파일 동일성 가정을 명시했다</li>
+      </ul>
+    </div>
+  </div>
+  <div class="box dark mt4">
+    <h4><span class="tag">IDEA</span>연구 아이디어 · 교육청 진단검사와 측정동일성</h4>
+    <p class="small" style="color:#E6E1D6">서울시교육청은 9월 7일부터 18일까지 학생 AI·디지털 리터러시 진단검사를 시행했고 결과는 11월 2일 발표 예정이다 진단영역에는 AI 기본개념 데이터와 기계학습 생성형 AI 윤리적·비판적 활용 창의적·주체적 AI 협업이 들어간다 이런 대규모 진단 자료가 연구에 쓰일 수 있다면 첫 질문은 평균 비교가 아니라 초·중·고와 지역 성취수준에 따른 측정동일성이어야 한다</p>
+  </div>
+  
+</section>

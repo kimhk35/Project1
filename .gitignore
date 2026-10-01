@@ -61,3 +61,13 @@ htmlcov/
 
 # 로컬 전용 설정
 *.local
+
+# Heurēsis 조판 작업 임시 파일
+heuresis/_check_*
+heuresis/preview/
+heuresis/_*.html
+!heuresis/dist/
+heuresis/export/out/
+
+# PRAXIS 빌드 중간 산출물
+praxis/src/_build/

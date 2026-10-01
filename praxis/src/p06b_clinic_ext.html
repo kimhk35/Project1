@@ -1,0 +1,415 @@
+<!-- ================= SPECIAL 01 CLINIC EXT (5/10) 수학 오개념 도감 1 ================= -->
+<section class="page" data-sec="SPECIAL 01 · 수학클리닉" data-title="수학클리닉" id="p-clinic5"
+         data-toc="SPECIAL 01|수학 오개념 도감|AI 진단과 대화 규약으로 읽는 여덟 가지 오개념" data-toc-cls="sp">
+<style>
+.mc-head{display:grid;grid-template-columns:1fr 62mm;gap:6mm;align-items:end}
+.mc-legend{font-family:var(--sans);font-size:7pt;line-height:1.55;color:var(--ink-2);border-left:.8mm solid var(--accent);padding-left:3mm}
+.mc-legend b{color:var(--navy)}
+.mc-card{display:grid;grid-template-columns:46mm 1fr;gap:5mm;border-top:.6mm solid var(--ink);padding:2.6mm 0 2.4mm;break-inside:avoid}
+.mc-side{display:flex;flex-direction:column;gap:1.4mm}
+.mc-top{display:flex;align-items:center;gap:2.4mm}
+.mc-no{font-family:var(--display);font-weight:800;font-size:21pt;color:var(--accent);line-height:1}
+.mc-ico{width:11mm;height:11mm;flex:none}
+.mc-side h4{font-family:var(--serif);font-weight:900;font-size:11.4pt;line-height:1.3;letter-spacing:-.01em}
+.mc-unit{font-family:var(--sans);font-size:6.4pt;font-weight:800;letter-spacing:.1em;color:var(--teal)}
+.mc-ans{background:#fff;border:.25mm solid var(--rule);border-left:.8mm solid var(--accent);padding:1.8mm 2.2mm;font-family:var(--sans);font-size:7.6pt;line-height:1.6}
+.mc-ans .h{display:block;font-size:6.2pt;font-weight:800;letter-spacing:.1em;color:var(--ink-3);margin-bottom:.6mm}
+.mc-ans .x{color:var(--accent);font-weight:700}
+.mc-ans .o{color:var(--teal);font-weight:700}
+.mc-dl{display:grid;grid-template-columns:15mm 1fr;gap:1mm 2.6mm;font-size:7.9pt;line-height:1.58}
+.mc-dl dt{font-family:var(--sans);font-size:6.5pt;font-weight:800;letter-spacing:.04em;color:var(--accent);padding-top:.4mm}
+.mc-dl dd{text-align:left}
+.mc-dl dd.ai{display:grid;grid-template-columns:1fr 1fr;gap:3mm}
+.mc-dl dd.ai > span{display:block}
+.mc-dl dd.ai i{font-style:normal;font-family:var(--sans);font-size:6.3pt;font-weight:800;color:var(--teal);display:block}
+.mc-dl dd.ai > span+span > i{color:var(--gold)}
+.mc-talk{font-family:var(--sans);font-size:7.3pt;line-height:1.55;background:var(--paper-2);padding:1.4mm 2mm}
+.mc-talk b{color:var(--navy);font-weight:800;margin-right:.8mm}
+.mc-talk > span{display:block}
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;font-size:.82em;line-height:1.05;margin:0 .3mm}
+.fr sup,.fr sub{font-size:1em;vertical-align:baseline}
+.fr sup{border-bottom:.2mm solid currentColor;padding:0 .4mm}
+.wk-lanes td,.wk-lanes th{padding:1.2mm 1.4mm}
+.sh-tbl td{font-size:7.1pt;line-height:1.48}
+.sh-tbl td.k{white-space:normal;width:25mm}
+.sh-tbl td.k small{display:block;font-weight:500;color:var(--ink-3);font-size:6.2pt;line-height:1.4;margin-top:.4mm}
+.sh-tbl .ko{font-weight:700;color:var(--teal)}
+.sh-tbl .ko.u{color:var(--ink-3)}
+.rs-card{border-top:.6mm solid var(--ink);padding:2.6mm 0 1.8mm;display:grid;grid-template-columns:30mm 1fr;gap:5mm;break-inside:avoid}
+.rs-card .rs-no{font-family:var(--display);font-weight:800;font-size:30pt;color:var(--accent);line-height:.9}
+.rs-card h4{font-family:var(--serif);font-weight:900;font-size:12.4pt;line-height:1.3;margin-bottom:1mm}
+.rs-card .rs-src{font-family:var(--sans);font-size:6.6pt;color:var(--ink-3);line-height:1.5;margin-top:1.6mm}
+.rs-card dl{display:grid;grid-template-columns:12mm 1fr;gap:1mm 2.6mm;font-size:8pt;line-height:1.6}
+.rs-card dt{font-family:var(--sans);font-size:6.6pt;font-weight:800;color:var(--accent);padding-top:.35mm}
+.rs-card dd{text-align:left}
+.rs-card dt.eth{color:var(--teal)}
+.mc-idx{display:grid;grid-template-columns:repeat(4,1fr);gap:0 4mm;margin-top:3.4mm;border-top:.3mm solid var(--rule);padding-top:2.2mm}
+.mc-idx div{display:flex;gap:2mm;align-items:baseline;font-family:var(--sans);font-size:7.3pt;line-height:1.35;padding:1mm 0;border-bottom:.25mm dotted var(--rule)}
+.mc-idx b{font-family:var(--display);font-weight:800;color:var(--accent);font-size:10pt}
+.mc-idx span small{display:block;font-size:6.2pt;color:var(--teal);font-weight:700;letter-spacing:.06em}
+</style>
+  <div class="mc-head">
+    <div>
+      <div class="kicker">수학클리닉 확장<span class="sep">/</span>MISCONCEPTION ATLAS</div>
+      <h1 class="headline">수학 오개념 도감</h1>
+      <div class="cs-sub">AI 진단과 대화 규약으로 읽는 여덟 가지 오개념</div>
+    </div>
+    <div class="mc-legend"><b>읽는 법</b> 카드마다 학생 답의 모습 · 왜 생기나 · AI가 잡아야 할 것과 놓치기 쉬운 것 · {{pg:p-clinic3}}면의 네 단계 대화 규약으로 옮긴 튜터 질문 · 보충 문항 설계 아이디어를 담았다</div>
+  </div>
+  <p class="dek mt2">클리닉의 진단은 오답을 세는 일이 아니라 오답 뒤의 생각을 이름 붙이는 일이다 중학교 수학에서 오래 보고된 대표 오개념 여덟 가지를 골라 AI 채점과 튜터가 어디서 도움이 되고 어디서 교사의 눈이 필요한지 정리했다</p>
+  <div class="byline">정리 <b>Heurēsis 편집부</b> · 편집부 정리 · 수학교육의 일반적 지식을 바탕으로 했으며 특정 논문의 결과가 아니다 · 학생 답과 대화 문장은 편집부 예시</div>
+
+  <div class="mc-idx">
+    <div><b>01</b><span>문자를 이름으로 읽기<small>문자와 식</small></span></div>
+    <div><b>02</b><span>등호를 결과 신호로 읽기<small>문자와 식</small></span></div>
+    <div><b>03</b><span>음수의 뺄셈<small>수와 연산</small></span></div>
+    <div><b>04</b><span>분수 나눗셈<small>수와 연산</small></span></div>
+    <div><b>05</b><span>기울기의 부호와 변화율<small>함수</small></span></div>
+    <div><b>06</b><span>비례와 가법적 사고<small>비와 비례</small></span></div>
+    <div><b>07</b><span>꼭짓점과 평행이동 방향<small>함수</small></span></div>
+    <div><b>08</b><span>확률의 대표성 오류<small>확률</small></span></div>
+  </div>
+
+  <article class="mc-card mt4">
+    <div class="mc-side">
+      <div class="mc-top"><span class="mc-no">01</span>
+        <svg class="mc-ico" viewBox="0 0 40 40" role="img" aria-label="이름표가 붙은 문자"><rect x="3" y="9" width="26" height="22" rx="3" fill="#EFE8DA" stroke="#14223A" stroke-width="2"/><text x="16" y="26" font-size="15" font-weight="900" text-anchor="middle" fill="#14223A" font-family="Noto Sans KR">S</text><path d="M29 14 l8 -6 M29 26 l8 6" stroke="#C8412A" stroke-width="2"/><circle cx="37" cy="8" r="2.4" fill="#C8412A"/></svg></div>
+      <h4>문자를 대상의 이름으로 읽기</h4>
+      <div class="mc-unit">문자와 식</div>
+      <div class="mc-ans"><span class="h">학생 답의 모습</span>학생 수는 교사 수의 6배<br><span class="x">6S = T</span> (S 학생 수 · T 교사 수)<br>바른 식 <span class="o">S = 6T</span></div>
+    </div>
+    <dl class="mc-dl">
+      <dt>증상</dt><dd>문자를 수량이 아니라 사물의 약자로 읽는다 3a + 2b 를 사과 3개와 바나나 2개로 읽고 문장에 나온 순서대로 기호를 옮겨 식의 방향이 뒤집힌다</dd>
+      <dt>왜 생기나</dt><dd>m · cm 같은 단위 약자로 문자를 먼저 만났고 문장을 왼쪽부터 기호로 번역하는 습관이 겹친다 문자에는 개수가 들어간다는 약속을 명시적으로 다루지 않으면 이름표 읽기가 남는다</dd>
+      <dt>AI 진단</dt><dd class="ai"><span><i>잡아야 할 것</i>방향이 뒤집힌 식을 반복 패턴으로 묶고 수를 넣은 검산(T = 10이면 S = 60인가)으로 모순을 보여 준다</span><span><i>놓치기 쉬운 것</i>식만 비교하는 채점은 우연히 맞은 답을 통과시킨다 풀이 옆에 S는 학생이라고 적은 이름표 해석은 식 너머의 메모에서만 보인다</span></dd>
+      <dt>튜터 질문</dt><dd class="mc-talk"><span><b>① 제한</b>식을 대신 고쳐 주지 않는다</span><span><b>② 설명</b>S 자리에는 무엇이 들어가는지 말해 줄래</span><span><b>③ 검증</b>교사가 10명이면 네 식에서 학생은 몇 명이 되지</span><span><b>④ 연결</b>수를 넣은 뒤에도 방향을 바꾸지 못하면 교사 소집단으로</span></dd>
+      <dt>보충 문항</dt><dd>수를 넣어 표를 먼저 채운 뒤 식을 쓰는 표→식 문항 · 완성된 식을 다시 문장으로 옮기는 역번역 문항 · 방향만 다른 두 식 중 맞는 것을 고르고 이유 쓰기</dd>
+    </dl>
+  </article>
+
+  <article class="mc-card">
+    <div class="mc-side">
+      <div class="mc-top"><span class="mc-no">02</span>
+        <svg class="mc-ico" viewBox="0 0 40 40" role="img" aria-label="화살표처럼 쓰인 등호"><rect x="2" y="13" width="14" height="4" fill="#14223A"/><rect x="2" y="23" width="14" height="4" fill="#14223A"/><path d="M20 20 h14 M29 14 l6 6 l-6 6" fill="none" stroke="#C8412A" stroke-width="2.6"/></svg></div>
+      <h4>등호를 계산 결과 신호로 읽기</h4>
+      <div class="mc-unit">문자와 식 · 방정식</div>
+      <div class="mc-ans"><span class="h">학생 답의 모습</span>8 + 4 = □ + 5 에서 <span class="x">□ = 12</span><br>풀이 한 줄에 <span class="x">3x + 2 = 11 − 2 = 3x = 9</span><br>바른 답 <span class="o">□ = 7</span></div>
+    </div>
+    <dl class="mc-dl">
+      <dt>증상</dt><dd>등호 오른쪽에는 답이 온다고 여겨 빈칸에 왼쪽 계산 결과를 쓴다 풀이 과정을 등호로 계속 이어 붙여 중간 줄이 거짓 등식이 된다</dd>
+      <dt>왜 생기나</dt><dd>계산기와 초등 연산 문항에서 등호가 이제 답을 쓰라는 신호로 반복 쓰였다 양쪽이 같은 값이라는 관계 해석이 약하면 방정식의 양변 조작도 뜻 없는 절차가 된다</dd>
+      <dt>AI 진단</dt><dd class="ai"><span><i>잡아야 할 것</i>거짓 등식이 된 줄을 표시하고 최종 답과 별개로 과정 오류 유형으로 분류한다</span><span><i>놓치기 쉬운 것</i>최종 답 x = 3이 맞으면 과정을 보지 않는 채점은 등호 오용을 통과시킨다 손글씨 인식이 줄바꿈을 합치면 정상 풀이와 등호 사슬이 구분되지 않는다</span></dd>
+      <dt>튜터 질문</dt><dd class="mc-talk"><span><b>① 제한</b>12가 아니라고 먼저 말하지 않는다</span><span><b>② 설명</b>등호 왼쪽과 오른쪽을 각각 계산하면 얼마인지 말해 줄래</span><span><b>③ 검증</b>두 쪽이 같아야 한다면 □에는 무엇이 들어가야 할까</span><span><b>④ 연결</b>다음 풀이에서도 등호를 화살표처럼 쓰면 교사에게</span></dd>
+      <dt>보충 문항</dt><dd>참·거짓 등식 판별(7 = 3 + 4 · 3 + 4 = 4 + 3) · 양팔 저울 그림 문항 · 한 줄에 등호 하나만 쓰도록 풀이를 다시 쓰는 과제</dd>
+    </dl>
+  </article>
+  <div class="cont">→ {{next}}면에 계속</div>
+</section>
+
+<!-- ================= SPECIAL 01 CLINIC EXT (6/10) 수학 오개념 도감 2 ================= -->
+<section class="page" data-sec="SPECIAL 01 · 수학클리닉" data-title="수학클리닉" id="p-clinic6">
+  <div class="cont from">← {{prev}}면에서 계속</div>
+
+  <article class="mc-card">
+    <div class="mc-side">
+      <div class="mc-top"><span class="mc-no">03</span>
+        <svg class="mc-ico" viewBox="0 0 40 40" role="img" aria-label="수직선 위의 음수"><path d="M2 24 h36" stroke="#14223A" stroke-width="2"/><g stroke="#14223A" stroke-width="1.6"><path d="M8 20 v8 M16 20 v8 M24 20 v8 M32 20 v8"/></g><path d="M30 14 q-10 -10 -20 0" fill="none" stroke="#C8412A" stroke-width="2"/><path d="M10 14 l-1 -5 M10 14 l5 -1" stroke="#C8412A" stroke-width="2"/><text x="6" y="38" font-size="8" fill="#6B6F77" font-family="Noto Sans KR">−</text></svg></div>
+      <h4>음수의 뺄셈</h4>
+      <div class="mc-unit">수와 연산 · 정수와 유리수</div>
+      <div class="mc-ans"><span class="h">학생 답의 모습</span>(−3) − (−5) = <span class="x">−8</span><br>5 − (−2) = <span class="x">3</span><br>바른 답 <span class="o">2</span> · <span class="o">7</span></div>
+    </div>
+    <dl class="mc-dl">
+      <dt>증상</dt><dd>빼면 항상 작아진다고 여기거나 부호를 모두 더해 버린다 두 음수의 뺄셈에서 절댓값을 더한 −8 같은 답이 나온다</dd>
+      <dt>왜 생기나</dt><dd>자연수에서는 빼면 줄어든다가 늘 참이었다 부호 규칙을 의미 없이 외우면 곱셈의 음수와 음수는 양수 규칙을 덧셈·뺄셈에 섞어 쓴다</dd>
+      <dt>AI 진단</dt><dd class="ai"><span><i>잡아야 할 것</i>여러 문항에 걸쳐 같은 부호 오류가 반복되는지 보고 단순 실수와 규칙 오개념을 가른다</span><span><i>놓치기 쉬운 것</i>(−3) − (−5) = 2를 음수 두 개니까 양수라는 곱셈 규칙으로 맞힌 학생은 (−5) − (−3)에서 틀린다 한 문항만 보면 이 차이가 보이지 않는다</span></dd>
+      <dt>튜터 질문</dt><dd class="mc-talk"><span><b>① 제한</b>답을 바로 고쳐 주지 않는다</span><span><b>② 설명</b>수직선에서 어느 쪽으로 몇 칸 움직였는지 말해 줄래</span><span><b>③ 검증</b>−5를 빼는 것과 5를 더하는 것을 둘 다 계산해 비교해 볼까</span><span><b>④ 연결</b>규칙 섞기가 세 문항 이상 이어지면 교사 연결</span></dd>
+      <dt>보충 문항</dt><dd>수직선과 기온 변화 맥락 문항 · (−3) − (−5)와 (−5) − (−3)을 한 쌍으로 묶은 대비 문항 · 뺄셈을 덧셈으로 바꿔 쓰고 두 결과를 확인하는 문항</dd>
+    </dl>
+  </article>
+
+  <article class="mc-card">
+    <div class="mc-side">
+      <div class="mc-top"><span class="mc-no">04</span>
+        <svg class="mc-ico" viewBox="0 0 40 40" role="img" aria-label="막대로 본 분수 나눗셈"><rect x="3" y="6" width="34" height="9" fill="#fff" stroke="#14223A" stroke-width="1.6"/><rect x="3" y="6" width="25.5" height="9" fill="#E0735A"/><rect x="3" y="24" width="17" height="9" fill="#4F8F88"/><rect x="20" y="24" width="8.5" height="9" fill="#4F8F88" opacity=".5"/><path d="M20 22 v13" stroke="#14223A" stroke-width="1.4"/></svg></div>
+      <h4>분수 나눗셈</h4>
+      <div class="mc-unit">수와 연산 · 분수와 유리수</div>
+      <div class="mc-ans"><span class="h">학생 답의 모습</span><span class="fr"><sup>3</sup><sub>4</sub></span> ÷ <span class="fr"><sup>1</sup><sub>2</sub></span> = <span class="x"><span class="fr"><sup>3</sup><sub>8</sub></span></span><br><span class="fr"><sup>4</sup><sub>3</sub></span> × <span class="fr"><sup>1</sup><sub>2</sub></span> = <span class="x"><span class="fr"><sup>2</sup><sub>3</sub></span></span> (앞 분수를 뒤집음)<br>바른 답 <span class="o"><span class="fr"><sup>3</sup><sub>2</sub></span></span></div>
+    </div>
+    <dl class="mc-dl">
+      <dt>증상</dt><dd>나누면 작아진다고 여겨 곱셈처럼 계산하거나 역수를 취할 분수를 바꾼다 결과가 나누어지는 수보다 커지면 틀렸다고 여기고 스스로 고치기도 한다</dd>
+      <dt>왜 생기나</dt><dd>자연수 나눗셈에서는 몫이 작아지는 경험뿐이었다 역수를 곱하라는 절차를 몇 번 들어가는가 또는 1에 해당하는 양은 얼마인가라는 의미와 잇지 못하면 뒤집을 위치가 흔들린다</dd>
+      <dt>AI 진단</dt><dd class="ai"><span><i>잡아야 할 것</i>몫이 나누어지는 수보다 작아진 답과 뒤집힌 위치를 서로 다른 오류 유형으로 구분한다</span><span><i>놓치기 쉬운 것</i>계산 절차는 맞아도 상황 문장을 나눗셈식으로 세우지 못하는 학생은 계산 문항만으로는 드러나지 않는다</span></dd>
+      <dt>튜터 질문</dt><dd class="mc-talk"><span><b>① 제한</b>역수 규칙을 다시 읊어 주지 않는다</span><span><b>② 설명</b><span class="fr"><sup>3</sup><sub>4</sub></span> 안에 <span class="fr"><sup>1</sup><sub>2</sub></span>이 몇 번 들어갈지 먼저 어림해 볼래</span><span><b>③ 검증</b>네 답에 <span class="fr"><sup>1</sup><sub>2</sub></span>을 곱하면 <span class="fr"><sup>3</sup><sub>4</sub></span>가 되는지 확인해 볼까</span><span><b>④ 연결</b>어림과 계산이 계속 어긋나면 교사가 막대 모델로 지도</span></dd>
+      <dt>보충 문항</dt><dd>막대·수직선으로 몫을 어림한 뒤 계산하는 문항 · 나누는 수가 1보다 작을 때와 클 때 몫의 크기를 예측하는 대비 문항 · 상황 문장에서 식 세우기</dd>
+    </dl>
+  </article>
+
+  <article class="mc-card">
+    <div class="mc-side">
+      <div class="mc-top"><span class="mc-no">05</span>
+        <svg class="mc-ico" viewBox="0 0 40 40" role="img" aria-label="감소하는 직선과 변화량"><path d="M4 36 V4 M4 36 H38" stroke="#6B6F77" stroke-width="1.4"/><path d="M8 8 L34 32" stroke="#14223A" stroke-width="2.4"/><path d="M14 13.5 h10 v9.5" fill="none" stroke="#C8412A" stroke-width="1.8" stroke-dasharray="2 1.6"/></svg></div>
+      <h4>일차함수 기울기의 부호와 변화율</h4>
+      <div class="mc-unit">함수 · 일차함수</div>
+      <div class="mc-ans"><span class="h">학생 답의 모습</span>y = −2x + 3 의 기울기 <span class="x">2</span><br>(1, 5)와 (2, 3)을 지나는 직선의 기울기 <span class="x">−<span class="fr"><sup>1</sup><sub>2</sub></span></span><br>바른 답 <span class="o">−2</span></div>
+    </div>
+    <dl class="mc-dl">
+      <dt>증상</dt><dd>기울기를 가파른 정도로만 읽어 부호를 버리거나 x와 y의 변화량을 뒤집어 나눈다 y절편을 기울기로 읽는 혼동도 함께 나타난다</dd>
+      <dt>왜 생기나</dt><dd>기울기를 공식으로만 외우고 x가 1 늘 때 y가 어느 방향으로 얼마나 변하는가라는 변화율 해석을 표 · 그래프 · 식 사이를 오가며 확인한 경험이 적다</dd>
+      <dt>AI 진단</dt><dd class="ai"><span><i>잡아야 할 것</i>부호 누락 · 분자와 분모 뒤바뀜 · 절편 혼동을 서로 다른 코드로 나눈다</span><span><i>놓치기 쉬운 것</i>기울기가 1이나 −1인 문항에서는 분자와 분모를 뒤집어도 답이 같아 오개념이 숨는다 손으로 그린 그래프의 기울기 방향은 인식 오류가 섞일 수 있다</span></dd>
+      <dt>튜터 질문</dt><dd class="mc-talk"><span><b>① 제한</b>−2라고 먼저 알려 주지 않는다</span><span><b>② 설명</b>기울기를 구한 과정을 한 줄로 말해 줄래</span><span><b>③ 검증</b>x가 1에서 2로 갈 때 y는 커졌을까 작아졌을까</span><span><b>④ 연결</b>부호를 넣어도 표와 그래프가 어긋나면 교사 확인 · 대화 전문은 {{pg:p-clinic3}}면</span></dd>
+      <dt>보충 문항</dt><dd>표 · 그래프 · 식 · 상황 네 표현을 잇는 문항 · 기울기가 ±1이 아닌 값으로 짠 변별 문항 · 증가와 감소를 말로 먼저 쓰게 하는 문항</dd>
+    </dl>
+  </article>
+  <div class="cont">→ {{next}}면에 계속</div>
+</section>
+
+<!-- ================= SPECIAL 01 CLINIC EXT (7/10) 수학 오개념 도감 3 ================= -->
+<section class="page" data-sec="SPECIAL 01 · 수학클리닉" data-title="수학클리닉" id="p-clinic7">
+  <div class="cont from">← {{prev}}면에서 계속</div>
+
+  <article class="mc-card">
+    <div class="mc-side">
+      <div class="mc-top"><span class="mc-no">06</span>
+        <svg class="mc-ico" viewBox="0 0 40 40" role="img" aria-label="더하기와 곱하기로 늘어난 막대"><rect x="4" y="22" width="6" height="14" fill="#4F8F88"/><rect x="12" y="15" width="6" height="21" fill="#4F8F88"/><rect x="22" y="8" width="6" height="28" fill="#E0735A"/><rect x="30" y="4" width="6" height="32" fill="#E0735A" opacity=".6"/><text x="20" y="6" font-size="8" font-weight="900" fill="#C8412A" font-family="Noto Sans KR" text-anchor="middle">×</text></svg></div>
+      <h4>비례와 가법적 사고</h4>
+      <div class="mc-unit">변화와 관계 · 비와 비례</div>
+      <div class="mc-ans"><span class="h">학생 답의 모습</span>2 : 3 = 6 : □ 에서 <span class="x">□ = 7</span><br>(2에서 6으로 4를 더했으니 3에도 4를 더함)<br>바른 답 <span class="o">□ = 9</span></div>
+    </div>
+    <dl class="mc-dl">
+      <dt>증상</dt><dd>두 양의 관계를 몇 배인가가 아니라 몇 더 큰가로 본다 차이를 그대로 유지하면 비가 유지된다고 여긴다</dd>
+      <dt>왜 생기나</dt><dd>덧셈 구조가 먼저 익숙하고 비를 두 수의 쌍으로만 외우면 몇 배보다 몇 더가 자연스럽다 배율이 정수로 떨어지지 않는 문항에서 특히 드러난다</dd>
+      <dt>AI 진단</dt><dd class="ai"><span><i>잡아야 할 것</i>차이를 유지한 답과 배율을 유지한 답을 모두 계산해 학생 답이 어느 쪽인지 대조한다</span><span><i>놓치기 쉬운 것</i>2배 · 3배처럼 쉬운 수만 쓰면 가법적 사고를 가진 학생도 곱셈으로 맞힐 수 있다 오개념은 1.5배 같은 비정수 배 문항에서야 보인다</span></dd>
+      <dt>튜터 질문</dt><dd class="mc-talk"><span><b>① 제한</b>9라고 알려 주지 않는다</span><span><b>② 설명</b>2에서 6으로 갈 때 무엇을 했는지 말해 줄래</span><span><b>③ 검증</b>주스 2컵에 설탕 3숟가락이면 6컵에 7숟가락일 때도 맛이 같을까 한 컵당 설탕을 비교해 보자</span><span><b>④ 연결</b>단위비율로도 설명하지 못하면 교사 소집단</span></dd>
+      <dt>보충 문항</dt><dd>비정수 배 문항(4 : 6 = 6 : □) · 단위비율 표 채우기 · 맛이 같은 레시피와 다른 레시피를 고르고 이유 쓰기</dd>
+    </dl>
+  </article>
+
+  <article class="mc-card">
+    <div class="mc-side">
+      <div class="mc-top"><span class="mc-no">07</span>
+        <svg class="mc-ico" viewBox="0 0 40 40" role="img" aria-label="오른쪽으로 평행이동한 포물선"><path d="M3 6 Q12 44 21 6" fill="none" stroke="#6B6F77" stroke-width="1.6" stroke-dasharray="2.4 2"/><path d="M15 6 Q24 44 33 6" fill="none" stroke="#14223A" stroke-width="2.4"/><path d="M12 30 h10 M19 27 l3 3 l-3 3" fill="none" stroke="#C8412A" stroke-width="1.8"/></svg></div>
+      <h4>이차함수 꼭짓점과 평행이동 방향</h4>
+      <div class="mc-unit">함수 · 이차함수</div>
+      <div class="mc-ans"><span class="h">학생 답의 모습</span>y = (x − 2)<sup>2</sup> + 3 의 꼭짓점 <span class="x">(−2, 3)</span><br>y = x<sup>2</sup> 을 x축 방향으로 2만큼 이동 <span class="x">y = (x + 2)<sup>2</sup></span><br>바른 답 <span class="o">(2, 3)</span> · <span class="o">y = (x − 2)<sup>2</sup></span></div>
+    </div>
+    <dl class="mc-dl">
+      <dt>증상</dt><dd>괄호 안의 부호를 그대로 좌표로 옮기거나 이동 방향과 같은 부호를 식에 쓴다 y축 방향 이동은 맞히면서 x축 방향 이동에서만 틀리는 비대칭이 흔하다</dd>
+      <dt>왜 생기나</dt><dd>y축 방향 이동은 + q로 직관과 같지만 x축 방향 이동은 x 대신 x − p를 넣는 치환이라 부호가 반대로 보인다 부호를 반대로라는 규칙만 외우면 이유 없이 뒤집다가 헷갈린다</dd>
+      <dt>AI 진단</dt><dd class="ai"><span><i>잡아야 할 것</i>꼭짓점 x좌표의 부호만 틀린 답을 계산 실수와 구분하고 꼭짓점 문항과 이동 문항 사이의 일관성을 본다</span><span><i>놓치기 쉬운 것</i>규칙 암기로 맞힌 학생이 y = 2(x − 1)<sup>2</sup> − 4 같은 변형이나 그래프 그리기에서 틀리는 경우 손그림 그래프의 꼭짓점 위치는 인식 오차가 크다</span></dd>
+      <dt>튜터 질문</dt><dd class="mc-talk"><span><b>① 제한</b>부호를 반대로라고 규칙을 알려 주지 않는다</span><span><b>② 설명</b>(x − 2)<sup>2</sup>이 가장 작아지는 x는 얼마인지 말해 줄래</span><span><b>③ 검증</b>x = −2를 식에 넣으면 y가 3이 나오는지 계산해 볼까</span><span><b>④ 연결</b>대입 결과를 보고도 꼭짓점을 고치지 못하면 교사에게</span></dd>
+      <dt>보충 문항</dt><dd>꼭짓점 후보를 대입해 확인하는 검산 문항 · 이동 전후 함숫값 표 비교 · 그래프를 직접 옮겨 보는 조작 과제(인터랙티브 도구는 {{pg:p-clinic9}}면)</dd>
+    </dl>
+  </article>
+
+  <article class="mc-card">
+    <div class="mc-side">
+      <div class="mc-top"><span class="mc-no">08</span>
+        <svg class="mc-ico" viewBox="0 0 40 40" role="img" aria-label="동전 다섯 개"><g stroke="#14223A" stroke-width="1.4"><circle cx="8" cy="12" r="5" fill="#B08A3E"/><circle cx="20" cy="12" r="5" fill="#B08A3E"/><circle cx="32" cy="12" r="5" fill="#B08A3E"/><circle cx="14" cy="26" r="5" fill="#B08A3E"/><circle cx="26" cy="26" r="5" fill="#B08A3E"/></g><text x="20" y="39" font-size="8" font-weight="900" fill="#C8412A" text-anchor="middle" font-family="Noto Sans KR">?</text></svg></div>
+      <h4>확률의 대표성 오류</h4>
+      <div class="mc-unit">자료와 가능성 · 확률</div>
+      <div class="mc-ans"><span class="h">학생 답의 모습</span>앞면이 다섯 번 나왔으니 <span class="x">다음은 뒷면일 가능성이 더 크다</span><br>앞뒤앞뒤뒤가 앞앞앞앞앞보다 <span class="x">잘 나온다</span><br>바른 답 <span class="o">둘 다 <span class="fr"><sup>1</sup><sub>2</sub></span> · 두 수열 모두 <span class="fr"><sup>1</sup><sub>32</sub></span></span></div>
+    </div>
+    <dl class="mc-dl">
+      <dt>증상</dt><dd>무작위 결과는 무작위처럼 보여야 한다고 여겨 특정 수열이 더 그럴듯하다고 판단하거나 앞선 결과가 다음 결과를 바꾼다고 본다</dd>
+      <dt>왜 생기나</dt><dd>적은 횟수의 결과에도 전체 비율이 그대로 나타나야 한다는 직관과 독립 시행 개념의 부족이 겹친다 이번엔 나올 차례라는 일상의 운 이야기가 이를 강화한다</dd>
+      <dt>AI 진단</dt><dd class="ai"><span><i>잡아야 할 것</i>선택형 답만으로는 부족하다 이유 서술에서 나올 차례 · 번갈아 나온다 같은 표현을 찾아 오개념으로 분류한다</span><span><i>놓치기 쉬운 것</i><span class="fr"><sup>1</sup><sub>2</sub></span>이라고 정답을 써도 이유가 번갈아 나오니까라면 오개념은 남아 있다 이유가 짧으면 자동 분류가 흔들리므로 교사가 확인한다</span></dd>
+      <dt>튜터 질문</dt><dd class="mc-talk"><span><b>① 제한</b>독립이라는 용어부터 설명하지 않는다</span><span><b>② 설명</b>뒷면이 더 잘 나온다고 생각한 이유를 말해 줄래</span><span><b>③ 검증</b>동전이 앞의 다섯 번을 기억할까 두 수열의 확률을 각각 곱으로 계산해 비교해 보자</span><span><b>④ 연결</b>계산 뒤에도 직관을 고수하면 교사가 모의 실험으로 이어 간다</span></dd>
+      <dt>보충 문항</dt><dd>동전 던지기 모의 실험을 여러 번 반복해 상대도수를 비교하는 활동 · 특정 수열의 확률 계산 문항 · 답과 이유를 따로 채점하는 이단 문항</dd>
+    </dl>
+  </article>
+  <div class="cont">→ {{next}}면에 계속</div>
+</section>
+
+<!-- ================= SPECIAL 01 CLINIC EXT (8/10) 클리닉 한 주의 설계 ================= -->
+<section class="page tint" data-sec="SPECIAL 01 · 수학클리닉" data-title="수학클리닉" id="p-clinic8">
+  <div class="cont from">← {{prev}}면에서 계속</div>
+  <div class="kicker">운영 모델<span class="sep">/</span>A WEEK IN THE CLINIC</div>
+  <h1 class="headline m">클리닉 한 주의 설계</h1>
+  <p class="dek">월요일 진단에서 금요일 재확인까지 AI는 초안과 기록을 맡고 판단과 연결은 교사가 맡는다 한 학교가 방과후 수학클리닉을 주 5회 짧은 세션으로 운영한다고 가정하고 편집부가 흐름을 그려 보았다</p>
+  <div class="byline">설계 <b>Heurēsis 편집부</b> · 편집부 예시 · 실제 학교 사례가 아니며 운영 규모와 시간은 가정이다</div>
+
+  <figure class="figure mt4" id="fig-clinic-week">
+    <svg viewBox="0 0 680 300" role="img" aria-label="AI 보조 수학클리닉의 월요일부터 금요일까지 역할별 흐름">
+      <rect width="680" height="300" fill="#F7F3EB"/>
+      <g font-family="Noto Sans KR">
+        <g font-size="11" font-weight="900" fill="#fff" text-anchor="middle">
+          <rect x="70" y="8" width="118" height="24" fill="#14223A"/><text x="129" y="25">월 · 진단</text>
+          <rect x="192" y="8" width="118" height="24" fill="#14223A"/><text x="251" y="25">화 · 대화</text>
+          <rect x="314" y="8" width="118" height="24" fill="#14223A"/><text x="373" y="25">수 · 처방</text>
+          <rect x="436" y="8" width="118" height="24" fill="#14223A"/><text x="495" y="25">목 · 설명</text>
+          <rect x="558" y="8" width="118" height="24" fill="#C8412A"/><text x="617" y="25">금 · 재확인</text>
+        </g>
+        <g font-size="10" font-weight="800">
+          <rect x="4" y="40" width="62" height="78" fill="#C8412A"/><text x="35" y="84" fill="#fff" text-anchor="middle">교사</text>
+          <rect x="4" y="122" width="62" height="78" fill="#4F8F88"/><text x="35" y="166" fill="#fff" text-anchor="middle">AI</text>
+          <rect x="4" y="204" width="62" height="78" fill="#B08A3E"/><text x="35" y="248" fill="#fff" text-anchor="middle">학생</text>
+        </g>
+        <g fill="#fff" stroke="#CFC5B2" stroke-width="1">
+          <rect x="70" y="40" width="118" height="78"/><rect x="192" y="40" width="118" height="78"/><rect x="314" y="40" width="118" height="78"/><rect x="436" y="40" width="118" height="78"/><rect x="558" y="40" width="118" height="78"/>
+          <rect x="70" y="122" width="118" height="78"/><rect x="192" y="122" width="118" height="78"/><rect x="314" y="122" width="118" height="78"/><rect x="436" y="122" width="118" height="78"/><rect x="558" y="122" width="118" height="78"/>
+          <rect x="70" y="204" width="118" height="78"/><rect x="192" y="204" width="118" height="78"/><rect x="314" y="204" width="118" height="78"/><rect x="436" y="204" width="118" height="78"/><rect x="558" y="204" width="118" height="78"/>
+        </g>
+        <g font-size="9" fill="#16191F">
+          <text x="78" y="60">AI 채점 초안 검토</text><text x="78" y="75">오개념 코드 승인·수정</text><text x="78" y="90">오개념별 소집단 편성</text>
+          <text x="200" y="60">튜터 경계 설정</text><text x="200" y="75">교사 연결 알림 확인</text><text x="200" y="90">막힌 학생 직접 지도</text>
+          <text x="322" y="60">보충 문항 검토·배정</text><text x="322" y="75">추천 이유 확인</text><text x="322" y="90">과한 분량은 덜어냄</text>
+          <text x="444" y="60">소집단 설명 지도</text><text x="444" y="75">학생 설명 듣고 기록</text><text x="444" y="90">정서 신호 살피기</text>
+          <text x="566" y="60">재확인 결과 판정</text><text x="566" y="75">다음 주 계획·종료</text><text x="566" y="90">보호자 안내 초안 승인</text>
+          <text x="78" y="142">손글씨 답안 인식</text><text x="78" y="157">부분점수·오류 유형 제안</text><text x="78" y="172">학생별 반복 오류 요약</text>
+          <text x="200" y="142">규약에 따른 질문</text><text x="200" y="157">정답 직접 제공 제한</text><text x="200" y="172">막힘·정서 신호 표시</text>
+          <text x="322" y="142">오개념 태그로 문항 추천</text><text x="322" y="157">왜 지금인지 이유 표시</text><text x="322" y="172">재시도 간격 제안</text>
+          <text x="444" y="142">설명 녹취·메모 정리</text><text x="444" y="157">핵심어 요약 초안</text><text x="444" y="172">판정은 하지 않음</text>
+          <text x="566" y="142">평행 문항 채점 초안</text><text x="566" y="157">주간 기록 요약</text><text x="566" y="172">교사용 보고서 초안</text>
+          <text x="200" y="224">생각을 말로 꺼내기</text><text x="200" y="239">검증 질문에 답하기</text><text x="200" y="254">AI 답 복사 대신 손으로</text>
+          <text x="78" y="224">형성평가 풀이</text><text x="78" y="239">자기 확신도 표시</text><text x="78" y="254">짧은 불안 체크</text>
+          <text x="322" y="224">보충 문항 풀이</text><text x="322" y="239">틀린 이유 한 줄 쓰기</text><text x="322" y="254">간격 연습 시작</text>
+          <text x="444" y="224">자기 말로 설명 발표</text><text x="444" y="239">친구 풀이 검산</text><text x="444" y="254">남은 질문 적기</text>
+          <text x="566" y="224">평행 문항 재확인</text><text x="566" y="239">효능감 체크</text><text x="566" y="254">다음 주 목표 적기</text>
+        </g>
+        <g font-size="7.6" fill="#6B6F77">
+          <text x="78" y="110">승인 전에는 학생에게 가지 않음</text>
+          <text x="566" y="110">일주일 뒤 지연 재확인 예약</text>
+          <text x="200" y="192">대화 로그 요약만 교사에게</text>
+          <text x="444" y="192">설명 품질은 교사가 판단</text>
+        </g>
+        <path d="M188 294 H558" stroke="#C8412A" stroke-width="1.6"/><path d="M552 290 l6 4 l-6 4" fill="none" stroke="#C8412A" stroke-width="1.6"/>
+        <text x="373" y="291" font-size="8" fill="#C8412A" text-anchor="middle" font-weight="700">같은 오개념 태그가 월요일 진단부터 금요일 재확인까지 따라간다</text>
+      </g>
+    </svg>
+    <figcaption><b>그림 A 클리닉 한 주의 역할 흐름</b> 개념도 · 편집부 예시 · 각 칸의 AI 기능은 {{pg:p-clinic9}}면의 도구들이 표방하는 기능을 조합한 것으로 특정 제품 하나로 모두 구현된다는 뜻이 아니다</figcaption>
+  </figure>
+
+  <div class="grid g-5-7 mt4" style="gap:6mm">
+    <div>
+      <h3 class="sub" style="margin-top:0"><span class="no">01</span>세 가지 역할 원칙</h3>
+      <ul class="list small">
+        <li><b>교사는 판정하고 연결한다</b> 오개념 코드 확정 · 소집단 편성 · 보충 분량 · 클리닉 종료는 교사의 결정이다 AI 제안을 거절한 이유도 짧게 남긴다</li>
+        <li><b>AI는 초안을 만들고 기록한다</b> 채점 · 오류 분류 · 문항 추천 · 요약은 모두 초안이다 정서 상태를 판정하거나 학생을 등급으로 나누지 않는다</li>
+        <li><b>학생은 설명하고 스스로 확인한다</b> AI의 문장을 옮겨 적지 않고 자기 말로 다시 쓴다 목요일 발표와 금요일 재확인이 학생 몫의 증거다</li>
+      </ul>
+      <div class="box acc mt2">
+        <h4><span class="tag">WHY</span>왜 금요일이 아니라 다음 주인가</h4>
+        <p class="small">금요일 재확인은 같은 주의 기억에 기대기 쉽다 클리닉을 졸업시키는 판정은 일주일 뒤 평행 문항으로 한 번 더 확인하는 편이 안전하다 {{pg:p-clinic}}면의 다섯 고리 중 재검사 고리다</p>
+      </div>
+    </div>
+    <div>
+      <h3 class="sub" style="margin-top:0"><span class="no">02</span>기록하는 데이터</h3>
+      <table class="tbl wk-lanes">
+        <thead><tr><th>기록</th><th>누가 만드나</th><th>쓰임</th></tr></thead>
+        <tbody>
+          <tr><td class="k">오개념 코드</td><td>AI 제안 · 교사 확정</td><td>소집단 편성과 재확인 문항 선택</td></tr>
+          <tr><td class="k">AI 제안 수정 로그</td><td>교사의 승인·수정·거절</td><td>어떤 오류에서 AI가 자주 틀리는지 점검</td></tr>
+          <tr><td class="k">대화 요약</td><td>AI 초안</td><td>교사 연결 사유 확인 · 원문은 최소 보관</td></tr>
+          <tr><td class="k">자기 확신도</td><td>학생</td><td>맞았지만 불안한 학생 찾기</td></tr>
+          <tr><td class="k">불안·효능감 체크</td><td>학생 짧은 문항</td><td>성취와 함께 변화 보기 · 진단 용도 아님</td></tr>
+          <tr><td class="k">재확인 결과</td><td>AI 채점 초안 · 교사 판정</td><td>같은 오개념이 다시 나타나는지 확인</td></tr>
+          <tr><td class="k">교사 연결 사유</td><td>AI 표시 · 교사 기록</td><td>막힘 · 반복 오류 · 정서 신호의 빈도</td></tr>
+        </tbody>
+      </table>
+      <p class="note mt2">보관 기간 · 삭제 절차 · 외부 AI 서비스로 가는 정보의 범위는 운영 전에 학교 규정과 계약서로 정해 둔다 학생 실명과 민감정보는 AI 입력 전에 지운다</p>
+    </div>
+  </div>
+  <div class="box teal mt2">
+    <h4><span class="tag">EXIT</span>클리닉을 졸업하는 기준 · 편집부 제안</h4>
+    <div class="grid g3" style="gap:5mm">
+      <p class="small"><b>오개념이 돌아오지 않는다</b><br>일주일 뒤 평행 문항에서 같은 오개념 코드가 다시 나오지 않는다</p>
+      <p class="small"><b>자기 말로 설명한다</b><br>AI 없이 풀이의 이유를 한두 문장으로 말하고 반례나 검산으로 스스로 확인한다</p>
+      <p class="small"><b>불안이 막지 않는다</b><br>틀릴 수 있는 문항에도 첫 시도를 하고 도움 요청이 필요한 때를 스스로 고른다</p>
+    </div>
+  </div>
+  <div class="cont">→ {{next}}면에 계속</div>
+</section>
+
+<!-- ================= SPECIAL 01 CLINIC EXT (9/10) 클리닉 도구 선반 ================= -->
+<section class="page" data-sec="SPECIAL 01 · 수학클리닉" data-title="수학클리닉" id="p-clinic9">
+  <div class="cont from">← {{prev}}면에서 계속</div>
+  <div class="kicker">도구 비교<span class="sep">/</span>THE CLINIC TOOL SHELF</div>
+  <h1 class="headline m">클리닉 도구 선반</h1>
+  <p class="dek">9월 에듀테크 레이더에서 오개념 · 보충 · 튜터와 맞닿은 도구 여덟 가지를 골라 클리닉의 쓰임새로 다시 정렬했다 표의 기능은 공급사 발표와 공개 자료 기준이며 학습 효과의 근거가 아니다</p>
+  <div class="byline">정리 <b>Heurēsis 편집부</b> · 근거 EdTech Radar 2026년 9월 12 · 13 · 14 · 16 · 18 · 19 · 20 · 28 · 30일자 · 한국어 지원은 공개 자료로 확인된 것만 적고 나머지는 미확인</div>
+
+  <table class="tbl sh-tbl mt4">
+    <thead><tr><th>도구</th><th style="width:44mm">무엇을 하나</th><th style="width:22mm">한국어</th><th>클리닉 쓰임</th><th>주의</th></tr></thead>
+    <tbody>
+      <tr><td class="k">Ed.ai<small>Ed.ai · 프랑스 · 9월 10일 투자·확장 발표</small></td><td>손글씨 수학 답안 인식 · 다단계 풀이 추적 · 부분점수 제안 · 반복 오류 탐지 · 학생별 보충 문항 생성 · 교사 검토 후 승인</td><td><span class="ko u">미확인</span></td><td>월요일 진단의 채점 초안과 오개념별 보충 배정 · 자세한 내용은 {{pg:p-clinic2}}면</td><td>한국 교육과정 정렬 미확인 · 얼리 액세스는 월 60개 답안 · 실명을 지운 샘플로 정확도와 교사 수정률부터 확인</td></tr>
+      <tr><td class="k">SchoolAI<small>SchoolAI · 미국 · 9월 15일 Midland 학군 도입 보도</small></td><td>교사가 설계한 Space에서 학생이 AI 튜터와 대화 · Mission Control로 사고 과정 · 막힘 · 참여를 실시간 관찰 · 스마트 그룹 · 안전 경보</td><td><span class="ko u">미확인</span><br><span class="note">60개 이상 번역 표방</span></td><td>화요일 대화 세션 · 같은 오개념 학생을 묶어 소집단 지도 · 정답 대신 탐색 질문을 쓰도록 경계 설정</td><td>무료 체험은 연 5회 Space 실행 · 상시 관찰이 감시 효과를 낳을 수 있어 관찰 범위를 학생에게 알린다 · 질문형 설계는 공급사 설명</td></tr>
+      <tr><td class="k">엘리스 헬피챗<small>엘리스 · 한국 · 9월 에듀테크 코리아 페어 공개</small></td><td>교사용과 학생용 화면을 나눈 역할별 설계 · 학생용 대화 제한 · 정답을 바로 주기보다 단계 질문으로 유도하는 교육 모델</td><td><span class="ko">국내 서비스</span></td><td>대화 규약의 정답 직접 제공 제한을 제품 수준에서 적용해 보는 국내 선택지</td><td>대화 제한이 과의존을 줄이는지 · 지나친 제한이 질문의 질을 해치지 않는지는 실증되지 않았다</td></tr>
+      <tr><td class="k">Makit AI Learning OS<small>Makit AI Labs · 한국 · 9월 18일 포착</small></td><td>PDF와 주제로 수업 캡슐 · 퀴즈 · 시뮬레이션 생성 · 실시간 관제 · 오개념 감지와 드릴 처방을 표방</td><td><span class="ko">한국어 중심</span></td><td>수업 중 오개념 로그를 보며 즉시 보충 활동을 배포 · 공개된 실증은 고등교육 중심</td><td>가격 비공개 · 학습 로그를 세밀하게 수집하므로 저장 위치 · 보존 기간 · AI 진단 오류의 교사 검토 절차 확인</td></tr>
+      <tr><td class="k">Kahoot!<small>Kahoot! · 노르웨이 · 9월 3 · 17 · 28일 업데이트</small></td><td>비동기 과제 Kahootopia · 기기 없이 공유 화면으로 하는 Unplugged · 기초 격차를 겨냥한 Math Missions · 외부 AI에서 문항 초안 생성</td><td><span class="ko">한국어 서비스</span><br><span class="note">AI 생성 품질 확인 필요</span></td><td>수요일 간격 연습과 5~10분 오개념 확인 퀴즈 · 휴대폰 제한 교실의 형성평가</td><td>생성 문항의 수학적 정확성과 오개념 유발 여부는 교사 검토 필수 · 속도 경쟁은 수학불안을 키울 수 있다</td></tr>
+      <tr><td class="k">ScholarSail<small>ScholarSail · 9월 7일 신규 등록</small></td><td>노트와 문서에서 플래시카드 · 마인드맵 생성 · 간격 반복 · 회상 연습 · 3D 기억의 궁전</td><td><span class="ko u">미확인</span><br><span class="note">영어 중심</span></td><td>오개념 카드의 간격 반복 · 자기주도 보충 파일럿</td><td>교사가 학생 카드 품질과 반복 로그를 볼 수 있는지 미확인 · 모델 학습 사용 조건은 별도 확인</td></tr>
+      <tr><td class="k">Google Learning Interactives<small>Google Research · 9월 17일 연구 파일럿</small></td><td>교사가 자연어로 중·고 STEM 학습 시뮬레이션을 생성 · 교사 피드백을 거친 영어 샘플 30개 이상</td><td><span class="ko u">미확인</span></td><td>기울기 · 절편 · 평행이동을 슬라이더로 조작하는 표현 연결 활동 (오개념 05 · 07)</td><td>연구 파일럿이라 가격 · 로그 내보내기 · 개인정보 범위 미확인 · 생성물의 수학적 정확성은 교사 검토</td></tr>
+      <tr><td class="k">Learning Commons<small>Learning Commons · 미국 · 9월 22일 발표</small></td><td>교육과정 · 학습진행 · 오개념 지식그래프와 산출물 평가자 · Eedi Misconception Graph 공개 · 학생 데이터 없이 품질 점검</td><td><span class="ko u">미확인</span><br><span class="note">한국 교육과정 지원도 미확인</span></td><td>AI가 만든 보충 문항이 오개념을 제대로 겨냥하는지 점검하는 연구용 샌드박스</td><td>학생용 앱이 아니라 기반 인프라 · 미국 성취기준 중심이라 국내 전이 가능성은 검증 전</td></tr>
+    </tbody>
+  </table>
+
+  <div class="grid g2 mt4" style="gap:5mm">
+    <div class="box dark">
+      <h4><span class="tag">BEFORE</span>선반에서 꺼내기 전 다섯 질문</h4>
+      <ol class="list num small">
+        <li>AI의 진단과 점수는 교사 승인 전에 학생에게 가는가</li>
+        <li>튜터가 정답을 곧바로 주지 않도록 교사가 경계를 정할 수 있는가</li>
+        <li>교사가 AI 제안을 고친 기록이 남고 내보낼 수 있는가</li>
+        <li>한국어 수식 표기와 국내 교육과정에서 직접 시험해 보았는가</li>
+        <li>학생 답안과 대화의 보관 기간 · 삭제 · 모델 학습 사용이 계약서에 적혀 있는가</li>
+      </ol>
+    </div>
+    <div class="box teal">
+      <h4><span class="tag">READ</span>표를 읽을 때</h4>
+      <p class="small">여덟 도구 가운데 9월 자료에서 클리닉 학습 효과를 독립적으로 검증한 사례는 확인되지 않았다 기능 목록은 도입 후보를 좁히는 데 쓰고 효과는 {{pg:p-clinic10}}면의 설계처럼 학교가 직접 확인해야 한다 한 도구로 한 주의 모든 칸을 채우기보다 진단 · 대화 · 연습을 서로 다른 도구로 나누면 데이터 흐름도 나뉜다는 점을 함께 고려한다</p>
+    </div>
+  </div>
+  <div class="cont">→ {{next}}면에 계속</div>
+</section>
+
+<!-- ================= SPECIAL 01 CLINIC EXT (10/10) 클리닉에서 시작하는 연구 세 편 ================= -->
+<section class="page" data-sec="SPECIAL 01 · 수학클리닉" data-title="수학클리닉" id="p-clinic10">
+  <div class="cont from">← {{prev}}면에서 계속</div>
+  <div class="kicker">연구 아이디어<span class="sep">/</span>THREE STUDIES FROM THE CLINIC</div>
+  <h1 class="headline m">클리닉에서 시작하는 연구 세 편</h1>
+  <p class="dek">9월 연구 브리핑이 남긴 질문 가운데 학교 클리닉에서 바로 설계할 수 있는 세 가지를 편집부가 일반 연구 설계로 정리했다 표본 규모와 측정 도구는 예시이며 실제 연구에서는 사전 검정력 분석과 기관 심의를 거쳐야 한다</p>
+  <div class="byline">정리 <b>Heurēsis 편집부</b> · 연구 아이디어 · 근거 문헌은 {{pg:p-sources}}면 참고문헌</div>
+
+  <article class="rs-card mt4">
+    <div><span class="rs-no">01</span><div class="rs-src">출발점 · 과학 학습을 다룬 가나 GPT-4o 가능성 연구(Apeadido 외 2026 · Discover Artificial Intelligence)의 손글씨 재구성 장치 · {{pg:p-clinic2}}면</div></div>
+    <div>
+      <h4>AI의 설명을 자기 말로 다시 쓰게 하면 오개념이 덜 돌아오는가</h4>
+      <dl>
+        <dt>RQ</dt><dd>AI 피드백을 그대로 옮겨 쓰게 할 때 · 자기 말로 손으로 다시 쓰게 할 때 · 소크라테스식 질문만 받을 때 오개념 교정과 전이는 어떻게 다른가</dd>
+        <dt>설계</dt><dd>같은 오개념 코드를 가진 중학생을 세 조건에 무선 배정하는 3집단 실험 · 원 연구는 과학 과목의 대조군 없는 31명 가능성 연구였으므로 수학 오개념에서 비교 조건을 두고 다시 확인한다</dd>
+        <dt>측정</dt><dd>사전 · 직후 · 1주 뒤 평행 문항 · 같은 오개념의 재발 여부 · 설명 글의 질 루브릭 · 소요 시간</dd>
+        <dt>분석</dt><dd>학생을 반에 내포한 혼합효과 로지스틱 모형으로 재발 확률 비교 · 오개념 유형과 조건의 상호작용을 사전등록</dd>
+        <dt class="eth">윤리</dt><dd>세 조건 모두 교사 피드백을 보장하고 연구 종료 뒤 가장 효과적인 조건을 전원에게 제공 · 손글씨 원본은 비식별 스캔만 보관</dd>
+      </dl>
+    </div>
+  </article>
+
+  <article class="rs-card">
+    <div><span class="rs-no">02</span><div class="rs-src">출발점 · LLM을 시스템 구성요소로 보고 책임 배분을 설계 변수로 제시한 Zhengdao Li 외 2026 편집논문 · 오개념 그래프를 공개한 Learning Commons 발표</div></div>
+    <div>
+      <h4>한 번에 판단하는 AI와 근거를 보여 주는 AI 중 교사는 누구를 더 잘 고치는가</h4>
+      <dl>
+        <dt>RQ</dt><dd>단일 LLM이 곧바로 진단하는 구조 · 오개념 코드북을 검색해 근거를 제시하는 구조 · 여기에 교사 검토를 더한 구조는 진단 정확도 · 과잉교정 · 교사의 수정 행동에서 어떻게 다른가</dd>
+        <dt>설계</dt><dd>비식별 오답 풀이를 교사가 먼저 코딩한 기준 자료로 만들고 세 구조에 같은 풀이를 넣어 비교 · 교사 참여 부분은 교사 내 반복측정 교차설계</dd>
+        <dt>측정</dt><dd>오류 유형별 정밀도 · 재현율 · 교사 코딩과의 일치도 · 교사의 승인 · 수정 · 거절 로그 · 근거 문장의 충실도 · 교사 신뢰</dd>
+        <dt>분석</dt><dd>오류 유형별 F1 비교 · 교사 간 일치도 계수 · 수정 여부를 종속변수로 한 다층 로지스틱 모형</dd>
+        <dt class="eth">윤리</dt><dd>학생 풀이는 외부 모델에 넣기 전 실명과 학교 정보를 지운다 · 연구 기간의 AI 진단은 학생 성적에 반영하지 않는다</dd>
+      </dl>
+    </div>
+  </article>
+
+  <article class="rs-card">
+    <div><span class="rs-no">03</span><div class="rs-src">출발점 · 단계 질문형 튜터를 내세운 국내 서비스 발표와 9월 브리핑의 생산적 고투 보존형 힌트 제안 · 불안과 자신감을 함께 재라는 Moradi · Evans 2026 · {{pg:p-clinic4}}면</div></div>
+    <div>
+      <h4>도움은 언제 주어야 하는가 · 즉답 · 단계 힌트 · 교사 중재의 비교</h4>
+      <dl>
+        <dt>RQ</dt><dd>생산적 고투를 남기도록 설계한 단계형 AI 힌트는 즉답형 튜터나 교사 중재보다 수학불안 · 효능감 · 자기설명 · 지연 전이에서 어떤 차이를 만드는가</dd>
+        <dt>설계</dt><dd>클리닉 참여 학생을 즉답 · 단계 힌트 · 교사 중재 세 조건에 배정 · 반 단위 오염을 막으려면 반 또는 세션 단위 군집 배정</dd>
+        <dt>측정</dt><dd>수학불안 척도와 상태불안 · 효능감 · 첫 시도 보존율 · 힌트 요청 간격 · 자기설명 코딩 · 1주 뒤 전이 문항</dd>
+        <dt>분석</dt><dd>세션을 반복측정으로 둔 다층모형 · 사전 불안 수준에 따른 조건 효과의 이질성 검토</dd>
+        <dt class="eth">윤리</dt><dd>불안이 높아지는 신호가 보이면 조건과 상관없이 교사가 개입하는 중지 규칙을 미리 정한다 · 불안 점수는 선발이나 평가에 쓰지 않는다</dd>
+      </dl>
+    </div>
+  </article>
+
+  <p class="lead mt2 endnote">여덟 가지 오개념 모두 AI가 답의 모양은 먼저 알아채지만 그 뒤의 생각을 확인하는 일은 학생의 설명과 교사의 질문에 달려 있다 클리닉의 기록이 연구가 되고 그 연구가 다시 교실로 돌아오는 순환이 이 코너가 제안하는 설계의 전부다<span class="endmark">■</span></p>
+</section>
