@@ -245,3 +245,42 @@ def art_blank(c):
     return '<svg viewBox="0 0 600 420">' + ''.join(s) + '</svg>'
 
 
+
+
+def art_conceptmap(c):
+    # concept map: nodes all present, one link missing (판별식 ↔ 교점)
+    ink, acc, bg, a2 = c['ink'], c['acc'], c['bg'], c['acc2']
+    nodes = {'판별식': (100, 92, 40), '실근': (318, 112, 38), '이차방정식': (104, 300, 46),
+             'y = 0': (300, 318, 36), 'x축 교점': (500, 214, 48)}
+    edges = [('판별식', '실근', '부호로 개수 구분'), ('이차방정식', '실근', '해'),
+             ('실근', 'y = 0', 'y가 0인 x'), ('y = 0', 'x축 교점', 'x축 위의 점')]
+    s = []
+    s.append(f'<circle cx="300" cy="210" r="196" fill="none" stroke="{ink}" stroke-width="1" stroke-dasharray="2 6" opacity=".35"/>')
+    for a, b, t in edges:
+        x1, y1, _ = nodes[a]; x2, y2, _ = nodes[b]
+        s.append(f'<line x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}" stroke="{ink}" stroke-width="2.2"/>')
+    # the missing link
+    x1, y1, _ = nodes['판별식']; x2, y2, _ = nodes['x축 교점']
+    s.append(f'<path d="M{x1+38} {y1-14} C 260 10, 470 40, {x2-6} {y2-48}" fill="none" stroke="{acc}" stroke-width="2.6" stroke-dasharray="7 7"/>')
+    s.append(f'<circle cx="360" cy="40" r="20" fill="{acc}"/>')
+    s.append(f'<text x="360" y="49" font-family="Noto Serif KR" font-weight="900" font-size="24" fill="{bg}" text-anchor="middle">?</text>')
+    s.append(f'<text x="390" y="46" class="lbl" fill="{acc}">선 위에 적을 말</text>')
+    for a, b, t in edges:
+        x1, y1, _ = nodes[a]; x2, y2, _ = nodes[b]
+        mx, my = (x1+x2)/2, (y1+y2)/2
+        w = len(t)*12 + 18
+        s.append(f'<rect x="{mx-w/2:.1f}" y="{my-12:.1f}" width="{w}" height="24" rx="12" fill="{bg}" stroke="{ink}" stroke-width="1.2"/>')
+        s.append(f'<text x="{mx:.1f}" y="{my+4.5:.1f}" class="lbl" fill="{ink}" text-anchor="middle">{t}</text>')
+    for n, (x, y, r) in nodes.items():
+        hl = n == 'x축 교점'
+        fill = a2 if hl else (acc if n == '판별식' else bg)
+        tc = bg if n in ('x축 교점', '판별식') else ink
+        s.append(f'<circle cx="{x}" cy="{y}" r="{r}" fill="{fill}" stroke="{ink}" stroke-width="2.4"/>')
+        fs = 16 if len(n) > 3 else 19
+        s.append(f'<text x="{x}" y="{y+fs*0.36:.1f}" font-family="Noto Serif KR" font-weight="900" font-size="{fs}" fill="{tc}" text-anchor="middle">{n}</text>')
+    # parabola that never meets the axis (D < 0)
+    s.append(f'<line x1="440" y1="372" x2="580" y2="372" stroke="{ink}" stroke-width="1.6"/>')
+    s.append(f'<path d="M462 302 Q 510 392, 558 302" fill="none" stroke="{acc}" stroke-width="2.4"/>')
+    s.append(f'<text x="580" y="398" class="lbl" fill="{ink}" opacity=".6" text-anchor="end">D &lt; 0</text>')
+    s.append(f'<text x="30" y="404" class="lbl" fill="{ink}" opacity=".6">두 지식은 있는데 잇는 선이 없다</text>')
+    return '<svg viewBox="0 0 600 420">' + ''.join(s) + '</svg>'
