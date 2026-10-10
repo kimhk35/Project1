@@ -284,3 +284,37 @@ def art_conceptmap(c):
     s.append(f'<text x="580" y="398" class="lbl" fill="{ink}" opacity=".6" text-anchor="end">D &lt; 0</text>')
     s.append(f'<text x="30" y="404" class="lbl" fill="{ink}" opacity=".6">두 지식은 있는데 잇는 선이 없다</text>')
     return '<svg viewBox="0 0 600 420">' + ''.join(s) + '</svg>'
+
+
+def art_compare(c):
+    # ten columns around one slot: an answer card being held against its outline
+    ink, acc, bg, a2 = c['ink'], c['acc'], c['bg'], c['acc2']
+    M, S, P = '#0F6E68', '#FF5A36', '#2E5C8A'
+    items = [('00', M), ('01', M), ('02', M), ('03', M), ('04', M), ('06', M),
+             ('S1', S), ('S2', S), ('PL1', P), ('PL2', P)]
+    cx, cy, R = 300, 200, 172
+    s = []
+    s.append(f'<circle cx="{cx}" cy="{cy}" r="{R}" fill="none" stroke="{ink}" stroke-width="1" stroke-dasharray="2 6" opacity=".4"/>')
+    pos = []
+    for k, (t, col) in enumerate(items):
+        ang = math.radians(-90 + k * 36)
+        x, y = cx + R * math.cos(ang), cy + R * math.sin(ang)
+        pos.append((x, y, t, col))
+        ex, ey = cx + 104 * math.cos(ang), cy + 88 * math.sin(ang)
+        s.append(f'<line x1="{x:.1f}" y1="{y:.1f}" x2="{ex:.1f}" y2="{ey:.1f}" stroke="{col}" stroke-width="1.6" opacity=".7"/>')
+    # the slot (dashed outline) and the answer card slightly off it
+    s.append(f'<rect x="{cx-70}" y="{cy-52}" width="140" height="104" rx="10" fill="{bg}" stroke="{ink}" stroke-width="2.2" stroke-dasharray="7 6"/>')
+    s.append(f'<g transform="rotate(-7 {cx+14} {cy-8})"><rect x="{cx-56}" y="{cy-60}" width="140" height="104" rx="10" fill="{acc}" stroke="{ink}" stroke-width="2.4"/>')
+    for k, w in enumerate([92, 70, 104]):
+        s.append(f'<rect x="{cx-38}" y="{cy-38+k*14}" width="{w}" height="5" rx="2.5" fill="{bg}" opacity=".45"/>')
+    s.append(f'<text x="{cx+14}" y="{cy+28}" font-family="Noto Serif KR" font-weight="900" font-size="26" fill="{bg}" text-anchor="middle">답</text></g>')
+    for x, y, t, col in pos:
+        s.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="22" fill="{bg}" stroke="{col}" stroke-width="2.6"/>')
+        s.append(f'<text x="{x:.1f}" y="{y+5:.1f}" font-family="JetBrains Mono" font-weight="500" font-size="{14 if len(t) < 3 else 12}" fill="{ink}" text-anchor="middle">{t}</text>')
+    s.append(f'<rect x="{cx-50}" y="{cy+66}" width="100" height="26" rx="13" fill="{bg}" stroke="{ink}" stroke-width="1.2"/>')
+    s.append(f'<text x="{cx}" y="{cy+84}" class="lbl" fill="{ink}" text-anchor="middle">대조할 자리</text>')
+    for k, (lab, col) in enumerate([('연재', M), ('번외편', S), ('Policy Lens', P)]):
+        y = 300 + k * 24
+        s.append(f'<circle cx="540" cy="{y-4}" r="5" fill="{col}"/>')
+        s.append(f'<text x="530" y="{y}" class="lbl" fill="{ink}" text-anchor="end" style="font-size:12px">{lab}</text>')
+    return '<svg viewBox="0 0 600 420">' + ''.join(s) + '</svg>'

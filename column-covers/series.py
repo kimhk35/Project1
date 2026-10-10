@@ -31,4 +31,13 @@ SERIES = {
         num=lambda n: f'PL{n}',
         numlabel=lambda n: f'Policy Lens {n}',
     ),
+    # Review R1 R2 ... 여러 시리즈를 함께 다시 읽는 복습 칼럼 연녹회색 바탕 + 자주
+    'review': dict(
+        theme=dict(bg='#E4E8E1', ink='#17201C', acc='#6A3F7A', acc2='#C8553D', mute='#66706A', dark=False),
+        cat='REVIEW',
+        kicker='AI Insight Column · Review',
+        footer='AI Insight Column',
+        num=lambda n: f'R{n}',
+        numlabel=lambda n: f'Review {n}',
+    ),
 }
