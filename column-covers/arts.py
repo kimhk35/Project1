@@ -318,3 +318,46 @@ def art_compare(c):
         s.append(f'<circle cx="540" cy="{y-4}" r="5" fill="{col}"/>')
         s.append(f'<text x="530" y="{y}" class="lbl" fill="{ink}" text-anchor="end" style="font-size:12px">{lab}</text>')
     return '<svg viewBox="0 0 600 420">' + ''.join(s) + '</svg>'
+
+
+def art_bus(c):
+    # 8.6 buses: the division is right, the answer ignores that buses come whole
+    ink, acc, bg, a2 = c['ink'], c['acc'], c['bg'], c['acc2']
+    s = []
+
+    def bus(x, y, w, h, fill, frac=1.0):
+        if frac < 1:
+            s.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="10" fill="none" stroke="{ink}" stroke-width="2" stroke-dasharray="6 5"/>')
+            s.append(f'<rect x="{x}" y="{y}" width="{w*frac:.1f}" height="{h}" rx="10" fill="{fill}" stroke="{ink}" stroke-width="2.4"/>')
+            s.append(f'<line x1="{x+w*frac:.1f}" y1="{y-8}" x2="{x+w*frac:.1f}" y2="{y+h+8}" stroke="{a2}" stroke-width="2.4"/>')
+        else:
+            s.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="10" fill="{fill}" stroke="{ink}" stroke-width="2.4"/>')
+        for k in range(4):
+            wx = x + 12 + k * 22
+            if wx + 16 <= x + w * frac:
+                s.append(f'<rect x="{wx}" y="{y+9}" width="16" height="14" rx="3" fill="{bg}" opacity=".85"/>')
+        for wx in (x + 24, x + w - 24):
+            if wx <= x + w * frac:
+                s.append(f'<circle cx="{wx}" cy="{y+h}" r="8" fill="{ink}"/><circle cx="{wx}" cy="{y+h}" r="3" fill="{bg}"/>')
+
+    W, H = 110, 52
+    for k in range(9):
+        x, y = 222 + (k % 3) * 126, 40 + (k // 3) * 92
+        if k < 8:
+            bus(x, y, W, H, acc)
+        else:
+            bus(x, y, W, H, a2, frac=0.6)
+    s.append(f'<text x="{222+2*126+W*0.6:.0f}" y="{40+2*92-14}" class="lbl" fill="{a2}" text-anchor="middle">0.6대?</text>')
+    # calculator readout
+    s.append(f'<rect x="24" y="52" width="164" height="108" rx="14" fill="{ink}"/>')
+    s.append(f'<text x="44" y="84" class="lbl" fill="{bg}" opacity=".7">학생 ÷ 정원</text>')
+    s.append(f'<text x="172" y="140" font-family="Playfair Display" font-weight="900" font-size="54" fill="{bg}" text-anchor="end">8.6</text>')
+    s.append(f'<line x1="84" y1="146" x2="180" y2="96" stroke="{a2}" stroke-width="4" stroke-linecap="round"/>')
+    s.append(f'<path d="M106 176 v40" stroke="{ink}" stroke-width="2"/><path d="M98 208 l8 10 l8 -10" fill="none" stroke="{ink}" stroke-width="2"/>')
+    s.append(f'<text x="106" y="282" font-family="Playfair Display" font-weight="900" font-size="64" fill="{acc}" text-anchor="middle">9</text>')
+    s.append(f'<text x="106" y="308" class="lbl" fill="{ink}" text-anchor="middle">왜 올리지?</text>')
+    # the constraint, outside the problem
+    s.append(f'<path d="M222 340 q0 12 12 12 h334 q12 0 12 -12" fill="none" stroke="{ink}" stroke-width="1.4"/>')
+    s.append(f'<text x="400" y="378" class="lbl" fill="{ink}" text-anchor="middle">조건 · 버스는 자연수로만 센다</text>')
+    s.append(f'<text x="24" y="404" class="lbl" fill="{ink}" opacity=".6">계산은 맞고 상황은 보지 않았다</text>')
+    return '<svg viewBox="0 0 600 420">' + ''.join(s) + '</svg>'
