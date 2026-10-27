@@ -361,3 +361,39 @@ def art_bus(c):
     s.append(f'<text x="400" y="378" class="lbl" fill="{ink}" text-anchor="middle">조건 · 버스는 자연수로만 센다</text>')
     s.append(f'<text x="24" y="404" class="lbl" fill="{ink}" opacity=".6">계산은 맞고 상황은 보지 않았다</text>')
     return '<svg viewBox="0 0 600 420">' + ''.join(s) + '</svg>'
+
+
+def art_memory(c):
+    # a head with organized chunks and one seat waiting for the incoming answer
+    ink, acc, bg, a2 = c['ink'], c['acc'], c['bg'], c['acc2']
+    s = []
+    s.append(f'<path d="M150 400 L150 330 C 88 306, 62 240, 72 178 C 84 96, 156 40, 240 40 C 326 40, 386 102, 388 176 L 410 232 '
+             f'L 388 244 C 390 276, 384 306, 352 312 L 318 314 L 318 400" fill="none" stroke="{ink}" stroke-width="2.6" stroke-linejoin="round"/>')
+    cell, gap, x0, y0 = 36, 9, 108, 128
+    for i in range(4):
+        for j in range(4):
+            x, y = x0 + i * (cell + gap), y0 + j * (cell + gap)
+            if (i, j) == (3, 2):
+                s.append(f'<rect x="{x}" y="{y}" width="{cell}" height="{cell}" rx="6" fill="none" stroke="{a2}" stroke-width="2.4" stroke-dasharray="5 4"/>')
+            elif (i, j) in ((0, 3), (3, 0)):
+                s.append(f'<rect x="{x}" y="{y}" width="{cell}" height="{cell}" rx="6" fill="{ink}" opacity=".12"/>')
+            else:
+                s.append(f'<rect x="{x}" y="{y}" width="{cell}" height="{cell}" rx="6" fill="{acc if i < 3 and j == 0 else bg}" stroke="{ink}" stroke-width="2"/>')
+    # chunk outline around the row of three
+    s.append(f'<rect x="{x0-6}" y="{y0-6}" width="{3*cell+2*gap+12}" height="{cell+12}" rx="10" fill="none" stroke="{acc}" stroke-width="2.4"/>')
+    s.append(f'<text x="{x0+24}" y="{y0-16}" class="lbl" fill="{acc}">덩어리</text>')
+    # incoming answer card
+    sx, sy = x0 + 3 * (cell + gap), y0 + 2 * (cell + gap)
+    s.append(f'<rect x="470" y="230" width="110" height="78" rx="10" fill="{a2}" stroke="{ink}" stroke-width="2.4"/>')
+    for k, w in enumerate([70, 52]):
+        s.append(f'<rect x="486" y="{248+k*13}" width="{w}" height="5" rx="2.5" fill="{bg}" opacity=".55"/>')
+    s.append(f'<text x="525" y="296" class="lbl" fill="{bg}" text-anchor="middle">AI의 답</text>')
+    s.append(f'<path d="M466 262 C 400 262, 330 300, {sx+cell+8} {sy+cell/2+6}" fill="none" stroke="{a2}" stroke-width="2.2" stroke-dasharray="6 6"/>')
+    s.append(f'<path d="M{sx+cell+18} {sy+cell/2-2} l-10 8 l12 4" fill="none" stroke="{a2}" stroke-width="2.2" stroke-linejoin="round"/>')
+    s.append(f'<text x="525" y="334" class="lbl" fill="{a2}" text-anchor="middle">앉을 자리를 찾는다</text>')
+    # retrieval arrow out of the head
+    s.append(f'<path d="M{x0+2*cell+gap} {y0-6} C 250 40, 380 20, 470 70" fill="none" stroke="{ink}" stroke-width="2.2"/>')
+    s.append(f'<path d="M458 58 l14 13 l-18 4" fill="none" stroke="{ink}" stroke-width="2.2" stroke-linejoin="round"/>')
+    s.append(f'<text x="482" y="98" class="lbl" fill="{ink}">꺼내기</text>')
+    s.append(f'<text x="580" y="404" class="lbl" fill="{ink}" opacity=".6" text-anchor="end">꺼낼 수 있어야 맞대어 볼 수 있다</text>')
+    return '<svg viewBox="0 0 600 420">' + ''.join(s) + '</svg>'
