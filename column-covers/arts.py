@@ -397,3 +397,41 @@ def art_memory(c):
     s.append(f'<text x="482" y="98" class="lbl" fill="{ink}">꺼내기</text>')
     s.append(f'<text x="580" y="404" class="lbl" fill="{ink}" opacity=".6" text-anchor="end">꺼낼 수 있어야 맞대어 볼 수 있다</text>')
     return '<svg viewBox="0 0 600 420">' + ''.join(s) + '</svg>'
+
+
+def art_confidence(c):
+    # calibration chart + the two-slot confidence card (AI answer vs my own judgment)
+    ink, acc, bg, a2, mute = c['ink'], c['acc'], c['bg'], c['acc2'], c['mute']
+    s = []
+    # calibration chart
+    X0, Y0, L = 40, 330, 230
+    s.append(f'<line x1="{X0}" y1="{Y0}" x2="{X0+L}" y2="{Y0}" stroke="{ink}" stroke-width="2"/>')
+    s.append(f'<line x1="{X0}" y1="{Y0}" x2="{X0}" y2="{Y0-L}" stroke="{ink}" stroke-width="2"/>')
+    s.append(f'<line x1="{X0}" y1="{Y0}" x2="{X0+L}" y2="{Y0-L}" stroke="{ink}" stroke-width="1.6" stroke-dasharray="5 6" opacity=".6"/>')
+    s.append(f'<path d="M{X0} {Y0-30} C {X0+90} {Y0-70}, {X0+150} {Y0-100}, {X0+L} {Y0-130}" fill="none" stroke="{a2}" stroke-width="3"/>')
+    for k in range(5):
+        x = X0 + 20 + k * 50
+        y = Y0 - 30 - (k * 25) - (8 if k % 2 else 0)
+        s.append(f'<circle cx="{x}" cy="{y:.0f}" r="5" fill="{a2}"/>')
+    s.append(f'<text x="{X0+L}" y="{Y0+24}" class="lbl" fill="{ink}" text-anchor="end">확신</text>')
+    s.append(f'<text x="{X0+8}" y="{Y0-L+4}" class="lbl" fill="{ink}">정답률</text>')
+    s.append(f'<text x="{X0+L-50}" y="{Y0-L+24}" class="lbl" fill="{mute}" text-anchor="end" style="font-size:12px">보정</text>')
+    s.append(f'<text x="{X0+L-4}" y="{Y0-140}" class="lbl" fill="{a2}" text-anchor="end" style="font-size:12px">과신</text>')
+    # two-slot card
+    cx, cy, W, H = 320, 70, 250, 230
+    s.append(f'<rect x="{cx}" y="{cy}" width="{W}" height="{H}" rx="14" fill="{bg}" stroke="{ink}" stroke-width="2.4"/>')
+    s.append(f'<text x="{cx+20}" y="{cy+34}" font-family="Noto Serif KR" font-weight="900" font-size="17" fill="{ink}">맞는 것 같아요</text>')
+    s.append(f'<line x1="{cx+20}" y1="{cy+50}" x2="{cx+W-20}" y2="{cy+50}" stroke="{ink}" stroke-width="1" opacity=".4"/>')
+    rows = [('ⓐ AI의 답', 4, a2, cy + 96), ('ⓑ 내 생각', 2, acc, cy + 164)]
+    for lab, v, col, y in rows:
+        s.append(f'<text x="{cx+20}" y="{y-14}" class="lbl" fill="{ink}">{lab}</text>')
+        for k in range(4):
+            x = cx + 40 + k * 46
+            s.append(f'<circle cx="{x}" cy="{y+12}" r="14" fill="{col if k < v else bg}" stroke="{col}" stroke-width="2.4"/>')
+            s.append(f'<text x="{x}" y="{y+17}" font-family="JetBrains Mono" font-weight="500" font-size="13" fill="{bg if k < v else col}" text-anchor="middle">{k+1}</text>')
+    # gap bracket
+    gx = cx + 40 + 3 * 46 + 30
+    s.append(f'<path d="M{gx} {cy+108} h10 v68 h-10" fill="none" stroke="{ink}" stroke-width="1.8"/>')
+    s.append(f'<text x="{cx+W-10}" y="{cy+H+28}" class="lbl" fill="{ink}" text-anchor="end">ⓐ − ⓑ 판단이 어디로 기울었나</text>')
+    s.append(f'<text x="40" y="404" class="lbl" fill="{ink}" opacity=".6">확신은 하나가 아니라 둘이다</text>')
+    return '<svg viewBox="0 0 600 420">' + ''.join(s) + '</svg>'
