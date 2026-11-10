@@ -435,3 +435,44 @@ def art_confidence(c):
     s.append(f'<text x="{cx+W-10}" y="{cy+H+28}" class="lbl" fill="{ink}" text-anchor="end">ⓐ − ⓑ 판단이 어디로 기울었나</text>')
     s.append(f'<text x="40" y="404" class="lbl" fill="{ink}" opacity=".6">확신은 하나가 아니라 둘이다</text>')
     return '<svg viewBox="0 0 600 420">' + ''.join(s) + '</svg>'
+
+
+def art_verify(c):
+    # a check that always passes (stuck thermometer) vs a check fixed in advance that can catch a wrong answer
+    ink, acc, bg, a2, mute = c['ink'], c['acc'], c['bg'], c['acc2'], c['mute']
+    s = []
+    # stuck thermometer
+    tx = 70
+    s.append(f'<rect x="{tx-14}" y="40" width="28" height="220" rx="14" fill="{bg}" stroke="{ink}" stroke-width="2.4"/>')
+    s.append(f'<circle cx="{tx}" cy="276" r="26" fill="{mute}" stroke="{ink}" stroke-width="2.4"/>')
+    s.append(f'<rect x="{tx-6}" y="150" width="12" height="120" fill="{mute}"/>')
+    for k in range(7):
+        y = 70 + k * 26
+        s.append(f'<line x1="{tx+14}" y1="{y}" x2="{tx+24}" y2="{y}" stroke="{ink}" stroke-width="1.4"/>')
+    s.append(f'<line x1="{tx+14}" y1="150" x2="{tx+34}" y2="150" stroke="{ink}" stroke-width="2"/>')
+    s.append(f'<text x="{tx+40}" y="157" font-family="Playfair Display" font-weight="900" font-size="22" fill="{ink}">36.5</text>')
+    s.append(f'<text x="{tx-30}" y="336" class="lbl" fill="{ink}">늘 같은 눈금</text>')
+    # what students call checking
+    for k, t in enumerate(['읽어 봤다', '이해가 된다', '같은 답이 나왔다']):
+        y = 214 + k * 34
+        s.append(f'<rect x="132" y="{y-18}" width="{len(t)*13+44}" height="26" rx="13" fill="{bg}" stroke="{ink}" stroke-width="1.4"/>')
+        s.append(f'<text x="146" y="{y}" class="lbl" fill="{ink}">{t}</text>')
+        s.append(f'<path d="M{len(t)*13+150} {y-6} l5 6 l9 -11" fill="none" stroke="{mute}" stroke-width="2.4" stroke-linecap="round"/>')
+    s.append(f'<line x1="300" y1="40" x2="300" y2="330" stroke="{ink}" stroke-width="1" stroke-dasharray="3 6" opacity=".4"/>')
+    # check fixed in advance: a gate
+    gx = 470
+    s.append(f'<rect x="{gx-60}" y="60" width="120" height="34" rx="8" fill="{acc}"/>')
+    s.append(f'<text x="{gx}" y="82" class="lbl" fill="{bg}" text-anchor="middle">미리 정한 확인</text>')
+    s.append(f'<rect x="{gx-60}" y="94" width="14" height="190" fill="{ink}"/><rect x="{gx+46}" y="94" width="14" height="190" fill="{ink}"/>')
+    s.append(f'<line x1="{gx-46}" y1="180" x2="{gx+46}" y2="180" stroke="{a2}" stroke-width="3"/>')
+    # answers approaching
+    s.append(f'<rect x="330" y="150" width="70" height="56" rx="8" fill="{a2}" stroke="{ink}" stroke-width="2.2"/>')
+    s.append(f'<text x="365" y="186" font-family="Noto Serif KR" font-weight="900" font-size="20" fill="{bg}" text-anchor="middle">답</text>')
+    s.append(f'<path d="M{gx-14} 166 l28 28 M{gx+14} 166 l-28 28" stroke="{a2}" stroke-width="4" stroke-linecap="round"/>')
+    s.append(f'<text x="{gx}" y="232" class="lbl" fill="{a2}" text-anchor="middle">걸린다</text>')
+    # restructure loop
+    s.append(f'<path d="M365 214 C 360 300, 470 330, 540 290 C 580 260, 580 160, 540 120" fill="none" stroke="{ink}" stroke-width="2.2"/>')
+    s.append(f'<path d="M532 132 l8 -14 l10 14" fill="none" stroke="{ink}" stroke-width="2.2" stroke-linejoin="round"/>')
+    s.append(f'<text x="470" y="336" class="lbl" fill="{ink}" text-anchor="middle">어긋난 자리에서 다시 짓기</text>')
+    s.append(f'<text x="580" y="404" class="lbl" fill="{ink}" opacity=".6" text-anchor="end">틀린 답도 통과하는 확인은 확인이 아니다</text>')
+    return '<svg viewBox="0 0 600 420">' + ''.join(s) + '</svg>'

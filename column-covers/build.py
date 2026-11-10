@@ -76,8 +76,10 @@ def ensure_fonts():
 def chromium_path():
     if os.environ.get('CHROMIUM'):
         return os.environ['CHROMIUM']
-    hits = sorted(glob.glob('/opt/pw-browsers/chromium-*/chrome-linux/chrome'))
-    return hits[-1] if hits else None
+    hits = sorted(glob.glob('/opt/pw-browsers/chromium-*/chrome-linux*/chrome'))
+    if hits:
+        return hits[-1]
+    return '/opt/pw-browsers/chromium' if os.path.isfile('/opt/pw-browsers/chromium') else None
 
 
 def page_size_mm(src):
