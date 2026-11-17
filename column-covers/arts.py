@@ -476,3 +476,42 @@ def art_verify(c):
     s.append(f'<text x="470" y="336" class="lbl" fill="{ink}" text-anchor="middle">어긋난 자리에서 다시 짓기</text>')
     s.append(f'<text x="580" y="404" class="lbl" fill="{ink}" opacity=".6" text-anchor="end">틀린 답도 통과하는 확인은 확인이 아니다</text>')
     return '<svg viewBox="0 0 600 420">' + ''.join(s) + '</svg>'
+
+
+def art_itinerary(c):
+    # one itinerary sheet, six requirements passing work to each other
+    ink, acc, bg, a2, mute = c['ink'], c['acc'], c['bg'], c['acc2'], c['mute']
+    s = []
+    # itinerary sheet
+    s.append(f'<g transform="rotate(-4 140 200)">')
+    s.append(f'<rect x="30" y="50" width="220" height="290" rx="6" fill="#FFFDF8" stroke="{ink}" stroke-width="2"/>')
+    s.append(f'<text x="50" y="84" font-family="Noto Serif KR" font-weight="900" font-size="16" fill="{ink}">1박 2일 일정표</text>')
+    rows = [('1일', '전망대', 0), ('', '해안 산책로', 2), ('', '수산시장', 0),
+            ('2일', '미술관', 1), ('', '케이블카', 0), ('', '이름난 식당', 0)]
+    for k, (d, t, flag) in enumerate(rows):
+        y = 118 + k * 34 + (10 if k >= 3 else 0)
+        if d:
+            s.append(f'<text x="50" y="{y}" class="lbl" fill="{acc}" style="font-size:12px">{d}</text>')
+        s.append(f'<text x="86" y="{y}" class="lbl" fill="{ink}">{t}</text>')
+        s.append(f'<line x1="50" y1="{y+10}" x2="230" y2="{y+10}" stroke="{ink}" stroke-width="1" opacity=".2"/>')
+        if flag == 1:
+            s.append(f'<line x1="82" y1="{y-5}" x2="{86+len(t)*13+4}" y2="{y-5}" stroke="{a2}" stroke-width="2.4"/>')
+            s.append(f'<text x="{86+len(t)*13+12}" y="{y}" class="lbl" fill="{a2}" style="font-size:11px">월 휴관</text>')
+        if flag == 2:
+            s.append(f'<text x="{86+len(t)*13+10}" y="{y}" class="lbl" fill="{a2}" style="font-size:11px">계단?</text>')
+    s.append('</g>')
+    # six requirements, a winding path
+    pts = [(330, 80), (460, 80), (560, 170), (460, 250), (330, 250), (390, 350)]
+    names = [('05', '목표'), ('06', '구조'), ('07', '제약'), ('08', '기억'), ('09', '확신도'), ('10', '결과')]
+    for (x1, y1), (x2, y2) in zip(pts, pts[1:]):
+        s.append(f'<line x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}" stroke="{ink}" stroke-width="2.2"/>')
+    x1, y1 = pts[-1]; x2, y2 = pts[0]
+    s.append(f'<path d="M{x1-36} {y1-8} C 270 330, 250 140, {x2-34} {y2+14}" fill="none" stroke="{acc}" stroke-width="2.2" stroke-dasharray="6 6"/>')
+    s.append(f'<path d="M{x2-46} {y2+6} l12 8 l-2 -14" fill="none" stroke="{acc}" stroke-width="2.2" stroke-linejoin="round"/>')
+    for (x, y), (n, t) in zip(pts, names):
+        hl = t == '결과'
+        s.append(f'<circle cx="{x}" cy="{y}" r="34" fill="{acc if hl else bg}" stroke="{ink}" stroke-width="2.4"/>')
+        s.append(f'<text x="{x}" y="{y-8}" font-family="JetBrains Mono" font-weight="500" font-size="11" fill="{bg if hl else mute}" text-anchor="middle">{n}</text>')
+        s.append(f'<text x="{x}" y="{y+13}" font-family="Noto Serif KR" font-weight="900" font-size="{15 if len(t) > 2 else 17}" fill="{bg if hl else ink}" text-anchor="middle">{t}</text>')
+    s.append(f'<text x="580" y="404" class="lbl" fill="{ink}" opacity=".6" text-anchor="end">요건과 요건이 서로 건네주는 것</text>')
+    return '<svg viewBox="0 0 600 420">' + ''.join(s) + '</svg>'
